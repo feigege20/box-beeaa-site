@@ -26,6 +26,7 @@ const SECURITY_HEADERS = {
     "img-src 'self' data: blob: https://beeaa.com https://*.r2.cloudflarestorage.com",
     "font-src 'self' data:",
     "connect-src 'self' https://plausible.io https://static.cloudflareinsights.com",
+    "media-src 'self' https://v.psste.com https://*.r2.cloudflarestorage.com blob: data:",
     "frame-src https://wa.me",
     "form-action 'self' mailto:",
     "base-uri 'self'",
