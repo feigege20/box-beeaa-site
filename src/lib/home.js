@@ -226,10 +226,38 @@ export function renderHome({ lang = "en" } = {}) {
     <div class="container">
       <h2 style="color:#FFFFFF;">${t ? "工厂视频实拍" : "Factory Video Tour"}</h2>
       <p style="color:#CBD5E1;margin-bottom:1.5rem;">${t ? "13,000㎡ 现代化工厂 · 60+ 先进设备 · 100+ 专业员工" : "13,000㎡ Modern Facility · 60+ Advanced Machines · 100+ Skilled Workers"}</p>
-      <video autoplay muted loop playsinline controls preload="auto" style="width:100%;max-width:960px;border-radius:12px;background:#000;aspect-ratio:16/9;" poster="/images/real/hero/factory-video-poster-1120w.webp">
+      <video id="factoryVideo" autoplay muted loop playsinline controls preload="auto" playsinline webkit-playsinline style="width:100%;max-width:960px;border-radius:12px;background:#000;aspect-ratio:16/9;cursor:pointer;" poster="/images/real/hero/factory-video-poster-1120w.webp" onclick="if(this.paused){this.play()}">
         <source src="${esc(videoUrl)}" type="video/mp4" />
         ${t ? "您的浏览器不支持视频播放。" : "Your browser does not support video."}
       </video>
+      <script>
+        // Autoplay fallback: some browsers (Chrome 88+, Safari 14+, mobile) block autoplay
+        // even with muted attribute. Explicit .play() with promise handling ensures best-effort.
+        (function() {
+          var v = document.getElementById('factoryVideo');
+          if (!v) return;
+          // Try explicit play
+          var tryPlay = function() {
+            var p = v.play();
+            if (p && p.catch) {
+              p.catch(function(err) {
+                // Autoplay blocked — that's OK, user can click to play (poster is visible)
+                console.log('[factoryVideo] autoplay blocked, user can click to play:', err && err.name);
+              });
+            }
+          };
+          // Multiple triggers: loadedmetadata, canplay, user interaction
+          v.addEventListener('loadedmetadata', tryPlay);
+          v.addEventListener('canplay', tryPlay);
+          // Also try on first user interaction with page (some browsers allow autoplay after interaction)
+          ['click','touchstart','keydown','scroll'].forEach(function(evt) {
+            document.addEventListener(evt, function once() {
+              tryPlay();
+              document.removeEventListener(evt, once, true);
+            }, { once: true, capture: true });
+          });
+        })();
+      </script>
     </div>
   </section>` : ""}
 
