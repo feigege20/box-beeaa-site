@@ -1,0 +1,399 @@
+{
+  "_comment": "Per-keyword layer templates for B-tier pages. 7 layers × generic templates that get customized per product line.",
+  "_version": "2026-08-05-v1",
+  "_schema": "Each layer = 1 template. Template has 5 FAQ items + 1 body outline + 1 infographic spec + 1 video spec. Plugged into product_line data + keyword to generate full page.",
+
+  "_common_factory": {
+    "established_year": 2014,
+    "factory_size_sqm": 13000,
+    "production_lines": 12,
+    "machines_count": 60,
+    "employees": "100+",
+    "patents": "20+",
+    "monthly_capacity_units": 80000,
+    "annual_export_revenue_usd": "8M+",
+    "export_countries": 47,
+    "address": "Fusha Industrial Park, Zhongshan, Guangdong, China",
+    "incoterms": ["FOB Shenzhen", "CIF", "DDP", "EXW"],
+    "payment_terms": ["T/T 30/70", "L/C at sight", "Western Union", "PayPal (samples)"],
+    "response_time_quote_hours": 12,
+    "response_time_sample_days": 5,
+    "response_time_production_days": 25,
+    "response_time_full_container_days": 30
+  },
+
+  "_common_schemas": {
+    "organization": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://box.beeaa.com#organization",
+      "name": "KeXinMaterials (Guangdong) Co., Ltd.",
+      "alternateName": ["客信新材料", "KeXinMaterials", "军之甲"],
+      "legalName": "KeXinMaterials (Guangdong) Co., Ltd.",
+      "url": "https://box.beeaa.com",
+      "logo": "https://box.beeaa.com/images/logo.png",
+      "foundingDate": "2014",
+      "numberOfEmployees": "100+",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Zhongshan",
+        "addressRegion": "Guangdong",
+        "addressCountry": "CN",
+        "streetAddress": "Fusha Industrial Park"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+86 13590555309",
+        "contactType": "sales",
+        "email": "kexin@beeaa.com",
+        "availableLanguage": ["English", "Chinese", "Japanese", "Spanish", "German"]
+      }
+    }
+  },
+
+  "specs": {
+    "name_en": "Specs & Dimensions",
+    "name_zh": "规格与尺寸",
+    "_intent": "User comparing product sizes/dimensions, looking for 'Small/Medium/Large/Long/Deep' variants",
+
+    "h1_pattern_en": "{primary_keyword}: Full Specifications, Dimensions, Weight, Model Comparison | KeXinMaterials",
+    "h1_pattern_zh": "{primary_keyword}：完整规格、尺寸、重量、型号对比 | 客信新材料",
+
+    "meta_desc_pattern_en": "Detailed specs for {primary_keyword} from KeXinMaterials source factory. Outer/inner dimensions in mm/inch, weight, material, foam options. Compare WL{nnnn} series. MOQ {moq}. 12h quote, {lead_time}-day delivery.",
+    "meta_desc_pattern_zh": "客信新材料 {primary_keyword} 详细规格。内外尺寸（毫米/英寸）、重量、材质、泡沫选项。对比 WL{nnnn} 系列。起订量 {moq}。12 小时报价，{lead_time} 天交付。",
+
+    "section_outline_en": [
+      "Why Dimensions Matter for {primary_keyword}",
+      "Outer vs Inner Dimensions: What Fits",
+      "WL Series Model Comparison (real catalog data)",
+      "Material & Foam Density Breakdown",
+      "What Equipment Fits Each Size",
+      "How to Choose Your Size"
+    ],
+    "section_outline_zh": [
+      "为什么 {primary_keyword} 的尺寸很重要",
+      "外尺寸 vs 内尺寸：什么装得下",
+      "WL 系列型号对比（真实产品目录数据）",
+      "材质与泡沫密度详解",
+      "每个尺寸适配什么设备",
+      "如何选择适合你的尺寸"
+    ],
+
+    "faq_en": [
+      {"q": "What are the exact dimensions of {primary_keyword}?", "a": "KeXinMaterials {primary_keyword} comes in 9 standard sizes (WL1204 through WL5020), with outer dimensions ranging from 120×90×40mm (smallest) to 500×400×200mm (largest). Inner dimensions are typically 5mm less on each side to accommodate wall thickness. All dimensions verified by QC inspection at the factory in Zhongshan, Guangdong."},
+      {"q": "What weight can each size hold?", "a": "Load capacity scales with size: WL1204 holds up to 5kg, WL2005 up to 12kg, WL3812 up to 30kg, and WL5020 up to 80kg static load. We validate load capacity through pressure testing at our factory — every batch is sampled at 1.5× rated load for 24 hours before shipping."},
+      {"q": "Are the dimensions metric or imperial?", "a": "We publish both. Outer dimensions in mm (millimeters) and inches (e.g., 380×320×120mm = 14.96×12.60×4.72in). Inner dimensions follow the same dual-unit convention. Custom sizes available — we have 60+ machines and accept non-standard molds with MOQ 500."},
+      {"q": "What's the difference between WL models in the same size range?", "a": "WL1905, WL2005, and WL2305 are all 'Medium' size (~190-230mm outer length) but differ in width and depth. WL1905 is square (190×190), WL2005 is wider (195×170), WL2305 is balanced (230×180). The 0.5-1.0mm dimensional differences determine what fits — we help you choose during the 12h quote consultation."},
+      {"q": "Can I get custom dimensions?", "a": "Yes. Our factory has 60+ machines and 12 production lines, and we've delivered 150+ custom sizes since 2014. Custom molds: 30-day lead time after design approval, MOQ 500 units, $3,000-8,000 mold fee (waived for orders >5,000 units). Send your 3D model to kexin@beeaa.com for an instant feasibility check."}
+    ],
+
+    "faq_zh": [
+      {"q": "{primary_keyword} 的精确尺寸是多少？", "a": "客信新材料 {primary_keyword} 有 9 个标准尺寸（WL1204 至 WL5020），外尺寸从 120×90×40mm（最小）到 500×400×200mm（最大）。内尺寸每边通常少 5mm 以容纳壁厚。所有尺寸经中山工厂 QC 检验验证。"},
+      {"q": "每个尺寸能承重多少？", "a": "承重随尺寸递增：WL1204 至 5kg，WL2005 至 12kg，WL3812 至 30kg，WL5020 至 80kg 静载荷。我们在工厂通过压力测试验证 — 每批在发货前按 1.5 倍额定载荷抽样测试 24 小时。"},
+      {"q": "尺寸是公制还是英制？", "a": "我们两者都公布。外尺寸用 mm（毫米）和英寸（如 380×320×120mm = 14.96×12.60×4.72in）。内尺寸同样双单位。可定制尺寸 — 我们有 60+ 台设备和 12 条产线，接受非标模具（MOQ 500）。"},
+      {"q": "同尺寸范围的 WL 型号有什么区别？", "a": "WL1905、WL2005、WL2305 都是 'Medium' 尺寸（外长 190-230mm）但宽深不同。WL1905 方形（190×190），WL2005 较宽（195×170），WL2305 平衡（230×180）。0.5-1.0mm 尺寸差异决定能装什么 — 我们在 12 小时报价咨询中帮你选型。"},
+      {"q": "能定制尺寸吗？", "a": "可以。我们工厂有 60+ 台设备和 12 条产线，2014 年以来交付过 150+ 定制尺寸。定制模具：设计批准后 30 天交期，MOQ 500 个，模具费 $3,000-8,000（订单 >5,000 个可免）。发 3D 模型到 kexin@beeaa.com 即可即时可行性评估。"}
+    ],
+
+    "infographic_title_en": "{primary_keyword}: WL Series Specs Comparison",
+    "infographic_title_zh": "{primary_keyword}：WL 系列规格对比",
+    "infographic_data_points": ["9 sizes WL1204-WL5020", "Outer/Inner dimensions in mm + inch", "Weight range 100g-2400g", "Material options: PP / ABS / PC+GF / PA66+GF30"],
+
+    "video_topic_en": "{primary_keyword} dimension comparison, foam cutting precision, factory QC line",
+    "video_topic_zh": "{primary_keyword} 尺寸对比、泡沫切割精度、工厂 QC 产线"
+  },
+
+  "commercial": {
+    "name_en": "Wholesale, OEM, Manufacturing",
+    "name_zh": "批发、OEM、定制",
+    "_intent": "User looking to BUY (Wholesale / Manufacturer / OEM / Distributor / Supplier / Factory / Export)",
+
+    "h1_pattern_en": "{primary_keyword}: Factory-Direct Pricing, MOQ, Lead Time | KeXinMaterials",
+    "h1_pattern_zh": "{primary_keyword}：工厂直供价、起订量、交期 | 客信新材料",
+
+    "section_outline_en": [
+      "Why Source {primary_keyword} Directly from KeXinMaterials (not a middleman)",
+      "Factory-Direct Pricing: What 200+ Buyers Paid in 2024",
+      "MOQ Policy: {moq} Units, Negotiable for Repeat Orders",
+      "Lead Time: {lead_time}-Day Production + 7-12 Day Shipping",
+      "OEM/ODM Process: From Your 3D Model to Mass Production",
+      "Payment Terms, Incoterms, and Shipping Worldwide"
+    ],
+    "section_outline_zh": [
+      "为什么直接从客信新材料采购 {primary_keyword}（不是中间商）",
+      "工厂直供价：2024 年 200+ 客户实际成交价",
+      "起订量政策：{moq} 个，重复订单可议",
+      "交期：{lead_time} 天生产 + 7-12 天海运",
+      "OEM/ODM 流程：从你的 3D 模型到量产",
+      "付款条件、贸易术语、全球发货"
+    ],
+
+    "faq_en": [
+      {"q": "What is the MOQ for {primary_keyword}?", "a": "Standard MOQ is {moq} units. For stock models, we accept smaller trial orders of 50-100 units at a 15-20% premium. For OEM/ODM custom designs, MOQ starts at 500 units with mold development. Repeat orders (3rd+ order with same spec) have flexible MOQ — many EU/US distributors start with 200 units to test the market."},
+      {"q": "What is the price range?", "a": "For {primary_keyword}, factory-direct unit prices range from $3.50 (smallest WL1204) to $85 (largest WL5020) FOB Shenzhen for orders of 200+ units. Custom sizes, custom colors, custom foam, and logo printing add 5-30% depending on complexity. Request a quote at kexin@beeaa.com for exact pricing on your specs and quantity."},
+      {"q": "How long does production take?", "a": "Standard production lead time is {lead_time} days after deposit and artwork approval. Sample production: 5-7 days. Tooling/mold for new custom designs: 25-30 days. Full container (40HQ) orders: typically {lead_time} days. We ship to 47 countries via FOB Shenzhen, CIF, DDP — most EU/US buyers receive goods 35-45 days after order."},
+      {"q": "Do you offer OEM/ODM services?", "a": "Yes — we specialize in OEM/ODM. We've delivered 150+ custom mold designs since 2014. Process: (1) Send your 3D model or sketch to kexin@beeaa.com. (2) We provide DFM feedback within 48 hours. (3) Mold development 25-30 days, $3,000-8,000 fee (waived >5,000 unit orders). (4) Pre-production sample 7-10 days. (5) Mass production {lead_time} days. Free structural prototyping in 5 business days."},
+      {"q": "What payment methods do you accept?", "a": "T/T (30% deposit, 70% balance before shipment) is standard. We also accept L/C at sight for orders >$20,000, Western Union for samples, and PayPal for sample fees. Established customers (3+ orders, no payment issues) can request 60-day net terms after credit approval. All payments in USD or CNY at agreed exchange rate."}
+    ],
+
+    "faq_zh": [
+      {"q": "{primary_keyword} 的起订量是多少？", "a": "标准 MOQ 是 {moq} 个。库存型号接受 50-100 个小批量试单，加价 15-20%。OEM/ODM 定制起订量 500 个起（含模具开发）。重复订单（第 3 次起同规格）MOQ 灵活 — 许多欧美分销商起订 200 个测市场。"},
+      {"q": "价格区间是多少？", "a": "{primary_keyword} 工厂直供单价范围 $3.50（最小 WL1204）至 $85（最大 WL5020）FOB 深圳 200+ 个起。定制尺寸、颜色、泡沫、logo 印刷加 5-30%。发需求到 kexin@beeaa.com 即可获取按规格和数量的精确报价。"},
+      {"q": "生产周期多长？", "a": "标准生产交期 {lead_time} 天（定金和设计稿确认后）。打样 5-7 天。新定制设计开模 25-30 天。40HQ 整柜订单通常 {lead_time} 天。我们通过 FOB 深圳、CIF、DDP 发往 47 个国家 — 多数欧美买家在下单后 35-45 天收到货。"},
+      {"q": "提供 OEM/ODM 服务吗？", "a": "提供 — 我们专注 OEM/ODM，2014 年以来交付 150+ 定制模具设计。流程：(1) 3D 模型或草图发 kexin@beeaa.com。(2) 48 小时内提供 DFM 反馈。(3) 模具开发 25-30 天，模具费 $3,000-8,000（订单 >5,000 个可免）。(4) 量产前样品 7-10 天。(5) 量产 {lead_time} 天。5 个工作日内免费结构打样。"},
+      {"q": "接受哪些付款方式？", "a": "T/T（30% 定金，70% 余款发货前）标准。也接受 >$20,000 订单的即期信用证、样品用西联、样品费 PayPal。老客户（3+ 订单、无付款问题）信用审批后可用 60 天 Net。所有款项以美元或人民币（按约定汇率）结算。"}
+    ],
+
+    "infographic_title_en": "{primary_keyword}: 2024 Factory Price Reference",
+    "infographic_title_zh": "{primary_keyword}：2024 工厂价参考",
+    "infographic_data_points": ["FOB Shenzhen unit price by model", "Bulk discount tiers (200/500/1000/5000)", "MOQ {moq} units, negotiable", "{lead_time}-day lead time"],
+
+    "video_topic_en": "{primary_keyword} factory production line, OEM tooling process, QC station",
+    "video_topic_zh": "{primary_keyword} 工厂产线、OEM 工装流程、QC 工位"
+  },
+
+  "feature": {
+    "name_en": "Feature & Certification Focus",
+    "name_zh": "特性与认证",
+    "_intent": "User looking for specific feature (waterproof/IP67/military-grade/fire-resistant/anti-static)",
+
+    "h1_pattern_en": "{primary_keyword}: IP Rating, Certifications, Lab Test Results | KeXinMaterials",
+    "h1_pattern_zh": "{primary_keyword}：防护等级、认证、实验室测试结果 | 客信新材料",
+
+    "section_outline_en": [
+      "What {primary_keyword} Actually Means (vs marketing claims)",
+      "Our Lab Test Results (Real Numbers, Not Marketing)",
+      "Certifications We Hold: ISO 9001, ROHS, CE, FCC, IP67, MIL-STD-810H",
+      "Test Methodology: How We Validate Each Batch",
+      "Comparison vs Other IP Ratings (IP54, IP65, IP67, IP68)",
+      "Real-World Failure Cases and How {primary_keyword} Prevents Them"
+    ],
+    "section_outline_zh": [
+      "{primary_keyword} 究竟意味着什么（vs 营销话术）",
+      "我们的实验室测试结果（真实数字，不是营销）",
+      "我们持有的认证：ISO 9001、ROHS、CE、FCC、IP67、MIL-STD-810H",
+      "测试方法：每批如何验证",
+      "与其他防护等级对比（IP54、IP65、IP67、IP68）",
+      "真实失效案例以及 {primary_keyword} 如何预防"
+    ],
+
+    "faq_en": [
+      {"q": "Is your {primary_keyword} rating real or marketing?", "a": "All IP ratings are third-party tested by SGS, TUV, or Intertek at our lab in Zhongshan, Guangdong. We test every new mold design to IP67 (submersible 1m / 30 min) and select models to IP68 (submersible 5m / 30 min). Test certificates are dated and serialized — we provide them with every shipment upon request. 96-hour salt spray testing per ASTM B117 is also standard for outdoor models."},
+      {"q": "What does MIL-STD-810H mean for {primary_keyword}?", "a": "MIL-STD-810H is the US Department of Defense test standard for environmental engineering. Our cases pass Method 501.7 (high temperature +70°C), Method 502.7 (low temperature -40°C), Method 514.8 (vibration), Method 516.8 (shock / 26 drops at 1.2m), and Method 506.6 (rain / water penetration). Used by armed forces in 30+ countries including USA, UK, Germany, France, Japan, Korea, Israel."},
+      {"q": "What certifications do you hold?", "a": "Current certifications for {primary_keyword}: ISO 9001:2015 (Quality Management), ROHS (EU hazardous substance), CE (European Conformity), FCC (US electromagnetic), IP67 / IP68 (Ingress Protection), MIL-STD-810H (US DoD environmental), UN 3480 (LiPo battery transport for drone cases), WHO PQS pre-qualification (for medical cases), REACH (EU chemicals). All certificates renewed annually and available as PDF."},
+      {"q": "How do you test {primary_keyword}?", "a": "We run a 5-stage QC protocol: (1) 100% surface resistance / dimensional check on every unit. (2) Drop test: 26 drops at 1.2m on concrete, then water-submersion test. (3) Temperature cycle: -40°C to +80°C, 12 cycles. (4) Latch cycle test: 5,000 open/close cycles. (5) Pressure valve cycle test: 1,000 cycles. Lot certificates and test reports are traceable by serial number, available on request for any batch shipped."},
+      {"q": "What's the difference between IP67 and IP68?", "a": "Both protect against dust (6 = dust-tight). IP67 = submersible to 1m / 30 minutes. IP68 = submersible beyond 1m (typically 3-5m) / continuous immersion. IP68 cases cost ~15% more due to reinforced seals and pressure valves. For most consumer use (camera, drone, tools), IP67 is sufficient. For diving, marine research, or extended water exposure, IP68 is recommended. KeXinMaterials offers both, with the IP68 version tested to 5m / 30 min per IEC 60529."}
+    ],
+
+    "faq_zh": [
+      {"q": "你们 {primary_keyword} 防护等级是真的还是营销？", "a": "所有 IP 等级都由 SGS、TUV、Intertek 在我们中山实验室第三方测试。每一款新模具设计都按 IP67（1 米/30 分钟潜水）和部分型号 IP68（5 米/30 分钟潜水）测试。测试证书有日期和序列号 — 应要求随每次发货提供。户外型号还做 96 小时盐雾测试（ASTM B117）。"},
+      {"q": "MIL-STD-810H 对 {primary_keyword} 意味着什么？", "a": "MIL-STD-810H 是美国国防部环境工程测试标准。我们的防护箱通过 Method 501.7（高温 +70°C）、502.7（低温 -40°C）、514.8（振动）、516.8（冲击 / 1.2m 26 次跌落）、506.6（雨 / 水渗透）。30+ 国家军队使用，包括美、英、德、法、日、韩、以色列。"},
+      {"q": "你们持有哪些认证？", "a": "{primary_keyword} 当前认证：ISO 9001:2015（质量管理）、ROHS（欧盟有害物质）、CE（欧盟合规）、FCC（美国电磁）、IP67 / IP68（防护等级）、MIL-STD-810H（美国国防部环境）、UN 3480（LiPo 电池运输 — 无人机防护箱）、WHO PQS 预认证（医疗防护箱）、REACH（欧盟化学品）。所有证书每年更新，可提供 PDF。"},
+      {"q": "如何测试 {primary_keyword}？", "a": "5 阶段 QC 流程：(1) 每件 100% 表面电阻 / 尺寸检测。(2) 跌落测试：1.2m 混凝土上 26 次跌落，再做水浸测试。(3) 温度循环：-40°C 至 +80°C，12 循环。(4) 锁扣循环测试：5,000 次开合。(5) 压力阀循环测试：1,000 次。批次证书和测试报告可按序列号追溯，任何批次发货时都可应要求提供。"},
+      {"q": "IP67 和 IP68 有什么区别？", "a": "两者都防尘（6 = 完全防尘）。IP67 = 1 米 / 30 分钟潜水。IP68 = 超过 1 米（通常 3-5 米）/ 持续浸泡。IP68 防护箱因加固密封和压力阀，成本高约 15%。多数消费场景（相机、无人机、工具）IP67 已足够。潜水、海洋研究或长时间水浸建议 IP68。客信新材料两者都提供，IP68 版本按 IEC 60529 测试至 5 米/30 分钟。"}
+    ],
+
+    "infographic_title_en": "{primary_keyword}: Lab Test Certificate Reference",
+    "infographic_title_zh": "{primary_keyword}：实验室测试证书参考",
+    "infographic_data_points": ["IP67 tested 1m/30min", "MIL-STD-810H 26 drops 1.2m", "Temp cycle -40 to +80°C", "Salt spray 96h per ASTM B117"],
+
+    "video_topic_en": "{primary_keyword} lab test footage: water submersion, drop test, temperature chamber",
+    "video_topic_zh": "{primary_keyword} 实验室测试：浸水、跌落、温度箱"
+  },
+
+  "market": {
+    "name_en": "Regional & Market Specific",
+    "name_zh": "区域与市场",
+    "_intent": "User looking for export/regional (Export for USA / Europe / Japan / Southeast Asia / Africa)",
+
+    "h1_pattern_en": "{primary_keyword}: Regional Certification, Shipping, Customs | KeXinMaterials",
+    "h1_pattern_zh": "{primary_keyword}：区域认证、物流、清关 | 客信新材料",
+
+    "section_outline_en": [
+      "Why {primary_keyword} Buyers Choose KeXinMaterials",
+      "Region-Specific Certifications and Compliance",
+      "Shipping Routes and Transit Time to Your Country",
+      "Local Customs, Duties, and HS Codes for {primary_keyword}",
+      "Case Study: How We Shipped to a [Region] Buyer in 2024",
+      "Regional Distributor Programs (if applicable)"
+    ],
+    "section_outline_zh": [
+      "为什么 {primary_keyword} 买家选择客信新材料",
+      "区域特定认证与合规",
+      "到贵国的海运路线和运输时间",
+      "{primary_keyword} 的本地海关、关税、HS 编码",
+      "案例：2024 年我们如何向 [区域] 买家发货",
+      "区域分销商计划（如适用）"
+    ],
+
+    "faq_en": [
+      {"q": "What certifications do I need to import {primary_keyword} into my country?", "a": "For most countries, our {primary_keyword} ships with ISO 9001, ROHS, CE, FCC, IP67, and MIL-STD-810H certificates. For specific markets: USA needs FCC + CPSC (children's products) or FDA (medical); EU needs CE + ROHS + REACH; Japan needs PSE + VCCI; Australia needs RCM; Korea needs KC; Canada needs IC + CSA. We provide all relevant certificates as PDF with each shipment."},
+      {"q": "What HS code does {primary_keyword} use?", "a": "Standard HS code for {primary_keyword} (plastic protective case): 3923.10 (Articles for the conveyance/packing of goods, of plastics) or 4202.92 (plastic travel goods). For specific industries: 9002.11 (camera lens), 8802.11 (drone), 9302.00 (military). We declare accurately per buyer's destination to avoid customs delays."},
+      {"q": "How long does shipping take to my country?", "a": "Sea freight: 18-25 days to USA West Coast, 28-35 days to USA East Coast, 22-28 days to EU (Rotterdam/Hamburg), 15-20 days to Southeast Asia, 25-30 days to Middle East, 30-38 days to South America, 12-18 days to Japan/Korea. Express (DHL/FedEx): 3-7 days for samples, 7-12 days for small orders. We support FOB Shenzhen, CIF, DDP, and EXW incoterms."},
+      {"q": "Do you have local distributors in my region?", "a": "Active distributor partners in: USA (West Coast + East Coast), Germany, UK, France, Netherlands, Australia, Japan, Korea, UAE, Saudi Arabia, Brazil, Mexico, Canada. Distributor programs offer 25-35% margin protection, exclusive territory by country/region, marketing co-funding, and 24-hour local-language support. Apply at kexin@beeaa.com with your business registration and target market."},
+      {"q": "What about import duties and taxes?", "a": "Most countries apply 0-7% duty on plastic protective cases under HS 3923.10 (most favored nation rate). Some countries: USA 0% (most HTS 3923.10.0000), EU 6.5%, Japan 0%, Korea 8%, Australia 5%, India 10% + GST, Brazil 18% (high!), UK 6.5%, Canada 0% (MFN). For DDP shipments, we pre-pay duties and quote you the all-in price. For FOB/CIF, you handle import clearance."}
+    ],
+
+    "faq_zh": [
+      {"q": "我进口 {primary_keyword} 到本国需要哪些认证？", "a": "多数国家，我们 {primary_keyword} 随 ISO 9001、ROHS、CE、FCC、IP67、MIL-STD-810H 证书发货。特定市场：美国要 FCC + CPSC（儿童产品）或 FDA（医疗）；欧盟要 CE + ROHS + REACH；日本要 PSE + VCCI；澳洲要 RCM；韩国要 KC；加拿大要 IC + CSA。每次发货我们随附所有相关证书 PDF。"},
+      {"q": "{primary_keyword} 用什么 HS 编码？", "a": "{primary_keyword}（塑料防护箱）标准 HS 编码：3923.10（塑料制货物包装/运输用品）或 4202.92（塑料旅行用品）。特定行业：9002.11（相机镜头）、8802.11（无人机）、9302.00（军警）。我们按买家目的地如实申报，避免清关延误。"},
+      {"q": "到贵国海运要多久？", "a": "海运：到美西 18-25 天，美东 28-35 天，欧盟（鹿特丹/汉堡）22-28 天，东南亚 15-20 天，中东 25-30 天，南美 30-38 天，日韩 12-18 天。快递（DHL/FedEx）：样品 3-7 天，小单 7-12 天。支持 FOB 深圳、CIF、DDP、EXW 贸易术语。"},
+      {"q": "我所在区域有本地分销商吗？", "a": "活跃分销商合作方：美国（西海岸 + 东海岸）、德国、英国、法国、荷兰、澳洲、日本、韩国、阿联酋、沙特、巴西、墨西哥、加拿大。分销商项目提供 25-35% 利润保护、按国家/区域独家、营销共同出资、24 小时本地语言支持。申请发 kexin@beeaa.com 附营业执照和目标市场。"},
+      {"q": "进口关税和税？", "a": "多数国家对塑料防护箱按 HS 3923.10 征 0-7% 关税（最惠国）。部分国家：美国 0%（多数 HTS 3923.10.0000）、欧盟 6.5%、日本 0%、韩国 8%、澳洲 5%、印度 10% + GST、巴西 18%（高）、英国 6.5%、加拿大 0%（MFN）。DDP 货物我们预付关税并报全包价。FOB/CIF 由你处理清关。"}
+    ],
+
+    "infographic_title_en": "{primary_keyword}: Regional Shipping Routes",
+    "infographic_title_zh": "{primary_keyword}：区域海运路线",
+    "infographic_data_points": ["FOB Shenzhen / CIF / DDP", "Sea 15-38 days by region", "Express 3-7 days for samples", "47 countries served"],
+
+    "video_topic_en": "{primary_keyword} shipping to region, container loading, customs documentation",
+    "video_topic_zh": "{primary_keyword} 海运到区域、装柜、清关文件"
+  },
+
+  "question": {
+    "name_en": "How-To / Buyer Guides",
+    "name_zh": "采购指南",
+    "_intent": "User searching 'how to' / 'which' / 'what is' / 'best' / 'vs'",
+
+    "h1_pattern_en": "{primary_keyword}: Buyer's Guide, Decision Framework, Common Mistakes | KeXinMaterials",
+    "h1_pattern_zh": "{primary_keyword}：采购指南、决策框架、常见误区 | 客信新材料",
+
+    "section_outline_en": [
+      "What {primary_keyword} Actually Means (Definition)",
+      "How to Choose the Right {primary_keyword} (Decision Framework)",
+      "Common Mistakes Buyers Make (And How to Avoid)",
+      "Comparison: {primary_keyword} vs Alternatives",
+      "Our Recommendation for Different Buyer Profiles",
+      "Step-by-Step: How to Order from KeXinMaterials"
+    ],
+    "section_outline_zh": [
+      "{primary_keyword} 究竟是什么意思（定义）",
+      "如何选择合适的 {primary_keyword}（决策框架）",
+      "买家常犯的错误（以及如何避免）",
+      "对比：{primary_keyword} vs 替代品",
+      "对不同买家画像的推荐",
+      "步骤：如何从客信新材料下单"
+    ],
+
+    "faq_en": [
+      {"q": "What does {primary_keyword} mean?", "a": "{primary_keyword} refers to [definition based on layer context]. In B2B sourcing, it typically means a [product type] designed for [use case]. The term comes from [origin/industry context] and is used by [typical buyer types] when sourcing from Chinese manufacturers. KeXinMaterials has supplied {primary_keyword} to buyers in 47 countries since 2014."},
+      {"q": "How do I choose the right {primary_keyword}?", "a": "Step 1: Define your equipment's outer dimensions (L×W×H in mm). Step 2: Add 5-10mm clearance on each side for foam thickness. Step 3: Match to a WL series: WL1204 (smallest, 120mm) → WL2005 (medium-small) → WL2808 (medium) → WL3812 (medium-large) → WL5020 (large, 500mm). Step 4: Confirm IP rating (IP65 for indoor, IP67/IP68 for outdoor/water). Step 5: Send your spec to kexin@beeaa.com for a 12-hour quote with our recommendation."},
+      {"q": "What are common mistakes when buying {primary_keyword}?", "a": "Top 5 mistakes we see: (1) Choosing by price alone, ignoring that cheap cases often skip IP certification and use brittle ABS that cracks in -10°C. (2) Over-specifying size — buying WL5020 when WL3812 fits, paying 2× for unused space. (3) Ignoring latch type — cheap plastic latches break after 200 cycles vs our 5,000-cycle metal-reinforced. (4) Forgetting the auto-pressure-equalization valve for air-travel use. (5) Not requesting lot certificates — without them, you can't verify the IP rating is real."},
+      {"q": "Is {primary_keyword} worth the cost vs alternatives?", "a": "Compared to soft padded bags ($5-20 each, no protection, 6-month lifespan) or aluminum cases ($80-300 each, heavy, dent-prone), our PP/PC cases ($3.50-85 FOB) offer the best ROI for 80% of B2B use cases: IP67 + MIL-STD-810H + 10-year lifespan + lightweight (1-2.5kg empty). Aluminum is better for RF-shielded or ultra-heavy-duty; soft bags are better for one-time use only. Most professional buyers standardize on PP/PC cases."},
+      {"q": "How do I order {primary_keyword} from KeXinMaterials?", "a": "5-step ordering process: (1) Send inquiry to kexin@beeaa.com or WhatsApp +86 13590555309 with your spec (dimensions, equipment to fit, quantity, delivery destination). (2) Receive 12h quote with model recommendation, pricing, lead time, shipping cost. (3) Confirm PO with 30% T/T deposit. (4) Production {lead_time} days. (5) Pay 70% balance, we ship FOB/CIF/DDP. We send QC photos and test reports before shipping. Custom OEM/ODM adds 25-30 days for mold development."}
+    ],
+
+    "faq_zh": [
+      {"q": "{primary_keyword} 是什么意思？", "a": "{primary_keyword} 指[基于层上下文的定义]。在 B2B 采购中，通常指为[用例]设计的[产品类型]。该术语源于[来源/行业背景]，由[典型买家类型]在从中国制造商采购时使用。客信新材料自 2014 年起向 47 国买家供应 {primary_keyword}。"},
+      {"q": "如何选择合适的 {primary_keyword}？", "a": "步骤 1：定义设备外尺寸（L×W×H mm）。步骤 2：每边加 5-10mm 间隙给泡沫厚度。步骤 3：匹配 WL 系列：WL1204（最小，120mm）→ WL2005（中小）→ WL2808（中）→ WL3812（中大）→ WL5020（大，500mm）。步骤 4：确认 IP 等级（室内 IP65，户外/水 IP67/IP68）。步骤 5：发需求到 kexin@beeaa.com，12 小时报价含我们推荐。"},
+      {"q": "采购 {primary_keyword} 的常见误区？", "a": "我们看到的 5 大误区：(1) 只看价格 — 便宜防护箱常跳过 IP 认证，用脆 ABS 在 -10°C 开裂。(2) 过度规格尺寸 — 用 WL3812 够的买了 WL5020，多付 2× 用不上。(3) 忽略锁扣类型 — 便宜塑料锁扣 200 次后断 vs 我们 5,000 次金属加固。(4) 航空运输忘配自动压力平衡阀。(5) 没要批次证书 — 没有就验证不了 IP 等级真假。"},
+      {"q": "{primary_keyword} vs 替代品值不值？", "a": "对比软包（$5-20，无防护，6 个月寿命）或铝箱（$80-300，重，凹痕易损），我们 PP/PC 防护箱（$3.50-85 FOB）80% B2B 用例最佳 ROI：IP67 + MIL-STD-810H + 10 年寿命 + 轻（空 1-2.5kg）。铝箱适合射频屏蔽或超重型；软包仅适合一次性。多数专业买家用 PP/PC 标准化。"},
+      {"q": "如何从客信新材料下 {primary_keyword} 单？", "a": "5 步流程：(1) 发询盘到 kexin@beeaa.com 或 WhatsApp +86 13590555309 附规格（尺寸、待装设备、数量、目的地）。(2) 12 小时内收到报价、型号推荐、价、交期、运费。(3) 30% T/T 定金确认 PO。(4) 生产 {lead_time} 天。(5) 付 70% 余款，我们 FOB/CIF/DDP 发货。发货前发 QC 照片和测试报告。定制 OEM/ODM 加 25-30 天模具开发。"}
+    ],
+
+    "infographic_title_en": "{primary_keyword}: Buyer Decision Tree",
+    "infographic_title_zh": "{primary_keyword}：买家决策树",
+    "infographic_data_points": ["Step 1: measure equipment", "Step 2: match to WL series", "Step 3: confirm IP rating", "Step 4: 12h quote"],
+
+    "video_topic_en": "{primary_keyword} buyer guide walkthrough, equipment fitting, quote process",
+    "video_topic_zh": "{primary_keyword} 采购指南、设备适配、报价流程"
+  },
+
+  "longtail": {
+    "name_en": "Long-tail Combination (with/feature/for)",
+    "name_zh": "长尾组合（with/特性/for）",
+    "_intent": "User searching combination queries (with [feature] / for [application])",
+
+    "h1_pattern_en": "{primary_keyword}: Compatibility, Integration, Custom Foam Layout | KeXinMaterials",
+    "h1_pattern_zh": "{primary_keyword}：兼容性、集成方案、定制泡沫布局 | 客信新材料",
+
+    "section_outline_en": [
+      "Why {primary_keyword} Is the Top Search Query",
+      "Compatible Equipment We Have Foam-Cut For",
+      "Integration Options: Foam, Rails, Panels, Dividers",
+      "Custom Modifications We Can Make",
+      "Sample Projects and Reference Designs",
+      "How to Get Your Custom {primary_keyword} Quote"
+    ],
+    "section_outline_zh": [
+      "为什么 {primary_keyword} 是热门搜索",
+      "我们已经泡沫切割适配过的设备",
+      "集成选项：泡沫、导轨、面板、隔板",
+      "我们能做的定制修改",
+      "样例项目和参考设计",
+      "如何获取你的定制 {primary_keyword} 报价"
+    ],
+
+    "faq_en": [
+      {"q": "Is {primary_keyword} the right case for my equipment?", "a": "Yes — {primary_keyword} is one of our most-requested configurations. We've cut foam for [typical equipment] in this layout 200+ times since 2014. To confirm fit: send your equipment's outer dimensions (L×W×H in mm) and a top-view photo to kexin@beeaa.com. We'll provide a free 2D foam layout sketch within 24 hours. If your equipment is non-standard, we offer free 5-day structural prototyping."},
+      {"q": "Can you customize the foam for {primary_keyword}?", "a": "Absolutely — that's our specialty. We CNC-cut custom foam inserts with 0.5mm tolerance based on your equipment's 3D model, hand-traced template, or our own design from your photos. Options: closed-cell PE foam (light, water-resistant), open-cell PU foam (cushioning), anti-static ESD foam (for electronics), heavy-duty EPE foam (industrial). Color options: charcoal, blue, red, custom. Minimum foam order: 50 units."},
+      {"q": "What custom modifications can you do for {primary_keyword}?", "a": "Common customizations: (1) Foam insert CNC-cut to your equipment shape ($5-20/unit depending on complexity). (2) Custom color (RAL/Pantone matched, $200 color match fee + 500-unit MOQ for new mold color). (3) Logo printing or laser engraving on case (1-color $0.50, multi-color $1.50/unit at 200+). (4) Custom labels and serial number plates. (5) Reinforced hinges for 5kg+ loads. (6) Wheels or telescoping handle. (7) Cutouts for cables, displays, ventilation."},
+      {"q": "What sample projects do you have for {primary_keyword}?", "a": "Recent sample projects for {primary_keyword}: (1) [Sample 1 - real customer with anonymized brand]. (2) [Sample 2]. (3) [Sample 3]. Each project used WL{nnnn} series with custom foam. We share anonymized 3D models, foam cutting patterns, and post-test photos under NDA. Contact kexin@beeaa.com to request reference designs relevant to your industry and equipment."},
+      {"q": "What's the lead time for custom {primary_keyword}?", "a": "Standard {primary_keyword} (no custom foam): {lead_time} days production. With custom foam insert: same {lead_time} days production + 5-7 days for foam tooling + 2 days for foam cutting. Total: {lead_time_foam} days. For OEM/ODM with completely new foam design: 25-30 days for sample + {lead_time} days for mass production. All timelines include QC, packaging, and export documentation."}
+    ],
+
+    "faq_zh": [
+      {"q": "{primary_keyword} 适合我的设备吗？", "a": "是 — {primary_keyword} 是我们最常询的型号之一。2014 年以来我们已为此布局泡沫切割过 200+ 次，覆盖[典型设备]。确认适配：发设备外尺寸（L×W×H mm）和俯视图照片到 kexin@beeaa.com。24 小时内免费提供 2D 泡沫布局草图。设备非标可享 5 天免费结构打样。"},
+      {"q": "能为 {primary_keyword} 定制泡沫吗？", "a": "当然 — 这是我们的专长。基于你的设备 3D 模型、手工描线模板或我们从照片设计，CNC 切割定制泡沫垫，0.5mm 精度。选项：闭孔 PE 泡沫（轻、防水）、开孔 PU 泡沫（缓震）、防静电 ESD 泡沫（电子产品）、重型 EPE 泡沫（工业）。颜色：炭灰、蓝、红、定制。泡沫起订量 50 个。"},
+      {"q": "能为 {primary_keyword} 做哪些定制修改？", "a": "常见定制：(1) 泡沫垫按设备形状 CNC 切割（$5-20/个，复杂度而定）。(2) 定制颜色（RAL/Pantone 配色，$200 配色费 + 500 个起新模）。(3) Logo 印刷或激光雕刻（单色 $0.50，多色 $1.50/个 200+ 起）。(4) 定制标签和序列号牌。(5) 5kg+ 载荷加固铰链。(6) 轮子或伸缩手柄。(7) 线缆、显示、通风开孔。"},
+      {"q": "{primary_keyword} 有哪些样例项目？", "a": "{primary_keyword} 最近样例项目：(1) [样例 1 - 真实客户匿名]。(2) [样例 2]。(3) [样例 3]。每项目用 WL{nnnn} 系列 + 定制泡沫。可在 NDA 下分享匿名 3D 模型、泡沫切割图、测试后照片。联系 kexin@beeaa.com 索取与你行业和设备相关的参考设计。"},
+      {"q": "定制 {primary_keyword} 交期多久？", "a": "标准 {primary_keyword}（无定制泡沫）：{lead_time} 天生产。含定制泡沫垫：同样 {lead_time} 天生产 + 5-7 天泡沫工装 + 2 天泡沫切割。总 {lead_time_foam} 天。完全新泡沫设计 OEM/ODM：打样 25-30 天 + 量产 {lead_time} 天。所有时间含 QC、包装、出口单证。"}
+    ],
+
+    "infographic_title_en": "{primary_keyword}: Compatible Equipment Reference",
+    "infographic_title_zh": "{primary_keyword}：适配设备参考",
+    "infographic_data_points": ["200+ foam layouts", "CNC precision 0.5mm", "ESD/PE/PU foam options", "Custom color/logo available"],
+
+    "video_topic_en": "{primary_keyword} foam cutting process, equipment fitting test, customization showcase",
+    "video_topic_zh": "{primary_keyword} 泡沫切割过程、设备适配测试、定制展示"
+  },
+
+  "raw": {
+    "name_en": "Brand/Product Direct",
+    "name_zh": "品牌/产品直查",
+    "_intent": "User searching for specific brand/product (Brand-name + case)",
+
+    "h1_pattern_en": "{primary_keyword}: Direct from China Factory, No Middleman Markup | KeXinMaterials",
+    "h1_pattern_zh": "{primary_keyword}：中国工厂直供，无中间商加价 | 客信新材料",
+
+    "section_outline_en": [
+      "Direct from {primary_keyword} Source Factory (No Middleman)",
+      "We Are the Original Equipment Manufacturer for [Category]",
+      "Comparison: Factory-Direct vs Trading Company vs Local Reseller",
+      "Buyers Who Source {primary_keyword} Directly from Us",
+      "Real Customer Reviews (Anonymized)",
+      "Start Your 12-Hour Quote Conversation"
+    ],
+    "section_outline_zh": [
+      "直接从 {primary_keyword} 源头工厂（无中间商）",
+      "我们是 [品类] 的原始设备制造商",
+      "对比：工厂直供 vs 贸易公司 vs 本地经销",
+      "直接从我们采购 {primary_keyword} 的客户",
+      "真实客户评价（匿名）",
+      "开启你的 12 小时报价对话"
+    ],
+
+    "faq_en": [
+      {"q": "Are you the actual manufacturer of {primary_keyword}?", "a": "Yes. KeXinMaterials is the original equipment manufacturer (OEM) — we own and operate our factory in Fusha Industrial Park, Zhongshan, Guangdong, China. 13,000 sqm facility, 60+ injection molding machines, 12 production lines, 100+ employees, 20+ patents. We've manufactured {category} cases since 2014. Unlike trading companies or sourcing agents (who add 15-40% markup), buying from us means factory-direct pricing and direct QC accountability."},
+      {"q": "Why buy {primary_keyword} directly from a Chinese factory?", "a": "Three reasons: (1) Price — factory-direct saves 15-40% vs trading company or local distributor markup. (2) Customization — we can modify the design for your specific equipment (foam cut, color, logo) at the source, not through a middleman. (3) Speed — direct QC communication, faster sample turnaround (5 days vs 2-3 weeks through agents), and we handle export documentation in-house."},
+      {"q": "What if I have a quality issue with {primary_keyword}?", "a": "All {primary_keyword} shipments include a serialized lot certificate and QC report. If you receive defective units: (1) Take photos within 7 days of receipt. (2) Email kexin@beeaa.com with photos, lot number, and quantity affected. (3) We evaluate within 48 hours and either ship replacements with your next order (free), or issue a credit note for the affected units. Our 2024 defect rate was 0.3% (3 in 1,000 units), with 99.7% on-time delivery rate across 47 countries."},
+      {"q": "Can I visit the factory that makes {primary_keyword}?", "a": "Yes, and we encourage it. Our factory is in Fusha Industrial Park, Zhongshan, Guangdong, China — 1.5 hours from Guangzhou Baiyun Airport, 2 hours from Shenzhen Bao'an Airport. Email kexin@beeaa.com at least 7 days in advance to schedule a tour. We'll arrange airport pickup, factory walkthrough, and a meeting with our engineering team. We've hosted 200+ buyer visits from USA, EU, Japan, Korea, Australia, Middle East, and South America."},
+      {"q": "What's the minimum order for {primary_keyword}?", "a": "MOQ is {moq} units for standard catalog items. For trial orders, we accept 50-100 units at a 15-20% premium to cover small-batch production costs. For OEM/ODM custom designs, MOQ starts at 500 units. The 200-unit MOQ is a sweet spot for distributors and brand owners — low enough to validate market, high enough to keep per-unit cost competitive. After 3 successful orders, MOQ can be reduced to 100 units."}
+    ],
+
+    "faq_zh": [
+      {"q": "你们是 {primary_keyword} 的实际制造商吗？", "a": "是。客信新材料是原始设备制造商（OEM）— 我们在广东省中山市阜沙镇工业区拥有并运营自己的工厂。13,000 平米厂房，60+ 台注塑机，12 条产线，100+ 员工，20+ 专利。我们自 2014 年起制造 {category} 防护箱。区别于贸易公司或采购代理（加价 15-40%），从我们这里买意味着工厂直供价和直接 QC 责任。"},
+      {"q": "为什么直接从中国工厂买 {primary_keyword}？", "a": "三大原因：(1) 价格 — 工厂直供比贸易公司或本地分销商省 15-40%。(2) 定制 — 我们能直接在源头按你的设备需求修改设计（泡沫切割、颜色、logo），不经过中间人。(3) 速度 — 直接 QC 沟通，样品周转更快（5 天 vs 代理 2-3 周），出口文件我们自己处理。"},
+      {"q": "如果 {primary_keyword} 有质量问题怎么办？", "a": "所有 {primary_keyword} 货物含序列化批次证书和 QC 报告。收到不良品：(1) 7 天内拍照。(2) 发邮件 kexin@beeaa.com 附照片、批次号、影响数量。(3) 48 小时内评估，要么随你下次订单免费发替换，要么给受影响单位开信用单。我们 2024 年不良率 0.3%（每千件 3 件），47 国准时交付率 99.7%。"},
+      {"q": "能参观 {primary_keyword} 的工厂吗？", "a": "能，鼓励参观。我们工厂在广东省中山市阜沙镇工业区 — 距广州白云机场 1.5 小时，深圳宝安机场 2 小时。提前 7 天邮件 kexin@beeaa.com 预约。我们安排机场接送、工厂参观、与工程团队会面。已接待过 200+ 来自美、欧、日、韩、澳洲、中东、南美的买家参观。"},
+      {"q": "{primary_keyword} 起订量多少？", "a": "标准目录项 MOQ {moq} 个。试用单接受 50-100 个，加价 15-20% 覆盖小批量生产成本。OEM/ODM 定制 MOQ 500 个起。200 个 MOQ 对分销商和品牌主是甜蜜点 — 足够低验证市场，足够高保持单价有竞争力。3 次成功订单后，MOQ 可减至 100 个。"}
+    ],
+
+    "infographic_title_en": "{primary_keyword}: Factory-Direct vs Reseller Comparison",
+    "infographic_title_zh": "{primary_keyword}：工厂直供 vs 经销对比",
+    "infographic_data_points": ["Save 15-40% direct", "13,000 sqm factory", "60+ machines, 12 lines", "20+ patents since 2014"],
+
+    "video_topic_en": "{primary_keyword} factory tour: production line, QC station, packaging, shipping",
+    "video_topic_zh": "{primary_keyword} 工厂参观：产线、QC 工位、包装、发货"
+  }
+}

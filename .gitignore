@@ -1,0 +1,115 @@
+﻿# === box-beeaa-site .gitignore ===
+
+# 构建产物（GitHub Actions 重新生成，1.3 GB 不要上传）
+node_modules/
+.cache/
+.turbo/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# 大图（构建时已经处理成 WebP，原图不入库）
+# 注：public/images/real/ 已经是 WebP 优化版，必须入库（Cloudflare 直接用）
+# 但 E:/junzhijia/ 的原图不应入库
+# public/images/real/factory/*.webp  ←  入库
+# E:/junzhijia/*.jpg                 ←  本地不入库
+*.psd
+*.ai
+*.sketch
+*.fig
+
+# 凭据（绝对不入库）
+_secrets/
+*.env
+*.env.local
+.env
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+.wrangler/
+
+# OS
+desktop.ini
+$RECYCLE.BIN/
+
+# 数据中间文件（build 时会重新生成）
+data/keywords_scored.json
+data/keywords_A.json
+data/keywords_B.json
+data/keywords_C.json
+reports/quality_gate.json
+reports/quality_gate_summary.md
+reports/kos_stats.json
+
+# 注：data/keywords_S.json + data/keywords_S_with_slug.json 必须入库
+# 因为 generate_extras.mjs 需要它们来生成 Tier 1 head term pages
+# 没有它们 Pages build 会失败 (ENOENT)
+
+# 临时
+tmp/
+*.log
+nul
+status.txt
+log.txt
+log2.txt
+ls.txt
+ls2.txt
+add.txt
+st.txt
+st2.txt
+st3.txt
+s4.txt
+a2.txt
+c2.txt
+c3.txt
+r1.txt
+remote.txt
+commit.txt
+c.txt
+c5.txt
+c6.txt
+s5.txt
+d.txt
+peek-*.txt
+probe-*.txt
+verify-*.txt
+check-*.txt
+debug-*.txt
+out.txt
+h.txt
+dump.txt
+dom*.txt
+css*.txt
+mobile-shots/
+lh-*/
+chrome-debug-*/
+chrome-emul-*/
+chrome-dp-*/
+chrome-*/
+
+# C:\Users\Administrator\.mavis\workspace\box-beeaa-site
+# 提交以下文件：
+#   - src/                  ← 源代码
+#   - scripts/              ← 生成脚本（不含产物）
+#   - data/                 ← keywords.json (必需)
+#   - public/               ← WebP 优化后的图
+#   - wrangler.toml
+#   - .github/workflows/    ← Actions
+#   - .gitignore
+
+# build artifacts & local-only (added 2026-08-11)
+dist/
+dist-b-en/
+dist-b-zh/
+dist-pages/
+_local_scripts/
+_audit_temp/
+

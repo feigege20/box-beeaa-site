@@ -1,0 +1,4322 @@
+[
+  {
+    "no": 1261,
+    "zh": "战术医疗箱小批量定制",
+    "en": "Tactical Medical Kit Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 81.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 6265,
+    "zh": "无人机箱小批量定制",
+    "en": "Drone Case / UAV Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 81.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 6361,
+    "zh": "植保无人机箱小批量定制",
+    "en": "Drone Case / UAV Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 81.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 6385,
+    "zh": "测绘无人机拉杆箱小批量定制",
+    "en": "Drone Case / UAV Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 81.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 6553,
+    "zh": "无人机电池防爆箱小批量定制",
+    "en": "UAV Battery Safety Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 81.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 6577,
+    "zh": "锂电池充电箱小批量定制",
+    "en": "UAV Battery Safety Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 81.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 6601,
+    "zh": "防燃电池盒小批量定制",
+    "en": "UAV Battery Safety Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 81.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 6625,
+    "zh": "智能电池箱小批量定制",
+    "en": "UAV Battery Safety Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 81.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 6649,
+    "zh": "穿越机电池收纳盒小批量定制",
+    "en": "UAV Battery Safety Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 81.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 7105,
+    "zh": "测绘无人机RTK箱小批量定制",
+    "en": "UAV RTK Ground Station Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 81.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 7129,
+    "zh": "无人机地基站箱小批量定制",
+    "en": "UAV RTK Ground Station Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 81.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 7345,
+    "zh": "外挂式战术飞行包小批量定制",
+    "en": "FPV Drone Hard Backpack Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 81.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 6249,
+    "zh": "无人机箱批发价格",
+    "en": "Drone Case / UAV Case Wholesale Price",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 6345,
+    "zh": "植保无人机箱批发价格",
+    "en": "Drone Case / UAV Case Wholesale Price",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 6369,
+    "zh": "测绘无人机拉杆箱批发价格",
+    "en": "Drone Case / UAV Case Wholesale Price",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 7089,
+    "zh": "测绘无人机RTK箱批发价格",
+    "en": "UAV RTK Ground Station Case Wholesale Price",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 7113,
+    "zh": "无人机地基站箱批发价格",
+    "en": "UAV RTK Ground Station Case Wholesale Price",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1285,
+    "zh": "战场急救箱小批量定制",
+    "en": "Tactical Medical Kit Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1309,
+    "zh": "军医背负箱小批量定制",
+    "en": "Tactical Medical Kit Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1333,
+    "zh": "野外搜救药箱小批量定制",
+    "en": "Tactical Medical Kit Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1357,
+    "zh": "橙色救援箱小批量定制",
+    "en": "Tactical Medical Kit Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1381,
+    "zh": "特种兵医药箱小批量定制",
+    "en": "Tactical Medical Kit Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 6289,
+    "zh": "航拍器防护箱小批量定制",
+    "en": "Drone Case / UAV Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 6313,
+    "zh": "飞行器硬壳箱小批量定制",
+    "en": "Drone Case / UAV Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 6337,
+    "zh": "大疆专业箱小批量定制",
+    "en": "Drone Case / UAV Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 6673,
+    "zh": "外场多路充电箱小批量定制",
+    "en": "UAV Battery Safety Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 6985,
+    "zh": "无人机全套一体箱小批量定制",
+    "en": "All-in-one Drone Hard Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 7057,
+    "zh": "双层大容量无人机箱小批量定制",
+    "en": "All-in-one Drone Hard Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 7153,
+    "zh": "移动基站防护箱小批量定制",
+    "en": "UAV RTK Ground Station Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 7177,
+    "zh": "测绘箱小批量定制",
+    "en": "UAV RTK Ground Station Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 7201,
+    "zh": "激光雷达一体箱小批量定制",
+    "en": "UAV RTK Ground Station Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 7225,
+    "zh": "高精度分体海绵箱小批量定制",
+    "en": "UAV RTK Ground Station Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 7249,
+    "zh": "穿越机背包硬壳小批量定制",
+    "en": "FPV Drone Hard Backpack Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 7273,
+    "zh": "FPV 眼镜包小批量定制",
+    "en": "FPV Drone Hard Backpack Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 7297,
+    "zh": "穿越机硬壳双肩包小批量定制",
+    "en": "FPV Drone Hard Backpack Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 7321,
+    "zh": "防撞穿越机收纳箱小批量定制",
+    "en": "FPV Drone Hard Backpack Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "drone-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22362,
+    "zh": "医疗箱小批量定制",
+    "en": "Medical First Aid Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22483,
+    "zh": "公司工厂应急药箱开模定制",
+    "en": "Medical First Aid Box Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22650,
+    "zh": "医疗试剂冷藏箱小批量定制",
+    "en": "Medical Cold Chain Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 80.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 333,
+    "zh": "野战防爆箱批发价格",
+    "en": "Tactical Military Box Wholesale Price",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 92,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1245,
+    "zh": "战术医疗箱批发价格",
+    "en": "Tactical Medical Kit Case Wholesale Price",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 92,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28921,
+    "zh": "无人机摄影箱批发价格",
+    "en": "Drone Photography Case Wholesale Price",
+    "layer": "商业",
+    "_product_line": "camera-stage-case",
+    "score": 79.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 92,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 5882,
+    "zh": "战术医疗箱怎么选",
+    "en": "tactical-medical-case how to choose",
+    "layer": "疑问",
+    "_product_line": "military-tactical-case",
+    "score": 79.6,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 55,
+      "competition": 85,
+      "ai_citation": 85
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 5892,
+    "zh": "战术医疗箱如何选型",
+    "en": "tactical-medical-case how to select",
+    "layer": "疑问",
+    "_product_line": "military-tactical-case",
+    "score": 79.6,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 55,
+      "competition": 85,
+      "ai_citation": 85
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22482,
+    "zh": "公司工厂应急药箱小批量定制",
+    "en": "Medical First Aid Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 79.6,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 30209,
+    "zh": "无人机摄影箱怎么选",
+    "en": "drone-photography-case how to choose",
+    "layer": "疑问",
+    "_product_line": "camera-stage-case",
+    "score": 79.6,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 55,
+      "competition": 85,
+      "ai_citation": 85
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 30219,
+    "zh": "无人机摄影箱如何选型",
+    "en": "drone-photography-case how to select",
+    "layer": "疑问",
+    "_product_line": "camera-stage-case",
+    "score": 79.6,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 55,
+      "competition": 85,
+      "ai_citation": 85
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 157,
+    "zh": "军规防护箱小批量定制",
+    "en": "Military Grade Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.3,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 92,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 349,
+    "zh": "野战防爆箱小批量定制",
+    "en": "Tactical Military Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.3,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 92,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 2077,
+    "zh": "军规安全箱小批量定制",
+    "en": "MIL-SPEC Equipment Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.3,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 92,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28937,
+    "zh": "无人机摄影箱小批量定制",
+    "en": "Drone Photography Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "camera-stage-case",
+    "score": 79.3,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 92,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 16404,
+    "zh": "IP67 防尘防水箱小批量定制",
+    "en": "Waterproof Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "waterproof-case",
+    "score": 79.3,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 92,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 141,
+    "zh": "军规防护箱批发价格",
+    "en": "Military Grade Case Wholesale Price",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 89,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 445,
+    "zh": "战术枪箱小批量定制",
+    "en": "Rifle Case / Gun Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 709,
+    "zh": "防水防潮弹药盒小批量定制",
+    "en": "Ammo Can / Ammo Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 805,
+    "zh": "便携战术手枪包小批量定制",
+    "en": "Pistol Case / Handgun Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1237,
+    "zh": "防震夜视仪安全箱小批量定制",
+    "en": "Night Vision Goggles Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1252,
+    "zh": "战术医疗箱来图定制",
+    "en": "Tactical Medical Kit Case Custom Design Service",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1262,
+    "zh": "战术医疗箱开模定制",
+    "en": "Tactical Medical Kit Case Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1286,
+    "zh": "战场急救箱开模定制",
+    "en": "Tactical Medical Kit Case Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1310,
+    "zh": "军医背负箱开模定制",
+    "en": "Tactical Medical Kit Case Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1334,
+    "zh": "野外搜救药箱开模定制",
+    "en": "Tactical Medical Kit Case Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1358,
+    "zh": "橙色救援箱开模定制",
+    "en": "Tactical Medical Kit Case Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1382,
+    "zh": "特种兵医药箱开模定制",
+    "en": "Tactical Medical Kit Case Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1693,
+    "zh": "军用车载工具箱小批量定制",
+    "en": "Vehicle Military Tool Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1717,
+    "zh": "战车随车修理箱小批量定制",
+    "en": "Vehicle Military Tool Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1741,
+    "zh": "装甲车五金箱小批量定制",
+    "en": "Vehicle Military Tool Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1765,
+    "zh": "重型搭扣铁锁工具箱小批量定制",
+    "en": "Vehicle Military Tool Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 1789,
+    "zh": "抗震随车箱小批量定制",
+    "en": "Vehicle Military Tool Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "military-tactical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22363,
+    "zh": "医疗箱开模定制",
+    "en": "Medical First Aid Box Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22386,
+    "zh": "医药箱小批量定制",
+    "en": "Medical First Aid Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22410,
+    "zh": "家庭急救箱小批量定制",
+    "en": "Medical First Aid Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22434,
+    "zh": "医生出诊箱小批量定制",
+    "en": "Medical First Aid Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22458,
+    "zh": "学校保健室医药箱小批量定制",
+    "en": "Medical First Aid Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22473,
+    "zh": "公司工厂应急药箱来图定制",
+    "en": "Medical First Aid Box Custom Design Service",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22651,
+    "zh": "医疗试剂冷藏箱开模定制",
+    "en": "Medical Cold Chain Box Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 98,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22674,
+    "zh": "血液运输保温箱小批量定制",
+    "en": "Medical Cold Chain Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22698,
+    "zh": "疫苗冷链箱小批量定制",
+    "en": "Medical Cold Chain Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22722,
+    "zh": "取样箱小批量定制",
+    "en": "Medical Cold Chain Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22746,
+    "zh": "实验室生物样品采样箱小批量定制",
+    "en": "Medical Cold Chain Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22770,
+    "zh": "干冰冷冻箱小批量定制",
+    "en": "Medical Cold Chain Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 23538,
+    "zh": "医疗拉杆恒温箱小批量定制",
+    "en": "Peritoneal Dialysis Warmer Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 17004,
+    "zh": "专业潜水大容量防水箱小批量定制",
+    "en": "Scuba Diving Gear Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "waterproof-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 17076,
+    "zh": "游艇防水工具箱小批量定制",
+    "en": "Marine Sealed Instrument Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "waterproof-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 17172,
+    "zh": "钓鱼配件防水盒小批量定制",
+    "en": "Waterproof Fishing Tackle Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "waterproof-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 17268,
+    "zh": "多格防水钓鱼配件箱小批量定制",
+    "en": "Waterproof Fishing Tackle Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "waterproof-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 17316,
+    "zh": "户外电源保护箱小批量定制",
+    "en": "Portable Power Station Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "waterproof-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 17364,
+    "zh": "储能电池防护箱小批量定制",
+    "en": "Portable Power Station Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "waterproof-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 17892,
+    "zh": "自动排气防水箱小批量定制",
+    "en": "Auto Pressure Valve Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "waterproof-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 12177,
+    "zh": "百分表防震硬盒小批量定制",
+    "en": "Precision Gauge Block Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "instrument-case",
+    "score": 79.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22470,
+    "zh": "公司工厂应急药箱ODM 定制",
+    "en": "Medical First Aid Box ODM Service",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 78.4,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 89,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22506,
+    "zh": "医疗仪器箱小批量定制",
+    "en": "Medical Instrument Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 78.4,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 89,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22530,
+    "zh": "医疗设备箱小批量定制",
+    "en": "Medical Instrument Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 78.4,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 89,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22602,
+    "zh": "激光医疗设备外壳小批量定制",
+    "en": "Medical Instrument Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 78.4,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 89,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22794,
+    "zh": "医疗急救转运箱小批量定制",
+    "en": "Medical Emergency Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 78.4,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 89,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28769,
+    "zh": "摄影器材箱小批量定制",
+    "en": "Camera Equipment Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "camera-stage-case",
+    "score": 78.4,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 89,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28934,
+    "zh": "无人机摄影箱跨境供应",
+    "en": "Drone Photography Case Cross-border Supplier",
+    "layer": "商业",
+    "_product_line": "camera-stage-case",
+    "score": 78.4,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 92,
+      "commercial": 80,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 16428,
+    "zh": "防爆水箱小批量定制",
+    "en": "Waterproof Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "waterproof-case",
+    "score": 78.4,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 89,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 16764,
+    "zh": "户外随身防水盒小批量定制",
+    "en": "Small Protective Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "waterproof-case",
+    "score": 78.4,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 89,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22471,
+    "zh": "公司工厂应急药箱OEM 贴牌",
+    "en": "Medical First Aid Box OEM Private Label",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 78.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22353,
+    "zh": "医疗箱来图定制",
+    "en": "Medical First Aid Box Custom Design Service",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 78.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22387,
+    "zh": "医药箱开模定制",
+    "en": "Medical First Aid Box Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 78.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22411,
+    "zh": "家庭急救箱开模定制",
+    "en": "Medical First Aid Box Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 78.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22435,
+    "zh": "医生出诊箱开模定制",
+    "en": "Medical First Aid Box Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 78.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22459,
+    "zh": "学校保健室医药箱开模定制",
+    "en": "Medical First Aid Box Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 78.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22641,
+    "zh": "医疗试剂冷藏箱来图定制",
+    "en": "Medical Cold Chain Box Custom Design Service",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 78.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 22675,
+    "zh": "血液运输保温箱开模定制",
+    "en": "Medical Cold Chain Box Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "medical-case",
+    "score": 78.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 17005,
+    "zh": "专业潜水大容量防水箱开模定制",
+    "en": "Scuba Diving Gear Case Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "waterproof-case",
+    "score": 78.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 17077,
+    "zh": "游艇防水工具箱开模定制",
+    "en": "Marine Sealed Instrument Case Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "waterproof-case",
+    "score": 78.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 17173,
+    "zh": "钓鱼配件防水盒开模定制",
+    "en": "Waterproof Fishing Tackle Box Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "waterproof-case",
+    "score": 78.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 17269,
+    "zh": "多格防水钓鱼配件箱开模定制",
+    "en": "Waterproof Fishing Tackle Box Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "waterproof-case",
+    "score": 78.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 17317,
+    "zh": "户外电源保护箱开模定制",
+    "en": "Portable Power Station Case Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "waterproof-case",
+    "score": 78.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 17365,
+    "zh": "储能电池防护箱开模定制",
+    "en": "Portable Power Station Case Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "waterproof-case",
+    "score": 78.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 17893,
+    "zh": "自动排气防水箱开模定制",
+    "en": "Auto Pressure Valve Case Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "waterproof-case",
+    "score": 78.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 12178,
+    "zh": "百分表防震硬盒开模定制",
+    "en": "Precision Gauge Block Box Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "instrument-case",
+    "score": 78.1,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 95,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28961,
+    "zh": "摄像机箱小批量定制",
+    "en": "Camcorder Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "camera-stage-case",
+    "score": 78.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 81,
+      "commercial": 87,
+      "competition": 85,
+      "ai_citation": 53
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 29661,
+    "zh": "IP67 防水摄影器材箱OEM 代工",
+    "en": "IP67 Waterproof camera-equipment-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "camera-stage-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 29665,
+    "zh": "IP68 防水摄影器材箱OEM 代工",
+    "en": "IP68 Waterproof camera-equipment-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "camera-stage-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 29693,
+    "zh": "IP67 防水相机防护箱OEM 代工",
+    "en": "IP67 Waterproof camera-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "camera-stage-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 29697,
+    "zh": "IP68 防水相机防护箱OEM 代工",
+    "en": "IP68 Waterproof camera-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "camera-stage-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 29725,
+    "zh": "IP67 防水单反相机箱OEM 代工",
+    "en": "IP67 Waterproof dslr-camera-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "camera-stage-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 29729,
+    "zh": "IP68 防水单反相机箱OEM 代工",
+    "en": "IP68 Waterproof dslr-camera-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "camera-stage-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 29853,
+    "zh": "IP67 防水无人机摄影箱OEM 代工",
+    "en": "IP67 Waterproof drone-photography-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "camera-stage-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 29857,
+    "zh": "IP68 防水无人机摄影箱OEM 代工",
+    "en": "IP68 Waterproof drone-photography-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "camera-stage-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 29885,
+    "zh": "IP67 防水运动相机箱OEM 代工",
+    "en": "IP67 Waterproof action-camera-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "camera-stage-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 29889,
+    "zh": "IP68 防水运动相机箱OEM 代工",
+    "en": "IP68 Waterproof action-camera-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "camera-stage-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 20575,
+    "zh": "IP67 防水防尘工业安全箱OEM 代工",
+    "en": "IP67 Waterproof dustproof-safety-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "waterproof-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 20579,
+    "zh": "IP68 防水防尘工业安全箱OEM 代工",
+    "en": "IP68 Waterproof dustproof-safety-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "waterproof-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 20607,
+    "zh": "IP67 防水IP6X 防尘箱OEM 代工",
+    "en": "IP67 Waterproof ip6x-dustproof-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "waterproof-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 20611,
+    "zh": "IP68 防水IP6X 防尘箱OEM 代工",
+    "en": "IP68 Waterproof ip6x-dustproof-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "waterproof-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 20799,
+    "zh": "IP67 防水耐黄变户外箱OEM 代工",
+    "en": "IP67 Waterproof yellowing-resistant-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "waterproof-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 20803,
+    "zh": "IP68 防水耐黄变户外箱OEM 代工",
+    "en": "IP68 Waterproof yellowing-resistant-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "waterproof-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 20927,
+    "zh": "IP67 防水IP67 防尘防水箱OEM 代工",
+    "en": "IP67 Waterproof ip67-waterproof-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "waterproof-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 20931,
+    "zh": "IP68 防水IP67 防尘防水箱OEM 代工",
+    "en": "IP68 Waterproof ip67-waterproof-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "waterproof-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 20959,
+    "zh": "IP67 防水户外箱OEM 代工",
+    "en": "IP67 Waterproof outdoor-dry-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "waterproof-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 20963,
+    "zh": "IP68 防水户外箱OEM 代工",
+    "en": "IP68 Waterproof outdoor-dry-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "waterproof-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 20991,
+    "zh": "IP67 防水户外露营收纳箱OEM 代工",
+    "en": "IP67 Waterproof camping-storage-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "waterproof-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 20995,
+    "zh": "IP68 防水户外露营收纳箱OEM 代工",
+    "en": "IP68 Waterproof camping-storage-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "waterproof-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 21183,
+    "zh": "IP67 防水相机防潮柜OEM 代工",
+    "en": "IP67 Waterproof camera-dry-cabinet OEM Service",
+    "layer": "长尾",
+    "_product_line": "waterproof-case",
+    "score": 77.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 97,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28753,
+    "zh": "摄影器材箱批发价格",
+    "en": "Camera Equipment Case Wholesale Price",
+    "layer": "商业",
+    "_product_line": "camera-stage-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 85,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 12057,
+    "zh": "精密量具量规盒小批量定制",
+    "en": "Precision Gauge Block Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "instrument-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 12081,
+    "zh": "游标卡尺盒小批量定制",
+    "en": "Precision Gauge Block Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "instrument-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 12105,
+    "zh": "千分尺塑料盒小批量定制",
+    "en": "Precision Gauge Block Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "instrument-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 12129,
+    "zh": "塞规环规盒小批量定制",
+    "en": "Precision Gauge Block Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "instrument-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 12153,
+    "zh": "针规高防锈保护盒小批量定制",
+    "en": "Precision Gauge Block Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "instrument-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 12321,
+    "zh": "手持打标机便携箱小批量定制",
+    "en": "Portable Laser Marking Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "instrument-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 12345,
+    "zh": "激光打码机外壳小批量定制",
+    "en": "Portable Laser Marking Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "instrument-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 12369,
+    "zh": "手持喷码机包装箱小批量定制",
+    "en": "Portable Laser Marking Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "instrument-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 12393,
+    "zh": "工业级便携打标机防护箱小批量定制",
+    "en": "Portable Laser Marking Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "instrument-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26426,
+    "zh": "PP 箱小批量定制",
+    "en": "PP Case / Polypropylene Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26450,
+    "zh": "聚丙烯改性塑料箱小批量定制",
+    "en": "PP Case / Polypropylene Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26474,
+    "zh": "PP 工程塑料防护箱小批量定制",
+    "en": "PP Case / Polypropylene Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26498,
+    "zh": "高韧性 PP 注塑箱小批量定制",
+    "en": "PP Case / Polypropylene Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26522,
+    "zh": "玻纤增强 PP 注塑箱小批量定制",
+    "en": "PP Case / Polypropylene Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26546,
+    "zh": "ABS 箱小批量定制",
+    "en": "ABS Case / Acrylonitrile Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26570,
+    "zh": "ABS 树脂硬壳箱小批量定制",
+    "en": "ABS Case / Acrylonitrile Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26594,
+    "zh": "ABS 注塑工具箱小批量定制",
+    "en": "ABS Case / Acrylonitrile Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26618,
+    "zh": "机箱小批量定制",
+    "en": "ABS Case / Acrylonitrile Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 27465,
+    "zh": "汽修工具箱小批量定制",
+    "en": "Auto Repair Tool Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "tool-box",
+    "score": 77.8,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 87,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 30153,
+    "zh": "摄影器材箱怎么选",
+    "en": "camera-equipment-case how to choose",
+    "layer": "疑问",
+    "_product_line": "camera-stage-case",
+    "score": 77.5,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 90,
+      "commercial": 55,
+      "competition": 85,
+      "ai_citation": 85
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 30163,
+    "zh": "摄影器材箱如何选型",
+    "en": "camera-equipment-case how to select",
+    "layer": "疑问",
+    "_product_line": "camera-stage-case",
+    "score": 77.5,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 90,
+      "commercial": 55,
+      "competition": 85,
+      "ai_citation": 85
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 30207,
+    "zh": "无人机摄影箱哪家好",
+    "en": "drone-photography-case which is the best",
+    "layer": "疑问",
+    "_product_line": "camera-stage-case",
+    "score": 77.3,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 100,
+      "commercial": 55,
+      "competition": 85,
+      "ai_citation": 69
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 30220,
+    "zh": "无人机摄影箱哪种材质好",
+    "en": "drone-photography-case which material is best",
+    "layer": "疑问",
+    "_product_line": "camera-stage-case",
+    "score": 77.3,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 100,
+      "commercial": 55,
+      "competition": 85,
+      "ai_citation": 69
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28757,
+    "zh": "摄影器材箱ODM 定制",
+    "en": "Camera Equipment Case ODM Service",
+    "layer": "商业",
+    "_product_line": "camera-stage-case",
+    "score": 77.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 92,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28770,
+    "zh": "摄影器材箱开模定制",
+    "en": "Camera Equipment Case Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "camera-stage-case",
+    "score": 77.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 92,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28793,
+    "zh": "相机防护箱小批量定制",
+    "en": "Camera Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "camera-stage-case",
+    "score": 77.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 85,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28817,
+    "zh": "单反相机箱小批量定制",
+    "en": "DSLR Camera Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "camera-stage-case",
+    "score": 77.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 85,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28841,
+    "zh": "微单相机箱小批量定制",
+    "en": "Mirrorless Camera Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "camera-stage-case",
+    "score": 77.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 85,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28925,
+    "zh": "无人机摄影箱ODM 定制",
+    "en": "Drone Photography Case ODM Service",
+    "layer": "商业",
+    "_product_line": "camera-stage-case",
+    "score": 77.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 92,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28928,
+    "zh": "无人机摄影箱来图定制",
+    "en": "Drone Photography Case Custom Design Service",
+    "layer": "商业",
+    "_product_line": "camera-stage-case",
+    "score": 77.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 92,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28931,
+    "zh": "无人机摄影箱招商代理",
+    "en": "Drone Photography Case Dealer Wanted",
+    "layer": "商业",
+    "_product_line": "camera-stage-case",
+    "score": 77.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 92,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26410,
+    "zh": "PP 箱批发价格",
+    "en": "PP Case / Polypropylene Box Wholesale Price",
+    "layer": "商业",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 83,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26434,
+    "zh": "聚丙烯改性塑料箱批发价格",
+    "en": "PP Case / Polypropylene Box Wholesale Price",
+    "layer": "商业",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 83,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26458,
+    "zh": "PP 工程塑料防护箱批发价格",
+    "en": "PP Case / Polypropylene Box Wholesale Price",
+    "layer": "商业",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 83,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26482,
+    "zh": "高韧性 PP 注塑箱批发价格",
+    "en": "PP Case / Polypropylene Box Wholesale Price",
+    "layer": "商业",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 83,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26506,
+    "zh": "玻纤增强 PP 注塑箱批发价格",
+    "en": "PP Case / Polypropylene Box Wholesale Price",
+    "layer": "商业",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 83,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26530,
+    "zh": "ABS 箱批发价格",
+    "en": "ABS Case / Acrylonitrile Box Wholesale Price",
+    "layer": "商业",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 83,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26554,
+    "zh": "ABS 树脂硬壳箱批发价格",
+    "en": "ABS Case / Acrylonitrile Box Wholesale Price",
+    "layer": "商业",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 83,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26578,
+    "zh": "ABS 注塑工具箱批发价格",
+    "en": "ABS Case / Acrylonitrile Box Wholesale Price",
+    "layer": "商业",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 83,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26602,
+    "zh": "机箱批发价格",
+    "en": "ABS Case / Acrylonitrile Box Wholesale Price",
+    "layer": "商业",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.2,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 83,
+      "commercial": 85,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14158,
+    "zh": "IP67 防水仪器箱OEM 代工",
+    "en": "IP67 Waterproof instrument-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14162,
+    "zh": "IP68 防水仪器箱OEM 代工",
+    "en": "IP68 Waterproof instrument-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14190,
+    "zh": "IP67 防水仪表箱OEM 代工",
+    "en": "IP67 Waterproof instrument-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14194,
+    "zh": "IP68 防水仪表箱OEM 代工",
+    "en": "IP68 Waterproof instrument-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14222,
+    "zh": "IP67 防水示波器硬壳箱OEM 代工",
+    "en": "IP67 Waterproof oscilloscope-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14226,
+    "zh": "IP68 防水示波器硬壳箱OEM 代工",
+    "en": "IP68 Waterproof oscilloscope-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14254,
+    "zh": "IP67 防水测绘仪器箱OEM 代工",
+    "en": "IP67 Waterproof surveying-instrument-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14258,
+    "zh": "IP68 防水测绘仪器箱OEM 代工",
+    "en": "IP68 Waterproof surveying-instrument-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14286,
+    "zh": "IP67 防水经纬仪箱OEM 代工",
+    "en": "IP67 Waterproof theodolite-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14290,
+    "zh": "IP68 防水经纬仪箱OEM 代工",
+    "en": "IP68 Waterproof theodolite-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14318,
+    "zh": "IP67 防水全站仪防护箱OEM 代工",
+    "en": "IP67 Waterproof total-station-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14322,
+    "zh": "IP68 防水全站仪防护箱OEM 代工",
+    "en": "IP68 Waterproof total-station-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14350,
+    "zh": "IP67 防水环保检测仪器箱OEM 代工",
+    "en": "IP67 Waterproof environmental-tester-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14354,
+    "zh": "IP68 防水环保检测仪器箱OEM 代工",
+    "en": "IP68 Waterproof environmental-tester-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14382,
+    "zh": "IP67 防水气体检测仪箱OEM 代工",
+    "en": "IP67 Waterproof gas-detector-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14386,
+    "zh": "IP68 防水气体检测仪箱OEM 代工",
+    "en": "IP68 Waterproof gas-detector-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14414,
+    "zh": "IP67 防水水质分析仪箱OEM 代工",
+    "en": "IP67 Waterproof water-analyzer-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14418,
+    "zh": "IP68 防水水质分析仪箱OEM 代工",
+    "en": "IP68 Waterproof water-analyzer-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 14446,
+    "zh": "IP67 防水探伤仪防护箱OEM 代工",
+    "en": "IP67 Waterproof flaw-detector-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "instrument-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26940,
+    "zh": "IP67 防水PP 箱OEM 代工",
+    "en": "IP67 Waterproof pp-箱 OEM Service",
+    "layer": "长尾",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26944,
+    "zh": "IP68 防水PP 箱OEM 代工",
+    "en": "IP68 Waterproof pp-箱 OEM Service",
+    "layer": "长尾",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26972,
+    "zh": "IP67 防水聚丙烯改性塑料箱OEM 代工",
+    "en": "IP67 Waterproof 聚丙烯改性塑料箱 OEM Service",
+    "layer": "长尾",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 26976,
+    "zh": "IP68 防水聚丙烯改性塑料箱OEM 代工",
+    "en": "IP68 Waterproof 聚丙烯改性塑料箱 OEM Service",
+    "layer": "长尾",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 27004,
+    "zh": "IP67 防水PP 工程塑料防护箱OEM 代工",
+    "en": "IP67 Waterproof pp-工程塑料防护箱 OEM Service",
+    "layer": "长尾",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 27008,
+    "zh": "IP68 防水PP 工程塑料防护箱OEM 代工",
+    "en": "IP68 Waterproof pp-工程塑料防护箱 OEM Service",
+    "layer": "长尾",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 27036,
+    "zh": "IP67 防水ABS 箱OEM 代工",
+    "en": "IP67 Waterproof abs-箱 OEM Service",
+    "layer": "长尾",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 27040,
+    "zh": "IP68 防水ABS 箱OEM 代工",
+    "en": "IP68 Waterproof abs-箱 OEM Service",
+    "layer": "长尾",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 27068,
+    "zh": "IP67 防水ABS 树脂硬壳箱OEM 代工",
+    "en": "IP67 Waterproof abs-树脂硬壳箱 OEM Service",
+    "layer": "长尾",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 27072,
+    "zh": "IP68 防水ABS 树脂硬壳箱OEM 代工",
+    "en": "IP68 Waterproof abs-树脂硬壳箱 OEM Service",
+    "layer": "长尾",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 27100,
+    "zh": "IP67 防水ABS 注塑工具箱OEM 代工",
+    "en": "IP67 Waterproof abs-注塑工具箱 OEM Service",
+    "layer": "长尾",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 27104,
+    "zh": "IP68 防水ABS 注塑工具箱OEM 代工",
+    "en": "IP68 Waterproof abs-注塑工具箱 OEM Service",
+    "layer": "长尾",
+    "_product_line": "engineering-plastic-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28180,
+    "zh": "IP67 防水工具箱OEM 代工",
+    "en": "IP67 Waterproof tool-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28184,
+    "zh": "IP68 防水工具箱OEM 代工",
+    "en": "IP68 Waterproof tool-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28212,
+    "zh": "IP67 防水工业工具箱OEM 代工",
+    "en": "IP67 Waterproof industrial-tool-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28216,
+    "zh": "IP68 防水工业工具箱OEM 代工",
+    "en": "IP68 Waterproof industrial-tool-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28244,
+    "zh": "IP67 防水塑料工具箱OEM 代工",
+    "en": "IP67 Waterproof plastic-tool-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28248,
+    "zh": "IP68 防水塑料工具箱OEM 代工",
+    "en": "IP68 Waterproof plastic-tool-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28276,
+    "zh": "IP67 防水周转箱OEM 代工",
+    "en": "IP67 Waterproof turnover-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28280,
+    "zh": "IP68 防水周转箱OEM 代工",
+    "en": "IP68 Waterproof turnover-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28308,
+    "zh": "IP67 防水物流周转箱OEM 代工",
+    "en": "IP67 Waterproof logistics-turnover-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28312,
+    "zh": "IP68 防水物流周转箱OEM 代工",
+    "en": "IP68 Waterproof logistics-turnover-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28340,
+    "zh": "IP67 防水塑料周转箱OEM 代工",
+    "en": "IP67 Waterproof plastic-turnover-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28344,
+    "zh": "IP68 防水塑料周转箱OEM 代工",
+    "en": "IP68 Waterproof plastic-turnover-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28372,
+    "zh": "IP67 防水机修工具箱OEM 代工",
+    "en": "IP67 Waterproof maintenance-tool-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28376,
+    "zh": "IP68 防水机修工具箱OEM 代工",
+    "en": "IP68 Waterproof maintenance-tool-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28404,
+    "zh": "IP67 防水汽修工具箱OEM 代工",
+    "en": "IP67 Waterproof auto-repair-tool-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28408,
+    "zh": "IP68 防水汽修工具箱OEM 代工",
+    "en": "IP68 Waterproof auto-repair-tool-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28436,
+    "zh": "IP67 防水家用工具箱OEM 代工",
+    "en": "IP67 Waterproof home-tool-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28440,
+    "zh": "IP68 防水家用工具箱OEM 代工",
+    "en": "IP68 Waterproof home-tool-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28468,
+    "zh": "IP67 防水抽屉式工具箱OEM 代工",
+    "en": "IP67 Waterproof drawer-tool-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28472,
+    "zh": "IP68 防水抽屉式工具箱OEM 代工",
+    "en": "IP68 Waterproof drawer-tool-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28500,
+    "zh": "IP67 防水车载工具箱OEM 代工",
+    "en": "IP67 Waterproof vehicle-tool-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28504,
+    "zh": "IP68 防水车载工具箱OEM 代工",
+    "en": "IP68 Waterproof vehicle-tool-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28532,
+    "zh": "IP67 防水便携工具箱OEM 代工",
+    "en": "IP67 Waterproof portable-tool-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 28536,
+    "zh": "IP68 防水便携工具箱OEM 代工",
+    "en": "IP68 Waterproof portable-tool-box OEM Service",
+    "layer": "长尾",
+    "_product_line": "tool-box",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31129,
+    "zh": "IP67 防水拉杆箱OEM 代工",
+    "en": "IP67 Waterproof trolley-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31133,
+    "zh": "IP68 防水拉杆箱OEM 代工",
+    "en": "IP68 Waterproof trolley-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31161,
+    "zh": "IP67 防水商务拉杆箱OEM 代工",
+    "en": "IP67 Waterproof business-trolley-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31165,
+    "zh": "IP68 防水商务拉杆箱OEM 代工",
+    "en": "IP68 Waterproof business-trolley-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31193,
+    "zh": "IP67 防水旅行拉杆箱OEM 代工",
+    "en": "IP67 Waterproof travel-trolley-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31197,
+    "zh": "IP68 防水旅行拉杆箱OEM 代工",
+    "en": "IP68 Waterproof travel-trolley-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31225,
+    "zh": "IP67 防水化妆箱OEM 代工",
+    "en": "IP67 Waterproof cosmetic-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31229,
+    "zh": "IP68 防水化妆箱OEM 代工",
+    "en": "IP68 Waterproof cosmetic-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31257,
+    "zh": "IP67 防水化妆师拉杆箱OEM 代工",
+    "en": "IP67 Waterproof makeup-trolley-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31261,
+    "zh": "IP68 防水化妆师拉杆箱OEM 代工",
+    "en": "IP68 Waterproof makeup-trolley-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31289,
+    "zh": "IP67 防水美甲工具箱OEM 代工",
+    "en": "IP67 Waterproof nail-art-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31293,
+    "zh": "IP68 防水美甲工具箱OEM 代工",
+    "en": "IP68 Waterproof nail-art-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31321,
+    "zh": "IP67 防水礼品箱OEM 代工",
+    "en": "IP67 Waterproof gift-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31325,
+    "zh": "IP68 防水礼品箱OEM 代工",
+    "en": "IP68 Waterproof gift-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31353,
+    "zh": "IP67 防水商务礼品箱OEM 代工",
+    "en": "IP67 Waterproof business-gift-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31357,
+    "zh": "IP68 防水商务礼品箱OEM 代工",
+    "en": "IP68 Waterproof business-gift-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31385,
+    "zh": "IP67 防水展示箱OEM 代工",
+    "en": "IP67 Waterproof display-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31389,
+    "zh": "IP68 防水展示箱OEM 代工",
+    "en": "IP68 Waterproof display-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31417,
+    "zh": "IP67 防水样品展示箱OEM 代工",
+    "en": "IP67 Waterproof sample-display-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31421,
+    "zh": "IP68 防水样品展示箱OEM 代工",
+    "en": "IP68 Waterproof sample-display-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31449,
+    "zh": "IP67 防水样品箱OEM 代工",
+    "en": "IP67 Waterproof sample-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31453,
+    "zh": "IP68 防水样品箱OEM 代工",
+    "en": "IP68 Waterproof sample-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31481,
+    "zh": "IP67 防水会议资料箱OEM 代工",
+    "en": "IP67 Waterproof conference-doc-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31485,
+    "zh": "IP68 防水会议资料箱OEM 代工",
+    "en": "IP68 Waterproof conference-doc-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31513,
+    "zh": "IP67 防水销售工具箱OEM 代工",
+    "en": "IP67 Waterproof sales-kit-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 31517,
+    "zh": "IP68 防水销售工具箱OEM 代工",
+    "en": "IP68 Waterproof sales-kit-case OEM Service",
+    "layer": "长尾",
+    "_product_line": "trolley-case",
+    "score": 77.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 94,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 45
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 27466,
+    "zh": "汽修工具箱开模定制",
+    "en": "Auto Repair Tool Box Custom Mold Making",
+    "layer": "商业",
+    "_product_line": "tool-box",
+    "score": 76.9,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 91,
+      "commercial": 76,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 27249,
+    "zh": "工具箱小批量定制",
+    "en": "Tool Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "tool-box",
+    "score": 76.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 81,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 27273,
+    "zh": "工业工具箱小批量定制",
+    "en": "Tool Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "tool-box",
+    "score": 76.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 81,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 27297,
+    "zh": "塑料工具箱小批量定制",
+    "en": "Plastic Tool Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "tool-box",
+    "score": 76.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 81,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 27321,
+    "zh": "金属工具箱小批量定制",
+    "en": "Metal Tool Box Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "tool-box",
+    "score": 76.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 81,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 30324,
+    "zh": "拉杆箱小批量定制",
+    "en": "Trolley Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "trolley-case",
+    "score": 76.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 81,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 30348,
+    "zh": "商务拉杆箱小批量定制",
+    "en": "Business Trolley Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "trolley-case",
+    "score": 76.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 81,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 30372,
+    "zh": "旅行拉杆箱小批量定制",
+    "en": "Travel Trolley Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "trolley-case",
+    "score": 76.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 81,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  },
+  {
+    "no": 30396,
+    "zh": "化妆箱小批量定制",
+    "en": "Cosmetic Case Low MOQ Custom",
+    "layer": "商业",
+    "_product_line": "trolley-case",
+    "score": 76.0,
+    "grade": "S",
+    "scores_breakdown": {
+      "search_demand": 81,
+      "commercial": 83,
+      "competition": 85,
+      "ai_citation": 49
+    },
+    "_seed_reason": "top-by-product-line"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "name": "KeXinMaterials (客信新材料)",
+  "short_name": "KeXinMaterials",
+  "description": "Source factory of protective cases — OEM/ODM, IP67/IP68, military grade. Established 2014.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8FAFC",
+  "theme_color": "#C2410C",
+  "lang": "en-US",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "business",
+    "shopping",
+    "productivity"
+  ]
+}

@@ -1,0 +1,24 @@
+# Cloudflare Pages HTTP 头
+# 提高 SEO + GEO + 性能
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-XSS-Protection: 1; mode=block
+
+# 静态资源缓存
+/styles/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML 不缓存（保证更新生效）
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate

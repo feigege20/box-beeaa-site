@@ -1,0 +1,35 @@
+name = "box-beeaa-site"
+compatibility_date = "2026-07-29"
+pages_build_output_dir = "./dist"
+
+# R2 buckets for Phase 2 (B-en long-tail + Chinese)
+# These bindings are exposed to Pages Functions via context.env
+[[r2_buckets]]
+binding = "BOX_EN_B"
+bucket_name = "box-en-b"
+preview_bucket_name = "box-en-b"
+
+[[r2_buckets]]
+binding = "BOX_ZH"
+bucket_name = "box-zh"
+preview_bucket_name = "box-zh"
+
+# Workers AI (Paid plan: 10K neurons/day 免费 + 付费扩展)
+# 自动按需调用 Llama 3 / embedding 模型
+[ai]
+binding = "AI"
+
+# Smart Placement (Paid plan)
+# Worker 自动部署到用户最近的数据中心, 大幅降低延迟 (尤其对亚洲/欧洲用户)
+# Free 计划不支持, 已在 $5/mo 套餐内
+[placement]
+mode = "smart"
+
+# Non-secret env vars (RESEND_API_KEY 在 Cloudflare Dashboard 加为 Secret)
+# 2026-08-01 验证 beeaa.com 后, From 改用 noreply@beeaa.com
+[vars]
+RESEND_FROM = "KeXinMaterials Inquiry <noreply@beeaa.com>"
+
+# Email Sending: Cloudflare Pages 不支持 send_email binding, 我们用 Resend HTTP API
+# FRED 在 https://resend.com 注册 (免费 100/天, 3K/月) → 创建 API key → 在 Pages Dashboard 加 secret RESEND_API_KEY
+# 也可以用 Cloudflare Email Service (需独立 Worker + 域名验证) — 见 functions/api/inquiry.js 注释

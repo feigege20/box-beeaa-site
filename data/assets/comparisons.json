@@ -1,0 +1,129 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "purpose": "对比表池 — 7 维差异化矩阵 #⑦ 辅助，每页选 1 张对比表",
+    "strategy": "20+ 张：客信 vs 普通 / PP vs ABS vs 玻纤 / 滚塑 vs 注塑 / IP67 vs IP68 / OEM vs ODM / DDP vs DDU / 海运 vs 空运 等"
+  },
+  "comparisons": [
+    {
+      "id": "kx-vs-ordinary",
+      "title_zh": "客信 vs 普通防护箱",
+      "title_en": "KeXinMaterials vs Ordinary Cases",
+      "rows": [
+        ["维度", "Dimension", "普通防护箱", "Ordinary Case", "客信新材料", "KeXinMaterials"],
+        ["防护等级", "IP Rating", "IP54", "IP54", "IP67 / MIL-STD-810G", "IP67 / MIL-STD-810G"],
+        ["材质", "Material", "普通 PP", "Plain PP", "玻纤增强 PP", "Glass Fiber PP"],
+        ["开模定制", "Custom Mold", "不支持", "Not supported", "支持，300 pcs 起", "Supported, 300 pcs MOQ"],
+        ["认证", "Certifications", "CE / RoHS", "CE / RoHS", "CE / RoHS / UN38.3 / FDA / UL", "CE / RoHS / UN38.3 / FDA / UL"],
+        ["交付周期", "Lead Time", "60 天", "60 days", "30 天（开模 45 天）", "30 days (mold 45)"],
+        ["MOQ", "MOQ", "500", "500", "100", "100"],
+        ["询盘响应", "Quote Response", "48h", "48h", "12h", "12h"],
+        ["工厂直供", "Factory Direct", "否", "No", "是", "Yes"]
+      ],
+      "tags": ["global"]
+    },
+    {
+      "id": "pp-vs-abs-vs-gfpp",
+      "title_zh": "PP vs ABS vs 玻纤增强 PP 材质对比",
+      "title_en": "PP vs ABS vs Glass-Fiber PP Material Comparison",
+      "rows": [
+        ["特性", "Property", "PP", "PP", "ABS", "ABS", "玻纤 PP", "Glass-Fiber PP"],
+        ["密度", "Density", "0.91 g/cm³", "0.91 g/cm³", "1.05 g/cm³", "1.05 g/cm³", "1.05 g/cm³", "1.05 g/cm³"],
+        ["抗冲击", "Impact Strength", "中", "Medium", "高", "High", "极高", "Very High"],
+        ["耐温", "Temp Range", "0~100℃", "0~100°C", "-20~80℃", "-20~80°C", "-40~120℃", "-40~120°C"],
+        ["抗 UV", "UV Resistance", "差", "Poor", "中", "Medium", "优", "Excellent"],
+        ["价格", "Price", "低", "Low", "中", "Medium", "高", "High"],
+        ["典型应用", "Typical Use", "普通物流箱", "Logistics", "工具箱", "Tool box", "军规 / 户外", "MIL / Outdoor"]
+      ],
+      "tags": ["material", "engineering"]
+    },
+    {
+      "id": "injection-vs-rotomold-vs-blowmold",
+      "title_zh": "注塑 vs 滚塑 vs 吹塑 工艺对比",
+      "title_en": "Injection vs Rotomold vs Blow Mold Process",
+      "rows": [
+        ["工艺", "Process", "注塑", "Injection", "滚塑", "Rotomolding", "吹塑", "Blow Molding"],
+        ["尺寸范围", "Size Range", "小-中", "Small-Med", "中-大", "Med-Large", "小-中", "Small-Med"],
+        ["壁厚", "Wall Thickness", "均匀 2-5mm", "Even 2-5mm", "均匀 3-10mm", "Even 3-10mm", "薄壁 0.5-3mm", "Thin 0.5-3mm"],
+        ["模具成本", "Mold Cost", "高", "High", "中", "Medium", "低", "Low"],
+        ["单件成本", "Unit Cost", "低", "Low", "中", "Medium", "低", "Low"],
+        ["小批量", "Small Batch", "适合", "Suitable", "适合", "Suitable", "适合", "Suitable"],
+        ["大批量", "Mass Prod", "适合", "Suitable", "适合", "Suitable", "适合", "Suitable"]
+      ],
+      "tags": ["process", "engineering"]
+    },
+    {
+      "id": "ip67-vs-ip68",
+      "title_zh": "IP67 vs IP68 防水等级",
+      "title_en": "IP67 vs IP68 Waterproof Rating",
+      "rows": [
+        ["等级", "Rating", "IP67", "IP67", "IP68", "IP68"],
+        ["防尘", "Dust", "6 完全防尘", "6 Dust-tight", "6 完全防尘", "6 Dust-tight"],
+        ["防水", "Water", "7 短时浸没", "7 Short immersion", "8 持续浸没", "8 Continuous immersion"],
+        ["测试条件", "Test", "1m / 30min", "1m / 30min", "5-30m / 持续", "5-30m / continuous"],
+        ["客信价格", "Price", "基准", "Base", "+15-25%", "+15-25%"],
+        ["典型应用", "Use", "户外 / 雨水", "Outdoor / rain", "水下作业", "Underwater"]
+      ],
+      "tags": ["feature", "ip"]
+    },
+    {
+      "id": "oem-vs-odm",
+      "title_zh": "OEM vs ODM 服务对比",
+      "title_en": "OEM vs ODM Service",
+      "rows": [
+        ["维度", "Dimension", "OEM", "OEM", "ODM", "ODM"],
+        ["设计归属", "Design Owner", "客户提供", "Client provides", "客信设计", "KeXin designs"],
+        ["品牌", "Brand", "客户品牌", "Client brand", "客户品牌（可选联合）", "Client brand (joint optional)"],
+        ["模具", "Mold", "客信开模", "KeXin molds", "客信开模", "KeXin molds"],
+        ["开发周期", "Dev Time", "30-45 天", "30-45 days", "45-60 天", "45-60 days"],
+        ["MOQ", "MOQ", "300 pcs", "300 pcs", "500 pcs", "500 pcs"],
+        ["适合", "Best For", "成熟方案", "Mature designs", "新品开发", "New product dev"]
+      ],
+      "tags": ["oem", "service"]
+    },
+    {
+      "id": "ddp-vs-ddu",
+      "title_zh": "DDP vs DDU 贸易术语",
+      "title_en": "DDP vs DDU Incoterms",
+      "rows": [
+        ["术语", "Term", "DDP", "Delivered Duty Paid", "DDU (DAP)", "Delivered At Place"],
+        ["关税", "Tariff", "卖方付", "Seller pays", "买方付", "Buyer pays"],
+        ["清关", "Customs", "卖方负责", "Seller handles", "买方负责", "Buyer handles"],
+        ["末端派送", "Last-mile", "门到门", "Door-to-door", "门到门", "Door-to-door"],
+        ["报价", "Quoted", "含全部费用", "All-in", "不含关税", "Excl. tariff"],
+        ["客户复杂度", "Client Effort", "零", "Zero", "需有进口商", "Need importer"],
+        ["推荐", "Recommended", "新客户首选", "New clients", "老客户 / 集团采购", "Existing clients"]
+      ],
+      "tags": ["export", "logistics"]
+    },
+    {
+      "id": "sea-vs-air-vs-express",
+      "title_zh": "海运 vs 空运 vs 国际快递",
+      "title_en": "Sea vs Air vs Express Shipping",
+      "rows": [
+        ["方式", "Mode", "海运 LCL", "Sea LCL", "海运 FCL", "Sea FCL", "空运", "Air", "国际快递", "Express"],
+        ["时效", "Transit", "35-50 天", "35-50 days", "25-40 天", "25-40 days", "5-7 天", "5-7 days", "3-5 天", "3-5 days"],
+        ["成本 (1CBM)", "Cost (1CBM)", "USD 80-150", "USD 80-150", "USD 50-90", "USD 50-90", "USD 400-700", "USD 400-700", "USD 600-1000", "USD 600-1000"],
+        ["最小量", "Min Qty", "0.5 CBM", "0.5 CBM", "15 CBM", "15 CBM", "100 kg", "100 kg", "0.5 kg", "0.5 kg"],
+        ["门到门", "D2D", "可选", "Optional", "可选", "Optional", "可选", "Optional", "是", "Yes"],
+        ["适合", "Best For", "小批量补货", "Replenishment", "大批量", "Bulk", "紧急样品", "Urgent sample", "1-10 件样品", "1-10 samples"]
+      ],
+      "tags": ["export", "logistics"]
+    },
+    {
+      "id": "soft-case-vs-hard-case",
+      "title_zh": "软壳 vs 硬壳防护箱",
+      "title_en": "Soft vs Hard Protective Case",
+      "rows": [
+        ["维度", "Dimension", "软壳（EVA / 尼龙）", "Soft (EVA / Nylon)", "硬壳（PP / ABS）", "Hard (PP / ABS)"],
+        ["抗冲击", "Impact", "中", "Medium", "高", "High"],
+        ["防水", "Waterproof", "IPX4（防泼）", "IPX4 (splash)", "IP67+", "IP67+"],
+        ["重量", "Weight", "轻 30-50%", "30-50% lighter", "标准", "Standard"],
+        ["价格", "Price", "中", "Medium", "低-高", "Low-High"],
+        ["适合", "Best For", "短途携带", "Short trips", "长途运输 / 防护", "Long transport"],
+        ["客信提供", "KeXin Offers", "是（KXBAG 系列）", "Yes (KXBAG)", "是（KXHARD 系列）", "Yes (KXHARD)"]
+      ],
+      "tags": ["global"]
+    }
+  ]
+}

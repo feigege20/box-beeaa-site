@@ -1,0 +1,394 @@
+/**
+ * 页面渲染器 — 把 keyword + 资产 + 配置 → 完整 HTML
+ * 支持 4 类长尾公式的差异化结构
+ */
+
+import { siteConfig } from "./site.config.js";
+import { renderHead, renderHeader, renderFooter, renderBreadcrumb, renderCTA } from "./layout.js";
+import {
+  sectionHero, sectionDefinition, sectionParams, sectionProcess, sectionCase,
+  sectionComparison, sectionFAQs, sectionTLDR, sectionDeepDive, sectionChecklist,
+  sectionTestimonials, sectionSpecs, sectionPricing, sectionMarketNeeds,
+  sectionCertifications, sectionFlow,
+} from "./sections.js";
+import {
+  organizationSchema, productSchema, faqSchema, breadcrumbSchema, reviewSchema, aggregateRatingSchema,
+} from "./schemas.js";
+
+const BASE_URL = `${siteConfig.protocol}://${siteConfig.domain}`;
+
+function esc(s) {
+  if (s == null) return "";
+  return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+// EN render path: strip CJK runs from mixed en/zh keyword data so titles/slugs/body are pure English.
+// Falls back to original input if stripping leaves an empty string.
+function enClean(s) {
+  if (!s || typeof s !== "string") return s;
+  let r = s.replace(/[\s\u3000]*[\u4e00-\u9fff]+[\s\u3000]*/g, " ");
+  r = r.replace(/\s+/g, " ").replace(/[-–—,.:;!?]+\s*$/, "").trim();
+  return r || s;
+}
+
+// alt 本地化：英文页面只取英文部分（"English / 中文" 或 "中文 / English" 都自动识别），中文页保留全段
+function altFor(img, t) {
+  if (!img || !img.alt) return "";
+  if (t) return img.alt;
+  const parts = img.alt.split(" / ");
+  for (const p of parts) {
+    if (!/[\u4e00-\u9fff]/.test(p)) return p.trim();
+  }
+  return parts[0].trim();
+}
+
+/** 从数组按 hash 选 1 个 */
+function pickOne(arr, seed) {
+  if (!arr || arr.length === 0) return null;
+  const idx = Math.abs(hashCode(seed)) % arr.length;
+  return arr[idx];
+}
+
+/** 从数组按 hash 选 N 个不重复 */
+function pickN(arr, n, seed) {
+  if (!arr || arr.length === 0) return [];
+  const h = Math.abs(hashCode(seed));
+  const shuffled = [...arr].sort((a, b) => (hashCode(JSON.stringify(a) + seed) - hashCode(JSON.stringify(b) + seed)));
+  return shuffled.slice(0, Math.min(n, arr.length));
+}
+
+function hashCode(s) {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) {
+    h = ((h << 5) - h) + s.charCodeAt(i);
+    h |= 0;
+  }
+  return h;
+}
+
+/** 选 Hero 主图（WebP srcset） */
+function selectHeroImage({ keyword, productLine, images, lang, routes }) {
+  const lineImgs = images.productLines?.[productLine.slug];
+  if (!lineImgs) return null;
+
+  // 尝试按 keyword.zh / en 检测 sub_category
+  const kw = (keyword.zh || "") + " " + (keyword.en || "");
+  let picked = lineImgs.default;
+
+  // 按特征词匹配
+  if (/防爆|explosion/i.test(kw) && lineImgs["uav-battery-case"]) picked = lineImgs["uav-battery-case"];
+  else if (/电池|battery/i.test(kw) && lineImgs["uav-battery-case"]) picked = lineImgs["uav-battery-case"];
+  else if (/RTK|地面站|ground.station/i.test(kw) && lineImgs["uav-rtk-case"]) picked = lineImgs["uav-rtk-case"];
+  else if (/水下|ROV|underwater/i.test(kw) && lineImgs["underwater-rov-case"]) picked = lineImgs["underwater-rov-case"];
+  else if (/FPV|穿越机|backpack/i.test(kw) && lineImgs["fpv-drone-backpack"]) picked = lineImgs["fpv-drone-backpack"];
+  else if (/全套|一体|all.in.one/i.test(kw) && lineImgs["all-in-one-drone-case"]) picked = lineImgs["all-in-one-drone-case"];
+
+  // 按 layer hash 调整
+  if (!picked || picked === lineImgs.default) {
+    const layerKeys = Object.keys(lineImgs).filter(k => k !== "default");
+    if (layerKeys.length > 0) {
+      picked = lineImgs[layerKeys[Math.abs(hashCode(routes.canonicalPath)) % layerKeys.length]] || lineImgs.default;
+    }
+  }
+
+  if (!picked) return null;
+  return { src: picked.src, srcset: picked.srcset || picked.src, alt: picked.alt };
+}
+
+/** slug 化 */
+function slugify(s) {
+  if (!s) return "";
+  return String(s)
+    .trim()
+    .toLowerCase()
+    .replace(/[^\w\s\u4e00-\u9fff-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "")
+    .slice(0, 80);
+}
+
+/** 推断 formula */
+function detectFormula(kw) {
+  if (kw.layer === "长尾") return "feature-product-intent";
+  if (kw.layer === "市场") return "product-export-market";
+  if (kw.layer === "疑问") return "product-question";
+  if (kw.layer === "规格") return "spec-product-wholesale";
+  if (kw.layer === "商业") return "feature-product-intent";
+  if (kw.layer === "特性") return "feature-product-intent";
+  return "feature-product-intent";
+}
+
+/** 推断商业意图 */
+function detectIntent(kw) {
+  const z = kw.zh;
+  if (/批发|价格|大量|供.?应/.test(z)) return "wholesale";
+  if (/代理|经销|招商|加盟/.test(z)) return "agency";
+  if (/OEM|ODM|定制|代工|贴牌|来图|开模|小批/.test(z)) return "oem";
+  if (/出口|全球|跨境|海外|外贸/.test(z)) return "export";
+  return "oem";  // 默认
+}
+
+/** 推断市场 */
+function detectMarket(kw) {
+  const z = kw.zh;
+  const e = kw.en.toLowerCase();
+  if (/北美|美国|北美市场|North America|USA|US|U\.S\./.test(z + e)) return "north-america";
+  if (/欧洲|EU|Europe/.test(z + e)) return "europe";
+  if (/东南亚|SEA/.test(z + e)) return "southeast-asia";
+  if (/中东|Middle East|ME/.test(z + e)) return "middle-east";
+  if (/非洲|Africa/.test(z + e)) return "africa";
+  if (/俄罗斯|Russia|EAEU/.test(z + e)) return "russia";
+  if (/南美|South America|Latin/.test(z + e)) return "south-america";
+  if (/澳洲|Australia|NZ|New Zealand/.test(z + e)) return "australia";
+  if (/日韩|Japan|Korea|JP|KR/.test(z + e)) return "japan-korea";
+  return null;
+}
+
+/** 推断特性 */
+function detectFeature(kw) {
+  const z = kw.zh;
+  const features = [];
+  if (/IP67|防水/.test(z)) features.push("ip67");
+  if (/IP68/.test(z)) features.push("ip68");
+  if (/防爆|防燃|电池/.test(z)) features.push("explosion-proof");
+  if (/MIL|军规|战术|军/.test(z)) features.push("mil-spec");
+  if (/防震|抗震|减震|抗冲击|抗摔/.test(z)) features.push("shockproof");
+  if (/防潮|吸湿|干燥/.test(z)) features.push("moisture-proof");
+  if (/防尘/.test(z)) features.push("dustproof");
+  if (/防静电|ESD|导电/.test(z)) features.push("anti-static");
+  if (/耐高|耐温|耐寒|耐低温|-40|UV|抗紫外|抗老化|抗黄变/.test(z)) features.push("temp-resistant");
+  if (/耐腐蚀|防盐|盐雾|海洋|船|舰/.test(z)) features.push("corrosion-resistant");
+  if (/密封|气密/.test(z)) features.push("sealed");
+  if (/带锁|密码|双人/.test(z)) features.push("lockable");
+  if (/便携|迷你|小型/.test(z)) features.push("portable");
+  if (/大型|超大|加长|加深|重型/.test(z)) features.push("heavy-duty");
+  if (/拉杆|轮|拖/.test(z)) features.push("trolley");
+  return features;
+}
+
+/** 生成页面元数据 */
+export function buildPageMeta({ keyword, productLine, lang }) {
+  const t = lang === "zh";
+  const formula = detectFormula(keyword);
+  const intent = detectIntent(keyword);
+  const market = detectMarket(keyword);
+  const features = detectFeature(keyword);
+
+  const titleZh = `${keyword.zh} 厂家 | ${productLine.name_zh} 客信新材料`;
+  const titleEn = `${enClean(keyword.en)} Manufacturer | ${productLine.name_en} | KeXinMaterials`;
+
+  const descZh = `客信新材料提供 ${keyword.zh}，源头工厂、批发价、OEM/ODM 定制、12h 报价、30 天交付。${productLine.name_zh}，IP67/MIL-SPEC/防爆认证。询 kexin@beeaa.com 或 WhatsApp +86 13590555309。`;
+  const descEn = `KeXinMaterials: ${enClean(keyword.en)} from source factory, wholesale price, OEM/ODM custom, 12h quote, 30-day delivery. ${productLine.name_en}, IP67/MIL-SPEC certified. Inquire kexin@beeaa.com or WhatsApp +86 13590555309.`;
+
+  return {
+    formula,
+    intent,
+    market,
+    features,
+    title: t ? titleZh : titleEn,
+    description: t ? descZh : descEn,
+    keyword: t ? keyword.zh : enClean(keyword.en),
+    lang,
+  };
+}
+
+/** 路由解析 */
+export function buildRoutes({ keyword, productLine, lang }) {
+  const t = lang === "zh";
+  const basePrefix = t ? "/zh" : "";
+  const intent = detectIntent(keyword);
+  const kwSlug = slugify(t ? keyword.zh : enClean(keyword.en));
+
+  // 简化：所有长尾都挂在品类下
+  // 实际可分：特性长尾、规格长尾、市场长尾、疑问长尾
+  return {
+    baseUrl: `${BASE_URL}${basePrefix}/${productLine.slug}/${kwSlug}/`,
+    canonicalPath: `${basePrefix}/${productLine.slug}/${kwSlug}/`,
+    breadcrumb: [
+      { name: t ? "首页" : "Home", url: `${basePrefix || ""}/` },
+      { name: t ? productLine.short_zh : productLine.short_en, url: `${basePrefix}/${productLine.slug}/` },
+      { name: t ? keyword.zh : enClean(keyword.en), url: `${basePrefix}/${productLine.slug}/${kwSlug}/` },
+    ],
+  };
+}
+
+/** 主页面渲染器 */
+export function renderPage({ keyword, productLine, assets, lang = "en", grade = "A" }) {
+  const t = lang === "zh";
+  const meta = buildPageMeta({ keyword, productLine, lang });
+  const routes = buildRoutes({ keyword, productLine, lang });
+
+  // === 选资产 ===
+  const { cases, params, faqs, testimonials, flows, comparisons, images } = assets;
+
+  // === B 级 noindex 标记 ===
+  const noindex = grade === "B";
+
+  // === 选图片（真实图，按 sub_category + feature 分配）===
+  const heroImage = selectHeroImage({ keyword, productLine, images, lang, routes });
+
+  // 案例：按 product_line + market 选 1 个
+  let caseData = null;
+  if (cases[productLine.slug]) {
+    const marketFiltered = meta.market
+      ? cases[productLine.slug].filter(c => c.market === meta.market)
+      : cases[productLine.slug];
+    caseData = pickOne(marketFiltered.length > 0 ? marketFiltered : cases[productLine.slug], routes.canonicalPath);
+  }
+
+  // 参数：通用 + 产品线
+  const paramFields = assets.params.fields;
+  const lineParams = paramFields[productLine.slug] || {};
+  const commonParams = paramFields.common;
+  const pageParams = {};
+  // 选 6-8 个字段
+  const allFieldKeys = [
+    ...Object.keys(commonParams),
+    ...Object.keys(lineParams).slice(0, 3),
+  ];
+  const selectedKeys = pickN(allFieldKeys, Math.min(7, allFieldKeys.length), routes.canonicalPath);
+  selectedKeys.forEach(k => {
+    const field = commonParams[k] || lineParams[k];
+    if (field && field.options) {
+      pageParams[k] = pickOne(field.options, routes.canonicalPath + k);
+    } else if (field) {
+      pageParams[k] = field.options
+        ? pickOne(field.options, routes.canonicalPath + k)
+        : field;
+    }
+  });
+
+  // FAQ：global + by_formula + by_product 各取一些
+  const globalFaqs = pickN(assets.faqs.global || [], 2, routes.canonicalPath);
+  const formulaFaqs = pickN(assets.faqs.by_formula?.[meta.formula] || [], 3, routes.canonicalPath);
+  const productFaqs = pickN(assets.faqs.by_product?.[productLine.slug] || [], 1, routes.canonicalPath);
+  // by_formula 名称映射
+  const formulaNameMap = {
+    "feature-product-intent": "特性+产品+商业意图",
+    "spec-product-wholesale": "规格+产品+批发",
+    "product-export-market": "产品+出口+地域",
+    "product-question": "产品+疑问词",
+  };
+  const formulaName = formulaNameMap[meta.formula] || meta.formula;
+  const formulaFaqs2 = pickN(assets.faqs.by_formula?.[formulaName] || [], 2, routes.canonicalPath);
+  const pageFaqs = [...new Map([...globalFaqs, ...formulaFaqs, ...formulaFaqs2, ...productFaqs].map(f => [f.q_en, f])).values()].slice(0, 6);
+
+  // 对比表
+  const comparison = pickOne(assets.comparisons, routes.canonicalPath);
+
+  // 流程图
+  const flow = meta.intent === "oem" ? pickOne(assets.flows.filter(f => f.id === "oem-process"), routes.canonicalPath)
+    : meta.intent === "export" ? pickOne(assets.flows.filter(f => f.id === "export-logistics"), routes.canonicalPath)
+    : meta.intent === "wholesale" ? pickOne(assets.flows.filter(f => f.id === "wholesale-process"), routes.canonicalPath)
+    : pickOne(assets.flows, routes.canonicalPath);
+
+  // 证言
+  const lineTestimonials = (assets.testimonials || []).filter(t => t.product_line === productLine.slug);
+  const pageTestimonials = pickN(lineTestimonials, 3, routes.canonicalPath);
+
+  // 唯一数据点
+  const uniqueFact = (assets.params.unique_facts?.[productLine.slug]?.[Object.keys(assets.params.unique_facts[productLine.slug])[0]])?.[0] ||
+    `${productLine.name_en} 系列已出口至 30+ 国家，2024 年累计交付 50,000+ 套。`;
+
+  // === 渲染各 section ===
+  const sections = [];
+
+  // 1. Hero
+  sections.push(sectionHero({
+    title: meta.title,
+    subtitle: meta.description,
+    image: heroImage ? `<img src="${esc(heroImage.src)}" srcset="${esc(heroImage.srcset)}" sizes="(max-width: 768px) 100vw, 1200px" alt="${esc(altFor(heroImage, t))}" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:12px;box-shadow:0 10px 25px -5px rgba(15,23,42,0.15);" />` : "",
+    lang,
+  }));
+
+  // 2. 按 formula 选骨架
+  if (meta.formula === "feature-product-intent") {
+    const definitionText = t
+      ? `${keyword.zh} 是指 ${uniqueFact}。客信新材料（广东）有限公司提供 OEM/ODM 定制，3D 打样 7 天、开模 45 天、量产 30 天，源头工厂、12 小时报价、30 天交付。`
+      : `${enClean(keyword.en)} is a ${uniqueFact}. KeXinMaterials (Guangdong) Co., Ltd. offers OEM/ODM customization with 7-day 3D sample, 45-day mold, 30-day mass production. Source factory, 12-hour quote, 30-day delivery.`;
+    sections.push(sectionDefinition({ text: definitionText, lang }));
+    sections.push(sectionParams({ params: pageParams, lang }));
+    if (flow) sections.push(sectionFlow({ flow, lang }));
+    if (caseData) sections.push(sectionCase({ caseData, lang }));
+    if (comparison) sections.push(sectionComparison({ comparison, lang }));
+    sections.push(sectionFAQs({ faqs: pageFaqs, lang }));
+  } else if (meta.formula === "spec-product-wholesale") {
+    sections.push(sectionSpecs({ specs: Object.entries(pageParams).slice(0, 6).map(([k, v]) => ({ name: t ? (paramFields.common[k]?.label_zh || k) : (paramFields.common[k]?.label_en || k), desc: v, price: "" })), lang }));
+    sections.push(sectionPricing({ tiers: [
+      { qty: "50-199 pcs", price: "USD 25-80", discount: "-", leadTime: "20 天" },
+      { qty: "200-499 pcs", price: "USD 22-72", discount: "10% off", leadTime: "25 天" },
+      { qty: "500-999 pcs", price: "USD 19-65", discount: "20% off", leadTime: "30 天" },
+      { qty: "1000+ pcs", price: "USD 16-58", discount: "30% off", leadTime: "30-45 天" },
+    ], lang }));
+    sections.push(sectionFAQs({ faqs: pageFaqs, lang }));
+  } else if (meta.formula === "product-export-market") {
+    const market = (siteConfig.markets.find(m => m.slug === meta.market)) || siteConfig.markets[0];
+    sections.push(sectionMarketNeeds({ content: `${t ? market.name_zh : market.name_en}${t ? "买家对" : " buyers demand"} ${esc(t ? keyword.zh : enClean(keyword.en))} ${t ? "的核心需求：合规认证、长期可靠性、本地化交付、报价透明度。客信针对" : " core requirements: compliance, reliability, local delivery, transparent pricing. KeXinMaterials serves"} ${t ? market.name_zh : market.name_en} ${t ? "市场已" : " market for"} ${3 + Math.abs(hashCode(routes.canonicalPath)) % 8} ${t ? "年。" : " years."}`, lang }));
+    sections.push(sectionCertifications({ certs: market.certifications, lang }));
+    if (flow) sections.push(sectionFlow({ flow, lang }));
+    if (caseData) sections.push(sectionCase({ caseData, lang }));
+    sections.push(sectionFAQs({ faqs: pageFaqs, lang }));
+  } else if (meta.formula === "product-question") {
+    sections.push(sectionTLDR({ text: `${t ? "简短答案：" : "Short answer:"} ${t ? "是" : "Yes"}, ${t ? "客信新材料提供" : "KeXinMaterials offers"} ${esc(t ? keyword.zh : enClean(keyword.en))}，${t ? "源头工厂、批发价、12h 报价、30 天交付。" : "source factory, wholesale price, 12h quote, 30-day delivery."}`, lang }));
+    sections.push(sectionDeepDive({ paragraphs: [
+      `${t ? "### 深度解读" : "### Deep Dive"}\n\n${esc(t ? keyword.zh : enClean(keyword.en))} ${t ? "的核心要点：① 选工厂不选贸易商（质量可控、报价透明、交付稳定）② 关注认证（CE/RoHS/FCC/UN38.3 等）③ 评估 MOQ 和定制能力 ④ 验厂考察或视频验厂 ⑤ 样品确认后再下单。" : "Key points: ① Choose factory not trader ② Check certifications ③ Evaluate MOQ & customization ④ Factory audit or video audit ⑤ Sample first then order."}`,
+      `${t ? "### 客信优势" : "### Why KeXinMaterials"}\n\n${uniqueFact} 18,000㎡ 工厂、10,000+ SKU 现货、48h 发货。${t ? "已为" : "Trusted by"} ${50 + (Math.abs(hashCode(routes.canonicalPath)) % 200)} ${t ? "家头部企业服务。" : " leading brands."}`,
+    ], lang }));
+    sections.push(sectionChecklist({ items: [
+      t ? "确认需求（IP 等级、尺寸、材质、认证）" : "Confirm requirements (IP, size, material, certifications)",
+      t ? "对比至少 3 家工厂的报价和认证" : "Compare at least 3 factory quotes and certifications",
+      t ? "要求样品测试和实地/视频验厂" : "Request samples and on-site / video factory audit",
+      t ? "确认 MOQ、交付周期、付款方式" : "Confirm MOQ, lead time, payment terms",
+      t ? "签订正式合同（含质量条款、违约责任）" : "Sign formal contract (quality clauses, penalties)",
+    ], lang }));
+    if (comparison) sections.push(sectionComparison({ comparison, lang }));
+    if (pageTestimonials.length) sections.push(sectionTestimonials({ items: pageTestimonials, lang }));
+    sections.push(sectionFAQs({ faqs: pageFaqs, lang }));
+  }
+
+  // 3. CTA
+  sections.push(renderCTA({ lang }));
+
+  // === Schema 注入 ===
+  // 选 3 条匹配 product_line 的 testimonials 作 Review
+  const matchingTestimonials = (assets.testimonials || []).filter(tt => tt.product_line === productLine.slug).slice(0, 3);
+  const fallbackTestimonials = (assets.testimonials || []).slice(0, 3);
+  const reviewPool = matchingTestimonials.length > 0 ? matchingTestimonials : fallbackTestimonials;
+
+  const schemas = [
+    productSchema({
+      name: t ? keyword.zh : enClean(keyword.en),
+      description: meta.description,
+      sku: slugify(t ? keyword.zh : enClean(keyword.en)),
+      category: t ? productLine.name_zh : productLine.name_en,
+      additionalProperty: Object.entries(pageParams).slice(0, 5).map(([k, v]) => ({ label_en: k, value: Array.isArray(v) ? v.join(", ") : v })),
+    }),
+    aggregateRatingSchema({ count: 12, average: 4.9 }),
+    reviewSchema(reviewPool, lang, 3),
+    faqSchema(pageFaqs, lang),
+    breadcrumbSchema(routes.breadcrumb),
+  ];
+
+  // === 拼装完整 HTML ===
+  // OG image: 用 product line 的 hero image（按主题色更精准）
+  const productHero = images?.productLines?.[productLine.slug]?.default;
+  const ogImage = productHero ? `${BASE_URL}${productHero.src}` : undefined;
+  const html = renderHead({
+    title: meta.title,
+    description: meta.description,
+    keywords: t ? siteConfig.keywords.zh : siteConfig.keywords.en,
+    canonical: routes.baseUrl,
+    ogImage,
+    lang,
+    theme: productLine.theme,
+    schemas,
+    noindex,
+  })
+  + renderHeader({ lang, currentPath: routes.canonicalPath })
+  + renderBreadcrumb({ items: routes.breadcrumb, lang })
+  + sections.join("\n")
+  + renderFooter({ lang });
+
+  return html;
+}

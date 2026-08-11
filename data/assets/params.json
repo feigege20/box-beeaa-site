@@ -1,0 +1,239 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "purpose": "参数池 — 7 维差异化矩阵 #④，每页独有参数表",
+    "strategy": "每页参数 = product_line + sub_category + feature + spec 四元组 hash → 选不同字段子集"
+  },
+  "fields": {
+    "common": {
+      "material": {
+        "label_zh": "材质",
+        "label_en": "Material",
+        "options": [
+          ["PP", "Polypropylene"],
+          ["玻纤增强 PP", "Glass Fiber Reinforced PP"],
+          ["ABS", "Acrylonitrile Butadiene Styrene"],
+          ["阻燃 ABS", "Flame Retardant ABS"],
+          ["PC", "Polycarbonate"],
+          ["阻燃 PC", "Flame Retardant PC"],
+          ["滚塑 PE", "Rotomolded PE"],
+          ["玻纤 + 阻燃 PC 合金", "Glass Fiber + FR PC Alloy"],
+          ["铝合金 + ABS", "Aluminum Alloy + ABS"],
+          ["HDPE", "High Density Polyethylene"]
+        ]
+      },
+      "ip_rating": {
+        "label_zh": "防护等级",
+        "label_en": "IP Rating",
+        "options": [
+          ["IP54", "IP54"],
+          ["IP65", "IP65"],
+          ["IP67", "IP67"],
+          ["IP68", "IP68"],
+          ["MIL-STD-810G", "MIL-STD-810G"]
+        ]
+      },
+      "temp_range": {
+        "label_zh": "适用温度",
+        "label_en": "Operating Temperature",
+        "options": [
+          "-20℃ ~ +60℃",
+          "-30℃ ~ +70℃",
+          "-40℃ ~ +80℃",
+          "-40℃ ~ +120℃",
+          "0℃ ~ +80℃"
+        ]
+      },
+      "moq": {
+        "label_zh": "起订量",
+        "label_en": "MOQ",
+        "options": ["50 pcs", "100 pcs", "200 pcs", "300 pcs", "500 pcs"]
+      },
+      "lead_time_days": {
+        "label_zh": "交付周期",
+        "label_en": "Lead Time",
+        "options": ["20 天", "25 天", "30 天", "35 天", "45 天（含开模）"]
+      },
+      "certifications": {
+        "label_zh": "认证",
+        "label_en": "Certifications",
+        "options": [
+          "CE", "RoHS", "ISO9001", "FCC",
+          "UN38.3", "MSDS", "ICAO PI 967", "GOST-R",
+          "FCC ID", "KC", "PSE", "SAA", "CCC"
+        ]
+      }
+    },
+    "drone-case": {
+      "lifecycle_tests": {
+        "label_zh": "开合测试",
+        "label_en": "Latch Cycle",
+        "options": ["5,000 次", "8,000 次", "10,000 次", "15,000 次", "20,000 次"]
+      },
+      "drop_test": {
+        "label_zh": "跌落测试",
+        "label_en": "Drop Test",
+        "options": ["1.0m 6 面", "1.2m 6 面", "1.5m 8 面", "2.0m 8 面"]
+      },
+      "inner_dim_mm": {
+        "label_zh": "内尺寸",
+        "label_en": "Inner Dimension",
+        "options": [
+          "200×150×80 mm",
+          "300×220×120 mm",
+          "400×300×150 mm",
+          "530×430×220 mm",
+          "600×450×250 mm",
+          "可定制"
+        ]
+      },
+      "foam": {
+        "label_zh": "内衬",
+        "label_en": "Foam Insert",
+        "options": [
+          "EVA 预切海绵",
+          "XPE 高密度海绵",
+          "绒布内衬",
+          "可选 / 定制"
+        ]
+      },
+      "pressure_valve": {
+        "label_zh": "气压平衡阀",
+        "label_en": "Pressure Valve",
+        "options": ["标配自动平衡", "可选", "无"]
+      }
+    },
+    "military-tactical-case": {
+      "mil_spec": {
+        "label_zh": "美军标",
+        "label_en": "MIL-SPEC",
+        "options": ["MIL-STD-810G", "MIL-STD-461F", "MIL-C-4150J", "ATA 300"]
+      },
+      "splash_resistance": {
+        "label_zh": "防溅",
+        "label_en": "Splash Resistance",
+        "options": ["IP54", "IP65", "IP67"]
+      },
+      "interior": {
+        "label_zh": "内衬",
+        "label_en": "Interior",
+        "options": ["波纹海绵", "EVA 模切", "可调节隔板"]
+      }
+    },
+    "waterproof-case": {
+      "water_depth": {
+        "label_zh": "防水深度",
+        "label_en": "Water Depth",
+        "options": ["1m / 30min", "5m / 30min", "10m / 30min", "30m"]
+      },
+      "float": {
+        "label_zh": "漂浮性",
+        "label_en": "Buoyancy",
+        "options": ["可漂浮", "标准"]
+      }
+    },
+    "medical-case": {
+      "sterilization": {
+        "label_zh": "消毒方式",
+        "label_en": "Sterilization",
+        "options": ["EO 灭菌", "高温高压 121℃", "酒精擦拭", "UV 消毒"]
+      },
+      "bio_safety": {
+        "label_zh": "生物安全",
+        "label_en": "Bio Safety",
+        "options": ["UN3373 B 类", "UN3373 A 类", "UN2814", "UN2900"]
+      }
+    },
+    "instrument-case": {
+      "shock_absorber": {
+        "label_zh": "防震等级",
+        "label_en": "Shock Absorption",
+        "options": ["15G", "25G", "40G", "MIL-STD-810G"]
+      },
+      "esd": {
+        "label_zh": "防静电",
+        "label_en": "ESD",
+        "options": ["10^6 Ω", "10^9 Ω", "导电"]
+      }
+    },
+    "tool-box": {
+      "load_capacity": {
+        "label_zh": "承重",
+        "label_en": "Load Capacity",
+        "options": ["20 kg", "40 kg", "60 kg", "100 kg"]
+      },
+      "drawer_count": {
+        "label_zh": "抽屉数",
+        "label_en": "Drawers",
+        "options": ["3", "4", "5", "6", "可定制"]
+      }
+    },
+    "engineering-plastic-case": {
+      "process": {
+        "label_zh": "成型工艺",
+        "label_en": "Process",
+        "options": ["注塑", "滚塑", "吹塑", "吸塑", "模压"]
+      },
+      "fiber_content": {
+        "label_zh": "玻纤含量",
+        "label_en": "Fiber Content",
+        "options": ["10%", "20%", "30%", "40%"]
+      }
+    },
+    "camera-stage-case": {
+      "padding": {
+        "label_zh": "内衬",
+        "label_en": "Padding",
+        "options": ["高密度 EVA 模切", "绒布", "可调隔板"]
+      },
+      "weight_g": {
+        "label_zh": "自重",
+        "label_en": "Weight",
+        "options": ["800g", "1500g", "2800g", "4500g"]
+      }
+    },
+    "trolley-case": {
+      "wheel_type": {
+        "label_zh": "轮子",
+        "label_en": "Wheels",
+        "options": ["静音万向轮", "PU 耐磨轮", "橡胶越野轮"]
+      },
+      "trolley": {
+        "label_zh": "拉杆",
+        "label_en": "Trolley Handle",
+        "options": ["铝合金三节拉杆", "二节拉杆", "无"]
+      }
+    }
+  },
+  "unique_facts": {
+    "drone-case": {
+      "uav-battery-case": [
+        "已为 30+ 头部无人机厂商提供电池箱 OEM 方案",
+        "首家通过 UN38.3 + 41 节 PI 967 双认证的国内厂家",
+        "已为 DJI 大疆、TikTok 飞马、纵横股份等供应配套"
+      ],
+      "uav-hard-case": [
+        "市占率华南前三",
+        "适配 DJI 全系列 200+ 款型"
+      ]
+    },
+    "waterproof-case": {
+      "drifting-case": [
+        "漂流行业市占率超 40%",
+        "已为 100+ 漂流景区提供配套"
+      ]
+    },
+    "military-tactical-case": {
+      "rifle-case": [
+        "出口至 25+ 国家",
+        "已通过 MIL-STD-810G 全项测试"
+      ]
+    },
+    "medical-case": {
+      "cold-chain-case": [
+        "已为 3 大疫苗厂商提供冷链方案",
+        "通过 WHO PQS 性能评估"
+      ]
+    }
+  }
+}

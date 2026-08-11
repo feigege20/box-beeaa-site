@@ -1,0 +1,269 @@
+{
+  "_meta": {
+    "version": "3.0-webp",
+    "purpose": "真实图片 + WebP 多尺寸（1600w/800w/400w）",
+    "strategy": "srcset 响应式 + 800w 为主图加载"
+  },
+  "hero": {
+    "main": {
+      "src": "/images/real/hero/hero02-1600w.webp",
+      "srcset": "/images/real/hero/hero02-400w.webp 400w, /images/real/hero/hero02-800w.webp 800w, /images/real/hero/hero02-1600w.webp 1600w",
+      "alt": "客信新材料工厂实景 / KeXinMaterials Factory",
+      "sizes": "(max-width: 768px) 100vw, 1200px"
+    },
+    "banner": {
+      "src": "/images/real/hero/banner-main-1600w.webp",
+      "srcset": "/images/real/hero/banner-main-400w.webp 400w, /images/real/hero/banner-main-800w.webp 800w, /images/real/hero/banner-main-1600w.webp 1600w",
+      "alt": "8 系防护箱主推产品 / Series 8 Protective Case",
+      "sizes": "100vw"
+    },
+    "closeup1": {
+      "src": "/images/real/hero/closeup-1-1600w.webp",
+      "srcset": "/images/real/hero/closeup-1-400w.webp 400w, /images/real/hero/closeup-1-800w.webp 800w, /images/real/hero/closeup-1-1600w.webp 1600w",
+      "alt": "产品细节图 / Product Close-up",
+      "sizes": "(max-width: 768px) 100vw, 600px"
+    },
+    "closeup2": {
+      "src": "/images/real/hero/closeup-2-1600w.webp",
+      "srcset": "/images/real/hero/closeup-2-400w.webp 400w, /images/real/hero/closeup-2-800w.webp 800w, /images/real/hero/closeup-2-1600w.webp 1600w",
+      "alt": "产品特写 / Product Detail",
+      "sizes": "(max-width: 768px) 100vw, 600px"
+    },
+    "closeup3": {
+      "src": "/images/real/hero/closeup-3-1600w.webp",
+      "srcset": "/images/real/hero/closeup-3-400w.webp 400w, /images/real/hero/closeup-3-800w.webp 800w, /images/real/hero/closeup-3-1600w.webp 1600w",
+      "alt": "产品特写 / Product Detail",
+      "sizes": "(max-width: 768px) 100vw, 600px"
+    }
+  },
+  "factory": {
+    "exterior": {
+      "src": "/images/real/hero/factory-exterior-1600w.webp",
+      "srcset": "/images/real/hero/factory-exterior-400w.webp 400w, /images/real/hero/factory-exterior-800w.webp 800w, /images/real/hero/factory-exterior-1600w.webp 1600w",
+      "alt": "客信新材料（军之甲）13,000㎡ 工厂外景 / KeXinMaterials 13,000㎡ Factory"
+    },
+    "production-line": {
+      "src": "/images/real/factory/factory-10-1600w.webp",
+      "srcset": "/images/real/factory/factory-10-400w.webp 400w, /images/real/factory/factory-10-800w.webp 800w, /images/real/factory/factory-10-1600w.webp 1600w",
+      "alt": "工厂装配线 / Assembly Line"
+    },
+    "warehouse": {
+      "src": "/images/real/factory/factory-11-1600w.webp",
+      "srcset": "/images/real/factory/factory-11-400w.webp 400w, /images/real/factory/factory-11-800w.webp 800w, /images/real/factory/factory-11-1600w.webp 1600w",
+      "alt": "仓库实景 / Warehouse"
+    },
+    "quality-control": {
+      "src": "/images/real/factory/factory-12-1600w.webp",
+      "srcset": "/images/real/factory/factory-12-400w.webp 400w, /images/real/factory/factory-12-800w.webp 800w, /images/real/factory/factory-12-1600w.webp 1600w",
+      "alt": "质检工位 / Quality Control"
+    },
+    "shipping": {
+      "src": "/images/real/factory/factory-7-1600w.webp",
+      "srcset": "/images/real/factory/factory-7-400w.webp 400w, /images/real/factory/factory-7-800w.webp 800w, /images/real/factory/factory-7-1600w.webp 1600w",
+      "alt": "出货实景 / Shipping"
+    },
+    "team": {
+      "src": "/images/real/factory/factory-3-1600w.webp",
+      "srcset": "/images/real/factory/factory-3-400w.webp 400w, /images/real/factory/factory-3-800w.webp 800w, /images/real/factory/factory-3-1600w.webp 1600w",
+      "alt": "团队协作 / Team Collaboration"
+    }
+  },
+  "products": {
+    "patent-133": {
+      "src": "/images/real/products/patent-133-800w.webp",
+      "srcset": "/images/real/products/patent-133-400w.webp 400w, /images/real/products/patent-133-800w.webp 800w, /images/real/products/patent-133-1600w.webp 1600w",
+      "alt": "工具箱 133 外观专利产品 / Tool Box 133 Patent Design"
+    },
+    "patent-01": {
+      "src": "/images/real/products/patent-01-800w.webp",
+      "srcset": "/images/real/products/patent-01-400w.webp 400w, /images/real/products/patent-01-800w.webp 800w, /images/real/products/patent-01-1600w.webp 1600w",
+      "alt": "工具箱 01 外观专利产品 / Tool Box 01 Patent"
+    },
+    "patent-dual-latch": {
+      "src": "/images/real/products/patent-双扣-800w.webp",
+      "srcset": "/images/real/products/patent-双扣-400w.webp 400w, /images/real/products/patent-双扣-800w.webp 800w, /images/real/products/patent-双扣-1600w.webp 1600w",
+      "alt": "多功能双扣塑料工具箱 / Dual-Latch Plastic Tool Box"
+    },
+    "patent-dual-open": {
+      "src": "/images/real/products/patent-双开-800w.webp",
+      "srcset": "/images/real/products/patent-双开-400w.webp 400w, /images/real/products/patent-双开-800w.webp 800w, /images/real/products/patent-双开-1600w.webp 1600w",
+      "alt": "一体成型双开工具箱 / Integrated Dual-Open Tool Box"
+    },
+    "patent-multi": {
+      "src": "/images/real/products/patent-多功能-800w.webp",
+      "srcset": "/images/real/products/patent-多功能-400w.webp 400w, /images/real/products/patent-多功能-800w.webp 800w, /images/real/products/patent-多功能-1600w.webp 1600w",
+      "alt": "多功能塑料工具箱 / Multi-Function Plastic Tool Box"
+    },
+    "patent-claw": {
+      "src": "/images/real/products/patent-爪扣-800w.webp",
+      "srcset": "/images/real/products/patent-爪扣-400w.webp 400w, /images/real/products/patent-爪扣-800w.webp 800w, /images/real/products/patent-爪扣-1600w.webp 1600w",
+      "alt": "工具箱爪扣 / Tool Box Claw Latch"
+    }
+  },
+  "productLines": {
+    "military-tactical-case": {
+      "default": {
+        "src": "/images/military-tactical-case/rifle-case-tactical-800w.webp",
+        "srcset": "/images/military-tactical-case/rifle-case-tactical-400w.webp 400w, /images/military-tactical-case/rifle-case-tactical-800w.webp 800w, /images/military-tactical-case/rifle-case-tactical-1600w.webp 1600w",
+        "alt": "MIL-SPEC Tactical Rifle Case / MIL-SPEC 军规步枪战术防护箱"
+      },
+      "rifle-case": {
+        "src": "/images/military-tactical-case/rifle-case-tactical-800w.webp",
+        "srcset": "/images/military-tactical-case/rifle-case-tactical-400w.webp 400w, /images/military-tactical-case/rifle-case-tactical-800w.webp 800w, /images/military-tactical-case/rifle-case-tactical-1600w.webp 1600w",
+        "alt": "Rifle Case / 战术枪箱"
+      },
+      "ammo-case": {
+        "src": "/images/military-tactical-case/ammo-can-stack-800w.webp",
+        "srcset": "/images/military-tactical-case/ammo-can-stack-400w.webp 400w, /images/military-tactical-case/ammo-can-stack-800w.webp 800w, /images/military-tactical-case/ammo-can-stack-1600w.webp 1600w",
+        "alt": "Ammo Storage Case / 弹药储存箱"
+      },
+      "tactical-medical-case": {
+        "src": "/images/military-tactical-case/tactical-medical-kit-800w.webp",
+        "srcset": "/images/military-tactical-case/tactical-medical-kit-400w.webp 400w, /images/military-tactical-case/tactical-medical-kit-800w.webp 800w, /images/military-tactical-case/tactical-medical-kit-1600w.webp 1600w",
+        "alt": "Tactical Medical Case / 战术医疗箱"
+      }
+    },
+    "drone-case": {
+      "default": {
+        "src": "/images/drone-case/uav-hard-case-ip67-outdoor-800w.webp",
+        "srcset": "/images/drone-case/uav-hard-case-ip67-outdoor-400w.webp 400w, /images/drone-case/uav-hard-case-ip67-outdoor-800w.webp 800w, /images/drone-case/uav-hard-case-ip67-outdoor-1600w.webp 1600w",
+        "alt": "IP67 Waterproof Drone Hard Case / IP67 防水无人机硬壳箱"
+      },
+      "uav-battery-case": {
+        "src": "/images/drone-case/uav-battery-case-explosion-proof-800w.webp",
+        "srcset": "/images/drone-case/uav-battery-case-explosion-proof-400w.webp 400w, /images/drone-case/uav-battery-case-explosion-proof-800w.webp 800w, /images/drone-case/uav-battery-case-explosion-proof-1600w.webp 1600w",
+        "alt": "Explosion-Proof UAV Battery Case / 防爆无人机电池箱"
+      },
+      "uav-rtk-case": {
+        "src": "/images/drone-case/uav-rtk-survey-case-800w.webp",
+        "srcset": "/images/drone-case/uav-rtk-survey-case-400w.webp 400w, /images/drone-case/uav-rtk-survey-case-800w.webp 800w, /images/drone-case/uav-rtk-survey-case-1600w.webp 1600w",
+        "alt": "UAV RTK Ground Station Case / 测绘无人机 RTK 地面站箱"
+      },
+      "underwater-rov-case": {
+        "src": "/images/drone-case/underwater-rov-case-marine-800w.webp",
+        "srcset": "/images/drone-case/underwater-rov-case-marine-400w.webp 400w, /images/drone-case/underwater-rov-case-marine-800w.webp 800w, /images/drone-case/underwater-rov-case-marine-1600w.webp 1600w",
+        "alt": "Underwater ROV Case / 水下 ROV 机器人箱"
+      },
+      "fpv-drone-backpack": {
+        "src": "/images/drone-case/fpv-drone-backpack-outdoor-800w.webp",
+        "srcset": "/images/drone-case/fpv-drone-backpack-outdoor-400w.webp 400w, /images/drone-case/fpv-drone-backpack-outdoor-800w.webp 800w, /images/drone-case/fpv-drone-backpack-outdoor-1600w.webp 1600w",
+        "alt": "FPV Drone Hard Backpack / FPV 穿越机硬壳背包"
+      },
+      "all-in-one-drone-case": {
+        "src": "/images/drone-case/all-in-one-drone-case-open-800w.webp",
+        "srcset": "/images/drone-case/all-in-one-drone-case-open-400w.webp 400w, /images/drone-case/all-in-one-drone-case-open-800w.webp 800w, /images/drone-case/all-in-one-drone-case-open-1600w.webp 1600w",
+        "alt": "All-in-one Drone Hard Case / 无人机全套一体箱"
+      }
+    },
+    "instrument-case": {
+      "default": {
+        "src": "/images/instrument-case/surveying-instrument-case-800w.webp",
+        "srcset": "/images/instrument-case/surveying-instrument-case-400w.webp 400w, /images/instrument-case/surveying-instrument-case-800w.webp 800w, /images/instrument-case/surveying-instrument-case-1600w.webp 1600w",
+        "alt": "Surveying Instrument Case / 测绘仪器箱"
+      },
+      "fusion-splicer-case": {
+        "src": "/images/instrument-case/fusion-splicer-case-800w.webp",
+        "srcset": "/images/instrument-case/fusion-splicer-case-400w.webp 400w, /images/instrument-case/fusion-splicer-case-800w.webp 800w, /images/instrument-case/fusion-splicer-case-1600w.webp 1600w",
+        "alt": "Fusion Splicer Case / 光纤熔接机箱"
+      },
+      "thermal-imager-case": {
+        "src": "/images/instrument-case/thermal-imager-case-800w.webp",
+        "srcset": "/images/instrument-case/thermal-imager-case-400w.webp 400w, /images/instrument-case/thermal-imager-case-800w.webp 800w, /images/instrument-case/thermal-imager-case-1600w.webp 1600w",
+        "alt": "Thermal Imager Case / 热成像仪箱"
+      }
+    },
+    "waterproof-case": {
+      "default": {
+        "src": "/images/waterproof-case/waterproof-case-camping-800w.webp",
+        "srcset": "/images/waterproof-case/waterproof-case-camping-400w.webp 400w, /images/waterproof-case/waterproof-case-camping-800w.webp 800w, /images/waterproof-case/waterproof-case-camping-1600w.webp 1600w",
+        "alt": "Waterproof Outdoor Camping Case / 防水户外露营收纳箱"
+      },
+      "drifting-case": {
+        "src": "/images/waterproof-case/drifting-case-river-800w.webp",
+        "srcset": "/images/waterproof-case/drifting-case-river-400w.webp 400w, /images/waterproof-case/drifting-case-river-800w.webp 800w, /images/waterproof-case/drifting-case-river-1600w.webp 1600w",
+        "alt": "Drifting Waterproof Case / 漂流专用防水箱"
+      },
+      "car-roof-cargo-box": {
+        "src": "/images/waterproof-case/car-roof-cargo-winter-800w.webp",
+        "srcset": "/images/waterproof-case/car-roof-cargo-winter-400w.webp 400w, /images/waterproof-case/car-roof-cargo-winter-800w.webp 800w, /images/waterproof-case/car-roof-cargo-winter-1600w.webp 1600w",
+        "alt": "Car Roof Cargo Box / 车顶行李箱"
+      }
+    },
+    "medical-case": {
+      "default": {
+        "src": "/images/medical-case/cold-chain-box-lab-800w.webp",
+        "srcset": "/images/medical-case/cold-chain-box-lab-400w.webp 400w, /images/medical-case/cold-chain-box-lab-800w.webp 800w, /images/medical-case/cold-chain-box-lab-1600w.webp 1600w",
+        "alt": "Medical Cold Chain Box / 医疗冷链运输箱"
+      },
+      "medical-cold-chain-box": {
+        "src": "/images/medical-case/cold-chain-box-lab-800w.webp",
+        "srcset": "/images/medical-case/cold-chain-box-lab-400w.webp 400w, /images/medical-case/cold-chain-box-lab-800w.webp 800w, /images/medical-case/cold-chain-box-lab-1600w.webp 1600w",
+        "alt": "Medical Cold Chain Transport Box"
+      },
+      "biological-specimen-carrier": {
+        "src": "/images/medical-case/un3373-biological-sample-800w.webp",
+        "srcset": "/images/medical-case/un3373-biological-sample-400w.webp 400w, /images/medical-case/un3373-biological-sample-800w.webp 800w, /images/medical-case/un3373-biological-sample-1600w.webp 1600w",
+        "alt": "UN3373 Biological Specimen Carrier / UN3373 生物样本运输箱"
+      },
+      "medical-emergency-case": {
+        "src": "/images/medical-case/emergency-first-aid-ambulance-800w.webp",
+        "srcset": "/images/medical-case/emergency-first-aid-ambulance-400w.webp 400w, /images/medical-case/emergency-first-aid-ambulance-800w.webp 800w, /images/medical-case/emergency-first-aid-ambulance-1600w.webp 1600w",
+        "alt": "Medical Emergency Case / 急救医疗箱"
+      }
+    },
+    "engineering-plastic-case": {
+      "default": {
+        "src": "/images/engineering-plastic-case/pp-case-factory-800w.webp",
+        "srcset": "/images/engineering-plastic-case/pp-case-factory-400w.webp 400w, /images/engineering-plastic-case/pp-case-factory-800w.webp 800w, /images/engineering-plastic-case/pp-case-factory-1600w.webp 1600w",
+        "alt": "PP Engineering Plastic Case / PP 工程塑料箱"
+      },
+      "pp-case": {
+        "src": "/images/engineering-plastic-case/pp-case-factory-800w.webp",
+        "srcset": "/images/engineering-plastic-case/pp-case-factory-400w.webp 400w, /images/engineering-plastic-case/pp-case-factory-800w.webp 800w, /images/engineering-plastic-case/pp-case-factory-1600w.webp 1600w",
+        "alt": "PP Case / PP 工具箱"
+      },
+      "abs-case": {
+        "src": "/images/engineering-plastic-case/abs-case-industrial-800w.webp",
+        "srcset": "/images/engineering-plastic-case/abs-case-industrial-400w.webp 400w, /images/engineering-plastic-case/abs-case-industrial-800w.webp 800w, /images/engineering-plastic-case/abs-case-industrial-1600w.webp 1600w",
+        "alt": "ABS Hard Case / ABS 硬壳箱"
+      }
+    },
+    "tool-box": {
+      "default": {
+        "src": "/images/tool-box/industrial-tool-box-mechanic-800w.webp",
+        "srcset": "/images/tool-box/industrial-tool-box-mechanic-400w.webp 400w, /images/tool-box/industrial-tool-box-mechanic-800w.webp 800w, /images/tool-box/industrial-tool-box-mechanic-1600w.webp 1600w",
+        "alt": "Industrial Tool Box / 工业工具箱"
+      },
+      "turnover-box": {
+        "src": "/images/tool-box/turnover-box-warehouse-800w.webp",
+        "srcset": "/images/tool-box/turnover-box-warehouse-400w.webp 400w, /images/tool-box/turnover-box-warehouse-800w.webp 800w, /images/tool-box/turnover-box-warehouse-1600w.webp 1600w",
+        "alt": "Logistics Turnover Box / 物流周转箱"
+      }
+    },
+    "camera-stage-case": {
+      "default": {
+        "src": "/images/camera-stage-case/dslr-camera-case-800w.webp",
+        "srcset": "/images/camera-stage-case/dslr-camera-case-400w.webp 400w, /images/camera-stage-case/dslr-camera-case-800w.webp 800w, /images/camera-stage-case/dslr-camera-case-1600w.webp 1600w",
+        "alt": "Camera Equipment Case / 摄影器材箱"
+      },
+      "stage-lighting-case": {
+        "src": "/images/camera-stage-case/stage-lighting-case-800w.webp",
+        "srcset": "/images/camera-stage-case/stage-lighting-case-400w.webp 400w, /images/camera-stage-case/stage-lighting-case-800w.webp 800w, /images/camera-stage-case/stage-lighting-case-1600w.webp 1600w",
+        "alt": "Stage Lighting Case / 舞台灯光箱"
+      }
+    },
+    "trolley-case": {
+      "default": {
+        "src": "/images/trolley-case/business-trolley-luxury-800w.webp",
+        "srcset": "/images/trolley-case/business-trolley-luxury-400w.webp 400w, /images/trolley-case/business-trolley-luxury-800w.webp 800w, /images/trolley-case/business-trolley-luxury-1600w.webp 1600w",
+        "alt": "Business Trolley Case / 商务拉杆箱"
+      },
+      "gift-case": {
+        "src": "/images/trolley-case/gift-case-luxury-800w.webp",
+        "srcset": "/images/trolley-case/gift-case-luxury-400w.webp 400w, /images/trolley-case/gift-case-luxury-800w.webp 800w, /images/trolley-case/gift-case-luxury-1600w.webp 1600w",
+        "alt": "Premium Gift Case / 高端礼品箱"
+      }
+    }
+  },
+  "logo": "/favicon.svg"
+}

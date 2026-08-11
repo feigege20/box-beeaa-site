@@ -1,0 +1,136 @@
+﻿{
+    "started_at":  "2026-08-01T18:50:00+08:00",
+    "target_hours":  38,
+    "current_phase":  "PAUSED by FRED 2026-08-04 19:25 (HIT 11229 reached, B-series 38h-master cron disabled)",
+    "elapsed_hours":  149,
+    "remaining_hours":  -111,
+    "last_batch":  {
+                       "completed_at":  "2026-08-04T18:20:00+00:00",
+                       "name":  "B1196-B1200: 50 case studies (AI Yoga 2/Pilates 2/Beverage 2/Apparel 2/Footwear 2) - HIT 11229 [PAUSED]",
+                       "total_case_studies":  11229,
+                       "b_tier_pages":  38100,
+                       "deployment_id":  "R2-only mode",
+                       "commit":  "pending"
+                   },
+    "phases":  {
+                   "PAUSE_LOG":  {
+                                     "paused_at":  "2026-08-04T19:25:00+08:00",
+                                     "paused_by":  "FRED directive: 先暂停 B-series",
+                                     "last_completed_batch":  "B1196-B1200",
+                                     "last_hit":  11229,
+                                     "last_commit":  "2d7bed7a",
+                                     "next_resume_point":  "B1201 (待 FRED 决定是否继续)",
+                                     "crons_disabled":  [
+                                                            "box-beeaa-38h-master",
+                                                            "box-beeaa-daily-check"
+                                                        ]
+                                 },
+                   "A":  {
+                             "name":  "Schema 全站",
+                             "total_batches":  10,
+                             "completed":  6
+                         },
+                   "B":  {
+                             "name":  "内容扩写 (B-series PAUSED at B1200 / HIT 11229 — FRED指令 2026-08-04 19:25)",
+                             "total_batches":  30,
+                             "completed":  250
+                         },
+                   "D":  {
+                             "name":  "SEO/AI 优化",
+                             "total_batches":  4,
+                             "completed":  4
+                         },
+                   "Phase1":  {
+                                  "name":  "Schema 注入 + cross-link (1386 case studies)",
+                                  "completed_at":  "2026-08-03T12:05:20+08:00",
+                                  "deployment_id":  "77b008ad"
+                              },
+                   "Phase2":  {
+                                  "name":  "B-tier 批量长尾页 (1514 pages)",
+                                  "completed_at":  "2026-08-03T12:20:00+08:00",
+                                  "deployment_id":  "4766139a"
+                              },
+                   "Phase2_5x":  {
+                                     "name":  "B-tier 5x 扩展 (20,446 pages + 21,960 R2)",
+                                     "completed_at":  "2026-08-03T13:50:00+08:00",
+                                     "deployment_id":  "f3e0ea0d"
+                                 },
+                   "Phase3.1":  {
+                                    "name":  "FAQ 块扩展 (48 pages × 12 FAQs = 540 Q\u0026As)",
+                                    "completed_at":  "2026-08-03T12:35:00+08:00",
+                                    "deployment_id":  "c968c4e9"
+                                },
+                   "Phase3.2":  {
+                                    "name":  "Comparison 页扩展 (20 new + 8 original = 28 EN + 28 ZH)",
+                                    "completed_at":  "2026-08-03T12:55:00+08:00",
+                                    "deployment_id":  "d1e7dfa5"
+                                },
+                   "A1-A6":  {
+                                 "name":  "A档 6 任务 (image verify + B-tier 5x + schema fix + 5 blogs + speed + cache)",
+                                 "completed_at":  "2026-08-03T14:30:00+08:00",
+                                 "deployment_id":  "f3e0ea0d"
+                             },
+                   "B153-B201":  {
+                                     "name":  "B153-B201: 100 case studies (Energy→CPG) - HIT 705→1191",
+                                     "completed_at":  "2026-08-03T20:20:00+08:00",
+                                     "deployment_id":  "030dca7a"
+                                 },
+                   "Recovery183":  {
+                                       "name":  "Recovery: 183 missing case studies (B-series gap)",
+                                       "completed_at":  "2026-08-03T16:35:00+08:00",
+                                       "deployment_id":  "562e5adf"
+                                   },
+                   "B202-B250":  {
+                                     "name":  "B202-B250: 49 batches = 490 case studies (Electronics→Car Rental) - 49 fresh industries",
+                                     "completed_at":  "2026-08-03T22:12:00+08:00",
+                                     "deployment_id":  "cb115c8d"
+                                 },
+                   "BrandLeakFix":  {
+                                        "name":  "Brand-name leak fix: 中山市伟立塑料制品有限公司 → 客信新材料（广东）有限公司 (565 files) + ROV image replace (8 R2 paths)",
+                                        "completed_at":  "2026-08-04T11:25:00+00:00",
+                                        "files_fixed":  565,
+                                        "images_replaced":  8
+                                    }
+               },
+    "content_stats":  {
+                          "case_studies":  11229,
+                          "b_tier_pages":  38100,
+                          "ai_images":  535,
+                          "internal_links":  380,
+                          "faq_qa_added":  5820,
+                          "comparison_pages":  51,
+                          "industry_hubs":  6,
+                          "guides":  28,
+                          "spec_sheets":  9,
+                          "test_reports":  9,
+                          "entities":  8,
+                          "tools":  5
+                      },
+    "cumulative_stats":  {
+                             "total_html_files":  66000,
+                             "r2_files_box_en_b":  42000,
+                             "r2_files_box_zh":  42000,
+                             "pages_file_count":  20003,
+                             "cloudflare_deploys":  450,
+                             "r2_uploads_cumulative":  52100,
+                             "github_commits":  554,
+                             "total_cost_usd":  5,
+                             "total_case_studies":  11229
+                         },
+    "v3_poc":  {
+                   "zh_pages":  919,
+                   "en_pages":  919,
+                   "product_line":  "camera-stage-case",
+                   "started_at":  "2026-08-05T09:30:00+08:00",
+                   "total_lines":  234,
+                   "differentiation_pct":  75,
+                   "new_assets":  {
+                                      "v3_generator":  "keyword parser + 6 section 池 + 30 FAQ 池 + 5 opening × 7 layer + 5 differentiator × 7 layer",
+                                      "video_replacement":  "11 Tier 1 页面删 psste.com",
+                                      "middleware_v6":  "去 fallback + B-tier 301 模糊匹配"
+                                  },
+                   "previous_v2_differentiation_pct":  0.4,
+                   "unique_lines_avg":  175,
+                   "total":  1838
+               }
+}

@@ -1,0 +1,255 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "purpose": "FAQ 池 — 7 维差异化矩阵 #⑥，每页 5-8 条 FAQ（≥3 条独有）",
+    "strategy": "按 formula × product_line × layer 索引，每页 hash 选 5-8 条，至少 3 条本页独有"
+  },
+  "global": [
+    {
+      "q_zh": "客信新材料是工厂还是贸易商？",
+      "q_en": "Is KeXinMaterials a factory or a trading company?",
+      "a_zh": "客信新材料（广东）有限公司是源头工厂，自有厂房 18,000㎡，从原材料改性、模具开发、注塑/滚塑/吸塑、装配到出货全流程自主。位于广东东莞，欢迎预约实地考察。",
+      "a_en": "KeXinMaterials (Guangdong) Co., Ltd. is a source factory with an 18,000㎡ facility. We control the entire process from material modification, mold development, injection/rotational/thermoforming, assembly to shipping. Located in Dongguan, Guangdong, factory visits are welcome by appointment.",
+      "tags": ["global", "oem", "factory"]
+    },
+    {
+      "q_zh": "起订量 (MOQ) 是多少？",
+      "q_en": "What is your MOQ?",
+      "a_zh": "标准 SKU 起订量 50-100pcs，定制开模起订量 300pcs。如需小批量试产，可协商 50pcs 起，但需共用现有模具。",
+      "a_en": "Standard SKUs have an MOQ of 50-100pcs; custom mold MOQ is 300pcs. Small batch trial orders of 50pcs are negotiable if we share existing molds.",
+      "tags": ["global", "wholesale", "oem"]
+    },
+    {
+      "q_zh": "交付周期多久？",
+      "q_en": "What is the lead time?",
+      "a_zh": "标准 SKU 现货 3 天内发货；常规定制 20-30 天；开模定制 35-45 天。东南亚、欧美、澳新可走海运 DDP 30-40 天。",
+      "a_en": "Standard SKUs ship within 3 days from stock. Custom orders 20-30 days. Custom mold 35-45 days. Sea shipping DDP to SEA / EU / NA / AU / NZ: 30-40 days.",
+      "tags": ["global", "oem", "wholesale", "export"]
+    },
+    {
+      "q_zh": "支持哪些付款方式？",
+      "q_en": "Which payment methods are supported?",
+      "a_zh": "支持 T/T 30%/70%、L/C at sight、信用证、PayPal（小单）、西联汇款。大额订单可分阶段付款。新客户首次合作建议 T/T 30%/70%。",
+      "a_en": "We support T/T 30%/70%, L/C at sight, Letter of Credit, PayPal (small orders), and Western Union. Large orders can use staged payment. New clients typically start with T/T 30%/70%.",
+      "tags": ["global", "export", "wholesale"]
+    },
+    {
+      "q_zh": "如何获取报价？",
+      "q_en": "How do I get a quote?",
+      "a_zh": "邮件 kexin@beeaa.com 发送需求（规格、尺寸、IP 等级、材质、数量、用途、目的地），12 小时内回复正式报价单（PDF + Excel）。紧急请加 WhatsApp +86 13590555309。",
+      "a_en": "Email kexin@beeaa.com with requirements (specs, dimensions, IP rating, material, quantity, application, destination). Formal PDF + Excel quote within 12 hours. For urgent requests, WhatsApp +86 13590555309.",
+      "tags": ["global", "oem", "wholesale", "export"]
+    },
+    {
+      "q_zh": "是否提供样品？",
+      "q_en": "Do you provide samples?",
+      "a_zh": "标准 SKU 样品免费（运费客户承担，5-7 个工作日 DHL/FedEx 送达）。定制样品需收开模费，量产后退还或抵扣货款。",
+      "a_en": "Standard SKU samples are free (shipping paid by client, 5-7 working days via DHL/FedEx). Custom samples require mold fees, refundable or deductible from bulk order.",
+      "tags": ["global", "oem"]
+    },
+    {
+      "q_zh": "认证有哪些？",
+      "q_en": "What certifications do you have?",
+      "a_zh": "ISO9001 质量管理体系、CE、RoHS、REACH、UN38.3（电池运输）、MSDS、ICAO PI 967（空运电池）、FDA（食品级）、UL、KC、PSE、SAA、GOST-R、FCC ID。",
+      "a_en": "ISO9001 QMS, CE, RoHS, REACH, UN38.3 (battery transport), MSDS, ICAO PI 967 (air battery), FDA (food grade), UL, KC, PSE, SAA, GOST-R, FCC ID.",
+      "tags": ["global", "export"]
+    },
+    {
+      "q_zh": "提供 OEM/ODM 代工服务吗？",
+      "q_en": "Do you offer OEM/ODM services?",
+      "a_zh": "提供全程 OEM/ODM 代工：3D 结构设计、模具开发、注塑/滚塑/吸塑、表面处理（丝印、烫金、激光雕刻、UV 喷涂）、中性包装、客 logo 贴标。无最低开模数量限制（小单可共用模）。",
+      "a_en": "Full OEM/ODM: 3D structural design, mold development, injection/rotomolding/thermoforming, surface finishing (silk-screen, hot stamping, laser engraving, UV spray), neutral packaging, client logo. No strict mold MOQ (small orders can share molds).",
+      "tags": ["global", "oem"]
+    }
+  ],
+  "by_formula": {
+    "特性+产品+商业意图": [
+      {
+        "q_zh": "IP67 是什么意思？能水下多深？",
+        "q_en": "What does IP67 mean? How deep can it go?",
+        "a_zh": "IP67 是国际防护等级标准：6 = 完全防尘，7 = 1 米水深浸没 30 分钟不进水。客信 IP67 防护箱通过 IEC 60529 测试，可短时浸入水中。如需更深水下使用，可定制 IP68（5-30 米）。",
+        "a_en": "IP67 is the international protection rating: 6 = dust-tight, 7 = immersion in 1m water for 30 minutes without ingress. Our IP67 cases pass IEC 60529. For deeper underwater use, IP68 (5-30m) is available.",
+        "tags": ["feature", "ip67"]
+      },
+      {
+        "q_zh": "防爆箱的防爆等级怎么选？",
+        "q_en": "How to choose explosion-proof rating?",
+        "a_zh": "常见有 Ex ib IIB T4（IIB 类气体，T4 温度组 ≤135℃）、Ex d IIB T4（隔爆型）、Ex e IIB（增安型）。锂电池运输多用 Ex ib IIB T4。客信提供认证方案，详询 kexin@beeaa.com。",
+        "a_en": "Common ratings: Ex ib IIB T4 (IIB gas, T4 temp ≤135°C), Ex d IIB T4 (flameproof), Ex e IIB (increased safety). Li-battery transport typically uses Ex ib IIB T4. Contact kexin@beeaa.com for certified solutions.",
+        "tags": ["feature", "explosion-proof"]
+      },
+      {
+        "q_zh": "军规 MIL-STD-810G 通过哪些测试？",
+        "q_en": "What tests does MIL-STD-810G cover?",
+        "a_zh": "MIL-STD-810G 涵盖 28 类环境测试：跌落、振动、冲击、湿热、盐雾、霉菌、太阳辐射、低气压、高低温、淋雨、沙尘、爆炸大气等。客信产品通过其中 15 项核心测试，可按需选配全项。",
+        "a_en": "MIL-STD-810G covers 28 environmental tests: drop, vibration, shock, humid heat, salt fog, fungus, solar radiation, low pressure, high/low temp, rain, sand dust, explosive atmosphere, etc. Our products pass 15 core tests; full suite available.",
+        "tags": ["feature", "mil-spec"]
+      },
+      {
+        "q_zh": "防静电箱的电阻值是多少？",
+        "q_en": "What is the resistance of ESD boxes?",
+        "a_zh": "客信防静电箱分三档：导电型 10^3-10^5 Ω（泄放静电快）、静电耗散型 10^6-10^9 Ω（行业标准）、绝缘型 10^10-10^12 Ω（防摩擦起电）。电子元件运输推荐 10^6-10^9 Ω。",
+        "a_en": "Three grades: conductive 10^3-10^5 Ω (fast static discharge), static dissipative 10^6-10^9 Ω (industry standard), insulative 10^10-10^12 Ω (anti-triboelectric). For electronics transport, 10^6-10^9 Ω is recommended.",
+        "tags": ["feature", "anti-static"]
+      }
+    ],
+    "规格+产品+批发/定制": [
+      {
+        "q_zh": "小型 / 中型 / 大型 / 超大 是怎么划分的？",
+        "q_en": "How are small / medium / large / extra large defined?",
+        "a_zh": "客信尺寸分级（外尺寸长边）：小型 ≤300mm、中型 300-500mm、大型 500-800mm、超大 800-1200mm、特大 >1200mm。同一产品不同尺寸内部容积差 3-5 倍。",
+        "a_en": "Size classification (outer longest side): Small ≤300mm, Medium 300-500mm, Large 500-800mm, Extra Large 800-1200mm, Oversize >1200mm. Same product at different sizes has 3-5x volume difference.",
+        "tags": ["spec"]
+      },
+      {
+        "q_zh": "加长箱和加深箱区别是什么？",
+        "q_en": "What is the difference between long and deep cases?",
+        "a_zh": "加长箱（如长条形工具箱、狙击枪箱）针对长形物品；加深箱（更深的内空）针对体积大但短小的物品。客信可同时定制加长 + 加深。",
+        "a_en": "Long cases (e.g., elongated toolbox, rifle case) suit long items. Deep cases (deeper interior) suit voluminous but short items. Both can be combined for custom orders.",
+        "tags": ["spec"]
+      },
+      {
+        "q_zh": "批发价目表如何获取？",
+        "q_en": "How to get the wholesale price list?",
+        "a_zh": "发送公司营业执照 + 采购需求（规格、数量、目的地）至 kexin@beeaa.com，注明「批发报价」，12 小时内获取 PDF + Excel 双语报价单。500+ pcs 享阶梯价。",
+        "a_en": "Send your business license + purchase requirements (specs, quantity, destination) to kexin@beeaa.com with subject 'Wholesale Quote'. Bilingual PDF + Excel quote within 12 hours. Tiered pricing for 500+ pcs.",
+        "tags": ["wholesale", "spec"]
+      }
+    ],
+    "产品+出口+地域": [
+      {
+        "q_zh": "出口到美国需要哪些认证？",
+        "q_en": "What certifications are needed for US exports?",
+        "a_zh": "基础：CE / RoHS / FCC（电子电气）。特殊：UL（电源、电池）、FDA（食品/医疗）、DOT（运输）、CPSIA（儿童相关）、UN38.3（电池）、FCC ID（无线）。客信可提供全套文件。",
+        "a_en": "Basic: CE / RoHS / FCC (electrical). Special: UL (power, battery), FDA (food/medical), DOT (transport), CPSIA (children), UN38.3 (battery), FCC ID (wireless). We provide full documentation.",
+        "tags": ["export", "north-america"]
+      },
+      {
+        "q_zh": "出口欧盟需要哪些认证？",
+        "q_en": "What certifications are needed for EU exports?",
+        "a_zh": "CE（强制，多指令）、REACH（化学品）、RoHS 2.0（有害物质）、PPE（个人防护）、EN 60529（IP 等级）、EN 62262（IK 抗冲击）、UN3373（生物样本）。客信所有产品支持 CE 一站式服务。",
+        "a_en": "CE (mandatory, multiple directives), REACH (chemicals), RoHS 2.0 (hazardous substances), PPE (personal protection), EN 60529 (IP), EN 62262 (IK), UN3373 (biological). One-stop CE service available.",
+        "tags": ["export", "europe"]
+      },
+      {
+        "q_zh": "中东市场需要 GCC 认证吗？",
+        "q_en": "Is GCC certification required for Middle East markets?",
+        "a_zh": "沙特：SABER 强制（PCOC + SCOC）。阿联酋：ECAS / EQM。科威特：KUCAS。卡塔尔：G-Mark。客信提供 GCC 一站式认证 + 沙特 SABER 法规培训。",
+        "a_en": "Saudi Arabia: SABER mandatory (PCOC + SCOC). UAE: ECAS / EQM. Kuwait: KUCAS. Qatar: G-Mark. We offer one-stop GCC certification + SABER regulatory training.",
+        "tags": ["export", "middle-east"]
+      },
+      {
+        "q_zh": "海运 DDP 到美国多久到？多少费用？",
+        "q_en": "How long and how much for DDP sea shipping to the US?",
+        "a_zh": "DDP 海运至美国西海岸（洛杉矶/长滩）：25-32 天，100kg 约 USD 0.8-1.5/kg。东海岸（纽约）：35-40 天，约 USD 1.2-2.0/kg。包含关税、清关、末端派送。",
+        "a_en": "DDP sea to US West Coast (LA / Long Beach): 25-32 days, ~USD 0.8-1.5/kg for 100kg+. East Coast (NY): 35-40 days, ~USD 1.2-2.0/kg. Includes tariff, customs, last-mile delivery.",
+        "tags": ["export", "north-america"]
+      },
+      {
+        "q_zh": "出口到俄罗斯需要注意什么？",
+        "q_en": "What to note for exporting to Russia?",
+        "a_zh": "需 GOST-R 认证、俄文说明书 + 标签、EAC 标志（欧亚经济联盟）。目前建议走哈萨克斯坦 / 白俄罗斯转口，或使用 EAEU 渠道。客信可提供俄文本地化服务。",
+        "a_en": "GOST-R certification, Russian manual + labels, EAC mark (EAEU) required. Currently recommend re-export via Kazakhstan / Belarus, or use EAEU channels. We offer Russian localization.",
+        "tags": ["export", "russia"]
+      }
+    ],
+    "产品+疑问词": [
+      {
+        "q_zh": "防护箱怎么选？",
+        "q_en": "How to choose a protective case?",
+        "a_zh": "5 步选型：① 明确保护对象（重量、尺寸、敏感性）② 评估使用环境（IP 等级、温度、振动）③ 确认行业认证（食品/医疗/电池/军规）④ 商业意图（批发/定制/出口）⑤ 预算（PP / ABS / 玻纤 / 滚塑 价差 2-3 倍）。",
+        "a_en": "5-step selection: ① Define items to protect (weight, size, sensitivity) ② Evaluate environment (IP rating, temperature, vibration) ③ Confirm industry certifications (food/medical/battery/military) ④ Commercial intent (wholesale/custom/export) ⑤ Budget (PP/ABS/GF/rotomold price 2-3x difference).",
+        "tags": ["question", "how-to-choose"]
+      },
+      {
+        "q_zh": "防护箱多少钱一个？",
+        "q_en": "How much is a protective case?",
+        "a_zh": "客信零售价（参考）：PP 小型 RMB 80-150，PP 中型 150-300，ABS 中型 200-400，玻纤 PP 中型 350-600，滚塑大型 600-1500。定制加 30-80%。批发 500+ 享 30% 折扣。",
+        "a_en": "Reference retail prices: PP small USD 12-22, PP medium USD 22-45, ABS medium USD 30-60, GF-PP medium USD 50-90, rotomold large USD 90-220. Custom adds 30-80%. Wholesale 500+ pcs 30% off.",
+        "tags": ["question", "price"]
+      },
+      {
+        "q_zh": "定制流程是怎样的？",
+        "q_en": "What is the customization process?",
+        "a_zh": "5 步定制：① 需求沟通（48h 回复，2-3 轮澄清）② 3D 设计 + 报价（3 个工作日，2 轮修改）③ 打样 + 签样（7-10 天，1 轮返工）④ 量产（30 天，含 IQC + FQC）⑤ 出货（海运 / 空运 / 快递，含文件）。",
+        "a_en": "5-step customization: ① Requirements (48h reply, 2-3 clarification rounds) ② 3D design + quote (3 working days, 2 revision rounds) ③ Sample + sign-off (7-10 days, 1 rework) ④ Production (30 days, IQC + FQC) ⑤ Shipping (sea / air / courier, docs included).",
+        "tags": ["question", "process"]
+      },
+      {
+        "q_zh": "起订量能少一些吗？",
+        "q_en": "Can MOQ be lower?",
+        "a_zh": "标准 SKU：50 pcs 起步，可享批发价。定制：300 pcs 起步，50 pcs 可协商但需共用现有模具（无独立开模）。所有小批量订单均可加急 15 天交付（加 20% 加急费）。",
+        "a_en": "Standard SKUs: 50 pcs MOQ with wholesale pricing. Custom: 300 pcs MOQ; 50 pcs negotiable if sharing existing molds (no dedicated tooling). All small batches can rush in 15 days (20% rush fee).",
+        "tags": ["question", "moq"]
+      }
+    ]
+  },
+  "by_product": {
+    "drone-case": [
+      {
+        "q_zh": "大疆御 3 适配哪款箱子？",
+        "q_en": "Which case fits DJI Mavic 3?",
+        "a_zh": "客信 KX-D300 系列专为 DJI 御 3 设计，含主机 + 3 电池 + 遥控器 + 充电管家 + ND 滤镜位。也可选 KX-D350 升级版（4 电池 + 4 块备用螺旋桨）。IP67，可定制 logo。",
+        "a_en": "Our KX-D300 series is designed for DJI Mavic 3 with slots for aircraft + 3 batteries + remote + charging hub + ND filters. Upgrade to KX-D350 for 4 batteries + 4 spare propellers. IP67, custom logo available.",
+        "tags": ["drone-case", "spec"]
+      },
+      {
+        "q_zh": "无人机电池箱能过空运吗？",
+        "q_en": "Can drone battery cases be air-shipped?",
+        "a_zh": "可以。客信提供 UN38.3 + MSDS + 41 节 PI 967（≤100Wh 锂电池）+ 965（>100Wh）全套空运文件。IATA 2024 新规下，单箱 ≤10kg 锂电池无需危险品申报。",
+        "a_en": "Yes. We provide UN38.3 + MSDS + Section II PI 967 (≤100Wh Li-battery) + PI 965 (>100Wh) full air transport docs. Under IATA 2024, ≤10kg Li-battery per case does not require dangerous goods declaration.",
+        "tags": ["drone-case", "export", "feature"]
+      },
+      {
+        "q_zh": "穿越机硬壳包能装几块电池？",
+        "q_en": "How many FPV batteries fit in a hard backpack?",
+        "a_zh": "标配 6 块（1300mAh 5S），最大 12 块（可定制扩展仓）。同时容纳 1 个 FPV 头显 + 1 个遥控器 + 充电板。KX-FPV01 系列。",
+        "a_en": "Standard 6 batteries (1300mAh 5S), max 12 (custom expandable bay). Also fits 1 FPV goggle + 1 remote + 1 charging pad. KX-FPV01 series.",
+        "tags": ["drone-case", "spec"]
+      }
+    ],
+    "medical-case": [
+      {
+        "q_zh": "核酸样本箱需要哪些认证？",
+        "q_en": "What certifications do nucleic acid sample cases need?",
+        "a_zh": "UN3373 B 类（生物物质 B 类）、IATA 包装指令 650、ADR（欧洲陆运）、DOT 49 CFR（美国陆运）、WHO PQS 性能规范。客信提供主容器 + 次容器 + 外包装三层方案。",
+        "a_en": "UN3373 Category B, IATA Packing Instruction 650, ADR (EU road), DOT 49 CFR (US road), WHO PQS performance spec. We provide primary + secondary + outer packaging 3-layer solution.",
+        "tags": ["medical-case", "certification"]
+      },
+      {
+        "q_zh": "疫苗冷链箱温度保持多久？",
+        "q_en": "How long do vaccine cold-chain cases maintain temperature?",
+        "a_zh": "2-8℃ 冷链箱：被动保温 48-72h（PCM 相变材料）。-20℃ 冷冻箱：-25℃±2℃ 维持 96h。-70℃ 干冰箱：VIP 真空绝热板，-70℃±2℃ 维持 72h。GPS 温度记录仪可选。",
+        "a_en": "2-8°C cold chain: 48-72h passive (PCM phase change). -20°C freezer: -25°C±2°C for 96h. -70°C dry ice: VIP vacuum insulation, -70°C±2°C for 72h. GPS temperature logger optional.",
+        "tags": ["medical-case", "spec"]
+      }
+    ],
+    "waterproof-case": [
+      {
+        "q_zh": "漂流箱能浮起来吗？",
+        "q_en": "Do drifting cases float?",
+        "a_zh": "客信漂流专用箱 KX-WP-DRIFT 系列自带漂浮设计（高密度 PE 闭孔结构 + 密封空气腔），可在 50kg 满载下保持漂浮。红色高可视度外观，1.5m 抗跌落，标配肩带和快挂扣。",
+        "a_en": "Our KX-WP-DRIFT drifting cases have built-in buoyancy (high-density closed-cell PE + sealed air cavity), float with 50kg load. Red high-visibility exterior, 1.5m drop resistant, with shoulder strap and quick-clip.",
+        "tags": ["waterproof-case", "feature"]
+      }
+    ],
+    "military-tactical-case": [
+      {
+        "q_zh": "军规箱和普通箱的核心区别？",
+        "q_en": "Core differences between MIL-SPEC and regular cases?",
+        "a_zh": "军规箱通过 MIL-STD-810G 至少 15 项测试：跌落 1.2m+、振动 25G、抗盐雾 96h、霉菌 28 天、温度冲击 -40~+70℃。普通箱仅通过 IEC 60529 IP 等级。寿命差 5-10 倍。",
+        "a_en": "MIL-SPEC cases pass 15+ MIL-STD-810G tests: drop 1.2m+, vibration 25G, salt spray 96h, fungus 28 days, temp shock -40~+70°C. Regular cases only pass IEC 60529 IP rating. Lifespan difference 5-10x.",
+        "tags": ["military-tactical-case", "feature"]
+      }
+    ],
+    "trolley-case": [
+      {
+        "q_zh": "拉杆箱能登机吗？",
+        "q_en": "Are trolley cases carry-on size?",
+        "a_zh": "客信商务拉杆箱分 3 规格：20 寸（≤20×40×55cm，可登机）、24 寸（需托运）、28 寸（大件托运）。20 寸 + IP54 + 静音万向轮适合商旅。",
+        "a_en": "We offer 3 sizes: 20-inch (≤20×40×55cm, carry-on), 24-inch (checked), 28-inch (large checked). 20-inch + IP54 + silent PU wheels is ideal for business travel.",
+        "tags": ["trolley-case", "spec"]
+      }
+    ]
+  }
+}

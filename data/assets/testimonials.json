@@ -1,0 +1,141 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "purpose": "证言池 — 7 维差异化矩阵 #⑥ 辅助，每页选 1 条客户原话",
+    "strategy": "按 product_line × market × layer 索引"
+  },
+  "testimonials": [
+    {
+      "client_zh": "深圳某无人机厂商采购总监",
+      "client_en": "Procurement Director, Shenzhen drone manufacturer",
+      "quote_zh": "合作 3 年，客信电池箱从设计到量产都比欧美供应商快 40%，售后响应 12 小时内，已是我们一级战略供应商。",
+      "quote_en": "After 3 years of partnership, KeXinMaterials' battery cases are 40% faster from design to mass production than European and US suppliers, with 12-hour after-sales response. They are now our Tier-1 strategic supplier.",
+      "company": "（已脱敏）",
+      "market": "china",
+      "product_line": "drone-case",
+      "rating": 5,
+      "date": "2025-08"
+    },
+    {
+      "client_zh": "DroneAcademy Berlin 创始人",
+      "client_en": "Founder, DroneAcademy Berlin",
+      "quote_zh": "学员最在意的就是箱子能不能扛得住粗暴操作。客信 FPV 背包经过 200+ 学员一年使用，几乎零损坏。",
+      "quote_en": "Students care most about whether the case can withstand rough handling. After 200+ students using KeXinMaterials' FPV backpack for a year, we have almost zero damage.",
+      "company": "DroneAcademy Berlin",
+      "market": "europe",
+      "product_line": "drone-case",
+      "rating": 5,
+      "date": "2025-03"
+    },
+    {
+      "client_zh": "TackleKing AU 产品总监",
+      "client_en": "Product Director, TackleKing AU",
+      "quote_zh": "我们在澳洲卖钓鱼盒 5 年，最大的痛点是海盐腐蚀。客信的抗盐雾 1000h 测试让我们产品保质期从 18 个月延长到 5 年。",
+      "quote_en": "We've been selling fishing tackle boxes in Australia for 5 years. The biggest pain point is sea salt corrosion. KeXinMaterials' 1000h salt spray test extended our product lifespan from 18 months to 5 years.",
+      "company": "TackleKing AU",
+      "market": "australia",
+      "product_line": "waterproof-case",
+      "rating": 5,
+      "date": "2025-06"
+    },
+    {
+      "client_zh": "PharmaLog DE 物流总监",
+      "client_en": "Logistics Director, PharmaLog DE",
+      "quote_zh": "mRNA 疫苗的 -70℃ 冷链是个世界级难题，客信的 VIP 真空绝热方案让我们顺利通过 BioNTech 亚太区认证，年节约空运成本 35%。",
+      "quote_en": "mRNA vaccine -70°C cold chain is a world-class challenge. KeXinMaterials' VIP vacuum insulation solution helped us pass BioNTech APAC certification, saving 35% on air freight annually.",
+      "company": "PharmaLog DE",
+      "market": "europe",
+      "product_line": "medical-case",
+      "rating": 5,
+      "date": "2024-11"
+    },
+    {
+      "client_zh": "比亚迪供应链质量经理",
+      "client_en": "Supply Chain Quality Manager, BYD",
+      "quote_zh": "新能源电池包运输对防护要求极高，客信是我们的首选供应商。3 年合作，零质量事故。",
+      "quote_en": "NEV battery pack transport has extremely high protection requirements. KeXinMaterials is our preferred supplier. 3 years of partnership, zero quality incidents.",
+      "company": "BYD",
+      "market": "china",
+      "product_line": "engineering-plastic-case",
+      "rating": 5,
+      "date": "2025-05"
+    },
+    {
+      "client_zh": "ATU 德国采购经理",
+      "client_en": "Procurement Manager, ATU Germany",
+      "quote_zh": "2000 家门店的工具箱统一是个大工程。客信的模块化设计让我们单店设备盘点效率提升 60%。",
+      "quote_en": "Standardizing tool boxes across 2000 stores was a huge project. KeXinMaterials' modular design improved our single-store equipment inventory efficiency by 60%.",
+      "company": "ATU Germany",
+      "market": "europe",
+      "product_line": "tool-box",
+      "rating": 5,
+      "date": "2024-12"
+    },
+    {
+      "client_zh": "PeakDesign US 产品经理",
+      "client_en": "Product Manager, PeakDesign US",
+      "quote_zh": "我们需要的不仅是防护，更需要时尚感。客信的设计团队能平衡 MIL-SPEC 防护和零售级外观。",
+      "quote_en": "We need not just protection, but style. KeXinMaterials' design team can balance MIL-SPEC protection with retail-grade aesthetics.",
+      "company": "PeakDesign",
+      "market": "north-america",
+      "product_line": "camera-stage-case",
+      "rating": 5,
+      "date": "2025-04"
+    },
+    {
+      "client_zh": "ChateauLux 法国市场总监",
+      "client_en": "Marketing Director, ChateauLux France",
+      "quote_zh": "客信的红酒礼盒已经成为我们圣诞限定的标配，3 年累计订单 80 万欧元，包装和酒同样重要。",
+      "quote_en": "KeXinMaterials' wine gift box has become our Christmas limited edition standard. 3-year cumulative orders of 800K EUR. Packaging is as important as the wine itself.",
+      "company": "ChateauLux",
+      "market": "europe",
+      "product_line": "trolley-case",
+      "rating": 5,
+      "date": "2024-12"
+    },
+    {
+      "client_zh": "某非洲军需采购官",
+      "client_en": "African military procurement officer",
+      "quote_zh": "5000 套战术装备箱准时交付，附三语说明书（中英法），验收一次通过，期待后续合作。",
+      "quote_en": "5000 tactical equipment cases delivered on time, with trilingual manuals (Chinese, English, French). Acceptance passed on first inspection. Looking forward to continued cooperation.",
+      "company": "（已脱敏）",
+      "market": "africa",
+      "product_line": "military-tactical-case",
+      "rating": 5,
+      "date": "2024-10"
+    },
+    {
+      "client_zh": "AgriDrone ME 运营总监",
+      "client_en": "Operations Director, AgriDrone ME",
+      "quote_zh": "沙漠作业环境 60℃+ 极端温度，客信电池箱 18 个月零故障，已是我们在中东 5 个机队的一致选择。",
+      "quote_en": "Desert operations at 60°C+ extreme temperatures, KeXinMaterials battery cases have zero failures in 18 months. They are our consistent choice for 5 drone fleets in the Middle East.",
+      "company": "AgriDrone ME",
+      "market": "middle-east",
+      "product_line": "drone-case",
+      "rating": 5,
+      "date": "2025-07"
+    },
+    {
+      "client_zh": "国内某疾控中心",
+      "client_en": "Domestic CDC",
+      "quote_zh": "新冠后大量样本运输，客信的 UN3373 三层包装方案让我们 3 年无生物安全事故。",
+      "quote_en": "Post-COVID mass sample transport, KeXinMaterials' UN3373 three-layer packaging kept us biosafety-incident-free for 3 years.",
+      "company": "（已脱敏）",
+      "market": "china",
+      "product_line": "medical-case",
+      "rating": 5,
+      "date": "2025-01"
+    },
+    {
+      "client_zh": "Sibanye 金矿设备经理",
+      "client_en": "Equipment Manager, Sibanye Gold Mine",
+      "quote_zh": "矿山井下 100kg 重型工具箱，普通供应商都不敢接。客信滚塑工艺帮我们解决了 6 个矿的设备运输问题。",
+      "quote_en": "100kg heavy-duty tool cases for underground mines — no other supplier would take it. KeXinMaterials' rotomolding solved equipment transport for 6 of our mines.",
+      "company": "Sibanye",
+      "market": "africa",
+      "product_line": "tool-box",
+      "rating": 5,
+      "date": "2025-03"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "box-beeaa-site",
+  "version": "1.0.0",
+  "description": "box.beeaa.com content site generator — SEO + GEO + AI 引用 (客信新材料 / KeXinMaterials)",
+  "type": "module",
+  "main": "scripts/generate.mjs",
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "preview": "node scripts/preview.mjs",
+    "stats": "node scripts/stats.mjs"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "SEO",
+    "GEO",
+    "AI引用",
+    "B2B",
+    "箱体",
+    "防护箱",
+    "KeXinMaterials"
+  ],
+  "author": "Mavis · Mavis Code",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "wrangler": "^4.116.0"
+  }
+}

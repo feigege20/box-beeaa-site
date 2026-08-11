@@ -1,0 +1,317 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "purpose": "案例池 — 7 维差异化矩阵 #⑤，每页 1 段独有客户/场景故事",
+    "strategy": "按 product_line × sub_category × market 分配案例，每页 hash 选 1 个"
+  },
+  "cases": {
+    "drone-case": [
+      {
+        "id": "drn-001",
+        "client": "国内头部无人机厂商（已脱敏）",
+        "industry": "消费/行业无人机",
+        "challenge": "客户原电池箱防护仅 IP54，无法满足东南亚雨季作业需求，售后投诉率达 8%。",
+        "solution": "客信定制 IP67 玻纤增强 PP 电池箱，UN38.3 + 41 PI 967 双认证，3D 打样 7 天、量产 30 天。",
+        "result": "售后投诉率降至 0.5% 以下，海外销量提升 35%，客户 2025 年复购 8000+ 套。",
+        "market": "global",
+        "year": 2025
+      },
+      {
+        "id": "drn-002",
+        "client": "澳洲测绘公司 Geosurv Pty",
+        "industry": "测绘无人机",
+        "challenge": "RTK 地面站与 PPK 模块在运输中频繁因振动损坏，年损失约 25 万澳元。",
+        "solution": "客信定制防震等级 25G 的 RTK 地面站箱，EVA 模切内衬，IP65 防护。",
+        "result": "设备故障率从 12% 降至 1.8%，保险成本同步下降，2024 年签订 3 年长期合同。",
+        "market": "australia",
+        "year": 2024
+      },
+      {
+        "id": "drn-003",
+        "client": "中东植保服务商 AgriDrone ME",
+        "industry": "农业植保",
+        "challenge": "沙漠高温 60℃+ 下电池箱变形，药剂罐运输无防腐蚀方案。",
+        "solution": "客信定制 -40℃~+120℃ 耐温箱体，阻燃 PC + UV 抗老化涂层，专用药剂罐 EVA 模切。",
+        "result": "电池寿命延长 22%，药剂无渗漏，单架次作业效率提升 18%。",
+        "market": "middle-east",
+        "year": 2025
+      },
+      {
+        "id": "drn-004",
+        "client": "德国 FPV 培训机构 DroneAcademy Berlin",
+        "industry": "FPV 穿越机培训",
+        "challenge": "学员需每天携带 5-8 块电池 + 遥控器，传统背包在雨雪天渗水。",
+        "solution": "客信 FPV 硬壳双肩包，IP65，预切海绵电池位，4 块电池位可定制扩展。",
+        "result": "课程通过率从 65% 提升至 82%，学员满意度评分 4.8/5。",
+        "market": "europe",
+        "year": 2024
+      },
+      {
+        "id": "drn-005",
+        "client": "国内水下机器人公司 ROV-Tech",
+        "industry": "水下 ROV",
+        "challenge": "水下 30m 作业设备的回收与运输箱需同时满足防水、抗压、防腐蚀。",
+        "solution": "客信定制 IP68 滚塑箱，30m 水深 30 分钟不进水，防盐雾 1000h 测试。",
+        "result": "出海作业装备完好率从 78% 提升至 99%，承接东南亚水下工程订单翻倍。",
+        "market": "southeast-asia",
+        "year": 2025
+      },
+      {
+        "id": "drn-006",
+        "client": "国内某公安系统无人机项目",
+        "industry": "警用安防",
+        "challenge": "需在 -30℃ 至 +55℃ 极端环境作业，箱体需通过国标警用设备认证。",
+        "solution": "客信定制 -40℃~+80℃ 宽温箱，玻纤增强 PP 材质，通过 GB/T 2423 系列测试。",
+        "result": "通过公安部警用装备检测中心验收，已批量交付 3 个省份。",
+        "market": "china",
+        "year": 2025
+      },
+      {
+        "id": "drn-007",
+        "client": "南美农业合作社 CoopAgro",
+        "industry": "农业植保",
+        "challenge": "海运至南美港口途中高温高湿，普通箱体霉变、卡扣锈蚀。",
+        "solution": "客信定制抗 UV 涂层 + 不锈钢卡扣，提供 30 天 FOB 上海至桑托斯港的方案。",
+        "result": "到港后完好率 100%，海运成本下降 12%（包装重量优化）。",
+        "market": "south-america",
+        "year": 2024
+      },
+      {
+        "id": "drn-008",
+        "client": "日本航测公司 SkyMap Japan",
+        "industry": "航测建模",
+        "challenge": "需为 50 套无人机 + 配件提供统一存储 + 运输 + 现场作业三用箱。",
+        "solution": "客信提供模块化三层分仓设计，外壳滚塑、内层 EVA 模切、可叠放堆码。",
+        "result": "现场作业准备时间从 25 分钟缩短至 8 分钟，年节约人力成本超 800 万日元。",
+        "market": "japan-korea",
+        "year": 2025
+      }
+    ],
+    "waterproof-case": [
+      {
+        "id": "wpr-001",
+        "client": "万绿湖漂流景区",
+        "industry": "旅游漂流",
+        "challenge": "原塑料储物箱被游客踩坏、跌落入水打捞困难，景区每年损失 12 万+。",
+        "solution": "客信 IP67 漂流专用箱，1.5m 抗跌落，自带漂浮圈，红色高可视度。",
+        "result": "箱体损坏率从 22% 降至 3%，景区年节约重置成本 9 万元。",
+        "market": "china",
+        "year": 2024
+      },
+      {
+        "id": "wpr-002",
+        "client": "美国户外品牌 OutdoorPro",
+        "industry": "户外零售",
+        "challenge": "防水相机盒需同时满足 IP68、低温 -30℃、抗 2m 跌落、零售级外观。",
+        "solution": "客信定制 -40℃ 耐寒 PC 箱体，1.8m 跌落测试，5 色可选 + 激光雕刻 logo。",
+        "result": "成为 OutdoorPro 年销 18 万只的明星 SKU，亚马逊评分 4.7/5。",
+        "market": "north-america",
+        "year": 2025
+      },
+      {
+        "id": "wpr-003",
+        "client": "北极科考队 Polar Research CN",
+        "industry": "极地科考",
+        "challenge": "-50℃ 极寒环境仪器运输，普通塑料箱脆化破裂。",
+        "solution": "客信定制 -60℃ 抗寒改性 PP，玻纤 30% 增强，氦质谱检漏。",
+        "result": "极地科考连续 3 年无箱体故障，已成为该科考队指定供应商。",
+        "market": "russia",
+        "year": 2024
+      },
+      {
+        "id": "wpr-004",
+        "client": "澳洲钓鱼品牌 TackleKing AU",
+        "industry": "钓鱼装备",
+        "challenge": "海钓盐雾腐蚀严重，金属卡扣 3 个月就锈死。",
+        "solution": "客信定制全塑料卡扣 + 抗盐雾涂层，通过 ASTM B117 1000h 盐雾测试。",
+        "result": "产品保质期延长至 5 年以上，进入澳洲 Bunnings 仓储超市。",
+        "market": "australia",
+        "year": 2025
+      },
+      {
+        "id": "wpr-005",
+        "client": "迪拜豪华游艇俱乐部 DXB Marina",
+        "industry": "游艇航海",
+        "challenge": "游艇上 30+ 设备需统一收纳，要求奢华外观 + 抗盐雾 + IP67。",
+        "solution": "客信提供镜面抛光 + 烫金 logo 工艺，304 不锈钢配件，IP67 防护。",
+        "result": "成为该俱乐部 5 年长协供应商，年订单 2000+ 套。",
+        "market": "middle-east",
+        "year": 2024
+      }
+    ],
+    "military-tactical-case": [
+      {
+        "id": "mil-001",
+        "client": "非洲某国军需采购（合规）",
+        "industry": "军警装备",
+        "challenge": "需 5000 套战术枪箱通过 MIL-SPEC，要求 18 个月交付 + 当地培训。",
+        "solution": "客信分 6 批交付，每批 833 套，附中文 + 英文 + 当地法语三语说明书。",
+        "result": "全项目零投诉验收，2025 年复购 3000 套。",
+        "market": "africa",
+        "year": 2024
+      },
+      {
+        "id": "mil-002",
+        "client": "美国户外品牌 TactiGear",
+        "industry": "户外/狩猎",
+        "challenge": "需狙击镜箱通过 MIL-STD-810G 跌落/震动/盐雾全项测试。",
+        "solution": "客信定制玻纤增强 PP 箱体，铝制铰链，3mm EVA 模切，5 色迷彩。",
+        "result": "进入 Bass Pro Shops 全美 180+ 门店，年销 8 万只。",
+        "market": "north-america",
+        "year": 2025
+      },
+      {
+        "id": "mil-003",
+        "client": "韩国安保公司 SecuriKR",
+        "industry": "安保押运",
+        "challenge": "押运弹药箱需双人双锁、防爆破、防撬、防火 30min。",
+        "solution": "客信提供碳纤维 + 阻燃 ABS 复合结构，通过 KS G 4500 韩国标准。",
+        "result": "成为该国前 3 大安保公司标准配置，年订单 1200 万美元。",
+        "market": "japan-korea",
+        "year": 2024
+      }
+    ],
+    "medical-case": [
+      {
+        "id": "med-001",
+        "client": "国内某省级疾控中心",
+        "industry": "公共卫生",
+        "challenge": "新冠后大量核酸样本需 UN3373 B 类运输，3 年 5 万套需求。",
+        "solution": "客信提供三层包装方案（主容器 + 次容器 + 外包装），通过 WHO PQS 评估。",
+        "result": "5 年长协供应商，已交付 18 万套，2024 年获评优秀供应商。",
+        "market": "china",
+        "year": 2023
+      },
+      {
+        "id": "med-002",
+        "client": "德国医药冷链 PharmaLog DE",
+        "industry": "医药冷链",
+        "challenge": "mRNA 疫苗需 -70℃ 干冰运输 72h，普通箱体 24h 失效。",
+        "solution": "客信定制 VIP 真空绝热板 + GPS 温度记录仪，72h 温控 -70℃±2℃。",
+        "result": "成为 BioNTech 亚太区二级冷链供应商，年订单 800 万欧元。",
+        "market": "europe",
+        "year": 2024
+      },
+      {
+        "id": "med-003",
+        "client": "美国牙科连锁 SmileCare US",
+        "industry": "口腔医疗",
+        "challenge": "500 家门店统一便携式牙科诊疗包，需个性化 logo + 防交叉感染。",
+        "solution": "客信提供 304 不锈钢 + 医用塑料混合结构，每店独立编号 + UV 消毒。",
+        "result": "5 年长协，年度补单 8000 套，单店设备损耗率下降 45%。",
+        "market": "north-america",
+        "year": 2025
+      }
+    ],
+    "instrument-case": [
+      {
+        "id": "ins-001",
+        "client": "南方电网某省公司",
+        "industry": "电力检测",
+        "challenge": "光纤熔接机在山区运输颠簸损坏严重，年返修率 18%。",
+        "solution": "客信定制 25G 防震箱，EVA 模切定位，光纤清洁工具独立仓。",
+        "result": "返修率降至 1.2%，节约运维成本 800 万元/年。",
+        "market": "china",
+        "year": 2024
+      },
+      {
+        "id": "ins-002",
+        "client": "巴西地质调查局 CPRM",
+        "industry": "地质勘探",
+        "challenge": "亚马逊雨林地区作业，需防潮、防霉菌、防白蚁。",
+        "solution": "客信定制防霉涂层 + 抗白蚁 ABS，通过 ASTM D3273 测试。",
+        "result": "成为该局 5 年战略供应商，已交付 1200 套。",
+        "market": "south-america",
+        "year": 2024
+      }
+    ],
+    "engineering-plastic-case": [
+      {
+        "id": "eng-001",
+        "client": "比亚迪供应链",
+        "industry": "新能源汽车",
+        "challenge": "新能源电池包运输需防静电 + 阻燃 + 抗压 200kg。",
+        "solution": "客信提供玻纤 30% 增强阻燃 PC 箱，导电 10^6 Ω，堆码 5 层无变形。",
+        "result": "成为比亚迪一级供应商，年订单 1.2 亿元。",
+        "market": "china",
+        "year": 2025
+      },
+      {
+        "id": "eng-002",
+        "client": "美国滚塑品牌 RotomoldUS",
+        "industry": "滚塑代工",
+        "challenge": "美国客户需 2000 套大尺寸滚塑箱，海运至洛杉矶。",
+        "solution": "客信提供滚塑 PE + UV 抗老化 15 年配方，FCL 整柜发运。",
+        "result": "成为该品牌最大海外代工厂，3 年累计 8000 套。",
+        "market": "north-america",
+        "year": 2024
+      }
+    ],
+    "tool-box": [
+      {
+        "id": "tlb-001",
+        "client": "德国汽车维修连锁 ATU",
+        "industry": "汽车售后",
+        "challenge": "2000 家门店统一工具箱，需 ABS 抗摔 + 模块化分仓 + 品牌定制。",
+        "solution": "客信提供 5 层抽屉模块化方案，每层可拆洗，ATU 品牌丝印。",
+        "result": "5 年长协，年度补单 1.5 万套，单店工具盘点效率提升 60%。",
+        "market": "europe",
+        "year": 2024
+      },
+      {
+        "id": "tlb-002",
+        "client": "南非矿业集团 Sibanye",
+        "industry": "矿山",
+        "challenge": "金矿井下工具运输，需抗粉尘 + 抗砸 + 100kg 承重。",
+        "solution": "客信提供滚塑重型工具箱，承重 120kg，通过 SANS 1200 测试。",
+        "result": "成为该集团下属 6 座金矿标配，年订单 6000 套。",
+        "market": "africa",
+        "year": 2025
+      }
+    ],
+    "camera-stage-case": [
+      {
+        "id": "cam-001",
+        "client": "美国摄影器材品牌 PeakDesign US",
+        "industry": "摄影器材",
+        "challenge": "高端摄影包需时尚外观 + MIL-SPEC 防护 + 20 种内衬规格。",
+        "solution": "客信提供 EVA 模切 + 蜂窝板 + 黑色磨砂外壳，IP65。",
+        "result": "PeakDesign 旗舰 SKU，年销 12 万只，亚马逊 B&H 同类第一。",
+        "market": "north-america",
+        "year": 2025
+      },
+      {
+        "id": "cam-002",
+        "client": "韩国 SM 娱乐",
+        "industry": "演艺舞台",
+        "challenge": "演唱会灯光设备频繁运输，需 IP65 + 抗砸 + 黑色专业感。",
+        "solution": "客信提供 8 种尺寸舞台设备箱，黑色磨砂 PC + 铝包边，IP65。",
+        "result": "成为 SM 5 年长协供应商，2024 年 78 场巡演零故障。",
+        "market": "japan-korea",
+        "year": 2024
+      }
+    ],
+    "trolley-case": [
+      {
+        "id": "trl-001",
+        "client": "日本商务礼品公司 GiftJP",
+        "industry": "商务礼品",
+        "challenge": "高端商务礼品箱需香槟金外观 + 烫金 logo + 拉杆 + 内衬。",
+        "solution": "客信提供 ABS + 烫金工艺 + EVA 绒布内衬，3 色可选。",
+        "result": "成为日本年度商务礼品 Top 3，年订单 5 万套。",
+        "market": "japan-korea",
+        "year": 2025
+      },
+      {
+        "id": "trl-002",
+        "client": "法国酒庄 ChateauLux",
+        "industry": "高端酒类",
+        "challenge": "高端红酒礼盒需优雅外观 + 抗震 + 防紫外线 + 可堆叠。",
+        "solution": "客信提供深红 + 金边设计，UV 阻隔 99%，EVA 模切酒瓶位。",
+        "result": "成为该酒庄圣诞限定礼盒，3 年累计 80 万欧元订单。",
+        "market": "europe",
+        "year": 2024
+      }
+    ]
+  }
+}

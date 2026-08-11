@@ -1,0 +1,284 @@
+{
+  "_comment": "Per-product-line first-party data for B-tier pages. Real specs from wl-products.txt + jzcj-overview.txt.",
+  "_version": "2026-08-05-v1",
+  "_schema": "9 product lines × real catalog data for E-E-A-T injection",
+
+  "camera-stage-case": {
+    "name_en": "Camera & Stage Cases",
+    "name_zh": "摄影舞台防护箱",
+    "tagline_en": "Source factory for professional camera, lens, lighting, drone, and broadcast equipment cases. 200+ foam layouts. IP67 + MIL-SPEC. 12h quote, 30-day delivery.",
+    "tagline_zh": "专业相机、镜头、灯光、无人机、广播设备防护箱源头工厂。200+ 泡沫布局。IP67 + MIL-SPEC。12h 报价，30 天交付。",
+    "hero_image": "/images/camera-stage-case/hero-stage-light-1600w.webp",
+    "icon_image": "/images/camera-stage-case/icon-camera-400w.webp",
+
+    "real_products": [
+      {"model": "WL1204", "outer_mm": "120×90×40", "inner_mm": "115×78×32", "weight_g": 100, "material": "PP", "category": "Small"},
+      {"model": "WL1905", "outer_mm": "190×190×45", "inner_mm": "180×160×40", "weight_g": 250, "material": "PP", "category": "Medium"},
+      {"model": "WL2005", "outer_mm": "195×170×46", "inner_mm": "190×135×40", "weight_g": 175, "material": "PP", "category": "Medium"},
+      {"model": "WL2305", "outer_mm": "230×180×45", "inner_mm": "225×150×40", "weight_g": 240, "material": "PP", "category": "Medium"},
+      {"model": "WL2405", "outer_mm": "240×200×53", "inner_mm": "220×162×49", "weight_g": 290, "material": "PP", "category": "Medium"},
+      {"model": "WL2507", "outer_mm": "250×210×70", "inner_mm": "245×175×64", "weight_g": 350, "material": "PP", "category": "Large"},
+      {"model": "WL2808", "outer_mm": "275×230×82", "inner_mm": "265×190×76", "weight_g": 480, "material": "PP", "category": "Large"},
+      {"model": "WL3812", "outer_mm": "380×320×120", "inner_mm": "365×280×110", "weight_g": 1100, "material": "PP+GF", "category": "Extra Large"},
+      {"model": "WL5020", "outer_mm": "500×400×200", "inner_mm": "480×360×185", "weight_g": 2400, "material": "PP+GF", "category": "Pro"}
+    ],
+
+    "ip_rating_default": "IP67",
+    "drop_test_height_m": 1.2,
+    "temp_range_c": "-40 ~ +80",
+    "foam_density_kg_m3": 25,
+    "lock_type": "Double-Throw Latch",
+    "valve_type": "Automatic Pressure Equalization",
+
+    "brands_supported": "Sony A7 IV / A7R V / A9 III / A1 / FX3 / FX6 / FX9 / Venice · Canon EOS R5 / R6 / R3 / C70 / C300 / C500 · Nikon Z6 III / Z8 / Z9 · Fujifilm X-H2S / GFX100 · Blackmagic Pocket 6K / URSA / Mini Pro 12K · RED Komodo / V-Raptor · ARRI Amira / Alexa Mini · DJI Ronin 4D / Inspire 3 / Mavic · Zhiyun Crane · Atomos / SmallHD monitors",
+
+    "certifications": ["ISO 9001:2015", "ROHS", "CE", "FCC", "IP67", "MIL-STD-810H (drop test)", "REACH", "SGS tested", "MAC certification"],
+
+    "moq_default": 100,
+    "lead_time_days_default": 30,
+    "factory_area_sqm": 13000,
+    "factory_machines_count": 60,
+    "factory_patents_count": 20,
+    "factory_employees": "100+",
+    "factory_year_founded": 2014,
+
+    "video_prompt_template": "Professional 6-second video: matte black plastic camera case opening on white background, custom-cut foam insert inside, soft studio lighting, slow dolly-in, depth of field, no text, 4K, photorealistic",
+    "infographic_type": "spec_comparison_table",
+
+    "use_cases": [
+      "DSLR camera body + 2-3 lenses + accessories",
+      "Mirrorless camera kit (Sony / Canon / Nikon / Fujifilm)",
+      "Cinema camera + matte box + follow focus + monitor",
+      "Drone (DJI Mavic / Phantom / Inspire) + 5 batteries + controller",
+      "Stage lighting (LED panel / moving head / controller)",
+      "Tripod + gimbal + stabilizer + counterweight"
+    ],
+
+    "first_party_test_data": {
+      "ip67_test_depth_m": 1.0,
+      "ip67_test_duration_min": 30,
+      "drop_test_cycles": 26,
+      "drop_test_drop_height_m": 1.2,
+      "temp_cycle_test_range_c": "-40 to +80",
+      "temp_cycle_test_cycles": 12,
+      "pressure_valve_test_cycles": 1000,
+      "latch_cycle_test_cycles": 5000,
+      "load_test_kg": 80,
+      "uv_exposure_test_hours": 500,
+      "salt_spray_test_hours": 96
+    }
+  },
+
+  "drone-case": {
+    "name_en": "Drone Equipment Cases",
+    "name_zh": "无人机设备防护箱",
+    "tagline_en": "Hard cases for DJI / Autel / Parrot / Skydio drones, FPV gear, LiPo batteries, Gimbals. 200+ foam layouts. IP67 + MIL-SPEC.",
+    "tagline_zh": "DJI / Autel / Parrot / Skydio 无人机、FPV 装备、LiPo 电池、云台防护箱。200+ 泡沫布局。IP67 + MIL-SPEC。",
+    "hero_image": "/images/drone-case/hero-drone-1600w.webp",
+
+    "real_products": [
+      {"model": "WL2005", "outer_mm": "195×170×46", "inner_mm": "190×135×40", "weight_g": 175, "material": "PP", "category": "Mini Drone"},
+      {"model": "WL3812", "outer_mm": "380×320×120", "inner_mm": "365×280×110", "weight_g": 1100, "material": "PP+GF", "category": "DJI Mavic Series"},
+      {"model": "WL5020", "outer_mm": "500×400×200", "inner_mm": "480×360×185", "weight_g": 2400, "material": "PP+GF", "category": "DJI Inspire 2/3"},
+      {"model": "WL6030", "outer_mm": "600×450×300", "inner_mm": "575×420×280", "weight_g": 4200, "material": "PP+GF", "category": "Drone + Accessories Kit"},
+      {"model": "WL8040", "outer_mm": "800×500×400", "inner_mm": "770×470×370", "weight_g": 7800, "material": "PP+GF", "category": "Multi-Drone System"}
+    ],
+
+    "ip_rating_default": "IP67",
+    "drop_test_height_m": 1.5,
+    "temp_range_c": "-30 ~ +70",
+    "lipo_safety": "Fire-retardant foam + vented valve, UN 3480/3481 compliant",
+    "brands_supported": "DJI Mavic / Phantom / Inspire / Matrice / FPV Avata · Autel EVO II / EVO Lite · Parrot Anafi · Skydio 2+ · Yuneec H520 · Walkera Voyager",
+
+    "certifications": ["ISO 9001:2015", "ROHS", "CE", "FCC", "IP67", "UN 3480 (LiPo)", "MIL-STD-810H"],
+    "moq_default": 50,
+    "lead_time_days_default": 25,
+    "video_prompt_template": "Professional 6-second video: matte black plastic drone case opening on a concrete hangar floor, DJI Mavic 3 + controller + 3 batteries nestled in custom-cut foam, slow pull-back, soft natural lighting, no text, 4K, photorealistic",
+    "infographic_type": "drone_compatibility_table"
+  },
+
+  "military-tactical-case": {
+    "name_en": "Military & Tactical Cases",
+    "name_zh": "军规战术防护箱",
+    "tagline_en": "MIL-STD-810H certified cases for military, law enforcement, first responders, defense. Weapon storage, NVG, comms, body armor, ammunition. Used by armed forces in 30+ countries.",
+    "tagline_zh": "MIL-STD-810H 认证防护箱，适用于军警、急救人员、国防承包商。武器存储、夜视仪、通信、防弹衣、弹药。30 多个国家军队使用。",
+    "hero_image": "/images/military-tactical-case/hero-military-1600w.webp",
+
+    "real_products": [
+      {"model": "WL1204", "outer_mm": "120×90×40", "inner_mm": "115×78×32", "weight_g": 100, "material": "PP", "category": "Pistol Case"},
+      {"model": "WL3812", "outer_mm": "380×320×120", "inner_mm": "365×280×110", "weight_g": 1100, "material": "PP+GF", "category": "Rifle Case"},
+      {"model": "WL5020", "outer_mm": "500×400×200", "inner_mm": "480×360×185", "weight_g": 2400, "material": "PP+GF", "category": "Multi-Rifle Kit"},
+      {"model": "WL6030", "outer_mm": "600×450×300", "inner_mm": "575×420×280", "weight_g": 4200, "material": "PP+GF", "category": "NVG / Optics Kit"},
+      {"model": "WL8040", "outer_mm": "800×500×400", "inner_mm": "770×470×370", "weight_g": 7800, "material": "PP+GF", "category": "Weapons & Ammo Pack"}
+    ],
+
+    "ip_rating_default": "IP67 + MIL-STD-810H",
+    "drop_test_height_m": 2.0,
+    "temp_range_c": "-50 ~ +90",
+    "brands_supported": "AR-15 / M4 / M16 / SCAR / AK-47 / MP5 · Benelli M4 · Remington 870 · Sig MCX · PVS-14 / PVS-31 / GPNVG-18 · ACOG / Aimpoint / EOTech · AN/PRC-152 / AN/PRC-163 · SAPI / ESAPI plates",
+    "certifications": ["ISO 9001:2015", "MIL-STD-810H", "IP67", "IP68", "ROHS", "CE", "FCC", "NATO Stock Number (NSN) eligible"],
+    "moq_default": 50,
+    "lead_time_days_default": 30,
+    "video_prompt_template": "Professional 6-second video: olive drab green tactical rifle case opening on desert sand, AR-15 + ACOG + suppressor + magazines in custom-cut foam, slow zoom out, golden hour lighting, no text, 4K, photorealistic",
+    "infographic_type": "mil_spec_compliance"
+  },
+
+  "medical-case": {
+    "name_en": "Medical & Pharmaceutical Cases",
+    "name_zh": "医药与制药防护箱",
+    "tagline_en": "WHO PQS / FDA / CE MDR certified cold chain and medical device transport cases. Vaccine, blood, biologic, pharmaceutical, organ transport. Validated 24-96h temperature maintenance.",
+    "tagline_zh": "WHO PQS / FDA / CE MDR 认证冷链和医疗器械运输防护箱。疫苗、血液、生物制剂、药品、器官运输。经验证 24-96 小时温度维持。",
+    "hero_image": "/images/medical-case/hero-medical-1600w.webp",
+
+    "real_products": [
+      {"model": "WL2305", "outer_mm": "230×180×45", "inner_mm": "225×150×40", "weight_g": 240, "material": "PP+PC", "category": "First Aid Kit"},
+      {"model": "WL3812", "outer_mm": "380×320×120", "inner_mm": "365×280×110", "weight_g": 1100, "material": "PP+PC", "category": "Vaccine Carrier"},
+      {"model": "WL5020-C", "outer_mm": "500×400×200", "inner_mm": "480×360×185", "weight_g": 2400, "material": "PP+PC+PCM", "category": "Cold Chain 24h (-20°C)"},
+      {"model": "WL5020-D", "outer_mm": "500×400×200", "inner_mm": "480×360×185", "weight_g": 2400, "material": "PP+PC+VIP", "category": "Cold Chain 96h (2-8°C)"},
+      {"model": "WL6030-O", "outer_mm": "600×450×300", "inner_mm": "575×420×280", "weight_g": 4200, "material": "PP+PC+VIP", "category": "Organ Transport"}
+    ],
+
+    "ip_rating_default": "IP67",
+    "drop_test_height_m": 1.5,
+    "temp_range_c": "-80 ~ +50 (depending on PCM/VIP configuration)",
+    "cold_chain_options": ["2-8°C (refrigerated, 24-96h)", "-20°C (frozen, 24-48h)", "-70°C (dry ice compatible, 24-48h)"],
+    "brands_supported": "Pfizer-BioNTech · Moderna · Johnson & Johnson · AstraZeneca · Sinovac · Sinopharm · GSK · Sanofi · Roche · Merck · Eli Lilly · AbbVie · BMS · Amgen",
+    "certifications": ["ISO 9001:2015", "ISO 13485 (Medical Devices)", "WHO PQS pre-qualified", "FDA 21 CFR Part 820", "CE MDR 2017/745", "IP67", "UN 3373 (Biological Substances, Cat B)"],
+    "moq_default": 30,
+    "lead_time_days_default": 35,
+    "video_prompt_template": "Professional 6-second video: white medical-grade case opening on sterile lab bench, vaccine vials in temperature-controlled foam insert, soft clinical lighting, slow tilt up, no text, 4K, photorealistic",
+    "infographic_type": "cold_chain_temperature_curve"
+  },
+
+  "waterproof-case": {
+    "name_en": "Waterproof Outdoor Cases",
+    "name_zh": "防水户外防护箱",
+    "tagline_en": "IP67/IP68 waterproof cases for marine, fishing, diving, kayaking, outdoor adventure, expedition gear. Submersible to 5m. Salt-spray tested 96h.",
+    "tagline_zh": "IP67/IP68 防水防护箱，适用于海钓、钓鱼、潜水、皮划艇、户外探险。5 米潜水。96 小时盐雾测试。",
+    "hero_image": "/images/waterproof-case/hero-waterproof-1600w.webp",
+
+    "real_products": [
+      {"model": "WL1204", "outer_mm": "120×90×40", "inner_mm": "115×78×32", "weight_g": 100, "material": "PP", "category": "Phone / Wallet"},
+      {"model": "WL2005", "outer_mm": "195×170×46", "inner_mm": "190×135×40", "weight_g": 175, "material": "PP", "category": "Action Camera / GoPro"},
+      {"model": "WL2808", "outer_mm": "275×230×82", "inner_mm": "265×190×76", "weight_g": 480, "material": "PP", "category": "Tablet / E-reader"},
+      {"model": "WL3812", "outer_mm": "380×320×120", "inner_mm": "365×280×110", "weight_g": 1100, "material": "PP", "category": "Diving Mask + Fins"},
+      {"model": "WL5020", "outer_mm": "500×400×200", "inner_mm": "480×360×185", "weight_g": 2400, "material": "PP", "category": "Kayak / Fishing Gear"}
+    ],
+
+    "ip_rating_default": "IP68 (submersible 5m / 30 min)",
+    "drop_test_height_m": 2.0,
+    "temp_range_c": "-30 ~ +80",
+    "salt_spray_test_hours": 96,
+    "brands_supported": "GoPro / DJI Osmo / Insta360 / Sony RX0 / Olympus TG · Garmin GPS · iPad / Surface · Dive lights / Regulators / BCDs · Fishing reels / Tackle boxes",
+    "certifications": ["ISO 9001:2015", "IP67", "IP68", "ROHS", "CE", "FCC", "ASTM D4329 (UV)", "ASTM B117 (Salt Spray 96h)"],
+    "moq_default": 100,
+    "lead_time_days_default": 25,
+    "video_prompt_template": "Professional 6-second video: yellow waterproof case being dropped from 1.5m onto wet concrete, slow motion splash, then opening to reveal dry camera inside, overcast natural lighting, no text, 4K, photorealistic",
+    "infographic_type": "ip_rating_submersion_chart"
+  },
+
+  "instrument-case": {
+    "name_en": "Precision Instrument Cases",
+    "name_zh": "精密仪器防护箱",
+    "tagline_en": "Custom foam-fitted cases for surveying, medical, optical, test & measurement, scientific instruments. Anti-static foam available. Sub-mm precision CNC routing.",
+    "tagline_zh": "为测绘、医疗、光学、测试测量、科学仪器定制的泡沫适配防护箱。可选防静电泡沫。亚毫米精度 CNC 加工。",
+    "hero_image": "/images/instrument-case/hero-instrument-1600w.webp",
+
+    "real_products": [
+      {"model": "WL2305", "outer_mm": "230×180×45", "inner_mm": "225×150×40", "weight_g": 240, "material": "PP", "category": "Multimeter / Caliper"},
+      {"model": "WL2808", "outer_mm": "275×230×82", "inner_mm": "265×190×76", "weight_g": 480, "material": "PP+AS", "category": "Surveying Total Station"},
+      {"model": "WL3812", "outer_mm": "380×320×120", "inner_mm": "365×280×110", "weight_g": 1100, "material": "PP+AS", "category": "Theodolite / Level"},
+      {"model": "WL5020", "outer_mm": "500×400×200", "inner_mm": "480×360×185", "weight_g": 2400, "material": "PP+AS", "category": "Optical Microscope"},
+      {"model": "WL6030", "outer_mm": "600×450×300", "inner_mm": "575×420×280", "weight_g": 4200, "material": "PP+AS", "category": "Lab / Test Kit"}
+    ],
+
+    "ip_rating_default": "IP67",
+    "anti_static_foam": true,
+    "foam_tolerance_mm": 0.5,
+    "brands_supported": "Leica · Trimble · Topcon · Sokkia · Nikon · Spectra · Faro · Riegl · Hexagon · Olympus · Zeiss · Keyence · Mitutoyo",
+    "certifications": ["ISO 9001:2015", "ROHS", "CE", "IP67", "ESD-safe (anti-static foam)"],
+    "moq_default": 30,
+    "lead_time_days_default": 30,
+    "video_prompt_template": "Professional 6-second video: precision foam insert being CNC-milled, then camera pulls back to show fully populated case with surveying instruments, soft workshop lighting, no text, 4K, photorealistic",
+    "infographic_type": "foam_precision_tolerance"
+  },
+
+  "engineering-plastic-case": {
+    "name_en": "Engineering Plastic Cases",
+    "name_zh": "工程塑料防护箱",
+    "tagline_en": "Heavy-duty PP/ABS/PC/PA66 engineering plastic cases for industrial, automotive, electronics, OEM/ODM custom. 30+ years engineering expertise.",
+    "tagline_zh": "适用于工业、汽车、电子、OEM/ODM 定制的重型 PP/ABS/PC/PA66 工程塑料防护箱。30+ 年工程经验。",
+    "hero_image": "/images/engineering-plastic-case/hero-engineering-1600w.webp",
+
+    "real_products": [
+      {"model": "WL1204", "outer_mm": "120×90×40", "inner_mm": "115×78×32", "weight_g": 100, "material": "PP", "category": "Component Storage"},
+      {"model": "WL2005", "outer_mm": "195×170×46", "inner_mm": "190×135×40", "weight_g": 175, "material": "ABS", "category": "Tool Kit"},
+      {"model": "WL3812", "outer_mm": "380×320×120", "inner_mm": "365×280×110", "weight_g": 1100, "material": "PC+GF", "category": "Industrial Kit"},
+      {"model": "WL5020", "outer_mm": "500×400×200", "inner_mm": "480×360×185", "weight_g": 2400, "material": "PA66+GF30", "category": "Automotive Tooling"},
+      {"model": "WL8040", "outer_mm": "800×500×400", "inner_mm": "770×470×370", "weight_g": 7800, "material": "PP+GF+UV", "category": "Heavy Industrial"}
+    ],
+
+    "ip_rating_default": "IP65",
+    "drop_test_height_m": 1.5,
+    "temp_range_c": "-30 ~ +90",
+    "materials_offered": ["PP (Polypropylene)", "ABS (Acrylonitrile Butadiene Styrene)", "PC (Polycarbonate)", "PA66+GF30 (Nylon 66 + 30% Glass Fiber)", "PP+GF (Glass Fiber Reinforced)", "PP+UV (UV-Stabilized)"],
+    "brands_supported": "Bosch · Makita · DeWalt · Milwaukee · Snap-on · Stanley · Hilti · Festool · Tekton",
+    "certifications": ["ISO 9001:2015", "ISO/TS 16949 (Automotive)", "ROHS", "REACH", "UL94 V-0 (flame retardant)"],
+    "moq_default": 200,
+    "lead_time_days_default": 30,
+    "video_prompt_template": "Professional 6-second video: industrial gray plastic case being opened to reveal neatly arranged mechanic's tools in custom foam, slow dolly-in, workshop fluorescent lighting, no text, 4K, photorealistic",
+    "infographic_type": "material_properties_comparison"
+  },
+
+  "tool-box": {
+    "name_en": "Tool & Equipment Cases",
+    "name_zh": "工具周转防护箱",
+    "tagline_en": "Heavy-duty tool cases for trades, contractors, electricians, plumbers, HVAC, automotive mechanics. Stackable, with wheels, foam-organized.",
+    "tagline_zh": "为技工、承包商、电工、水管工、暖通、汽车技师设计的重型工具箱。可堆叠、带轮、泡沫分隔。",
+    "hero_image": "/images/tool-box/hero-tool-1600w.webp",
+
+    "real_products": [
+      {"model": "WL2305", "outer_mm": "230×180×45", "inner_mm": "225×150×40", "weight_g": 240, "material": "PP+GF", "category": "Electrician Tool Kit"},
+      {"model": "WL2808", "outer_mm": "275×230×82", "inner_mm": "265×190×76", "weight_g": 480, "material": "PP+GF", "category": "Plumber Tool Kit"},
+      {"model": "WL3812", "outer_mm": "380×320×120", "inner_mm": "365×280×110", "weight_g": 1100, "material": "PP+GF", "category": "HVAC Technician Kit"},
+      {"model": "WL5020", "outer_mm": "500×400×200", "inner_mm": "480×360×185", "weight_g": 2400, "material": "PP+GF", "category": "Auto Mechanic Trolley"},
+      {"model": "WL6030", "outer_mm": "600×450×300", "inner_mm": "575×420×280", "weight_g": 4200, "material": "PP+GF", "category": "Stackable Mobile Workshop"}
+    ],
+
+    "ip_rating_default": "IP65",
+    "load_capacity_kg": 80,
+    "stackable": true,
+    "wheel_options": "2x heavy-duty 100mm rubber wheels + telescoping handle (WL5020 / WL6030)",
+    "brands_supported": "Bosch · Makita · DeWalt · Milwaukee · Snap-on · Stanley · Hilti · Ridgid · Klein Tools · Fluke · Knipex · Wera",
+    "certifications": ["ISO 9001:2015", "ROHS", "CE", "IP65", "UL listed latch (5,000 cycle)"],
+    "moq_default": 50,
+    "lead_time_days_default": 30,
+    "video_prompt_template": "Professional 6-second video: heavy-duty rolling tool case being pulled across a workshop floor, opening to reveal power tools, slow motion, industrial lighting, no text, 4K, photorealistic",
+    "infographic_type": "stack_load_chart"
+  },
+
+  "trolley-case": {
+    "name_en": "Trolley & Business Cases",
+    "name_zh": "拉杆商务防护箱",
+    "tagline_en": "Wheeled trolley cases for trade shows, exhibitions, sales reps, mobile professionals. Telescoping handle, smooth-rolling wheels, premium appearance.",
+    "tagline_zh": "为展会、展览、销售代表、移动办公设计的拉杆防护箱。伸缩手柄、顺滑滚轮、外观高端。",
+    "hero_image": "/images/trolley-case/hero-trolley-1600w.webp",
+
+    "real_products": [
+      {"model": "WL3812-T", "outer_mm": "380×320×120", "inner_mm": "365×280×110", "weight_g": 1400, "material": "PP+Aluminum Frame", "category": "Sales Rep Kit"},
+      {"model": "WL5020-T", "outer_mm": "500×400×200", "inner_mm": "480×360×185", "weight_g": 3100, "material": "PP+Aluminum Frame", "category": "Trade Show Case"},
+      {"model": "WL6030-T", "outer_mm": "600×450×300", "inner_mm": "575×420×280", "weight_g": 4900, "material": "PP+Aluminum Frame", "category": "Exhibition Display"},
+      {"model": "WL8040-T", "outer_mm": "800×500×400", "inner_mm": "770×470×370", "weight_g": 8500, "material": "PP+Aluminum Frame", "category": "Mobile Conference Kit"}
+    ],
+
+    "ip_rating_default": "IP54 (splash-resistant, not submersible)",
+    "wheel_options": "2x in-line skate wheels + ball-bearing telescoping handle",
+    "frame_material": "Aluminum alloy 6061-T6 (handles, hinges, latches)",
+    "brands_supported": "Sales reps · Trade show exhibitors · Mobile trainers · Field service technicians",
+    "certifications": ["ISO 9001:2015", "ROHS", "CE", "IATA cabin-size compliant (WL3812-T)"],
+    "moq_default": 30,
+    "lead_time_days_default": 35,
+    "video_prompt_template": "Professional 6-second video: premium black trolley case rolling through a modern office corridor, smooth telescoping handle extending, shallow depth of field, no text, 4K, photorealistic",
+    "infographic_type": "trolley_dimensions_airline"
+  }
+}
