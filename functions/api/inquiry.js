@@ -96,6 +96,38 @@ function validate(data) {
   return errors;
 }
 
+// === Spam 防护 (honeypot + 关键词黑名单 + 时间检查) ===
+const SPAM_KEYWORDS = [
+  "viagra", "casino", "lottery", "crypto giveaway", "click here to claim",
+  "free bitcoin", "make money fast", "work from home", "weight loss pill",
+  "seo backlink", "buy followers", "click my link", "投资理财", "网赚",
+  "免费BTC", "稳赚不赔", "博彩", "兼职刷单"
+];
+const URL_REGEX = /https?:\/\/[^\s]{20,}/gi; // 长 URL 链
+function checkSpam(data) {
+  // Honeypot: 机器人会填 website/url 字段，正常用户不会
+  if (data.website && String(data.website).trim() !== "") return { blocked: true, reason: "honeypot" };
+  if (data.url && String(data.url).trim() !== "") return { blocked: true, reason: "honeypot" };
+  // 关键词黑名单
+  const text = `${data.name || ""} ${data.message || ""} ${data.company || ""}`.toLowerCase();
+  for (const kw of SPAM_KEYWORDS) {
+    if (text.includes(kw.toLowerCase())) return { blocked: true, reason: "spam_keyword", keyword: kw };
+  }
+  // 短时间戳检查 (form 提交 < 2 秒 = bot)
+  if (data._ts) {
+    const ts = Number(data._ts);
+    if (!isNaN(ts) && ts > 0 && (Date.now() - ts) < 2000) {
+      return { blocked: true, reason: "submitted_too_fast" };
+    }
+  }
+  // 太多 URL = spam
+  const messageUrls = (data.message || "").match(URL_REGEX);
+  if (messageUrls && messageUrls.length >= 2) {
+    return { blocked: true, reason: "too_many_urls", count: messageUrls.length };
+  }
+  return { blocked: false };
+}
+
 // AI 翻译 + 分类 (如果有 Workers AI binding)
 async function aiEnhance(env, data) {
   if (!env.AI) {
@@ -309,6 +341,281 @@ function buildEmailText(data) {
   return lines.join("\n");
 }
 
+// === 自动回复邮件 (客户确认) ===
+function buildAutoReplyHTML(data, ai) {
+  const t = data.lang === "zh";
+  const productNames = {
+    "military-tactical-case": t ? "军事战术保护箱" : "Military / Tactical Case",
+    "drone-case": t ? "无人机防护箱" : "Drone Case",
+    "instrument-case": t ? "仪器仪表箱" : "Instrument Case",
+    "waterproof-case": t ? "防水保护箱" : "Waterproof Case",
+    "medical-case": t ? "医疗仪器箱" : "Medical Device Case",
+    "engineering-plastic-case": t ? "工程塑料箱" : "Engineering Plastic Case",
+    "tool-box": t ? "工具收纳箱" : "Tool Box",
+    "camera-stage-case": t ? "摄影器材箱" : "Camera / Stage Case",
+    "trolley-case": t ? "拉杆保护箱" : "Trolley Case"
+  };
+  const productsList = (data.productLine || []).map(p => productNames[p] || p).join(", ");
+  const greeting = t
+    ? `${data.name} 先生/女士，您好，<br><br>感谢您选择 <strong>客信新材料（KeXinMaterials）</strong>！我们已收到您的 OEM/ODM 询盘。`
+    : `Dear ${data.name},<br><br>Thank you for choosing <strong>KeXinMaterials</strong>! We have received your OEM/ODM inquiry.`;
+  const bodyText = t
+    ? `<p>我们的销售工程师将在 <strong>12 小时内</strong>通过邮件（kexin@beeaa.com）或 WhatsApp（+86 13590555309）回复您，提供详细报价、模具方案、认证文件等。</p>
+       <p>为了加速回复，如您方便请同步提供：<strong>3D 图纸 / 实物照片 / 详细规格表</strong>。</p>`
+    : `<p>Our sales engineer will reply within <strong>12 hours</strong> via email (kexin@beeaa.com) or WhatsApp (+86 13590555309) with detailed quotation, mold plan, and certification documents.</p>
+       <p>To accelerate the response, please also share if available: <strong>3D drawings / product photos / detailed specification sheet</strong>.</p>`;
+  const slaBlock = t
+    ? `<tr><td style="padding:8px 12px;background:#F1F5F9;color:#0F172A;font-weight:600;border:1px solid #E2E8F0;width:35%;">回复时间</td><td style="padding:8px 12px;color:#0F172A;border:1px solid #E2E8F0;">≤ 12 小时（工作日 08:00-18:00 GMT+8）</td></tr>
+       <tr><td style="padding:8px 12px;background:#F1F5F9;color:#0F172A;font-weight:600;border:1px solid #E2E8F0;">询盘编号</td><td style="padding:8px 12px;color:#0F172A;border:1px solid #E2E8F0;font-family:monospace;">${data._inquiry_id || "(待生成)"}</td></tr>
+       <tr><td style="padding:8px 12px;background:#F1F5F9;color:#0F172A;font-weight:600;border:1px solid #E2E8F0;">产品线</td><td style="padding:8px 12px;color:#0F172A;border:1px solid #E2E8F0;">${productsList}</td></tr>
+       <tr><td style="padding:8px 12px;background:#F1F5F9;color:#0F172A;font-weight:600;border:1px solid #E2E8F0;">数量</td><td style="padding:8px 12px;color:#0F172A;border:1px solid #E2E8F0;">${data.quantity} 件</td></tr>`
+    : `<tr><td style="padding:8px 12px;background:#F1F5F9;color:#0F172A;font-weight:600;border:1px solid #E2E8F0;width:35%;">Response time</td><td style="padding:8px 12px;color:#0F172A;border:1px solid #E2E8F0;">≤ 12 hours (business days 08:00-18:00 GMT+8)</td></tr>
+       <tr><td style="padding:8px 12px;background:#F1F5F9;color:#0F172A;font-weight:600;border:1px solid #E2E8F0;">Inquiry ID</td><td style="padding:8px 12px;color:#0F172A;border:1px solid #E2E8F0;font-family:monospace;">${data._inquiry_id || "(pending)"}</td></tr>
+       <tr><td style="padding:8px 12px;background:#F1F5F9;color:#0F172A;font-weight:600;border:1px solid #E2E8F0;">Product lines</td><td style="padding:8px 12px;color:#0F172A;border:1px solid #E2E8F0;">${productsList}</td></tr>
+       <tr><td style="padding:8px 12px;background:#F1F5F9;color:#0F172A;font-weight:600;border:1px solid #E2E8F0;">Quantity</td><td style="padding:8px 12px;color:#0F172A;border:1px solid #E2E8F0;">${data.quantity} pcs</td></tr>`;
+  const footerText = t
+    ? "此邮件由 box.beeaa.com 询盘系统自动发送，请勿直接回复（回复将无法送达）。如有疑问请直接邮件 kexin@beeaa.com 或 WhatsApp +86 13590555309。"
+    : "This email is auto-generated by box.beeaa.com inquiry system. Please do not reply directly (replies cannot be delivered). For questions, email kexin@beeaa.com or WhatsApp +86 13590555309.";
+  return `
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>${t ? "我们已收到您的询盘" : "We received your inquiry"}</title>
+</head>
+<body style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:#0F172A;line-height:1.5;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#F8FAFC;">
+    <tr>
+      <td align="center" style="padding:20px;">
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="max-width:600px;width:100%;background-color:#FFFFFF;border:1px solid #E2E8F0;border-radius:8px;overflow:hidden;">
+          <tr>
+            <td style="background-color:#0F766E;padding:28px 24px;color:#FFFFFF;">
+              <h1 style="margin:0 0 6px;font-size:24px;font-weight:700;color:#FFFFFF;line-height:1.3;">✅ ${t ? "询盘已收到" : "Inquiry Received"}</h1>
+              <p style="margin:0;font-size:14px;color:#FFFFFF;opacity:0.95;">${t ? "客信新材料 · KeXinMaterials" : "KeXinMaterials · Your Trusted Case Manufacturer"}</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:28px 24px;background-color:#FFFFFF;color:#0F172A;">
+              <div style="font-size:15px;line-height:1.65;color:#0F172A;">${greeting}</div>
+              <div style="font-size:15px;line-height:1.65;color:#0F172A;margin-top:14px;">${bodyText}</div>
+              <h3 style="margin:24px 0 12px;font-size:15px;font-weight:700;color:#0F172A;">${t ? "询盘摘要" : "Inquiry Summary"}</h3>
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;font-size:14px;border:1px solid #E2E8F0;">
+                ${slaBlock}
+              </table>
+              <h3 style="margin:24px 0 12px;font-size:15px;font-weight:700;color:#0F172A;">${t ? "我们能为您做什么" : "What we can do for you"}</h3>
+              <ul style="margin:0;padding-left:20px;font-size:14px;color:#0F172A;line-height:1.7;">
+                ${t
+                  ? `<li>OEM/ODM 定制（尺寸/颜色/泡棉/logo/认证）</li>
+                     <li>13,000 m² 自有工厂，60+ 设备，月产 50,000+ 件</li>
+                     <li>MOQ 50 件起，30 天标准交期</li>
+                     <li>ISO9001 / ROHS / CE / SGS / IP67 认证齐全</li>
+                     <li>出口 50+ 国家，美/英/德/加/日/俄等</li>`
+                  : `<li>OEM/ODM customization (size/color/foam/logo/certifications)</li>
+                     <li>13,000 m² in-house factory, 60+ machines, 50,000+ pcs/month capacity</li>
+                     <li>MOQ 50 pcs, 30-day standard delivery</li>
+                     <li>ISO9001 / ROHS / CE / SGS / IP67 certified</li>
+                     <li>Exported to 50+ countries (USA/UK/Germany/Canada/Japan/Russia etc.)</li>`}
+              </ul>
+              <div style="margin-top:24px;padding:16px;background-color:#FEF3C7;border-left:4px solid #F59E0B;border-radius:4px;">
+                <p style="margin:0;font-size:13px;color:#78350F;line-height:1.6;">
+                  ${t
+                    ? "💡 <strong>加速回复小贴士</strong>：将您的需求直接回复到 <a href=\"mailto:kexin@beeaa.com\" style=\"color:#C2410C;\">kexin@beeaa.com</a>，附上 3D 图纸或参考图，24 小时内可拿到初版报价单和模具方案。"
+                    : "💡 <strong>Tip to speed up the reply</strong>: Reply directly to <a href=\"mailto:kexin@beeaa.com\" style=\"color:#C2410C;\">kexin@beeaa.com</a> with your 3D drawings or reference photos. We can deliver an initial quotation and mold plan within 24 hours."}
+                </p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:18px 24px;background-color:#0F172A;color:#FFFFFF;">
+              <p style="margin:0 0 8px;font-size:14px;font-weight:600;">${t ? "客信新材料（KeXinMaterials）" : "KeXinMaterials (Guangdong) Co., Ltd."}</p>
+              <p style="margin:0;font-size:12px;color:#CBD5E1;line-height:1.6;">
+                ${t ? "源头发货工厂 · 12 年 OEM/ODM 经验 · 13,000 m²" : "Source factory · 12 years OEM/ODM · 13,000 m²"}<br>
+                📧 <a href="mailto:kexin@beeaa.com" style="color:#FBBF24;">kexin@beeaa.com</a>  ·  📱 <a href="https://wa.me/8613590555309" style="color:#FBBF24;">+86 13590555309 (WhatsApp)</a><br>
+                🌐 <a href="https://box.beeaa.com" style="color:#FBBF24;">box.beeaa.com</a>  ·  🏪 <a href="https://beeaa.com" style="color:#FBBF24;">beeaa.com</a>
+              </p>
+              <p style="margin:12px 0 0;font-size:11px;color:#94A3B8;line-height:1.5;">${footerText}</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`.trim();
+}
+
+function buildAutoReplyText(data) {
+  const t = data.lang === "zh";
+  const lines = [];
+  if (t) {
+    lines.push(`您好 ${data.name}，`);
+    lines.push(``);
+    lines.push(`感谢您选择客信新材料（KeXinMaterials）！我们已收到您的 OEM/ODM 询盘。`);
+    lines.push(``);
+    lines.push(`询盘编号：${data._inquiry_id || "(待生成)"}`);
+    lines.push(`产品线：${(data.productLine || []).join(", ")}`);
+    lines.push(`数量：${data.quantity} 件`);
+    lines.push(``);
+    lines.push(`我们的销售工程师将在 12 小时内通过邮件或 WhatsApp 回复您。`);
+    lines.push(``);
+    lines.push(`加速回复小贴士：将您的需求直接回复到 kexin@beeaa.com，附上 3D 图纸或参考图，24 小时内可拿到初版报价单和模具方案。`);
+    lines.push(``);
+    lines.push(`--`);
+    lines.push(`客信新材料（KeXinMaterials）`);
+    lines.push(`源头发货工厂 · 12 年 OEM/ODM 经验`);
+    lines.push(`kexin@beeaa.com · +86 13590555309 (WhatsApp)`);
+    lines.push(`box.beeaa.com · beeaa.com`);
+  } else {
+    lines.push(`Dear ${data.name},`);
+    lines.push(``);
+    lines.push(`Thank you for choosing KeXinMaterials! We have received your OEM/ODM inquiry.`);
+    lines.push(``);
+    lines.push(`Inquiry ID: ${data._inquiry_id || "(pending)"}`);
+    lines.push(`Product lines: ${(data.productLine || []).join(", ")}`);
+    lines.push(`Quantity: ${data.quantity} pcs`);
+    lines.push(``);
+    lines.push(`Our sales engineer will reply within 12 hours via email or WhatsApp.`);
+    lines.push(``);
+    lines.push(`Tip to speed up: Reply directly to kexin@beeaa.com with your 3D drawings or reference photos. We can deliver an initial quotation and mold plan within 24 hours.`);
+    lines.push(``);
+    lines.push(`--`);
+    lines.push(`KeXinMaterials (Guangdong) Co., Ltd.`);
+    lines.push(`Source factory · 12 years OEM/ODM · 13,000 m²`);
+    lines.push(`kexin@beeaa.com · +86 13590555309 (WhatsApp)`);
+    lines.push(`box.beeaa.com · beeaa.com`);
+  }
+  return lines.join("\n");
+}
+
+// === D1 持久化 (可选) — 如果 env.DB 存在则写入 ===
+async function saveToD1(env, data, ai, messageId, ip, userAgent) {
+  if (!env.DB) return { saved: false, reason: "no_d1_binding" };
+  try {
+    const id = `INQ-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).substring(2, 6).toUpperCase()}`;
+    data._inquiry_id = id;
+    const stmt = env.DB.prepare(`
+      INSERT INTO inquiries (
+        id, created_at, lang, name, company, email, phone, country,
+        product_line, size, material, ip_rating, color, foam_insert, logo_print,
+        quantity, target_price, lead_time, certification, usage, message,
+        ai_category, ai_urgency, ai_translation_zh, ai_translation_en,
+        status, ip_address, user_agent, resend_message_id
+      ) VALUES (?, datetime('now'), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'new', ?, ?, ?)
+    `);
+    await stmt.bind(
+      id, data.lang || "en",
+      data.name, data.company || null, data.email, data.phone, data.country,
+      JSON.stringify(data.productLine || []),
+      data.size || null, data.material || null, data.ipRating || null, data.color || null,
+      data.foamInsert || null, data.logoPrint || null,
+      String(data.quantity),
+      data.targetPrice || null, data.leadTime || null, data.certification || null, data.usage || null,
+      data.message || null,
+      ai?.category || null, ai?.urgency || null, ai?.translation_zh || null, ai?.translation_en || null,
+      ip, userAgent, messageId || null
+    ).run();
+    return { saved: true, id };
+  } catch (e) {
+    console.error("D1 save failed:", e);
+    return { saved: false, error: e.message };
+  }
+}
+
+// === Slack / Discord / Telegram webhook 通知 (可选) — 如果 env.NOTIFY_WEBHOOK 存在则推送 ===
+async function sendWebhookNotification(env, data, ai, inquiryId) {
+  if (!env.NOTIFY_WEBHOOK) return { sent: false, reason: "no_webhook" };
+  try {
+    const productNames = {
+      "military-tactical-case": "Military / Tactical Case",
+      "drone-case": "Drone Case",
+      "instrument-case": "Instrument Case",
+      "waterproof-case": "Waterproof Case",
+      "medical-case": "Medical Case",
+      "engineering-plastic-case": "Engineering Plastic Case",
+      "tool-box": "Tool Box",
+      "camera-stage-case": "Camera / Stage Case",
+      "trolley-case": "Trolley Case"
+    };
+    const productList = (data.productLine || []).map(p => productNames[p] || p).join(", ");
+    const urgency = ai?.urgency || "normal";
+    const urgencyEmoji = urgency === "high" ? "🔴" : urgency === "low" ? "🟢" : "🟡";
+    const urgencyColor = urgency === "high" ? "#DC2626" : urgency === "low" ? "#10B981" : "#F59E0B";
+
+    // Slack/Discord 兼容格式 (Embed)
+    const payload = {
+      text: `${urgencyEmoji} New OEM Inquiry from ${data.name} (${data.country}) - ${data.quantity}pcs`,
+      attachments: [{
+        color: urgencyColor,
+        title: `${data.name} - ${data.company || "N/A"}`,
+        title_link: `mailto:${data.email}`,
+        fields: [
+          { title: "Email", value: data.email, short: true },
+          { title: "Phone", value: data.phone, short: true },
+          { title: "Country", value: data.country, short: true },
+          { title: "Quantity", value: `${data.quantity} pcs`, short: true },
+          { title: "Products", value: productList, short: false },
+          { title: "Inquiry ID", value: inquiryId || "(no D1)", short: true },
+          { title: "Urgency", value: `${urgencyEmoji} ${urgency.toUpperCase()}`, short: true },
+          { title: "Lead time", value: data.leadTime || "—", short: true },
+          { title: "Target price", value: data.targetPrice ? `$${data.targetPrice}/pc` : "—", short: true }
+        ],
+        text: data.message ? `📝 Message: ${data.message.substring(0, 200)}${data.message.length > 200 ? "..." : ""}` : undefined,
+        footer: "box.beeaa.com inquiry system",
+        ts: Math.floor(Date.now() / 1000)
+      }]
+    };
+    const resp = await fetch(env.NOTIFY_WEBHOOK, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+    if (resp.ok) return { sent: true };
+    const errText = await resp.text();
+    return { sent: false, error: `webhook_${resp.status}`, body: errText.substring(0, 200) };
+  } catch (e) {
+    console.error("Webhook notification failed:", e);
+    return { sent: false, error: e.message };
+  }
+}
+
+// === Resend 发送自动回复 (给客户) ===
+async function sendAutoReply(env, data, ai, fromEmail) {
+  if (!env.RESEND_API_KEY) return { sent: false, reason: "no_resend_key" };
+  const t = data.lang === "zh";
+  const subject = t
+    ? `✅ 我们已收到您的询盘 ${data._inquiry_id || ""} — 客信新材料`
+    : `✅ We received your inquiry ${data._inquiry_id || ""} — KeXinMaterials`;
+  const autoHtml = buildAutoReplyHTML(data, ai);
+  const autoText = buildAutoReplyText(data);
+  try {
+    const resp = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${env.RESEND_API_KEY}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        from: fromEmail,
+        to: [data.email],
+        subject,
+        text: autoText,
+        html: autoHtml,
+        // 自动回复不该让客户 reply-to 业务邮箱
+        reply_to: env.RESEND_TO || "kexin@beeaa.com"
+      })
+    });
+    if (resp.ok) {
+      const result = await resp.json();
+      return { sent: true, messageId: result.id };
+    }
+    const err = await resp.json().catch(() => ({}));
+    return { sent: false, error: err.message || `resend_${resp.status}` };
+  } catch (e) {
+    return { sent: false, error: e.message };
+  }
+}
+
 export const onRequestPost = async (context) => {
   const { request, env } = context;
   const ip = request.headers.get("CF-Connecting-IP") || "unknown";
@@ -382,6 +689,20 @@ export const onRequestPost = async (context) => {
     });
   }
 
+  // Spam 防护
+  const spamCheck = checkSpam(clean);
+  if (spamCheck.blocked) {
+    console.log(`[inquiry] Blocked (${spamCheck.reason}): ${clean.email}`);
+    return new Response(JSON.stringify({
+      success: false,
+      error: "blocked",
+      reason: spamCheck.reason
+    }), {
+      status: 400,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS, ...SECURITY_HEADERS }
+    });
+  }
+
   // AI 增强 (如果有)
   const ai = await aiEnhance(env, clean);
 
@@ -390,6 +711,7 @@ export const onRequestPost = async (context) => {
   const html = buildEmailHTML(clean, ai);
   const text = buildEmailText(clean);
   const fromEmail = env.RESEND_FROM || "KeXinMaterials Inquiry <onboarding@resend.dev>";
+  const userAgent = request.headers.get("User-Agent") || "";
 
   // 1) Resend API (推荐, 免费 100/天)
   if (env.RESEND_API_KEY) {
@@ -415,11 +737,25 @@ export const onRequestPost = async (context) => {
       });
       const result = await resendResp.json();
       if (resendResp.ok) {
+        // ✅ 邮件发送成功 → 异步执行持久化 + 自动回复 + 通知
+        const [d1Result, autoReplyResult, notifyResult] = await Promise.all([
+          saveToD1(env, clean, ai, result.id, ip, userAgent),
+          sendAutoReply(env, clean, ai, fromEmail),
+          sendWebhookNotification(env, clean, ai, null)  // D1 之后如果有 ID 会再发一次
+        ]);
+        // 二次 webhook 通知带 D1 ID
+        if (d1Result.saved && d1Result.id) {
+          await sendWebhookNotification(env, clean, ai, d1Result.id);
+        }
         return new Response(JSON.stringify({
           success: true,
           method: "resend",
-          message: "Your inquiry has been sent. We will reply within 12 hours.",
+          message: "Your inquiry has been sent. A confirmation email is on its way to your inbox. We will reply within 12 hours.",
           messageId: result.id,
+          inquiryId: d1Result.id || null,
+          autoReply: autoReplyResult,
+          persisted: d1Result,
+          notified: notifyResult,
           ai: ai
         }), {
           status: 200,
@@ -459,10 +795,23 @@ export const onRequestPost = async (context) => {
         body: JSON.stringify({ to: "kexin@beeaa.com", from: "noreply@beeaa.com", subject, text, html })
       });
       if (cfResp.ok) {
+        // ✅ 邮件发送成功 → 持久化 + 通知
+        const [d1Result, autoReplyResult, notifyResult] = await Promise.all([
+          saveToD1(env, clean, ai, null, ip, userAgent),
+          sendAutoReply(env, clean, ai, fromEmail),
+          sendWebhookNotification(env, clean, ai, null)
+        ]);
+        if (d1Result.saved && d1Result.id) {
+          await sendWebhookNotification(env, clean, ai, d1Result.id);
+        }
         return new Response(JSON.stringify({
           success: true,
           method: "cf_email_service",
-          message: "Your inquiry has been sent. We will reply within 12 hours.",
+          message: "Your inquiry has been sent. A confirmation email is on its way. We will reply within 12 hours.",
+          inquiryId: d1Result.id || null,
+          autoReply: autoReplyResult,
+          persisted: d1Result,
+          notified: notifyResult,
           ai: ai
         }), {
           status: 200,
