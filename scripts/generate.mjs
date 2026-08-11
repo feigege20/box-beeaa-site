@@ -85,12 +85,13 @@ async function copyStatic() {
   const cssDst = path.join(DIST, "styles/theme.css");
   await ensureDir(path.dirname(cssDst));
   await fs.copyFile(cssSrc, cssDst);
-  // 复制 functions/_middleware.js 到 dist/functions/（Pages Functions bundle）
-  const funcSrc = path.join(ROOT, "functions/_middleware.js");
-  if (await fs.stat(funcSrc).catch(() => null)) {
-    const funcDst = path.join(DIST, "functions/_middleware.js");
-    await ensureDir(path.dirname(funcDst));
-    await fs.copyFile(funcSrc, funcDst);
+  // 复制 functions/ 整个目录到 dist/functions/（Pages Functions bundle）
+  // 包括 _middleware.js + api/inquiry.js + api/admin/inquiries.js 等
+  // Pages Functions 自动从 dist/functions/ 部署
+  const funcRoot = path.join(ROOT, "functions");
+  const funcDstRoot = path.join(DIST, "functions");
+  if (await fs.stat(funcRoot).catch(() => null)) {
+    await copyDir(funcRoot, funcDstRoot);
   }
   // 复制 .well-known 文件
   const wellKnownSrc = path.join(ROOT, "src/wellknown");
