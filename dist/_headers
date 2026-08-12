@@ -10,7 +10,7 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   # CSP (relaxed — allow inline scripts for our generator + schema JSON-LD)
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://beeaa.com https://*.r2.cloudflarestorage.com; font-src 'self' data:; connect-src 'self' https://plausible.io https://static.cloudflareinsights.com; media-src 'self' https://v.psste.com https://*.r2.cloudflarestorage.com blob: data:; frame-src https://wa.me; form-action 'self' mailto:; base-uri 'self'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://*.cloudflare.com; frame-ancestors 'self'; form-action 'self' mailto:; base-uri 'self'
   # Cache control for HTML
   Cache-Control: public, max-age=300, s-maxage=600, stale-while-revalidate=86400
 
