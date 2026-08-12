@@ -118,8 +118,8 @@ export function renderCategoryPage({ productLine, keywords = [], lang = "en" }) 
   const productImages = Object.values(lineImgs).filter(img => img && img.src).slice(0, 5);
 
   // 关键词 chip 列表
-  // 链接规则: S/A 级 → /<slug>/<kw-slug>-<no>/ (真实存在)
-  // B/C 级 → 显示为不可点击 span (B 级用随机 suffix 不用 kw 文本,链了会 404)
+  // 链接规则 (P0 修复 2026-08-12): S/A/B/C 级都链到 /<pl>/<kw-slug>-<no>/ (实际生成的 -N 路径)
+  // 之前 B/C 级是 <span> 不可点,FRED 看到 chip 不能点/URL 404
   function renderKwChips(kws, color) {
     if (kws.length === 0) return "";
     return `<div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
@@ -129,14 +129,10 @@ export function renderCategoryPage({ productLine, keywords = [], lang = "en" }) 
         const grade = kw.grade || "B";
         // EN: clean mixed en; ZH: keep as-is
         const displayText = t ? kw.zh : enClean(kw.en);
-        if (grade === "S" || grade === "A") {
-          // A/S 级有真实页,链到 no 页
-          const href = `${basePrefix}/${productLine.slug}/${kwSlug}-${no}/`;
-          return `<a href="${href}" style="display:inline-block;padding:0.4rem 0.8rem;background:#${color};color:#0F172A;border-radius:999px;font-size:0.75rem;text-decoration:none;">${esc(displayText)}</a>`;
-        } else {
-          // B/C 级用随机 suffix,显示文字不链接(避免 404)
-          return `<span title="(B/C grade) ${t ? "无单独页面" : "No dedicated page"}" style="display:inline-block;padding:0.4rem 0.8rem;background:#${color};color:#475569;border-radius:999px;font-size:0.75rem;cursor:help;">${esc(displayText)}</span>`;
-        }
+        // 全部级别都链到实际生成的 -N 路径
+        const href = `${basePrefix}/${productLine.slug}/${kwSlug}-${no}/`;
+        const textColor = (grade === "S" || grade === "A") ? "#0F172A" : "#1E293B";
+        return `<a href="${href}" title="${grade} grade · ${esc(displayText)}" style="display:inline-block;padding:0.4rem 0.8rem;background:#${color};color:${textColor};border-radius:999px;font-size:0.75rem;text-decoration:none;">${esc(displayText)}</a>`;
       }).join("")}
     </div>`;
   }
