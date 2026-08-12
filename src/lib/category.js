@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 品类页渲染器（9 个）
  * 接收 productLine + 该品类下的关键词子集，渲染完整的品类聚合页
  */
@@ -117,7 +117,8 @@ export function renderCategoryPage({ productLine, keywords = [], lang = "en" }) 
   const lineImgs = getProductImages(productLine.slug);
   const productImages = Object.values(lineImgs).filter(img => img && img.src).slice(0, 5);
 
-  // 关键词 chip 列表
+  // BUILD_SENTINEL_2026-08-12_12:23:45_chip_links_enabled
+  
   // 链接规则 (P0 修复 2026-08-12): S/A/B/C 级都链到 /<pl>/<kw-slug>-<no>/ (实际生成的 -N 路径)
   // 之前 B/C 级是 <span> 不可点,FRED 看到 chip 不能点/URL 404
   function renderKwChips(kws, color) {
