@@ -776,7 +776,8 @@ async function main() {
 
             let kwSlug = slugify(lang === "zh" ? kw.zh : enCleanForSlug(kw.en));
             if (!kwSlug) kwSlug = "page";
-            // 用 no 后缀保证唯一性（同一英文多中文共享时）
+            // P1 修复 2026-08-12: 保留 -N 后缀 (FRED 8/12 决策)
+            // 3,637 collision 用 -N 区分, 每个 keyword 1 个独立 page (V3 §2.1)
             kwSlug = `${kwSlug}-${kw.no}`;
             const dir = path.join(baseDir, line.slug, kwSlug);
             await ensureDir(dir);

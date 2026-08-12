@@ -1,6 +1,8 @@
 /**
  * 页面渲染器 — 把 keyword + 资产 + 配置 → 完整 HTML
  * 支持 4 类长尾公式的差异化结构
+ * P1 修复 2026-08-12: 启用 5 维防检测 (firstPersonStatement + firstPersonPreference + unpublishedData + varyParagraphLength + shuffleSections)
+ *   之前 renderer 完全没调 content_variation.js,导致 99% 模板同质
  */
 
 import { siteConfig } from "./site.config.js";
@@ -14,6 +16,10 @@ import {
 import {
   organizationSchema, productSchema, faqSchema, breadcrumbSchema, reviewSchema, aggregateRatingSchema,
 } from "./schemas.js";
+import {
+  firstPersonStatement, firstPersonPreference, unpublishedData, varyParagraphLength, shuffleSections,
+  sGradeFirstPersonParagraph,
+} from "./content_variation.js";
 
 const BASE_URL = `${siteConfig.protocol}://${siteConfig.domain}`;
 
@@ -294,6 +300,21 @@ export function renderPage({ keyword, productLine, assets, lang = "en", grade = 
   // === 渲染各 section ===
   const sections = [];
 
+  // P1 修复 2026-08-12: 5 维防检测 (V3 §3.1)
+  // 1. 段落长度变化 - varyParagraphLength 决定每段是短/中/长
+  // 2. 第一人称经验 - firstPersonStatement 加一段"我厂 12 年经验..."
+  // 3. 主观判断偏好 - firstPersonPreference 加一段"我个人更推荐..."
+  // 4. 未发表数据 - unpublishedData 加一段"我厂 2024-2026 实测..."
+  // 5. 段落顺序打乱 - shuffleSections 30% 概率打乱
+  const seedKey = routes.canonicalPath + ':' + (keyword.no || '');
+  const fpe = firstPersonStatement(t ? 'zh' : 'en');
+  const fpp = firstPersonPreference(t ? 'zh' : 'en');
+  const upd = unpublishedData(t ? 'zh' : 'en');
+  // S/A 级用更长版, B/C 级用短版 (差异化)
+  const sGradeBlock = (grade === 'S' || grade === 'A')
+    ? sGradeFirstPersonParagraph(esc(t ? keyword.zh : enClean(keyword.en)), t ? 'zh' : 'en')
+    : '';
+
   // 1. Hero
   sections.push(sectionHero({
     title: meta.title,
@@ -345,6 +366,43 @@ export function renderPage({ keyword, productLine, assets, lang = "en", grade = 
     if (comparison) sections.push(sectionComparison({ comparison, lang }));
     if (pageTestimonials.length) sections.push(sectionTestimonials({ items: pageTestimonials, lang }));
     sections.push(sectionFAQs({ faqs: pageFaqs, lang }));
+  }
+
+  // 2.5 P1 修复 2026-08-12 v2: 注入 5 维防检测 (V3 §3.1)
+  // Bug fix: sectionDeepDive 自己包 <p> + esc(), 不要预先包 <p> 字符串
+  // sGradeFirstPersonParagraph 返回 3 段 array, 直接展开传
+  // 30% 概率用 shuffleSections 打乱 4 个 section 顺序
+  if (sGradeBlock && sGradeBlock.length) {
+    sections.push(sectionDeepDive({ paragraphs: sGradeBlock, lang }));
+  }
+
+  // P1 修复 2026-08-12 v2: 5 维防检测 - 拼 4 段差异化内容 (第一人称经验 + 主观判断 + 未发表数据 + 唯一数据点)
+  // 用 seedKey 选每段的"短/中/长"长度, 30% 概率打乱 4 段顺序
+  // Bug fix: 只返回纯文本, sectionDeepDive 帮我们包 <p>
+  const fiveDimRawTexts = [fpe, fpp, upd, uniqueFact].map((text, i) => {
+    const lenMode = varyParagraphLength(seedKey + ':p' + i);
+    const sentences = text.split(/[.!?]+/).map(s => s.trim()).filter(Boolean);
+    let selected = sentences;
+    if (lenMode === 'short' && sentences.length > 1) selected = sentences.slice(0, 1);
+    else if (lenMode === 'medium' && sentences.length > 3) selected = sentences.slice(0, 3);
+    else if (lenMode === 'long' && sentences.length > 5) selected = sentences.slice(0, 5);
+    else if (lenMode === 'mixed' && sentences.length > 6) selected = [sentences[0], ...sentences.slice(-2)];
+    return selected.join('. ') + (selected.length ? '.' : '');
+  });
+  // 30% 概率打乱 4 段顺序
+  const finalParagraphs = Math.abs(hashCode(seedKey + 'shuf5')) % 10 < 3
+    ? [...fiveDimRawTexts].reverse()
+    : fiveDimRawTexts;
+  sections.push(sectionDeepDive({ paragraphs: finalParagraphs, lang }));
+
+  // 30% 概率打乱前面所有 section 顺序 (shuffleSections)
+  if (Math.abs(hashCode(seedKey + 'shuffle')) % 10 < 3) {
+    // 只打乱中间 section,保留 hero 在前, FAQ+CTA 在后
+    const before = sections.slice(0, 1);
+    const middle = sections.slice(1, -1);
+    const after = sections.slice(-1);
+    sections.length = 0;
+    sections.push(...before, ...shuffleSections(middle, seedKey + 'shf'), ...after);
   }
 
   // 3. CTA
