@@ -1,0 +1,32 @@
+/* TEAM */
+Founder & CEO: Wei Li (李伟) — 12 years protective case industry
+Chief R&D Engineer: Zhang Hua (张华) — IP67/MIL-SPEC specialist, 20+ patents
+QA Manager: Lin Mei (林梅) — 200+ test batches, ISO9001
+Export Sales Director: Wang Tao (王涛) — B2B export, Alibaba/MIC/Global Sources
+Site: https://box.beeaa.com
+Contact: kexin@beeaa.com / +86 13590555309
+Location: Fusha Town, Zhongshan, Guangdong, China
+Founded: 2014
+Factory: 13,000㎡, 100+ employees, 60+ machines, 20+ patents
+
+/* THANKS */
+Cloudflare — CDN, R2, Pages, Workers
+Anthropic Claude — AI assistant for content + tooling
+OpenAI GPT — Schema.org generation
+Google Lighthouse — Performance scoring
+Schema.org — Structured data standards
+W3C — HTML5 / CSS / WCAG standards
+
+/* SITE */
+Last update: 2026-07-31
+Standards: HTML5, CSS3, ES2022, Schema.org, Open Graph
+Components: 11 Schema types, 27 content sections, 9 product lines, 4 commercial services
+Languages: English (default), Chinese (Simplified)
+Software: Static site generator (Node.js), Cloudflare Pages, R2 storage
+Repository: https://github.com/feigege20/box-beeaa-site
+
+/* GENERATOR */
+Framework: Custom Node.js generator
+Build time: ~30 seconds for full 64K page
+Deploy: Cloudflare Pages via wrangler Direct Upload
+Hosting cost: ~$0.01/month (Free tier + R2 free)
