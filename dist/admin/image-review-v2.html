@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow" />
+<title>AI Image V2 Review - 15 replace-needed images</title>
+<style>
+  :root { --success: #10B981; --danger: #EF4444; --muted: #64748B; --border: #E2E8F0; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: #F8FAFC; color: #0F172A; margin: 0; padding: 0; }
+  header { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; }
+  h1 { margin: 0 0 0.5rem; font-size: 1.5rem; }
+  .meta { color: var(--muted); font-size: 0.9rem; }
+  .toolbar { display: flex; gap: 0.5rem; margin: 1rem 0; flex-wrap: wrap; align-items: center; }
+  .toolbar button { padding: 0.5rem 1rem; border: 1px solid var(--border); background: #fff; border-radius: 6px; cursor: pointer; font-size: 0.9rem; }
+  .toolbar button.primary { background: #0F172A; color: #fff; border-color: #0F172A; }
+  .toolbar button.success { background: var(--success); color: #fff; border-color: var(--success); }
+  .toolbar button.danger { background: var(--danger); color: #fff; border-color: var(--danger); }
+  .stats { padding: 0.4rem 0.8rem; background: #F1F5F9; border-radius: 6px; font-size: 0.9rem; }
+  .stats .approved { color: var(--success); font-weight: 700; }
+  .stats .rejected { color: var(--danger); font-weight: 700; }
+  main { padding: 1.5rem; max-width: 1400px; margin: 0 auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 1.5rem; }
+  .card { background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); transition: border 0.2s; }
+  .card[data-status="approved"] { border-color: var(--success); border-width: 2px; }
+  .card[data-status="rejected"] { border-color: var(--danger); border-width: 2px; }
+  .card img { width: 100%; height: 240px; object-fit: cover; display: block; background: #F1F5F9; }
+  .card .body { padding: 1rem; }
+  .fname { font-weight: 700; font-size: 0.9rem; word-break: break-all; margin-bottom: 0.25rem; }
+  .industry { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .prompt { font-size: 0.75rem; color: var(--muted); line-height: 1.4; max-height: 4em; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; margin-bottom: 0.75rem; }
+  .badge { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
+  .badge.approved { background: #D1FAE5; color: var(--success); }
+  .badge.rejected { background: #FEE2E2; color: var(--danger); }
+  .badge.pending { background: #F1F5F9; color: var(--muted); }
+  .actions { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+  .actions button { flex: 1; padding: 0.5rem; border: 1px solid var(--border); background: #fff; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+  .actions button.approve { background: var(--success); color: #fff; border-color: var(--success); }
+  .actions button.reject { background: var(--danger); color: #fff; border-color: var(--danger); }
+  textarea.export { width: 100%; height: 200px; margin-top: 1rem; font-family: monospace; font-size: 0.8rem; padding: 0.5rem; border: 1px solid var(--border); border-radius: 6px; display: none; }
+  .toast { position: fixed; bottom: 2rem; right: 2rem; background: #0F172A; color: #fff; padding: 0.75rem 1.5rem; border-radius: 6px; opacity: 0; transition: opacity 0.2s; z-index: 200; }
+  .toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🖼️ AI Image V2 Review - 15 replace-needed images</h1>
+  <div class="meta">F:\MiniMaxFile\beeaa_File\ai_v2_review\ · 15 images · 3 sizes each (400w/800w/1600w) · 默认全 pending,标 approve / reject</div>
+  <div class="toolbar">
+    <button class="primary" onclick="exportDecisions()">📋 Export Decisions (JSON)</button>
+    <button class="success" onclick="approveAll()">✓ Mark All Approved</button>
+    <button class="danger" onclick="confirmReset()">↺ Reset All</button>
+    <button onclick="toggleExport()">👁 Show JSON</button>
+    <span class="stats" id="stats">0 approved · 0 rejected · 15 pending</span>
+  </div>
+  <textarea class="export" id="exportBox" readonly></textarea>
+</header>
+<main>
+<div class="grid" id="grid"></div>
+</main>
+<div class="toast" id="toast"></div>
+<script>
+const ITEMS = [
+  {name: "case-abb-industrial-robots-switzerland", industry: "Industrial Robotics", prompt: "Modern factory floor with a yellow articulated industrial robot arm working on a metal part, robotic gripper, factory automation"},
+  {name: "case-apple-usa", industry: "Consumer Technology", prompt: "Modern minimalist tech office with clean desks, premium laptops and devices on display, white walls, glass partitions, natural daylight"},
+  {name: "case-blackrock-usa", industry: "Financial Services", prompt: "Modern corporate financial office interior, glass skyscrapers view through floor-to-ceiling windows, conference table with tablets"},
+  {name: "case-bytedance-china", industry: "Internet Technology", prompt: "Modern Chinese tech company open office, exposed concrete and wood, collaborative workspace, standing desks, urban loft style"},
+  {name: "case-copart-usa", industry: "Automotive Salvage", prompt: "Large outdoor vehicle salvage yard, rows of cars and trucks in lot, wide-angle landscape, clear blue sky, industrial storage"},
+  {name: "case-ebay-usa", industry: "E-commerce", prompt: "Massive e-commerce fulfillment warehouse, tall shelving aisles with cardboard packages, logistics conveyor system, worker with scanner"},
+  {name: "case-espn-usa", industry: "Sports Broadcasting", prompt: "Professional sports broadcast camera setup on tripod at stadium sideline, evening stadium lights, field goal post in background"},
+  {name: "case-kering-france", industry: "Luxury Fashion", prompt: "Upscale luxury fashion exhibition booth, designer handbag on velvet pedestal, gold accent lighting, soft bokeh background"},
+  {name: "case-miele-germany", industry: "Home Appliances", prompt: "Premium German appliance manufacturing facility, robotic assembly line for white goods, pristine clean factory floor, industrial precision"},
+  {name: "case-petronas-malaysia", industry: "Oil & Gas", prompt: "Offshore oil and gas platform at dusk, large industrial structure, drilling equipment silhouetted against orange and purple sky"},
+  {name: "case-regeneron-usa", industry: "Pharmaceutical", prompt: "Modern pharmaceutical research laboratory, scientist in white lab coat with pipette, cleanroom environment, blue and white sterile aesthetic"},
+  {name: "case-repsol-spain", industry: "Energy Retail", prompt: "Modern service station at sunset, fuel pumps under canopy, clean and minimal design, Spanish or European roadside, golden hour light"},
+  {name: "case-rov-nasa", industry: "Aerospace Robotics", prompt: "Space robotics laboratory, Mars rover prototype on simulated Mars terrain, red rocky surface, control room monitors in background"},
+  {name: "case-surveying-uae", industry: "Construction Surveying", prompt: "Construction surveying in desert, surveyor with tripod-mounted total station instrument, sandy construction site with cranes in background"},
+  {name: "medical-hero", industry: "Medical Equipment", prompt: "Modern hospital emergency room, medical cart with monitoring equipment, clean blue and white aesthetic, professional clinical photography"},
+];
+
+const STORAGE_KEY = "ai_v2_review_decisions";
+let decisions = {};
+try { decisions = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"); } catch(e) {}
+
+function statusFor(name) { return decisions[name] || "pending"; }
+
+function buildCards() {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = "";
+  ITEMS.forEach(item => {
+    const status = statusFor(item.name);
+    const card = document.createElement("div");
+    card.className = "card";
+    card.setAttribute("data-name", item.name);
+    card.setAttribute("data-status", status);
+    card.innerHTML = `
+      <img src="/admin/images/${item.name}-1600w.webp" alt="${item.name}" loading="lazy" />
+      <div class="body">
+        <div class="fname">${item.name}-1600w.webp</div>
+        <div class="industry">${item.industry}</div>
+        <div class="prompt">${item.prompt}</div>
+        <span class="badge ${status}">${status === 'approved' ? '✓ Approved' : status === 'rejected' ? '↻ Replace-needed' : '◯ Pending'}</span>
+        <div class="actions">
+          <button class="approve" onclick="setDecision('${item.name}', 'approved')">✓ Approve</button>
+          <button class="reject" onclick="setDecision('${item.name}', 'rejected')">↻ Reject</button>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function setDecision(name, status) {
+  decisions[name] = status;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(decisions));
+  refreshCard(name);
+  updateStats();
+}
+
+function refreshCard(name) {
+  const card = document.querySelector(`.card[data-name="${name}"]`);
+  if (!card) return;
+  const status = statusFor(name);
+  card.setAttribute("data-status", status);
+  const badge = card.querySelector(".badge");
+  badge.className = "badge " + status;
+  badge.textContent = status === 'approved' ? '✓ Approved' : status === 'rejected' ? '↻ Replace-needed' : '◯ Pending';
+}
+
+function updateStats() {
+  const approved = Object.values(decisions).filter(v => v === 'approved').length;
+  const rejected = Object.values(decisions).filter(v => v === 'rejected').length;
+  const pending = ITEMS.length - approved - rejected;
+  document.getElementById("stats").innerHTML =
+    `<span class="approved">${approved} approved</span> · <span class="rejected">${rejected} rejected</span> · ${pending} pending`;
+}
+
+function exportDecisions() {
+  const approved = Object.entries(decisions).filter(([k,v]) => v === 'approved').map(([k]) => k);
+  const rejected = Object.entries(decisions).filter(([k,v]) => v === 'rejected').map(([k]) => k);
+  const output = {
+    generated_at: new Date().toISOString(),
+    total_reviewed: ITEMS.length,
+    approved_count: approved.length,
+    rejected_count: rejected.length,
+    pending_count: ITEMS.length - approved.length - rejected.length,
+    approved: approved,
+    rejected: rejected,
+    all_approved: approved.length === ITEMS.length,
+    upload_to_r2: approved.map(name => {
+      const sizes = ['400w', '800w', '1600w'];
+      return sizes.map(s => ({size: s, local: `F:\\\\MiniMaxFile\\\\beeaa_File\\\\ai_v2_review\\\\${name}-${s}.webp`}));
+    }).flat()
+  };
+  const json = JSON.stringify(output, null, 2);
+  const box = document.getElementById('exportBox');
+  box.value = json;
+  box.style.display = 'block';
+  navigator.clipboard.writeText(json).then(() =>
+    showToast('Copied to clipboard! Paste to Mavis.')
+  ).catch(() => showToast('JSON shown in box. Copy manually.'));
+}
+
+function approveAll() {
+  if (!confirm('Mark ALL 15 images as approved?')) return;
+  ITEMS.forEach(i => decisions[i.name] = 'approved');
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(decisions));
+  ITEMS.forEach(i => refreshCard(i.name));
+  updateStats();
+  showToast('All 15 approved');
+}
+
+function confirmReset() {
+  if (!confirm('Reset all decisions?')) return;
+  decisions = {};
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(decisions));
+  ITEMS.forEach(i => refreshCard(i.name));
+  updateStats();
+  showToast('Reset all decisions');
+}
+
+function toggleExport() {
+  const box = document.getElementById('exportBox');
+  box.style.display = box.style.display === 'block' ? 'none' : 'block';
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+buildCards();
+updateStats();
+</script>
+</body>
+</html>
