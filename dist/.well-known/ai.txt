@@ -1,0 +1,31 @@
+# ai.txt — AI training/crawling policy
+# Per https://www.ai-txt.com/ proposed spec
+# Indicates how AI systems may use this site's content
+
+Contact: mailto:kexin@beeaa.com
+Canonical: https://box.beeaa.com/.well-known/ai.txt
+
+# Training policy
+training-allowed: yes
+training-allowed-full-text: yes
+training-allowed-summary: yes
+training-attribution-required: yes
+
+# Crawling policy (for AI assistants like ChatGPT, Claude, Perplexity)
+crawling-allowed: yes
+crawling-rate-limit: 1 request per 10 seconds per IP
+crawling-scope: /
+user-agent-token: *
+
+# Content licensing
+license: All Rights Reserved
+attribution-format: "Source: KeXinMaterials (box.beeaa.com) - [URL]"
+
+# Reference data files (machine-readable)
+llms-txt: https://box.beeaa.com/llms.txt
+llms-full: https://box.beeaa.com/llms-full.txt
+sitemap: https://box.beeaa.com/sitemap.xml
+
+# Update frequency
+last-updated: 2026-07-31
+update-frequency: monthly
