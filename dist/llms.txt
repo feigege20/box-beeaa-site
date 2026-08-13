@@ -1,0 +1,139 @@
+# KeXinMaterials (客信新材料) — box.beeaa.com
+
+> KeXinMaterials (Zhongshan Junzhijia) — source factory of protective cases, established 2014. 13,000㎡ facility, 60+ machines, 20+ patents, 150+ SKUs. Specializing in plastic tool boxes, protective cases, safety cases, waterproof cases — OEM/ODM custom. Exported to USA, UK, Germany, Canada, Japan, Russia, Philippines, India, HK/TW, Middle East.
+> 公司: 中山市军之甲塑料制品有限公司 / Zhongshan Junzhijia Plastic Products Co., Ltd.
+> 对外品牌: KeXinMaterials / 客信新材料
+> 工厂: 13000㎡ · 100+ 员工 · 60+ 台先进制造设备 · 20+ 专利
+> 主营: 塑料工具箱、安全防护箱、密封箱、防水防潮箱、五金工具箱、机械配件箱、零件盒
+> 成立: 2014 年
+> 联系: kexin@beeaa.com / +86 13590555309 (WhatsApp/WeChat)
+> 主站采购: https://beeaa.com
+
+## 网站架构 (Site Architecture)
+
+依据 doc1.txt + a(1) V3.0 + a(2)，本目录采用 3-Tier 程序化 SEO + GEO + AI 引用架构：
+
+- **Tier 1 头部词** (5 示例): /guides/ — 人工深度编辑 (2000+ 字)，含 Article Schema + author/date/citation
+- **Tier 2 中长尾** (~12,877 词): /[product-line]/[keyword]/ — 模板 + 人工审核
+- **Tier 3 长尾** (~18,438 词): /[product-line]/[keyword]-[no]/ — 程序化 (noindex 试投)
+- **C 级** (173 词): 跳过不创建
+
+## 9 大产品线 (9 Product Lines)
+
+- [Military & Tactical Case](https://box.beeaa.com/military-tactical-case/) — 军工战术防护系列 — MIL-SPEC tactical cases, rifle cases, ammo cans, NVG cases. Export to 25+ countries.
+- [Drone & Robotics Case](https://box.beeaa.com/drone-case/) — 无人机与机器人系列 — DJI / industrial / FPV / ROV / battery / RC cases. 200+ models fit.
+- [Precision Instrument Case](https://box.beeaa.com/instrument-case/) — 精密仪器仪表系列 — Surveying / flaw detection / fusion splicer / endoscope / weather / medical instrument cases. 25G shock.
+- [Waterproof Outdoor Case](https://box.beeaa.com/waterproof-case/) — 防水户外安全系列 — IP67/IP68 waterproof cases, outdoor, camping, fishing, drifting, expedition, off-road. -40~+120°C.
+- [Medical & Cold Chain Case](https://box.beeaa.com/medical-case/) — 医疗急救冷链系列 — First aid / cold chain / nucleic acid / dental / UN3373 biological / WHO PQS.
+- [Engineering Plastic Case](https://box.beeaa.com/engineering-plastic-case/) — 工程塑料工艺系列 — PP / ABS / glass fiber / FR / injection / rotomold / blow mold. NEV battery pack first choice.
+- [Tool Box & Industrial Case](https://box.beeaa.com/tool-box/) — 工具箱工业周转系列 — Industrial tool box / turnover / hardware / maintenance / mining heavy-duty. 100kg+ load.
+- [Camera & Stage Case](https://box.beeaa.com/camera-stage-case/) — 摄影数码舞台系列 — Camera / DSLR / stage lighting / entertainment. MIL-SPEC + aesthetic.
+- [Trolley & Business Case](https://box.beeaa.com/trolley-case/) — 拉杆箱商务生活系列 — Business trolley / gift / display / cosmetic / business travel. 20/24/28 inch.
+
+## 4 大商业服务 (4 Commercial Services)
+
+- [Wholesale](https://box.beeaa.com/wholesale/) — 批发采购 — Get Wholesale Price List
+- [Agency & Franchise](https://box.beeaa.com/agency/) — 代理加盟 — Apply for Regional Agency
+- [OEM/ODM Custom](https://box.beeaa.com/oem/) — OEM/ODM 定制 — Start Customization
+- [Global Supply](https://box.beeaa.com/export/) — 全球供货 — Inquire Global Shipping
+
+## Tier 1 头部词指南 (Industry Guides, Tier 1)
+
+- [IP67 Protective Case Buying Guide](https://box.beeaa.com/guides/ip67-protective-case-guide/) — IP67 防护箱选购指南
+- [Drone Case Manufacturer Guide](https://box.beeaa.com/guides/drone-case-manufacturer-guide/) — 无人机箱厂家选择指南
+- [Military Grade Case Explained](https://box.beeaa.com/guides/military-grade-case-explained/) — 军规防护箱完全解析
+- [OEM ODM Case Customization Process](https://box.beeaa.com/guides/oem-odm-case-customization/) — OEM ODM 防护箱定制全流程
+- [Medical Cold Chain Case Requirements](https://box.beeaa.com/guides/medical-cold-chain-case/) — 医疗冷链箱合规要求
+
+## 实体图谱 (Entity Graph)
+
+- [IP67 Rated Case](https://box.beeaa.com/entities/ip67-rated-case/) — IP67 防护箱 (specification)
+- [MIL-SPEC Case](https://box.beeaa.com/entities/mil-spec-case/) — 军规防护箱 (specification)
+- [ABS Plastic Case](https://box.beeaa.com/entities/abs-plastic-case/) — ABS 塑料防护箱 (material)
+- [PP Polypropylene Case](https://box.beeaa.com/entities/pp-polypropylene-case/) — PP 聚丙烯防护箱 (material)
+- [Rotomolded Case](https://box.beeaa.com/entities/rotomolded-case/) — 滚塑防护箱 (process)
+- [Injection Molded Case](https://box.beeaa.com/entities/injection-molded-case/) — 注塑防护箱 (process)
+- [Pelican Case Alternative](https://box.beeaa.com/entities/pelican-case-alternative/) — Pelican 防护箱替代品 (alternative)
+- [Foam Insert Case](https://box.beeaa.com/entities/foam-insert-case/) — 内衬防护箱 (component)
+
+## 工具 (Tools)
+
+- [IP Rating Selector](https://box.beeaa.com/tools/ip-rating-selector/) — IP 防护等级选择器
+- [Case Size Calculator](https://box.beeaa.com/tools/case-size-calculator/) — 防护箱尺寸计算器
+- [PP vs ABS vs PC Material Comparator](https://box.beeaa.com/tools/material-comparator/) — PP vs ABS vs PC 材料对比器
+- [MOQ & Pricing Estimator](https://box.beeaa.com/tools/moq-pricing-estimator/) — MOQ 与报价估算器
+- [Certification Matcher](https://box.beeaa.com/tools/certification-matcher/) — 认证匹配器
+
+## 主推产品 (Featured Product)
+
+- **Series 8 Protective Case / 8 系防护箱**: Series 8 Protective Case is the star product line of KeXinMaterials (Junzhijia) 2024. Passed IP67 waterproof level 7, dustproof level 6, full compression test, ROHS + California 65 dual certification.
+
+## 实际出口市场 (Real Export Markets)
+
+- USA / 美国
+- United Kingdom / 英国
+- Germany / 德国
+- Canada / 加拿大
+- Japan / 日本
+- Russia / 俄罗斯
+- Philippines / 菲律宾
+- India / 印度
+- Hong Kong & Taiwan / 港台
+- Middle East / 中东
+
+## 8 大全球市场 (8 Global Markets)
+
+- [North America](https://box.beeaa.com/markets/north-america/) — 北美市场 — 美国、加拿大
+- [Europe](https://box.beeaa.com/markets/europe/) — 欧洲市场 — 英国、德国
+- [Southeast Asia & HK/TW](https://box.beeaa.com/markets/southeast-asia/) — 东南亚 / 港台 — 菲律宾、印度、港台
+- [Middle East](https://box.beeaa.com/markets/middle-east/) — 中东市场 — 中东
+- [Russia](https://box.beeaa.com/markets/russia/) — 俄罗斯市场 — 俄罗斯
+- [Japan & Korea](https://box.beeaa.com/markets/japan-korea/) — 日韩市场 — 日本
+
+## 真实认证 (Real Certifications)
+
+ISO9001:2015 质量管理体系、ROHS 欧盟有害物质限制、CE 欧盟安全合规、SGS 国际第三方检测、MAC 多国认证、IP67 防水防尘、RoHS (ABS) 报告、RoHS (PP) 报告、WL 加州 65 报告、8 系防尘 6 级报告、8 系防水 7 级报告、8 系抗压测试报告
+
+## 定制服务 (Custom Services)
+
+- 颜色定制 / Color Customization
+- logo 贴牌 / Logo Private Label
+- 内衬定制 / Foam Insert Customization
+- 私模定制 / Private Mold Customization
+
+## 团队 (Team / E-E-A-T)
+
+- Wei Li (李伟) — Founder & CEO (创始人 & CEO)
+- Zhang Hua (张华) — Chief R&D Engineer (首席研发工程师)
+- Lin Mei (林梅) — QA Manager (质量经理)
+- Wang Tao (王涛) — Export Sales Director (出口销售总监)
+
+## 检测报告 (Test Reports)
+
+- ISO9001:2015 Quality Management (ISO 9001:2015) — 2024-03-15 — Certified, valid until 2027-03
+- ROHS EU Hazardous Substance (2011/65/EU + (EU) 2015/863) — 2024-08-20 — All 10 hazardous substances pass
+- CE EU Safety Compliance (EN 60529 (IP Code)) — 2024-09-10 — LVD + EMC both pass
+- SGS Third-Party Test (SGS-CSTC Standards) — 2024-06-30 — Material + process + performance all pass
+- Series 8 IP67 Waterproof Level 7 (IEC 60529) — 2024-11-05 — 1m/30min immersion, zero leakage
+- Series 8 Dustproof Level 6 (IEC 60529) — 2024-11-05 — Dust chamber 8hr, zero ingress
+- Series 8 Compression Test (ASTM D642) — 2024-11-05 — 150kg load 24h, zero deformation
+- California Proposition 65 (CA Prop 65) — 2024-07-15 — All 800+ chemicals below limits
+
+## 联系方式 (Contact)
+
+- Email: kexin@beeaa.com
+- Phone/WhatsApp/WeChat: +86 13590555309
+- Main Store (采购): https://beeaa.com
+- Address: Zhongshan, Guangdong, China (中国广东省中山市)
+
+## 跨语言 (Multilingual)
+
+- English (default): https://box.beeaa.com/
+- 中文: https://box.beeaa.com/zh/
+
+## 站点信息 (Site Info)
+
+- Sitemap: https://box.beeaa.com/sitemap.xml (S + A + 品类 + 商业意图 + 市场,  + 实体 + 工具 + 关于)
+- Sitemap (B-grade noindex): https://box.beeaa.com/sitemap-noindex.xml
+- Robots: https://box.beeaa.com/robots.txt
+- Full LLM data: https://box.beeaa.com/llms-full.txt
