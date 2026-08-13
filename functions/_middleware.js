@@ -1,12 +1,12 @@
-/**
- * box.beeaa.com Pages Function Middleware — V6
+﻿/**
+ * box.beeaa.com Pages Function Middleware 鈥?V6
  * 
- * 修复 V5 bug:
- * - 移除 tryKeys.push("zh/index.html") / "medical-case/index.html" 兜底 (404 静默回首页)
- * - 移除其他 HTML 路径的 R2 兜底 (404 应当返回 404)
- * - 新增 B-tier 301 模糊匹配: URL 不带数字后缀 → 自动加 -<NNNNN> 后 301 重定向
+ * 淇 V5 bug:
+ * - 绉婚櫎 tryKeys.push("zh/index.html") / "medical-case/index.html" 鍏滃簳 (404 闈欓粯鍥為椤?
+ * - 绉婚櫎鍏朵粬 HTML 璺緞鐨?R2 鍏滃簳 (404 搴斿綋杩斿洖 404)
+ * - 鏂板 B-tier 301 妯＄硦鍖归厤: URL 涓嶅甫鏁板瓧鍚庣紑 鈫?鑷姩鍔?-<NNNNN> 鍚?301 閲嶅畾鍚?
  * 
- * 路由:
+ * 璺敱:
  *   /zh/*             -> R2 bucket: box-zh
  *   /medical-case/*   -> R2 bucket: box-en-b (manual override)
  *   other HTML paths  -> R2 box-en-b (B-tier) then Pages fallback
@@ -64,7 +64,7 @@ function serveR2(obj) {
 }
 
 /**
- * 404 响应 — 标准 404 + HTML body
+ * 404 鍝嶅簲 鈥?鏍囧噯 404 + HTML body
  */
 function serve404() {
   const body = `<!DOCTYPE html>
@@ -87,7 +87,7 @@ p { color:#475569; line-height:1.6; margin:0 5px 0 0; }
 <h1>404</h1>
 <h2>Page Not Found</h2>
 <p>The page you requested is not in our catalog. This may be an old or mistyped URL. Browse our <a href="/">home page</a> for the latest products, or contact us for a custom quote.</p>
-<a href="/" class="cta">← Back to Home</a>
+<a href="/" class="cta">鈫?Back to Home</a>
 </div>
 </body>
 </html>`;
@@ -105,8 +105,8 @@ function serve301(targetUrl) {
 }
 
 /**
- * 解析 B-tier slug 是否带 -NNNNN 数字后缀
- * 返回 { base, hasSuffix, suffix, fullSlug }
+ * 瑙ｆ瀽 B-tier slug 鏄惁甯?-NNNNN 鏁板瓧鍚庣紑
+ * 杩斿洖 { base, hasSuffix, suffix, fullSlug }
  */
 function parseBslug(slug) {
   const m = slug.match(/^(.*?)-(\d{4,6})$/);
@@ -117,14 +117,14 @@ function parseBslug(slug) {
 }
 
 /**
- * 用 R2 List API 查找不带数字后缀的 slug 对应的实际 -NNNNN URL
- * 限制: 每个 prefix 最多 1 个匹配 (5min KV cache)
+ * 鐢?R2 List API 鏌ユ壘涓嶅甫鏁板瓧鍚庣紑鐨?slug 瀵瑰簲鐨勫疄闄?-NNNNN URL
+ * 闄愬埗: 姣忎釜 prefix 鏈€澶?1 涓尮閰?(5min KV cache)
  */
 const B_TIER_CACHE = new Map();
 const B_TIER_TTL_MS = 5 * 60 * 1000;
 
 async function findBslugSuffix(env, bucketName, productLine, slug) {
-  // 只在 box-en-b / box-zh 找
+  // 鍙湪 box-en-b / box-zh 鎵?
   if (bucketName !== "BOX_EN_B" && bucketName !== "BOX_ZH") return null;
   const cacheKey = `${bucketName}|${productLine}|${slug}`;
   const now = Date.now();
@@ -132,7 +132,7 @@ async function findBslugSuffix(env, bucketName, productLine, slug) {
     const e = B_TIER_CACHE.get(cacheKey);
     if (now - e.ts < B_TIER_TTL_MS) return e.value;
   }
-  // List 找以 slug- 开头的 key (delimiter "/" 限定只 list 子目录)
+  // List 鎵句互 slug- 寮€澶寸殑 key (delimiter "/" 闄愬畾鍙?list 瀛愮洰褰?
   const prefix = `${productLine}/${slug}-`;
   const bucket = bucketName === "BOX_EN_B" ? env.BOX_EN_B : env.BOX_ZH;
   try {
@@ -148,7 +148,7 @@ async function findBslugSuffix(env, bucketName, productLine, slug) {
       if (continuationToken) params.ContinuationToken = continuationToken;
       const resp = await bucket.list(params);
       for (const cp of resp.CommonPrefixes || []) {
-        // cp.Prefix 形如 "product-line/slug-NNNNN/"
+        // cp.Prefix 褰㈠ "product-line/slug-NNNNN/"
         const matched = cp.Prefix.match(new RegExp(`^${productLine.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&")}/${slug.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&")}-(\\d{4,6})/$`));
         if (matched) {
           found = matched[1];
@@ -175,7 +175,7 @@ export const onRequest = async (context) => {
     path = url.pathname;
   }
 
-  // 解析路径段: 跳过已知 segment
+  // 瑙ｆ瀽璺緞娈? 璺宠繃宸茬煡 segment
   const skipPrefixes = [
     "zh/", "medical-case/", "styles/", "images/", "_",
     "llms", "sitemap", "robots", "rss", "manifest", ".well-known",
@@ -185,37 +185,37 @@ export const onRequest = async (context) => {
   const isStaticAsset = path === "/" || path === "/index.html" || path === "/favicon.ico"
     || skipPrefixes.some(p => path === p.replace(/\/$/, "") || path.startsWith(p));
 
-  // === /zh/* 路由 ===
+  // === /zh/* 璺敱 ===
   if (path === "/zh" || path === "/zh/" || path.startsWith("/zh/")) {
     return await handleZHRoute(context, path);
   }
 
-  // === /medical-case/* 路由 ===
+  // === /medical-case/* 璺敱 ===
   if (path === "/medical-case" || path === "/medical-case/" || path.startsWith("/medical-case/")) {
     return await handleProductLineRoute(context, path, "medical-case", "BOX_EN_B");
   }
 
-  // === 其他 HTML 路径(非静态资源) ===
+  // === 鍏朵粬 HTML 璺緞(闈為潤鎬佽祫婧? ===
   if (!isStaticAsset) {
     return await handleGenericRoute(context, path);
   }
 
-  // === 静态资源/Pages 默认 ===
+  // === 闈欐€佽祫婧?Pages 榛樿 ===
   return withSecurityHeaders(context.next());
 };
 
 async function handleZHRoute(context, path) {
-  // path 以 /zh 开头
+  // path 浠?/zh 寮€澶?
   const pathNoSlash = path.replace(/^\/+/, ""); // "zh/..." or "zh"
   
-  // 检测是否带尾部斜杠
+  // 妫€娴嬫槸鍚﹀甫灏鹃儴鏂滄潬
   const endsWithSlash = path === "/zh" || path.endsWith("/");
   let suffix = "";
   if (endsWithSlash) {
     suffix = "index.html";
   }
   
-  // 第一轮: 精确匹配
+  // 绗竴杞? 绮剧‘鍖归厤
   const exactKeys = [];
   if (endsWithSlash) {
     exactKeys.push(pathNoSlash + suffix); // zh/camera-stage-case/foo/index.html
@@ -234,16 +234,16 @@ async function handleZHRoute(context, path) {
     } catch (e) { /* continue */ }
   }
   
-  // 第二轮: B-tier 模糊匹配 → 301
+  // 绗簩杞? B-tier 妯＄硦鍖归厤 鈫?301
   if (endsWithSlash) {
-    // 路径是 /zh/<product-line>/<slug>/
+    // 璺緞鏄?/zh/<product-line>/<slug>/
     const m = pathNoSlash.match(/^zh\/([^/]+)\/([^/]+)\/?$/);
     if (m) {
       const productLine = m[1];
       const slug = m[2];
       const slugInfo = parseBslug(slug);
       if (!slugInfo.hasSuffix) {
-        // 查找后缀
+        // 鏌ユ壘鍚庣紑
         const suffixNum = await findBslugSuffix(context.env, "BOX_ZH", productLine, slug);
         if (suffixNum) {
           const newPath = `/zh/${productLine}/${slug}-${suffixNum}/`;
@@ -253,7 +253,7 @@ async function handleZHRoute(context, path) {
     }
   }
   
-  // 真 404
+  // 鐪?404
   return withSecurityHeaders(serve404());
 }
 
@@ -263,7 +263,7 @@ async function handleProductLineRoute(context, path, productLine, bucketName) {
   
   const exactKeys = [];
   if (endsWithSlash) {
-    exactKeys.push(pathNoSlash + "index.html");
+    exactKeys.push(pathNoSlash + "/index.html");
   } else {
     exactKeys.push(pathNoSlash);
     exactKeys.push(pathNoSlash + "/index.html");
@@ -278,7 +278,7 @@ async function handleProductLineRoute(context, path, productLine, bucketName) {
     } catch (e) { /* continue */ }
   }
   
-  // 模糊匹配
+  // 妯＄硦鍖归厤
   if (endsWithSlash) {
     const m = pathNoSlash.match(/^([^/]+)\/([^/]+)\/?$/);
     if (m) {
@@ -302,14 +302,14 @@ async function handleGenericRoute(context, path) {
   const pathNoSlash = path.replace(/^\/+/, "");
   const endsWithSlash = path.endsWith("/");
   
-  // 跳过 _api, _next 之类
+  // 璺宠繃 _api, _next 涔嬬被
   if (pathNoSlash.startsWith("_")) {
     return withSecurityHeaders(context.next());
   }
   
   const exactKeys = [];
   if (endsWithSlash) {
-    exactKeys.push(pathNoSlash + "index.html");
+    exactKeys.push(pathNoSlash + "/index.html");
   } else {
     exactKeys.push(pathNoSlash);
     exactKeys.push(pathNoSlash + "/index.html");
@@ -324,7 +324,7 @@ async function handleGenericRoute(context, path) {
     } catch (e) { /* continue */ }
   }
   
-  // 模糊匹配 B-tier: 路径是 /<product-line>/<slug>/
+  // 妯＄硦鍖归厤 B-tier: 璺緞鏄?/<product-line>/<slug>/
   if (endsWithSlash) {
     const m = pathNoSlash.match(/^([^/]+)\/([^/]+)\/?$/);
     if (m) {
