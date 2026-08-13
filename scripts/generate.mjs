@@ -80,11 +80,22 @@ async function copyStatic() {
   if (await fs.stat(PUBLIC).catch(() => null)) {
     await copyDirWebpOnly(PUBLIC, DIST);
   }
-  // 复制 src/styles/theme.css
+  // 复制 src/styles/theme.css (with simple CSS minification to reduce file size)
   const cssSrc = path.join(ROOT, "src/styles/theme.css");
   const cssDst = path.join(DIST, "styles/theme.css");
   await ensureDir(path.dirname(cssDst));
-  await fs.copyFile(cssSrc, cssDst);
+  const cssRaw = await fs.readFile(cssSrc, "utf-8");
+  // 简单 CSS minify: 去注释 + 合并空白 + 去尾分号
+  const cssMin = cssRaw
+    .replace(/\/\*[\s\S]*?\*\//g, "")        // /* ... */
+    .replace(/^\s*\/\/.*$/gm, "")            // // line comments
+    .replace(/\s+/g, " ")                      // 多空白 -> 单空格
+    .replace(/\s*([{};:,>+~])\s*/g, "$1")     // 符号周围空白去掉
+    .replace(/;}/g, "}")                       // 末位分号去掉
+    .replace(/\s*!important/g, "!important")  // !important 紧贴
+    .trim();
+  await fs.writeFile(cssDst, cssMin, "utf-8");
+  console.log(`[GEN] theme.css: ${cssRaw.length} -> ${cssMin.length} bytes (${(100 - cssMin.length * 100 / cssRaw.length).toFixed(1)}% smaller)`);
   // 复制 functions/ 整个目录到 dist/functions/（Pages Functions bundle）
   // 包括 _middleware.js + api/inquiry.js + api/admin/inquiries.js 等
   // Pages Functions 自动从 dist/functions/ 部署

@@ -331,7 +331,7 @@ export function renderPage({ keyword, productLine, assets, lang = "en", grade = 
   sections.push(sectionHero({
     title: meta.title,
     subtitle: meta.description,
-    image: heroImage ? `<img src="${esc(heroImage.src)}" srcset="${esc(heroImage.srcset)}" sizes="(max-width: 768px) 100vw, 1200px" alt="${esc(altFor(heroImage, t))}" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:12px;box-shadow:0 10px 25px -5px rgba(15,23,42,0.15);" />` : "",
+    image: heroImage ? `<img src="${esc(heroImage.src)}" srcset="${esc(heroImage.srcset)}" sizes="(max-width: 768px) 100vw, 1200px" alt="${esc(altFor(heroImage, t))}" width="1600" height="893" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:12px;box-shadow:0 10px 25px -5px rgba(15,23,42,0.15);" />` : "",
     lang,
   }));
 

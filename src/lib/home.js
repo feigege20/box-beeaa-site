@@ -59,7 +59,7 @@ function altFor(img, t) {
 
 function renderPicture(img, classes = "", sizes = "(max-width: 768px) 100vw, 1200px", loading = "lazy", t = false) {
   if (!img) return "";
-  return `<img src="${esc(img.src)}" srcset="${esc(img.srcset)}" sizes="${esc(sizes)}" alt="${esc(altFor(img, t))}" loading="${loading}" decoding="async" class="${classes}" style="width:100%;height:auto;border-radius:12px;" />`;
+  return `<img src="${esc(img.src)}" srcset="${esc(img.srcset)}" sizes="${esc(sizes)}" alt="${esc(altFor(img, t))}" width="1600" height="893" loading="${loading}" decoding="async" class="${classes}" style="width:100%;height:auto;border-radius:12px;" />`;
 }
 
 export function renderHome({ lang = "en" } = {}) {
@@ -79,7 +79,7 @@ export function renderHome({ lang = "en" } = {}) {
   const productCards = siteConfig.productLines.map(p => {
     const img = getProductImage(p.slug);
     return `<a href="${basePrefix}/${p.slug}/" class="card" style="text-decoration:none;color:inherit;display:block;overflow:hidden;">
-      ${img ? `<img src="${esc(img.src)}" srcset="${esc(img.srcset)}" sizes="(max-width: 768px) 100vw, 380px" alt="${esc(altFor(img, t))}" loading="lazy" decoding="async" style="width:100%;height:180px;object-fit:cover;border-radius:8px 8px 0 0;margin:-1.5rem -1.5rem 1rem;width:calc(100% + 3rem);max-width:calc(100% + 3rem);" />` : ""}
+      ${img ? `<img src="${esc(img.src)}" srcset="${esc(img.srcset)}" sizes="(max-width: 768px) 100vw, 380px" alt="${esc(altFor(img, t))}" width="800" height="446" loading="lazy" decoding="async" style="width:100%;height:180px;object-fit:cover;border-radius:8px 8px 0 0;margin:-1.5rem -1.5rem 1rem;width:calc(100% + 3rem);max-width:calc(100% + 3rem);" />` : ""}
       <h3>${esc(t ? p.name_zh : p.name_en)}</h3>
       <p>${esc(t ? p.desc_zh : p.desc_en)}</p>
       <div style="margin-top:1rem;color:#3B5BFF;font-weight:600;font-size:0.875rem;">${t ? "查看产品 →" : "View Products →"}</div>
@@ -114,13 +114,13 @@ export function renderHome({ lang = "en" } = {}) {
   // 工厂实景（真实图，6 张网格）
   const factoryImgs = [getFactoryImage("production-line"), getFactoryImage("warehouse"), getFactoryImage("quality-control")].filter(Boolean);
   const factoryGrid2 = [getFactoryImage("shipping"), getFactoryImage("team"), getFactoryImage("exterior")].filter(Boolean);
-  const renderFactoryImg = (img) => `<img src="${esc(img.src)}" srcset="${esc(img.srcset)}" sizes="(max-width: 768px) 100vw, 380px" alt="${esc(altFor(img, t))}" loading="lazy" decoding="async" style="width:100%;height:240px;object-fit:cover;border-radius:12px;" />`;
+  const renderFactoryImg = (img) => `<img src="${esc(img.src)}" srcset="${esc(img.srcset)}" sizes="(max-width: 768px) 100vw, 380px" alt="${esc(altFor(img, t))}" width="800" height="446" loading="lazy" decoding="async" style="width:100%;height:240px;object-fit:cover;border-radius:12px;" />`;
   const factoryGrid = factoryImgs.length > 0
     ? `<div class="grid grid-3">
         ${factoryImgs.map(renderFactoryImg).join("")}
       </div>
       <div class="grid grid-3" style="margin-top:1rem;">
-        ${factoryGrid2.map(img => `<img src="${esc(img.src)}" srcset="${esc(img.srcset)}" sizes="(max-width: 768px) 100vw, 380px" alt="${esc(altFor(img, t))}" loading="lazy" decoding="async" style="width:100%;height:180px;object-fit:cover;border-radius:12px;" />`).join("")}
+        ${factoryGrid2.map(img => `<img src="${esc(img.src)}" srcset="${esc(img.srcset)}" sizes="(max-width: 768px) 100vw, 380px" alt="${esc(altFor(img, t))}" width="800" height="446" loading="lazy" decoding="async" style="width:100%;height:180px;object-fit:cover;border-radius:12px;" />`).join("")}
       </div>`
     : "";
 
@@ -191,7 +191,7 @@ export function renderHome({ lang = "en" } = {}) {
           </div>
         </div>
         <div>
-          ${featured8 ? `<img src="${esc(featured8.src)}" srcset="${esc(featured8.srcset)}" sizes="(max-width: 768px) 100vw, 600px" alt="${esc(altFor(featured8, t))}" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:16px;box-shadow:0 20px 40px -10px rgba(15,23,42,0.2);" />` : ""}
+          ${featured8 ? `<img src="${esc(featured8.src)}" srcset="${esc(featured8.srcset)}" sizes="(max-width: 768px) 100vw, 600px" alt="${esc(altFor(featured8, t))}" width="1600" height="893" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:16px;box-shadow:0 20px 40px -10px rgba(15,23,42,0.2);" />` : ""}
         </div>
       </div>
     </div>

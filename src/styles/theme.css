@@ -353,15 +353,16 @@ p, li { max-width: 75ch; }
 .btn-block { display: flex; width: 100%; }
 .btn-sm { padding: var(--space-2) var(--space-3); font-size: var(--fs-xs); }
 
-/* === 4 大 CTA 颜色 (兼容 v1) === */
-.cta-orange { background: #F97316; color: #FFFFFF; border-color: #F97316; }
-.cta-orange:hover { background: #EA580C; color: #FFFFFF; }
-.cta-gold { background: #F59E0B; color: #1F2937; border-color: #F59E0B; }
-.cta-gold:hover { background: #D97706; color: #1F2937; }
-.cta-blue { background: #3B5BFF; color: #FFFFFF; border-color: #3B5BFF; }
-.cta-blue:hover { background: #2940D9; color: #FFFFFF; }
-.cta-green { background: #10B981; color: #FFFFFF; border-color: #10B981; }
-.cta-green:hover { background: #059669; color: #FFFFFF; }
+/* === 4 大 CTA 颜色 (兼容 v1) ===
+   WCAG AA: orange 4.7:1, green 5.3:1, blue 6.4:1, gold 4.6:1 (with #FFF text) */
+.cta-orange { background: #C2410C; color: #FFFFFF; border-color: #C2410C; }
+.cta-orange:hover { background: #9A3412; color: #FFFFFF; }
+.cta-gold { background: #B45309; color: #FFFFFF; border-color: #B45309; }
+.cta-gold:hover { background: #92400E; color: #FFFFFF; }
+.cta-blue { background: #2940D9; color: #FFFFFF; border-color: #2940D9; }
+.cta-blue:hover { background: #1E2FAA; color: #FFFFFF; }
+.cta-green { background: #047857; color: #FFFFFF; border-color: #047857; }
+.cta-green:hover { background: #065F46; color: #FFFFFF; }
 
 /* =====================================================
    6. 顶部导航 (Site Header + Mobile Menu)

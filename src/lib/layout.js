@@ -177,7 +177,7 @@ export function renderFooter({ lang = "en" } = {}) {
   <div class="container">
     <div class="footer-grid">
       <div>
-        <h4>${t ? siteConfig.brand.zh : siteConfig.brand.en}</h4>
+        <h3 style="font-size:1rem;font-weight:700;">${t ? siteConfig.brand.zh : siteConfig.brand.en}</h3>
         <p>${t ? siteConfig.tagline.zh : siteConfig.tagline.en}</p>
         <p style="margin-top:1rem;">
           <strong>${t ? "邮箱" : "Email"}:</strong> <a href="mailto:${siteConfig.contact.email}">${siteConfig.contact.email}</a><br/>
@@ -186,13 +186,13 @@ export function renderFooter({ lang = "en" } = {}) {
         </p>
       </div>
       <div>
-        <h4>${t ? "9 大产品线" : "9 Product Lines"}</h4>
+        <h3 style="font-size:1rem;font-weight:700;">${t ? "9 大产品线" : "9 Product Lines"}</h3>
         <ul style="list-style:none;padding:0;margin:0;line-height:2;">
           ${siteConfig.productLines.map(p => `<li><a href="${t ? "/zh" : ""}/${p.slug}/">${t ? p.short_zh : p.short_en}</a></li>`).join("")}
         </ul>
       </div>
       <div>
-        <h4>${t ? "商业服务" : "Services"}</h4>
+        <h3 style="font-size:1rem;font-weight:700;">${t ? "商业服务" : "Services"}</h3>
         <ul style="list-style:none;padding:0;margin:0;line-height:2;">
           <li><a href="${t ? "/zh" : ""}/wholesale/">${t ? "批发采购" : "Wholesale"}</a></li>
           <li><a href="${t ? "/zh" : ""}/agency/">${t ? "代理加盟" : "Agency"}</a></li>
@@ -201,13 +201,13 @@ export function renderFooter({ lang = "en" } = {}) {
         </ul>
       </div>
       <div>
-        <h4>${t ? "全球市场" : "Global Markets"}</h4>
+        <h3 style="font-size:1rem;font-weight:700;">${t ? "全球市场" : "Global Markets"}</h3>
         <ul style="list-style:none;padding:0;margin:0;line-height:2;">
           ${siteConfig.markets.slice(0, 6).map(m => `<li><a href="${t ? "/zh" : ""}/markets/${m.slug}/">${t ? m.name_zh : m.name_en}</a></li>`).join("")}
         </ul>
       </div>
       <div>
-        <h4>${t ? "资源" : "Resources"}</h4>
+        <h3 style="font-size:1rem;font-weight:700;">${t ? "资源" : "Resources"}</h3>
         <ul style="list-style:none;padding:0;margin:0;line-height:2;">
           <li><a href="${t ? "/zh" : ""}/faq/">FAQ</a></li>
           <li><a href="${t ? "/zh" : ""}/blog/">${t ? "博客" : "Blog"}</a></li>

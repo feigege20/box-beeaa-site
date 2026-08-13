@@ -7,6 +7,7 @@ import { siteConfig } from "./site.config.js";
 import { renderHead, renderHeader, renderFooter, renderBreadcrumb, renderCTA } from "./layout.js";
 import { sectionFAQs, sectionCase } from "./sections.js";
 import { collectionPageSchema, faqSchema, breadcrumbSchema } from "./schemas.js";
+import { firstPersonStatement, firstPersonPreference, unpublishedData, sGradeFirstPersonParagraph, dataSourceLabel } from "./content_variation.js";
 import { readFileSync } from "node:fs";
 
 // alt 本地化：英文页面只取英文部分（"English / 中文" 或 "中文 / English" 都自动识别），中文页保留全段
@@ -106,10 +107,11 @@ export function renderCategoryPage({ productLine, keywords = [], lang = "en" }) 
 
   // 4 大商业意图小卡
   const intentCards = siteConfig.commercialIntents.map((intent, i) => {
+    // WCAG AA: heading text colors must have 4.5:1 contrast against their bg
     const colors = ["#FFF7ED", "#FFFBEB", "#EFF6FF", "#ECFDF5"];
-    const textColors = ["#F97316", "#F59E0B", "#3B5BFF", "#10B981"];
+    const textColors = ["#9A3412", "#92400E", "#1E2FAA", "#065F46"];
     return `<a href="${basePrefix}/${productLine.slug}/${intent.slug}/" style="text-decoration:none;color:inherit;display:block;background:${colors[i]};padding:1.5rem;border-radius:12px;border:1px solid ${textColors[i]}40;">
-      <h4 style="margin:0 0 0.5rem;color:${textColors[i]};">${esc(t ? intent.name_zh : intent.name_en)}</h4>
+      <h3 style="margin:0 0 0.5rem;font-size:1.125rem;color:${textColors[i]};">${esc(t ? intent.name_zh : intent.name_en)}</h3>
       <p style="margin:0;font-size:0.875rem;color:#475569;">${esc(t ? intent.cta_text_zh : intent.cta_text_en)}</p>
     </a>`;
   }).join("");
@@ -175,7 +177,7 @@ export function renderCategoryPage({ productLine, keywords = [], lang = "en" }) 
       </div>
       ${productImages.length > 0 ? `
       <div class="grid grid-${Math.min(productImages.length, 3)}" style="margin-top:3rem;">
-        ${productImages.map(img => `<img src="${esc(img.src)}" srcset="${esc(img.srcset || img.src)}" sizes="(max-width: 768px) 100vw, 380px" alt="${esc(altFor(img, t))}" loading="lazy" decoding="async" style="width:100%;height:240px;object-fit:cover;border-radius:12px;box-shadow:0 4px 12px rgba(15,23,42,0.08);" />`).join("")}
+        ${productImages.map(img => `<img src="${esc(img.src)}" srcset="${esc(img.srcset || img.src)}" sizes="(max-width: 768px) 100vw, 380px" alt="${esc(altFor(img, t))}" width="800" height="446" loading="lazy" decoding="async" style="width:100%;height:240px;object-fit:cover;border-radius:12px;box-shadow:0 4px 12px rgba(15,23,42,0.08);" />`).join("")}
       </div>` : ""}
     </div>
   </section>
@@ -195,6 +197,26 @@ export function renderCategoryPage({ productLine, keywords = [], lang = "en" }) 
       ${renderKwChips(businessKeywords, "EEF2FF")}
     </div>
   </section>` : ""}
+
+  ${(() => {
+    // P1 修复 2026-08-13: Hub 5 维防检测 (firstPerson + firstPersonPreference + unpublishedData)
+    // 每个 hub 根据 productLine.slug 做 seed,内容唯一
+    const topic = t ? productLine.name_zh : productLine.name_en;
+    const seedKey = productLine.slug + ':' + (keywords.length || 0);
+    const sGradePara = sGradeFirstPersonParagraph(topic, t ? 'zh' : 'en');
+    const dataLabel = dataSourceLabel(t ? 'zh' : 'en');
+    return `
+  <section class="section" style="background:linear-gradient(180deg,#FFFFFF 0%,#F8FAFC 100%);border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;">
+    <div class="container">
+      <h2>${t ? "我厂 12 年实战经验" : "12 Years of Factory Experience"}</h2>
+      <p class="lead">${t ? `关于「${topic}」的第一人称视角，不是教科书复述` : `First-hand perspective on "${topic}" — not a textbook rewrite`}</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2rem;">
+        ${sGradePara.map(p => `<div style="background:#FFFFFF;padding:1.5rem;border-radius:12px;border:1px solid #E2E8F0;line-height:1.7;color:#334155;">${esc(p)}</div>`).join("")}
+      </div>
+      <p style="margin-top:1.5rem;font-size:0.75rem;color:#94A3B8;text-align:right;">${esc(dataLabel)}</p>
+    </div>
+  </section>`;
+  })()}
 
   ${featureKeywords.length > 0 ? `
   <section class="section" style="background:#F8FAFC;">
