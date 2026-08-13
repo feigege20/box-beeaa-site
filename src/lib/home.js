@@ -72,8 +72,8 @@ export function renderHome({ lang = "en" } = {}) {
     : "KeXinMaterials · Source Factory of Protective Cases | 9 Product Lines · OEM/ODM · Global Supply";
 
   const description = t
-    ? "客信新材料（广东）有限公司，9 大产品线防护箱、安全箱、工具箱源头工厂。32,308 关键词全球买家覆盖，IP67 防水、MIL-SPEC 军规、防爆认证、30 天交付。批发、代理加盟、OEM/ODM、全球供货。kexin@beeaa.com / +86 13590555309"
-    : "KeXinMaterials (Guangdong) Co., Ltd. - source factory for protective cases across 9 product lines. 32,308 keywords covering global buyers. IP67 waterproof, MIL-SPEC, explosion-proof certified, 30-day delivery. Wholesale, Agency, OEM/ODM, Global Supply. kexin@beeaa.com / +86 13590555309";
+    ? "客信新材料（广东）有限公司，9 大产品线防护箱、安全箱、工具箱源头工厂。32,308 关键词全球买家覆盖，IP67 防水、MIL-SPEC 军规、防爆认证、30-45 天交付。FOB 深圳/EXW 中山，T/T 30% 定金。批发、代理加盟、OEM/ODM、全球供货。kexin@beeaa.com / +86 13590555309"
+    : "KeXinMaterials (Guangdong) Co., Ltd. - source factory for protective cases across 9 product lines. 32,308 keywords covering global buyers. IP67 waterproof, MIL-SPEC, explosion-proof certified, 30-45 day delivery. FOB Shenzhen / EXW Zhongshan, T/T 30% deposit. Wholesale, Agency, OEM/ODM, Global Supply. kexin@beeaa.com / +86 13590555309";
 
   // 9 大产品线卡片（带真实 WebP 图）
   const productCards = siteConfig.productLines.map(p => {
@@ -134,7 +134,7 @@ export function renderHome({ lang = "en" } = {}) {
   // FAQ
   const homeFaqs = [
     { q_zh: "客信新材料是工厂还是贸易商？", q_en: "Is KeXinMaterials a factory or trading company?", a_zh: "客信新材料是源头工厂，18,000㎡ 厂房，自主材料改性、模具、注塑/滚塑、装配到出货全流程。", a_en: "KeXinMaterials is a source factory with 18,000㎡ facility, controlling material modification, mold, injection/rotomolding, assembly, and shipping." },
-    { q_zh: "支持 OEM/ODM 吗？", q_en: "Do you support OEM/ODM?", a_zh: "支持。3D 设计 3 天、打样 7-10 天、开模 45 天、量产 30 天。", a_en: "Yes. 3D design 3 days, sample 7-10 days, mold 45 days, mass production 30 days." },
+    { q_zh: "支持 OEM/ODM 吗？", q_en: "Do you support OEM/ODM?", a_zh: "支持。3D 设计 3 天、打样 7-10 天、开模 45 天、量产 30 天。交货期 30-45 天，FOB 深圳/EXW 中山，T/T 30% 定金。", a_en: "Yes. 3D design 3 days, sample 7-10 days, mold 45 days, mass production 30 days. Lead time 30-45 days, FOB Shenzhen / EXW Zhongshan, T/T 30% deposit." },
     { q_zh: "如何询盘？", q_en: "How to inquire?", a_zh: "邮件 kexin@beeaa.com 或 WhatsApp +86 13590555309，12 小时内回复。", a_en: "Email kexin@beeaa.com or WhatsApp +86 13590555309, reply within 12 hours." },
     { q_zh: "MOQ 是多少？", q_en: "What is MOQ?", a_zh: "标准 SKU 50-100 pcs，定制 300 pcs。", a_en: "Standard SKUs 50-100 pcs, custom 300 pcs." },
   ];

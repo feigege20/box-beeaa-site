@@ -52,7 +52,12 @@
       "lead_time_days": {
         "label_zh": "交付周期",
         "label_en": "Lead Time",
-        "options": ["20 天", "25 天", "30 天", "35 天", "45 天（含开模）"]
+        "options": [
+          { "value_zh": "30-45 天", "value_en": "30-45 days" },
+          { "value_zh": "30-45 天", "value_en": "30-45 days" },
+          { "value_zh": "30-45 天（含开模）", "value_en": "30-45 days (incl. mold)" },
+          { "value_zh": "30-45 天（含开模）", "value_en": "30-45 days (incl. mold)" }
+        ]
       },
       "certifications": {
         "label_zh": "认证",

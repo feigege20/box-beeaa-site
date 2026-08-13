@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="tool">
+<html lang="en" data-theme="military-tactical">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Certification Matcher — KeXinMaterials Tools</title>
-  <meta name="description" content="Match required certifications (CE / ROHS / FCC / IP67 / MIL-SPEC) to your target market." />
-  <meta name="keywords" content="认证匹配器,Certification Matcher,防护箱,KeXinMaterials" />
+  <title>Certification Matcher | KeXinMaterials</title>
+  <meta name="description" content="Select target market. Get required certs (CE/ROHS/FCC/PSE/EAC/BIS) + which KeXinMaterials has + missing." />
+  <meta name="keywords" content="certification, CE, ROHS, FCC, MIL-SPEC, IP67, certification matcher, 认证匹配" />
   <link rel="canonical" href="https://box.beeaa.com/tools/certification-matcher/" />
   <link rel="alternate" hreflang="en" href="https://box.beeaa.com/tools/certification-matcher/" />
   <link rel="alternate" hreflang="zh-Hans" href="https://box.beeaa.com/zh/tools/certification-matcher/" />
   <link rel="alternate" hreflang="x-default" href="https://box.beeaa.com/tools/certification-matcher/" />
-  <meta property="og:title" content="Certification Matcher — KeXinMaterials Tools" />
-  <meta property="og:description" content="Match required certifications (CE / ROHS / FCC / IP67 / MIL-SPEC) to your target market." />
+  <meta property="og:title" content="Certification Matcher | KeXinMaterials" />
+  <meta property="og:description" content="Select target market. Get required certs (CE/ROHS/FCC/PSE/EAC/BIS) + which KeXinMaterials has + missing." />
   <meta property="og:url" content="https://box.beeaa.com/tools/certification-matcher/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
@@ -178,47 +178,42 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "@id": "https://box.beeaa.com/tools/certification-matcher/#app",
-  "name": "Certification Matcher",
-  "description": "Match required certifications (CE / ROHS / FCC / IP67 / MIL-SPEC) to your target market.",
-  "url": "https://box.beeaa.com/tools/certification-matcher/",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Any",
-  "offers": {
-    "@type": "Offer",
-    "price": 0,
-    "priceCurrency": "USD"
-  },
-  "creator": {
+  "@type": "WebSite",
+  "@id": "https://box.beeaa.com#website",
+  "url": "https://box.beeaa.com",
+  "name": "KeXinMaterials (Guangdong) Co., Ltd.",
+  "alternateName": "客信新材料",
+  "inLanguage": [
+    "en",
+    "zh"
+  ],
+  "publisher": {
     "@id": "https://box.beeaa.com#organization"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://box.beeaa.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
   }
 }
 </script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://box.beeaa.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Tools",
-      "item": "https://box.beeaa.com/tools/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Certification Matcher",
-      "item": "https://box.beeaa.com/tools/certification-matcher/"
-    }
-  ]
+  "@type": "SoftwareApplication",
+  "name": "Certification Matcher",
+  "description": "Match required certifications to target market",
+  "url": "https://box.beeaa.com/tools/certification-matcher/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web Browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "provider": {
+    "@id": "https://box.beeaa.com#organization"
+  }
 }
 </script>
 </head>
@@ -323,61 +318,48 @@
     }
   })();
   </script>
-</header><div class="container">
-  <nav class="breadcrumb" aria-label="breadcrumb">
-    <a href="/">Home</a><span>›</span><a href="/tools/">Tools</a><span>›</span><span>Certification Matcher</span>
-  </nav>
-</div><section class="hero">
+</header>
+<section class="hero" style="padding:3rem 0 2rem;">
   <div class="container">
-    <h1>Certification Matcher</h1>
-    <p>Match required certifications (CE / ROHS / FCC / IP67 / MIL-SPEC) to your target market.</p>
-    <div class="hero-cta">
-      <a href="#contact" class="btn btn-lg cta-orange">📧 Email Inquiry</a>
-      <a href="https://wa.me/8613590555309" class="btn btn-lg cta-green" target="_blank" rel="noopener">💬 WhatsApp</a>
+    <h1 style="font-size:clamp(2rem,5vw,3rem);font-weight:800;margin-bottom:1rem;">
+      Certification Matcher
+    </h1>
+    <p style="font-size:1.125rem;color:var(--color-text-muted);max-width:720px;">
+      Select your target market. Get required certifications + which KeXinMaterials already has + what's missing.
+    </p>
+  </div>
+</section>
+
+<section style="padding:2rem 0 4rem;">
+  <div class="container">
+    <div class="card card-elevated" style="max-width:720px;margin:0 auto;padding:2rem;">
+      <form id="certForm" onsubmit="return false;">
+        <div class="form-group" style="margin-bottom:1.5rem;">
+          <label style="font-weight:600;font-size:1.125rem;display:block;margin-bottom:0.5rem;">
+            Target Market
+          </label>
+          <select name="market" style="width:100%;padding:0.75rem;font-size:1rem;border:1px solid var(--color-border);border-radius:var(--radius);">
+            <option value="US">🇺🇸 United States</option><option value="EU">🇪🇺 European Union</option><option value="JP">🇯🇵 Japan</option><option value="AU">🇦🇺 Australia</option><option value="RU">🇷🇺 Russia</option><option value="IN">🇮🇳 India</option>
+          </select>
+        </div>
+
+        <button type="button" id="certMatchBtn" class="btn btn-lg cta-orange" style="width:100%;margin-top:1rem;">
+          🎯 See Required Certifications
+        </button>
+      </form>
+
+      <div id="certResult" style="display:none;margin-top:2rem;"></div>
     </div>
-    
-  </div>
-</section>
-<section class="section" style="background:linear-gradient(135deg,#FEF3C7 0%,#FFFFFF 100%);">
-  <div class="container">
-    <h2>TL;DR</h2>
-    <div class="callout" style="background:#FFFFFF;">
-      <p style="font-size:1.125rem;line-height:1.8;">This is a Certification Matcher, developed by KeXinMaterials factory team based on 12 years of experience and 200+ test batches. Free to use, no signup.</p>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="container container-narrow">
-    <h2>Deep Dive</h2>
-    <p style="margin-bottom:1.5rem;line-height:1.8;">This tool is developed by KeXinMaterials. We have 12 years of case manufacturing and extensive in-house test data for every scenario.</p><p style="margin-bottom:1.5rem;line-height:1.8;">Our export director Wang Tao reports that customers who use this tool before procurement can reduce 50% of communication overhead.</p><p style="margin-bottom:1.5rem;line-height:1.8;">The tool is completely free. Results are for reference only. For bulk orders, contact our factory directly.</p>
-  </div>
-</section>
-<section class="section" style="background:#F8FAFC;">
-  <div class="container">
-    <h2>About KeXinMaterials Factory</h2>
-    <p style="line-height:1.8;">KeXinMaterials (Guangdong) Co., Ltd. = Zhongshan Junzhijia Plastic Products Co., Ltd. (same company). Founded 2014. 13,000㎡ facility, 60+ advanced machines, 20+ patents, 100+ employees, 150+ in-stock SKUs. Specializing in plastic tool boxes, protective cases, safety cases, waterproof cases — OEM/ODM custom for outdoor exploration, military/fire/police, electronics, scientific research, aerospace &amp; communications. Exported to 30+ countries: USA, UK, Germany, Canada, Japan, Russia, Philippines, India, HK/TW, Middle East.</p>
-  </div>
-</section>
-<section class="section" style="background:#F8FAFC;">
-  <div class="container">
-    <h2>FAQs</h2>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary>How accurate is this Certification Matcher?</summary>
-        <p>Based on 200+ test batches + 12 years of factory experience. For reference only. Bulk orders should contact our engineering team.</p>
-      </details><details class="faq-item">
-        <summary>Can I use it commercially?</summary>
-        <p>Yes. CC BY 4.0 license.</p>
-      </details>
+
+    <div style="margin-top:3rem;max-width:720px;margin-left:auto;margin-right:auto;">
+      <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem;">KeXinMaterials Existing Certifications</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+        <span class="badge" style="padding:0.5rem 1rem;background:var(--color-success);color:#FFFFFF;border-radius:var(--radius-full);font-weight:600;">ISO9001 ✓</span><span class="badge" style="padding:0.5rem 1rem;background:var(--color-success);color:#FFFFFF;border-radius:var(--radius-full);font-weight:600;">ROHS ✓</span><span class="badge" style="padding:0.5rem 1rem;background:var(--color-success);color:#FFFFFF;border-radius:var(--radius-full);font-weight:600;">CE ✓</span><span class="badge" style="padding:0.5rem 1rem;background:var(--color-success);color:#FFFFFF;border-radius:var(--radius-full);font-weight:600;">SGS ✓</span><span class="badge" style="padding:0.5rem 1rem;background:var(--color-success);color:#FFFFFF;border-radius:var(--radius-full);font-weight:600;">IP67 ✓</span><span class="badge" style="padding:0.5rem 1rem;background:var(--color-success);color:#FFFFFF;border-radius:var(--radius-full);font-weight:600;">CA65 ✓</span>
+      </div>
     </div>
   </div>
 </section>
-<section class="section" style="background:linear-gradient(135deg,#0F172A 0%,#1E293B 100%);color:#FFFFFF;">
-  <div class="container">
-    <h2 style="color:#FFFFFF;">Bottom Line</h2>
-    <p style="font-size:1.25rem;line-height:1.8;color:#F1F5F9;">To put it bluntly: 80% of the 认证匹配器 on Alibaba are trading companies. Buy direct from our factory and save 30-50%.</p>
-  </div>
-</section><section class="cta-block">
+<section class="cta-block">
   <div class="container">
     <h2>Inquire Now · 30-Day Delivery</h2>
     <p>Source factory, wholesale price, 12-hour quote</p>
@@ -444,5 +426,65 @@
     });
   }
 </script>
-</body>
+<script>
+(function() {
+  var btn = document.getElementById('certMatchBtn');
+  var result = document.getElementById('certResult');
+  if (!btn || !result) return;
+  var MARKETS = {
+    US: {en:'United States', zh:'美国', flag:'🇺🇸', certs: [
+      {code:'FCC', en:'FCC (EMC)', zh:'FCC 电磁兼容', cost:'$800-1500', days:14, req:true},
+      {code:'CA65', en:'California Prop 65', zh:'加州 65 号提案', cost:'$600-1200', days:14, req:true},
+      {code:'UL', en:'UL (optional)', zh:'UL 安全认证（可选）', cost:'$2000-5000', days:30, req:false}
+    ]},
+    EU: {en:'European Union', zh:'欧盟', flag:'🇪🇺', certs: [
+      {code:'CE', en:'CE Marking', zh:'CE 认证', cost:'$800-1500', days:14, req:true},
+      {code:'ROHS', en:'ROHS 2.0', zh:'ROHS 2.0', cost:'$500-1000', days:10, req:true},
+      {code:'REACH', en:'REACH SVHC', zh:'REACH SVHC', cost:'$400-800', days:14, req:true}
+    ]},
+    JP: {en:'Japan', zh:'日本', flag:'🇯🇵', certs: [
+      {code:'PSE', en:'PSE Mark', zh:'PSE 认证', cost:'$1500-3000', days:30, req:true}
+    ]},
+    AU: {en:'Australia', zh:'澳大利亚', flag:'🇦🇺', certs: [
+      {code:'RCM', en:'RCM (SAA + ACMA)', zh:'RCM 认证', cost:'$1500-2500', days:21, req:true}
+    ]},
+    RU: {en:'Russia', zh:'俄罗斯', flag:'🇷🇺', certs: [
+      {code:'EAC', en:'EAC / GOST-R', zh:'EAC / GOST-R', cost:'$2000-4000', days:30, req:true}
+    ]},
+    IN: {en:'India', zh:'印度', flag:'🇮🇳', certs: [
+      {code:'BIS', en:'BIS', zh:'BIS 印度标准', cost:'$1500-3000', days:30, req:true}
+    ]}
+  };
+  var HAVE = ['ISO9001','ROHS','CE','SGS','IP67','CA65'];
+  btn.addEventListener('click', function() {
+    var code = document.querySelector('#certForm [name=market]').value;
+    var market = MARKETS[code];
+    var isZh = (document.documentElement.lang || 'en').toLowerCase().startsWith('zh');
+    var rows = market.certs.map(function(c) {
+      var have = HAVE.indexOf(c.code) >= 0;
+      var badge = have
+        ? '<span style="color:var(--color-success);font-weight:700;">✓ ' + (isZh ? '已有' : 'Have') + '</span>'
+        : '<span style="color:var(--color-danger);font-weight:700;">✗ ' + (isZh ? '需补' : 'Need') + '</span>';
+      var reqLabel = c.req ? ('<strong style="color:var(--color-danger);">' + (isZh ? '必须' : 'Required') + '</strong>') : ('<span style="color:var(--color-text-muted);">' + (isZh ? '可选' : 'Optional') + '</span>');
+      return '<tr><td>' + reqLabel + '</td><td><strong>' + c.code + '</strong> ' + (isZh ? c.zh : c.en) + '</td><td>' + c.cost + '</td><td>' + c.days + ' ' + (isZh ? '天' : 'days') + '</td><td>' + badge + '</td></tr>';
+    }).join('');
+    var totalCost = market.certs.filter(function(c){ return HAVE.indexOf(c.code) < 0; }).reduce(function(s, c){
+      var m = c.cost.match(/\$([0-9]+)-([0-9]+)/);
+      return s + (m ? (parseInt(m[1],10)+parseInt(m[2],10))/2 : 0);
+    }, 0);
+    result.style.display = 'block';
+    result.innerHTML =
+      '<h3 style="font-size:1.5rem;font-weight:800;color:var(--color-accent);margin-bottom:0.5rem;">' + market.flag + ' ' + (isZh ? market.zh : market.en) + '</h3>' +
+      '<p style="color:var(--color-text-muted);margin-bottom:1rem;">' + (isZh ? '客信已持有：' : 'Already have: ') + HAVE.join(', ') + '</p>' +
+      '<table class="params-table" style="width:100%;"><thead><tr><th>' + (isZh ? '类别' : 'Type') + '</th><th>' + (isZh ? '认证' : 'Cert') + '</th><th>' + (isZh ? '费用' : 'Cost') + '</th><th>' + (isZh ? '周期' : 'Days') + '</th><th>' + (isZh ? '状态' : 'Status') + '</th></tr></thead><tbody>' + rows + '</tbody></table>' +
+      '<p style="margin-top:1rem;font-weight:600;">' + (isZh ? '需补费用估算：
+</html> : 'Missing cost: 
+</html>) + Math.round(totalCost).toLocaleString() + ' ' + (isZh ? '(不含可选)' : '(excluding optional)') + '</p>' +
+      '<a href="mailto:kexin@beeaa.com".replace("@", "%40") + "?subject=" + encodeURIComponent((isZh ? "认证咨询" : "Certification inquiry") + " - " + (isZh ? market.zh : market.en)) + "" class="btn cta-orange" style="margin-top:1rem;">' +
+        (isZh ? '📧 认证咨询' : '📧 Ask About Certs') +
+      '</a>';
+    result.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+})();
+</script></body>
 </html>

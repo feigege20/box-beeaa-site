@@ -52,6 +52,34 @@ export const siteConfig = {
     main_site: "https://beeaa.com",
   },
 
+  // === 贸易条款（P2 修复 2026-08-12: FRED 反馈 "只做 FOB 和 EXW, 定金 30%, 交货期 30-45 天"）===
+  tradeTerms: {
+    incoterms: {
+      zh: "FOB 深圳 / EXW 中山",
+      en: "FOB Shenzhen / EXW Zhongshan",
+    },
+    paymentMethods: {
+      zh: "T/T 30% 定金, 余款发货前付清",
+      en: "T/T 30% deposit, 70% balance before shipment",
+    },
+    deposit: {
+      zh: "30% T/T 定金",
+      en: "30% T/T deposit",
+    },
+    leadTime: {
+      zh: "30-45 天",
+      en: "30-45 days",
+    },
+    leadTimeDetail: {
+      zh: "标准 SKU 现货 7-15 天, 定制订单 30-45 天",
+      en: "Standard SKUs in stock 7-15 days, custom orders 30-45 days",
+    },
+    moq: {
+      zh: "标准 SKU 50-100 pcs, 定制 300 pcs",
+      en: "Standard SKUs 50-100 pcs, custom 300 pcs",
+    },
+  },
+
   // === 工厂实景视频 ===
   media: {
     factory_video: "https://v.psste.com/43bb14edvodtranscq1500036857/4c171f995001834810945260570/v.f100800.mp4",

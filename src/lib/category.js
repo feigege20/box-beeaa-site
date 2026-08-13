@@ -74,8 +74,8 @@ export function renderCategoryPage({ productLine, keywords = [], lang = "en" }) 
     : `${productLine.name_en} Manufacturer | ${productLine.name_en} OEM/ODM | KeXinMaterials`;
 
   const description = t
-    ? `${productLine.name_zh}源头工厂 - 客信新材料提供 ${productLine.desc_zh}。${keywords.length}+ SKU、12h 报价、30 天交付、IP67/MIL-SPEC/防爆认证。询 kexin@beeaa.com / WhatsApp +86 13590555309。`
-    : `${productLine.name_en} source factory - KeXinMaterials offers ${productLine.desc_en} ${keywords.length}+ SKUs, 12h quote, 30-day delivery, IP67/MIL-SPEC certified. Email kexin@beeaa.com / WhatsApp +86 13590555309.`;
+    ? `${productLine.name_zh}源头工厂 - 客信新材料提供 ${productLine.desc_zh}。${keywords.length}+ SKU、12h 报价、30-45 天交付、IP67/MIL-SPEC/防爆认证。FOB 深圳/EXW 中山，T/T 30% 定金。询 kexin@beeaa.com / WhatsApp +86 13590555309。`
+    : `${productLine.name_en} source factory - KeXinMaterials offers ${productLine.desc_en} ${keywords.length}+ SKUs, 12h quote, 30-45 day delivery, IP67/MIL-SPEC certified. FOB Shenzhen / EXW Zhongshan, T/T 30% deposit. Email kexin@beeaa.com / WhatsApp +86 13590555309.`;
 
   // 关键词按 layer 分组
   const byLayer = {};
@@ -100,7 +100,8 @@ export function renderCategoryPage({ productLine, keywords = [], lang = "en" }) 
     { q_zh: `${productLine.name_zh}起订量是多少？`, q_en: `What is the MOQ for ${productLine.name_en}?`, a_zh: `标准 SKU 50-100 pcs，定制 300 pcs。批量越大单价越优惠。`, a_en: `Standard SKUs 50-100 pcs, custom 300 pcs. Larger quantities get better pricing.` },
     { q_zh: `${productLine.name_zh}能定制 logo 吗？`, q_en: `Can ${productLine.name_en} be customized with logo?`, a_zh: `可以。丝印、烫金、激光雕刻、UV 喷涂 4 种方式，最低 100pcs 起。`, a_en: `Yes. Silk-screen, hot stamping, laser engraving, UV spray - 4 options, MOQ 100pcs.` },
     { q_zh: `${productLine.name_zh}有哪些认证？`, q_en: `What certifications for ${productLine.name_en}?`, a_zh: `CE / RoHS / ISO9001 全系标配。UN38.3、FDA、UL、MIL-SPEC 可选。`, a_en: `CE / RoHS / ISO9001 standard. UN38.3, FDA, UL, MIL-SPEC optional.` },
-    { q_zh: `${productLine.name_zh}出口多久到？`, q_en: `How long for export delivery?`, a_zh: `海运 25-40 天 DDP，空运 5-7 天，快递 3-5 天。`, a_en: `Sea 25-40 days DDP, air 5-7 days, express 3-5 days.` },
+    { q_zh: `${productLine.name_zh}出口多久到？`, q_en: `How long for export delivery?`, a_zh: `生产 30-45 天，海运 25-40 天 DDP，空运 5-7 天，快递 3-5 天。`, a_en: `Production 30-45 days, sea 25-40 days DDP, air 5-7 days, express 3-5 days.` },
+    { q_zh: `${productLine.name_zh}贸易条款？`, q_en: `What are the trade terms?`, a_zh: `FOB 深圳 / EXW 中山，T/T 30% 定金，余款发货前付清。`, a_en: `FOB Shenzhen / EXW Zhongshan, T/T 30% deposit, 70% balance before shipment.` },
   ];
 
   // 4 大商业意图小卡

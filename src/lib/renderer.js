@@ -184,8 +184,8 @@ export function buildPageMeta({ keyword, productLine, lang }) {
   const titleZh = `${keyword.zh} 厂家 | ${productLine.name_zh} 客信新材料`;
   const titleEn = `${enClean(keyword.en)} Manufacturer | ${productLine.name_en} | KeXinMaterials`;
 
-  const descZh = `客信新材料提供 ${keyword.zh}，源头工厂、批发价、OEM/ODM 定制、12h 报价、30 天交付。${productLine.name_zh}，IP67/MIL-SPEC/防爆认证。询 kexin@beeaa.com 或 WhatsApp +86 13590555309。`;
-  const descEn = `KeXinMaterials: ${enClean(keyword.en)} from source factory, wholesale price, OEM/ODM custom, 12h quote, 30-day delivery. ${productLine.name_en}, IP67/MIL-SPEC certified. Inquire kexin@beeaa.com or WhatsApp +86 13590555309.`;
+  const descZh = `客信新材料提供 ${keyword.zh}，源头工厂、批发价、OEM/ODM 定制、12h 报价、30-45 天交付。FOB 深圳/EXW 中山，T/T 30% 定金。${productLine.name_zh}，IP67/MIL-SPEC/防爆认证。询 kexin@beeaa.com 或 WhatsApp +86 13590555309。`;
+  const descEn = `KeXinMaterials: ${enClean(keyword.en)} from source factory, wholesale price, OEM/ODM custom, 12h quote, 30-45 day delivery. FOB Shenzhen / EXW Zhongshan, T/T 30% deposit. ${productLine.name_en}, IP67/MIL-SPEC certified. Inquire kexin@beeaa.com or WhatsApp +86 13590555309.`;
 
   return {
     formula,
@@ -257,10 +257,22 @@ export function renderPage({ keyword, productLine, assets, lang = "en", grade = 
   selectedKeys.forEach(k => {
     const field = commonParams[k] || lineParams[k];
     if (field && field.options) {
-      pageParams[k] = pickOne(field.options, routes.canonicalPath + k);
+      // P2 修复 2026-08-12: options 支持 en/zh 分离 (value_zh + value_en) 或 string
+      const opt = pickOne(field.options, routes.canonicalPath + k);
+      if (typeof opt === "object" && opt !== null) {
+        pageParams[k] = (t ? opt.value_zh : opt.value_en) || opt.value_zh || opt.value_en || "";
+      } else {
+        pageParams[k] = opt;
+      }
     } else if (field) {
       pageParams[k] = field.options
-        ? pickOne(field.options, routes.canonicalPath + k)
+        ? (() => {
+            const opt = pickOne(field.options, routes.canonicalPath + k);
+            if (typeof opt === "object" && opt !== null) {
+              return (t ? opt.value_zh : opt.value_en) || opt.value_zh || opt.value_en || "";
+            }
+            return opt;
+          })()
         : field;
     }
   });
@@ -326,8 +338,8 @@ export function renderPage({ keyword, productLine, assets, lang = "en", grade = 
   // 2. 按 formula 选骨架
   if (meta.formula === "feature-product-intent") {
     const definitionText = t
-      ? `${keyword.zh} 是指 ${uniqueFact}。客信新材料（广东）有限公司提供 OEM/ODM 定制，3D 打样 7 天、开模 45 天、量产 30 天，源头工厂、12 小时报价、30 天交付。`
-      : `${enClean(keyword.en)} is a ${uniqueFact}. KeXinMaterials (Guangdong) Co., Ltd. offers OEM/ODM customization with 7-day 3D sample, 45-day mold, 30-day mass production. Source factory, 12-hour quote, 30-day delivery.`;
+      ? `${keyword.zh} 是指 ${uniqueFact}。客信新材料（广东）有限公司提供 OEM/ODM 定制，3D 打样 7 天、开模 45 天、量产 30 天，源头工厂、12 小时报价、30-45 天交付。FOB 深圳/EXW 中山，T/T 30% 定金。`
+      : `${enClean(keyword.en)} is a ${uniqueFact}. KeXinMaterials (Guangdong) Co., Ltd. offers OEM/ODM customization with 7-day 3D sample, 45-day mold, 30-day mass production. Source factory, 12-hour quote, 30-45 day delivery. FOB Shenzhen / EXW Zhongshan, T/T 30% deposit.`;
     sections.push(sectionDefinition({ text: definitionText, lang }));
     sections.push(sectionParams({ params: pageParams, lang }));
     if (flow) sections.push(sectionFlow({ flow, lang }));
@@ -337,10 +349,10 @@ export function renderPage({ keyword, productLine, assets, lang = "en", grade = 
   } else if (meta.formula === "spec-product-wholesale") {
     sections.push(sectionSpecs({ specs: Object.entries(pageParams).slice(0, 6).map(([k, v]) => ({ name: t ? (paramFields.common[k]?.label_zh || k) : (paramFields.common[k]?.label_en || k), desc: v, price: "" })), lang }));
     sections.push(sectionPricing({ tiers: [
-      { qty: "50-199 pcs", price: "USD 25-80", discount: "-", leadTime: "20 天" },
-      { qty: "200-499 pcs", price: "USD 22-72", discount: "10% off", leadTime: "25 天" },
-      { qty: "500-999 pcs", price: "USD 19-65", discount: "20% off", leadTime: "30 天" },
-      { qty: "1000+ pcs", price: "USD 16-58", discount: "30% off", leadTime: "30-45 天" },
+      { qty: "50-199 pcs", price: "USD 25-80", discount: "-", leadTime: t ? "30-45 天" : "30-45 days" },
+      { qty: "200-499 pcs", price: "USD 22-72", discount: "10% off", leadTime: t ? "30-45 天" : "30-45 days" },
+      { qty: "500-999 pcs", price: "USD 19-65", discount: "20% off", leadTime: t ? "30-45 天" : "30-45 days" },
+      { qty: "1000+ pcs", price: "USD 16-58", discount: "30% off", leadTime: t ? "30-45 天" : "30-45 days" },
     ], lang }));
     sections.push(sectionFAQs({ faqs: pageFaqs, lang }));
   } else if (meta.formula === "product-export-market") {
@@ -351,10 +363,10 @@ export function renderPage({ keyword, productLine, assets, lang = "en", grade = 
     if (caseData) sections.push(sectionCase({ caseData, lang }));
     sections.push(sectionFAQs({ faqs: pageFaqs, lang }));
   } else if (meta.formula === "product-question") {
-    sections.push(sectionTLDR({ text: `${t ? "简短答案：" : "Short answer:"} ${t ? "是" : "Yes"}, ${t ? "客信新材料提供" : "KeXinMaterials offers"} ${esc(t ? keyword.zh : enClean(keyword.en))}，${t ? "源头工厂、批发价、12h 报价、30 天交付。" : "source factory, wholesale price, 12h quote, 30-day delivery."}`, lang }));
+    sections.push(sectionTLDR({ text: `${t ? "简短答案：" : "Short answer:"} ${t ? "是" : "Yes"}, ${t ? "客信新材料提供" : "KeXinMaterials offers"} ${esc(t ? keyword.zh : enClean(keyword.en))}，${t ? "源头工厂、批发价、12h 报价、30-45 天交付，FOB 深圳/EXW 中山，T/T 30% 定金。" : "source factory, wholesale price, 12h quote, 30-45 day delivery, FOB Shenzhen / EXW Zhongshan, T/T 30% deposit."}`, lang }));
     sections.push(sectionDeepDive({ paragraphs: [
-      `${t ? "### 深度解读" : "### Deep Dive"}\n\n${esc(t ? keyword.zh : enClean(keyword.en))} ${t ? "的核心要点：① 选工厂不选贸易商（质量可控、报价透明、交付稳定）② 关注认证（CE/RoHS/FCC/UN38.3 等）③ 评估 MOQ 和定制能力 ④ 验厂考察或视频验厂 ⑤ 样品确认后再下单。" : "Key points: ① Choose factory not trader ② Check certifications ③ Evaluate MOQ & customization ④ Factory audit or video audit ⑤ Sample first then order."}`,
-      `${t ? "### 客信优势" : "### Why KeXinMaterials"}\n\n${uniqueFact} 18,000㎡ 工厂、10,000+ SKU 现货、48h 发货。${t ? "已为" : "Trusted by"} ${50 + (Math.abs(hashCode(routes.canonicalPath)) % 200)} ${t ? "家头部企业服务。" : " leading brands."}`,
+      `${t ? "### 深度解读" : "### Deep Dive"}\n\n${esc(t ? keyword.zh : enClean(keyword.en))} ${t ? "的核心要点：① 选工厂不选贸易商（质量可控、报价透明、交付稳定）② 关注认证（CE/RoHS/FCC/UN38.3 等）③ 评估 MOQ 和定制能力 ④ 验厂考察或视频验厂 ⑤ 样品确认后再下单。交货期 30-45 天，FOB 深圳/EXW 中山，T/T 30% 定金。" : "Key points: ① Choose factory not trader ② Check certifications ③ Evaluate MOQ & customization ④ Factory audit or video audit ⑤ Sample first then order. Lead time 30-45 days, FOB Shenzhen / EXW Zhongshan, T/T 30% deposit."}`,
+      `${t ? "### 客信优势" : "### Why KeXinMaterials"}\n\n${uniqueFact} 13,000㎡ 工厂、10,000+ SKU 现货、48h 发货。${t ? "已为" : "Trusted by"} ${50 + (Math.abs(hashCode(routes.canonicalPath)) % 200)} ${t ? "家头部企业服务。交货期 30-45 天，FOB 深圳/EXW 中山，T/T 30% 定金。" : " leading brands. Lead time 30-45 days, FOB Shenzhen / EXW Zhongshan, T/T 30% deposit."}`,
     ], lang }));
     sections.push(sectionChecklist({ items: [
       t ? "确认需求（IP 等级、尺寸、材质、认证）" : "Confirm requirements (IP, size, material, certifications)",
