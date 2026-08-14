@@ -206,7 +206,7 @@ export const onRequest = async (context) => {
 
 async function handleZHRoute(context, path) {
   // path 浠?/zh 寮€澶?
-  const pathNoSlash = path.replace(/^\/+/, ""); // "zh/..." or "zh"
+  const pathNoSlash = path.replace(/^\/+|\/+$/g, ""); // "zh/..." or "zh" (no leading/trailing slash)
   
   // 妫€娴嬫槸鍚﹀甫灏鹃儴鏂滄潬
   const endsWithSlash = path === "/zh" || path.endsWith("/");
@@ -258,7 +258,7 @@ async function handleZHRoute(context, path) {
 }
 
 async function handleProductLineRoute(context, path, productLine, bucketName) {
-  const pathNoSlash = path.replace(/^\/+/, "");
+  const pathNoSlash = path.replace(/^\/+|\/+$/g, "");
   const endsWithSlash = path === `/${productLine}` || path.endsWith("/");
   
   const exactKeys = [];
@@ -299,7 +299,7 @@ async function handleProductLineRoute(context, path, productLine, bucketName) {
 }
 
 async function handleGenericRoute(context, path) {
-  const pathNoSlash = path.replace(/^\/+/, "");
+  const pathNoSlash = path.replace(/^\/+|\/+$/g, "");
   const endsWithSlash = path.endsWith("/");
   
   // 璺宠繃 _api, _next 涔嬬被
