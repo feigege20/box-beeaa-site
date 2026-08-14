@@ -499,3 +499,27 @@ export function sectionMarketShare({ data, lang }) {
   </div>
 </section>`;
 }
+
+
+/** Related Categories section - B-tier pages link to 3-4 related product lines (internal linking) */
+export function sectionRelatedCategories({ currentSlug, productLines, lang, basePrefix = "" }) {
+  if (!productLines || productLines.length === 0) return "";
+  const t = lang === "zh";
+  // Pick 3-4 related product lines (excluding current)
+  const others = productLines.filter(p => p.slug !== currentSlug);
+  const picked = others.slice(0, 4);
+  if (picked.length === 0) return "";
+  return `<section class="section" style="background:#FFFFFF;">
+  <div class="container">
+    <h2>${t ? "相关产品线" : "Related Product Lines"}</h2>
+    <p style="color:#475569;margin-bottom:1.5rem;">${t ? "探索我们其他 9 大产品线，全部源头工厂直供、IP67 认证、30-45 天交付。" : "Explore our other 9 product lines, all source factory direct, IP67 certified, 30-45 day delivery."}</p>
+    <div class="grid grid-${Math.min(picked.length, 4)}">
+      ${picked.map(p => `<a href="${basePrefix}/${p.slug}/" class="card" style="text-decoration:none;display:block;padding:1.5rem;border:1px solid #E2E8F0;border-radius:12px;transition:all 0.2s;background:#F8FAFC;">
+        <div style="font-weight:700;color:#0F172A;margin-bottom:0.5rem;">${esc(t ? p.name_zh : p.name_en)}</div>
+        <div style="font-size:0.875rem;color:#64748B;line-height:1.5;">${esc((t ? p.desc_zh : p.desc_en || "").slice(0, 80))}</div>
+        <div style="margin-top:1rem;font-size:0.875rem;color:#3B5BFF;font-weight:600;">${t ? "查看详情 →" : "View Details →"}</div>
+      </a>`).join("")}
+    </div>
+  </div>
+</section>`;
+}

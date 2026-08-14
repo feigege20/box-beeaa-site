@@ -11,7 +11,7 @@ import {
   sectionHero, sectionDefinition, sectionParams, sectionProcess, sectionCase,
   sectionComparison, sectionFAQs, sectionTLDR, sectionDeepDive, sectionChecklist,
   sectionTestimonials, sectionSpecs, sectionPricing, sectionMarketNeeds,
-  sectionCertifications, sectionFlow,
+  sectionCertifications, sectionFlow, sectionRelatedCategories,
 } from "./sections.js";
 import {
   organizationSchema, productSchema, faqSchema, breadcrumbSchema, reviewSchema, aggregateRatingSchema,
@@ -387,6 +387,15 @@ export function renderPage({ keyword, productLine, assets, lang = "en", grade = 
     if (pageTestimonials.length) sections.push(sectionTestimonials({ items: pageTestimonials, lang }));
     sections.push(sectionFAQs({ faqs: pageFaqs, lang }));
   }
+
+  // P3.6 2026-08-14: 内部链接增强 - B-tier 页加 3-4 个相关产品线链接
+  // 目的: 提升 B-tier 页面 → Hub 页的内部链接, 增强 SEO 关联性
+  sections.push(sectionRelatedCategories({
+    currentSlug: productLine.slug,
+    productLines: siteConfig.productLines,
+    lang,
+    basePrefix,
+  }));
 
   // 2.5 P1 修复 2026-08-12 v2: 注入 5 维防检测 (V3 §3.1)
   // Bug fix: sectionDeepDive 自己包 <p> + esc(), 不要预先包 <p> 字符串
