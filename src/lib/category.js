@@ -6,7 +6,7 @@
 import { siteConfig } from "./site.config.js";
 import { renderHead, renderHeader, renderFooter, renderBreadcrumb, renderCTA } from "./layout.js";
 import { sectionFAQs, sectionCase } from "./sections.js";
-import { collectionPageSchema, faqSchema, breadcrumbSchema } from "./schemas.js";
+import { collectionPageSchema, faqSchema, breadcrumbSchema, howToSchema } from "./schemas.js";
 import { firstPersonStatement, firstPersonPreference, unpublishedData, sGradeFirstPersonParagraph, dataSourceLabel } from "./content_variation.js";
 import { readFileSync } from "node:fs";
 
@@ -155,6 +155,18 @@ export function renderCategoryPage({ productLine, keywords = [], lang = "en" }) 
         { name: t ? "首页" : "Home", url: `${basePrefix || ""}/` },
         { name: t ? productLine.short_zh : productLine.short_en, url: `${basePrefix}/${productLine.slug}/` },
       ]),
+      howToSchema({
+        name: t ? `如何定制 ${productLine.name_zh} 流程` : `How to Customize ${productLine.name_en}: 5-Step Process`,
+        description: t ? `5 步定制流程，从询盘到量产，30-45 天交付。` : `Our 5-step customization process from inquiry to mass production, 30-45 day delivery.`,
+        steps: [
+          { title: t ? "提交询盘" : "Submit Inquiry", text: t ? "邮件 kexin@beeaa.com 或 WhatsApp +86 13590555309，提供产品需求 (尺寸、材质、IP 等级、颜色、Logo 印刷等)。我们 12 小时内回复。" : "Email kexin@beeaa.com or WhatsApp +86 13590555309 with product specs (size, material, IP rating, color, logo print). We reply within 12 hours." },
+          { title: t ? "3D 设计与打样" : "3D Design & Sample", text: t ? "3D 设计 3 天完成，物理样品 7-10 天。样品费根据复杂度 $50-200，订单后返还。" : "3D design in 3 days, physical sample in 7-10 days. Sample fee $50-200 based on complexity, refundable on order." },
+          { title: t ? "报价与合同" : "Quote & Contract", text: t ? "基于样品确认，提供正式报价 (含 FOB 深圳 / EXW 中山 / DDP 可选)。合同条款: T/T 30% 定金 + 70% 发货前。" : "After sample confirmation, we provide formal quote (FOB Shenzhen / EXW Zhongshan / DDP options). Payment: T/T 30% deposit + 70% before shipment." },
+          { title: t ? "开模与量产" : "Tooling & Mass Production", text: t ? "开模 45 天。量产 30-45 天。生产过程提供照片 + 视频更新。第三方验厂 (SGS/BV/TÜV) 可安排。" : "Mold 45 days. Mass production 30-45 days. Photo + video updates during production. Third-party inspection (SGS/BV/TUV) can be arranged." },
+          { title: t ? "物流与售后" : "Shipping & After-Sales", text: t ? "海运 25-40 天 DDP,空运 5-7 天,快递 3-5 天。FOB 深圳港口或 EXW 中山工厂提货。产品 12 个月质保。" : "Sea 25-40 days DDP, air 5-7 days, express 3-5 days. FOB Shenzhen port or EXW Zhongshan factory pickup. 12-month product warranty." },
+        ],
+        totalTime: "P45D",
+      }),
     ],
   })
   + renderHeader({ lang, currentPath: `${basePrefix}/${productLine.slug}/` })
