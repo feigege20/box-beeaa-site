@@ -1,0 +1,118 @@
+# KeXinMaterials (客信新材料) — Full LLM Data
+## About
+KeXinMaterials (Guangdong) Co., Ltd. — source factory of protective cases, established 2014. 13,000㎡ facility, 60+ machines, 20+ patents, 150+ SKUs. Specializing in plastic tool boxes, protective cases, safety cases, waterproof cases — OEM/ODM custom. Exported to USA, UK, Germany, Canada, Japan, Russia, Philippines, India, HK/TW, Middle East.
+
+Company: KeXinMaterials (Guangdong) Co., Ltd.
+Email: kexin@beeaa.com
+Phone: +86 13590555309
+
+## 9 Product Lines
+### Military & Tactical Case (军工战术防护系列)
+MIL-SPEC tactical cases, rifle cases, ammo cans, NVG cases. Export to 25+ countries.
+URL: https://box.beeaa.com/military-tactical-case/
+
+### Drone & Robotics Case (无人机与机器人系列)
+DJI / industrial / FPV / ROV / battery / RC cases. 200+ models fit.
+URL: https://box.beeaa.com/drone-case/
+
+### Precision Instrument Case (精密仪器仪表系列)
+Surveying / flaw detection / fusion splicer / endoscope / weather / medical instrument cases. 25G shock.
+URL: https://box.beeaa.com/instrument-case/
+
+### Waterproof Outdoor Case (防水户外安全系列)
+IP67/IP68 waterproof cases, outdoor, camping, fishing, drifting, expedition, off-road. -40~+120°C.
+URL: https://box.beeaa.com/waterproof-case/
+
+### Medical & Cold Chain Case (医疗急救冷链系列)
+First aid / cold chain / nucleic acid / dental / UN3373 biological / WHO PQS.
+URL: https://box.beeaa.com/medical-case/
+
+### Engineering Plastic Case (工程塑料工艺系列)
+PP / ABS / glass fiber / FR / injection / rotomold / blow mold. NEV battery pack first choice.
+URL: https://box.beeaa.com/engineering-plastic-case/
+
+### Tool Box & Industrial Case (工具箱工业周转系列)
+Industrial tool box / turnover / hardware / maintenance / mining heavy-duty. 100kg+ load.
+URL: https://box.beeaa.com/tool-box/
+
+### Camera & Stage Case (摄影数码舞台系列)
+Camera / DSLR / stage lighting / entertainment. MIL-SPEC + aesthetic.
+URL: https://box.beeaa.com/camera-stage-case/
+
+### Trolley & Business Case (拉杆箱商务生活系列)
+Business trolley / gift / display / cosmetic / business travel. 20/24/28 inch.
+URL: https://box.beeaa.com/trolley-case/
+
+## All FAQs
+Q: Is KeXinMaterials a factory or a trading company?
+A: KeXinMaterials (Guangdong) Co., Ltd. is a source factory with an 18,000㎡ facility. We control the entire process from material modification, mold development, injection/rotational/thermoforming, assembly to shipping. Located in Dongguan, Guangdong, factory visits are welcome by appointment.
+
+Q: What is your MOQ?
+A: Standard SKUs have an MOQ of 50-100pcs; custom mold MOQ is 300pcs. Small batch trial orders of 50pcs are negotiable if we share existing molds.
+
+Q: What is the lead time?
+A: Standard SKUs ship within 3 days from stock. Custom orders 20-30 days. Custom mold 35-45 days. Sea shipping DDP to SEA / EU / NA / AU / NZ: 30-40 days.
+
+Q: Which payment methods are supported?
+A: We support T/T 30%/70%, L/C at sight, Letter of Credit, PayPal (small orders), and Western Union. Large orders can use staged payment. New clients typically start with T/T 30%/70%.
+
+Q: How do I get a quote?
+A: Email kexin@beeaa.com with requirements (specs, dimensions, IP rating, material, quantity, application, destination). Formal PDF + Excel quote within 12 hours. For urgent requests, WhatsApp +86 13590555309.
+
+Q: Do you provide samples?
+A: Standard SKU samples are free (shipping paid by client, 5-7 working days via DHL/FedEx). Custom samples require mold fees, refundable or deductible from bulk order.
+
+Q: What certifications do you have?
+A: ISO9001 QMS, CE, RoHS, REACH, UN38.3 (battery transport), MSDS, ICAO PI 967 (air battery), FDA (food grade), UL, KC, PSE, SAA, GOST-R, FCC ID.
+
+Q: Do you offer OEM/ODM services?
+A: Full OEM/ODM: 3D structural design, mold development, injection/rotomolding/thermoforming, surface finishing (silk-screen, hot stamping, laser engraving, UV spray), neutral packaging, client logo. No strict mold MOQ (small orders can share molds).
+
+Q: What does IP67 mean? How deep can it go?
+A: IP67 is the international protection rating: 6 = dust-tight, 7 = immersion in 1m water for 30 minutes without ingress. Our IP67 cases pass IEC 60529. For deeper underwater use, IP68 (5-30m) is available.
+
+Q: How to choose explosion-proof rating?
+A: Common ratings: Ex ib IIB T4 (IIB gas, T4 temp ≤135°C), Ex d IIB T4 (flameproof), Ex e IIB (increased safety). Li-battery transport typically uses Ex ib IIB T4. Contact kexin@beeaa.com for certified solutions.
+
+Q: What tests does MIL-STD-810G cover?
+A: MIL-STD-810G covers 28 environmental tests: drop, vibration, shock, humid heat, salt fog, fungus, solar radiation, low pressure, high/low temp, rain, sand dust, explosive atmosphere, etc. Our products pass 15 core tests; full suite available.
+
+Q: What is the resistance of ESD boxes?
+A: Three grades: conductive 10^3-10^5 Ω (fast static discharge), static dissipative 10^6-10^9 Ω (industry standard), insulative 10^10-10^12 Ω (anti-triboelectric). For electronics transport, 10^6-10^9 Ω is recommended.
+
+Q: How are small / medium / large / extra large defined?
+A: Size classification (outer longest side): Small ≤300mm, Medium 300-500mm, Large 500-800mm, Extra Large 800-1200mm, Oversize >1200mm. Same product at different sizes has 3-5x volume difference.
+
+Q: What is the difference between long and deep cases?
+A: Long cases (e.g., elongated toolbox, rifle case) suit long items. Deep cases (deeper interior) suit voluminous but short items. Both can be combined for custom orders.
+
+Q: How to get the wholesale price list?
+A: Send your business license + purchase requirements (specs, quantity, destination) to kexin@beeaa.com with subject 'Wholesale Quote'. Bilingual PDF + Excel quote within 12 hours. Tiered pricing for 500+ pcs.
+
+Q: What certifications are needed for US exports?
+A: Basic: CE / RoHS / FCC (electrical). Special: UL (power, battery), FDA (food/medical), DOT (transport), CPSIA (children), UN38.3 (battery), FCC ID (wireless). We provide full documentation.
+
+Q: What certifications are needed for EU exports?
+A: CE (mandatory, multiple directives), REACH (chemicals), RoHS 2.0 (hazardous substances), PPE (personal protection), EN 60529 (IP), EN 62262 (IK), UN3373 (biological). One-stop CE service available.
+
+Q: Is GCC certification required for Middle East markets?
+A: Saudi Arabia: SABER mandatory (PCOC + SCOC). UAE: ECAS / EQM. Kuwait: KUCAS. Qatar: G-Mark. We offer one-stop GCC certification + SABER regulatory training.
+
+Q: How long and how much for DDP sea shipping to the US?
+A: DDP sea to US West Coast (LA / Long Beach): 25-32 days, ~USD 0.8-1.5/kg for 100kg+. East Coast (NY): 35-40 days, ~USD 1.2-2.0/kg. Includes tariff, customs, last-mile delivery.
+
+Q: What to note for exporting to Russia?
+A: GOST-R certification, Russian manual + labels, EAC mark (EAEU) required. Currently recommend re-export via Kazakhstan / Belarus, or use EAEU channels. We offer Russian localization.
+
+Q: How to choose a protective case?
+A: 5-step selection: ① Define items to protect (weight, size, sensitivity) ② Evaluate environment (IP rating, temperature, vibration) ③ Confirm industry certifications (food/medical/battery/military) ④ Commercial intent (wholesale/custom/export) ⑤ Budget (PP/ABS/GF/rotomold price 2-3x difference).
+
+Q: How much is a protective case?
+A: Reference retail prices: PP small USD 12-22, PP medium USD 22-45, ABS medium USD 30-60, GF-PP medium USD 50-90, rotomold large USD 90-220. Custom adds 30-80%. Wholesale 500+ pcs 30% off.
+
+Q: What is the customization process?
+A: 5-step customization: ① Requirements (48h reply, 2-3 clarification rounds) ② 3D design + quote (3 working days, 2 revision rounds) ③ Sample + sign-off (7-10 days, 1 rework) ④ Production (30 days, IQC + FQC) ⑤ Shipping (sea / air / courier, docs included).
+
+Q: Can MOQ be lower?
+A: Standard SKUs: 50 pcs MOQ with wholesale pricing. Custom: 300 pcs MOQ; 50 pcs negotiable if sharing existing molds (no dedicated tooling). All small batches can rush in 15 days (20% rush fee).
+

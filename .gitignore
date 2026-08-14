@@ -106,10 +106,15 @@ chrome-*/
 #   - .gitignore
 
 # build artifacts & local-only (added 2026-08-11)
-dist/
+# dist/ 入库 (Pages build_command=exit 0 不重新生成, 必须 git 入库)
 dist-b-en/
 dist-b-zh/
 dist-pages/
 _local_scripts/
 _audit_temp/
 
+
+# P3.5 added 2026-08-14
+dist-mini/
+_tmp_epc.html
+_worker.bundle
