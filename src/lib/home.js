@@ -68,12 +68,12 @@ export function renderHome({ lang = "en" } = {}) {
   const canonical = `${BASE_URL}${basePrefix || ""}/`;
 
   const title = t
-    ? "客信新材料 · 箱体制造源头工厂 | 9 大产品线 OEM/ODM 全球供货"
-    : "KeXinMaterials · Source Factory of Protective Cases | 9 Product Lines · OEM/ODM · Global Supply";
+    ? "客信新材料 · 防护箱源头工厂 | 9 大产品线 OEM/ODM"
+    : "KeXinMaterials | Protective Case Factory | OEM/ODM";
 
   const description = t
-    ? "客信新材料（广东）有限公司，9 大产品线防护箱、安全箱、工具箱源头工厂。32,308 关键词全球买家覆盖，IP67 防水、MIL-SPEC 军规、防爆认证、30-45 天交付。FOB 深圳/EXW 中山，T/T 30% 定金。批发、代理加盟、OEM/ODM、全球供货。kexin@beeaa.com / +86 13590555309"
-    : "KeXinMaterials (Guangdong) Co., Ltd. - source factory for protective cases across 9 product lines. 32,308 keywords covering global buyers. IP67 waterproof, MIL-SPEC, explosion-proof certified, 30-45 day delivery. FOB Shenzhen / EXW Zhongshan, T/T 30% deposit. Wholesale, Agency, OEM/ODM, Global Supply. kexin@beeaa.com / +86 13590555309";
+    ? "客信新材料 9 大产品线防护箱源头工厂。13,000㎡ 厂房、20+ 专利、30-45 天交付。IP67/MIL-SPEC/防爆认证。FOB 深圳/EXW 中山。OEM/ODM 定制，kexin@beeaa.com 询盘。"
+    : "KeXinMaterials - source factory for 9 lines of protective cases. 13,000㎡ facility, 20+ patents, 30-45 day delivery. IP67/MIL-SPEC certified. FOB Shenzhen/EXW Zhongshan. OEM/ODM.";
 
   // 9 大产品线卡片（带真实 WebP 图）
   const productCards = siteConfig.productLines.map(p => {

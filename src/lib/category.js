@@ -75,8 +75,8 @@ export function renderCategoryPage({ productLine, keywords = [], lang = "en" }) 
     : `${productLine.name_en} Manufacturer | ${productLine.name_en} OEM/ODM | KeXinMaterials`;
 
   const description = t
-    ? `${productLine.name_zh}源头工厂 - 客信新材料提供 ${productLine.desc_zh}。${keywords.length}+ SKU、12h 报价、30-45 天交付、IP67/MIL-SPEC/防爆认证。FOB 深圳/EXW 中山，T/T 30% 定金。询 kexin@beeaa.com / WhatsApp +86 13590555309。`
-    : `${productLine.name_en} source factory - KeXinMaterials offers ${productLine.desc_en} ${keywords.length}+ SKUs, 12h quote, 30-45 day delivery, IP67/MIL-SPEC certified. FOB Shenzhen / EXW Zhongshan, T/T 30% deposit. Email kexin@beeaa.com / WhatsApp +86 13590555309.`;
+    ? `${productLine.name_zh}源头工厂 - 客信新材料。${productLine.desc_zh.slice(0, 40)}。${keywords.length}+ SKU、30-45 天交付、IP67 认证。FOB 深圳/EXW 中山。`
+    : `${productLine.name_en} manufacturer | KeXinMaterials. ${productLine.desc_en.slice(0, 80)}. ${keywords.length}+ SKUs, 30-45 day delivery, IP67 certified. FOB Shenzhen/EXW.`;
 
   // 关键词按 layer 分组
   const byLayer = {};

@@ -54,7 +54,15 @@ export function renderHead({ title, description, keywords, canonical, ogImage, l
   <meta property="og:type" content="${article ? "article" : "website"}" />
   <meta property="og:locale" content="${lang === "zh" ? "zh_CN" : "en_US"}" />
   ${ogImage ? `<meta property="og:image" content="${ogImage}" />` : `<meta property="og:image" content="${BASE_URL}/images/real/hero/hero02-1600w.webp" />`}
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="893" />
+  <meta property="og:image:alt" content="${escapeHtml(title)}" />
+  <meta property="og:site_name" content="KeXinMaterials" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="${escapeHtml(title)}" />
+  <meta name="twitter:description" content="${escapeHtml(description)}" />
+  ${ogImage ? `<meta name="twitter:image" content="${ogImage}" />` : `<meta name="twitter:image" content="${BASE_URL}/images/real/hero/hero02-1600w.webp" />`}
+  <meta name="twitter:site" content="@kexinmaterials" />
   <meta name="robots" content="${robotsContent}" />
   ${noindex ? '<meta name="googlebot" content="noindex" />' : ""}
   ${article ? `<meta name="article:author" content="KeXinMaterials Editorial" />
