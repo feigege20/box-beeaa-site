@@ -256,7 +256,9 @@ export function breadcrumbSchema(items) {
   };
 }
 
-/** Review schema — 引用 testimonials.json 真实客户原话 */
+/** Review schema — 引用 testimonials.json 真实客户原话
+ *  P3.6 修复 2026-08-14: 补全 description + image (Google Rich Results 要求)
+ */
 export function reviewSchema(testimonials, lang = "en", maxReviews = 3) {
   const t = lang === "zh";
   const subset = (testimonials || []).slice(0, maxReviews);
@@ -264,6 +266,8 @@ export function reviewSchema(testimonials, lang = "en", maxReviews = 3) {
     "@context": "https://schema.org",
     "@type": "Product",
     name: t ? "客信新材料防护箱" : "KeXinMaterials Protective Case",
+    description: t ? "客信新材料源头工厂防护箱，13,000㎡ 厂房，60+ 设备，20+ 专利，IP67/MIL-SPEC/防爆认证。已为 30+ 国家头部企业供货。" : "KeXinMaterials source factory protective cases, 13,000㎡ facility, 60+ machines, 20+ patents, IP67/MIL-SPEC/explosion-proof certified. Trusted by 30+ leading brands worldwide.",
+    image: [`${BASE_URL}/images/real/products/patent-133-1600w.webp`],
     review: subset.map(r => ({
       "@type": "Review",
       author: {
