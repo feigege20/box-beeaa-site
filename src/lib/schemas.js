@@ -17,8 +17,8 @@ const BASE_URL = `${siteConfig.protocol}://${siteConfig.domain}`;
 
 const COMPANY_FOUNDER = {
   "@type": "Person",
-  name: siteConfig.company.legal_zh,
-  alternateName: siteConfig.company.legal_en,
+  name: "Wei Li (李伟)",
+  alternateName: "Wei Li",
 };
 
 const AUTHORS = {
@@ -68,11 +68,8 @@ export function organizationSchema() {
     alternateName: [
       siteConfig.brand.zh,
       siteConfig.brand.en,
-      siteConfig.brand.domestic_zh,
-      siteConfig.company.legal_zh,
-      siteConfig.company.legal_en,
     ],
-    legalName: siteConfig.company.legal_zh,
+    legalName: siteConfig.company.zh,
     url: BASE_URL,
     logo: `${BASE_URL}/images/logo.png`,
     image: `${BASE_URL}/images/real/factory/factory-10-800w.webp`,

@@ -411,8 +411,8 @@ export function sectionAboutCompany({ lang }) {
   const t = lang === "zh";
   const title = t ? "关于客信新材料工厂" : "About KeXinMaterials Factory";
   const content = t
-    ? `客信新材料（广东）有限公司 = 中山市军之甲塑料制品有限公司（同一家）。2014 年成立，13,000㎡ 工厂，60+ 台先进制造设备，20+ 项专利，100+ 名员工，150+ 现货规格。主营塑料工具箱、防护箱、安全箱、防水箱 OEM/ODM 定制，覆盖户外考察、军警消防、电子电器、科学探测、航空通信。已出口美国、英国、德国、加拿大、日本、俄罗斯、菲律宾、印度、港台、中东等 30+ 国家。`
-    : `KeXinMaterials (Guangdong) Co., Ltd. = Zhongshan Junzhijia Plastic Products Co., Ltd. (same company). Founded 2014. 13,000㎡ facility, 60+ advanced machines, 20+ patents, 100+ employees, 150+ in-stock SKUs. Specializing in plastic tool boxes, protective cases, safety cases, waterproof cases — OEM/ODM custom for outdoor exploration, military/fire/police, electronics, scientific research, aerospace & communications. Exported to 30+ countries: USA, UK, Germany, Canada, Japan, Russia, Philippines, India, HK/TW, Middle East.`;
+    ? `客信新材料（广东）有限公司，2014 年成立，13,000㎡ 工厂，60+ 台先进制造设备，20+ 项专利，100+ 名员工，150+ 现货规格。主营塑料工具箱、防护箱、安全箱、防水箱 OEM/ODM 定制，覆盖户外考察、军警消防、电子电器、科学探测、航空通信。已出口美国、英国、德国、加拿大、日本、俄罗斯、菲律宾、印度、港台、中东等 30+ 国家。`
+    : `KeXinMaterials (Guangdong) Co., Ltd., Founded 2014. 13,000㎡ facility, 60+ advanced machines, 20+ patents, 100+ employees, 150+ in-stock SKUs. Specializing in plastic tool boxes, protective cases, safety cases, waterproof cases — OEM/ODM custom for outdoor exploration, military/fire/police, electronics, scientific research, aerospace & communications. Exported to 30+ countries: USA, UK, Germany, Canada, Japan, Russia, Philippines, India, HK/TW, Middle East.`;
   return `<section class="section" style="background:#F8FAFC;">
   <div class="container">
     <h2>${title}</h2>

@@ -1,6 +1,6 @@
 /**
  * 站点全局配置 — 基于真实公司资料
- * 客信新材料（广东）有限公司 = 中山市军之甲塑料制品有限公司（同一家）
+ * 客信新材料（广东）有限公司
  * 工厂：广东省中山市
  */
 
@@ -11,13 +11,10 @@ export const siteConfig = {
   brand: {
     zh: "客信新材料",
     en: "KeXinMaterials",
-    domestic_zh: "军之甲",  // 国内品牌（中山军之甲）
   },
   company: {
     zh: "客信新材料（广东）有限公司",
     en: "KeXinMaterials (Guangdong) Co., Ltd.",
-    legal_zh: "中山市军之甲塑料制品有限公司",  // 法人主体（中山军之甲）
-    legal_en: "Zhongshan Junzhijia Plastic Products Co., Ltd.",
   },
   founded: 2014,
   factory: {
@@ -31,16 +28,16 @@ export const siteConfig = {
     },
   },
   tagline: {
-    zh: "军之甲·客信新材料 · 防护箱源头工厂 | 2014 年成立 | 13,000㎡ 厂房 | ISO9001 / ROHS / CE / SGS / IP67",
-    en: "Junzhijia · KeXinMaterials | Source Factory of Protective Cases | Est. 2014 | 13,000㎡ Facility | ISO9001 / ROHS / CE / SGS / IP67",
+    zh: "客信新材料 · 防护箱源头工厂 | 2014 年成立 | 13,000㎡ 厂房 | ISO9001 / ROHS / CE / SGS / IP67",
+    en: "KeXinMaterials | Source Factory of Protective Cases | Est. 2014 | 13,000㎡ Facility | ISO9001 / ROHS / CE / SGS / IP67",
   },
   description: {
-    zh: "客信新材料（中山军之甲）2014 年成立，13,000㎡ 工厂，60+ 设备，20+ 专利，150+ 规格，专注塑料工具箱 / 防护箱 / 安全箱 / 防水箱 OEM/ODM 定制，覆盖户外考察、军警消防、电子电器、科学探测、航空通信。已出口美国、英国、德国、加拿大、日本、俄罗斯、菲律宾、印度、港台、中东。",
-    en: "KeXinMaterials (Zhongshan Junzhijia) — source factory of protective cases, established 2014. 13,000㎡ facility, 60+ machines, 20+ patents, 150+ SKUs. Specializing in plastic tool boxes, protective cases, safety cases, waterproof cases — OEM/ODM custom. Exported to USA, UK, Germany, Canada, Japan, Russia, Philippines, India, HK/TW, Middle East.",
+    zh: "客信新材料（广东）有限公司 2014 年成立，13,000㎡ 工厂，60+ 设备，20+ 专利，150+ 规格，专注塑料工具箱 / 防护箱 / 安全箱 / 防水箱 OEM/ODM 定制，覆盖户外考察、军警消防、电子电器、科学探测、航空通信。已出口美国、英国、德国、加拿大、日本、俄罗斯、菲律宾、印度、港台、中东。",
+    en: "KeXinMaterials (Guangdong) Co., Ltd. — source factory of protective cases, established 2014. 13,000㎡ facility, 60+ machines, 20+ patents, 150+ SKUs. Specializing in plastic tool boxes, protective cases, safety cases, waterproof cases — OEM/ODM custom. Exported to USA, UK, Germany, Canada, Japan, Russia, Philippines, India, HK/TW, Middle East.",
   },
   keywords: {
-    zh: "客信新材料,军之甲,防护箱,工具箱,安全箱,防水箱,OEM,ODM,源头工厂,IP67,军规箱,无人机箱,客信,KeXinMaterials",
-    en: "KeXinMaterials,Junzhijia,protective case,tool box,safety case,waterproof case,OEM,ODM,source factory,IP67,military case,drone case,Zhongshan factory",
+    zh: "客信新材料,防护箱,工具箱,安全箱,防水箱,OEM,ODM,源头工厂,IP67,军规箱,无人机箱,KeXinMaterials",
+    en: "KeXinMaterials,protective case,tool box,safety case,waterproof case,OEM,ODM,source factory,IP67,military case,drone case,Guangdong factory",
   },
 
   // === 联系信息 ===
@@ -139,8 +136,8 @@ export const siteConfig = {
   featuredProduct: {
     name_zh: "8 系防护箱",
     name_en: "Series 8 Protective Case",
-    description_zh: "8 系防护箱是客信新材料（军之甲）2024 年主推明星产品系列，已通过 IP67 防水 7 级、防尘 6 级、抗压全项测试，ROHS + 加州 65 双重认证。",
-    description_en: "Series 8 Protective Case is the star product line of KeXinMaterials (Junzhijia) 2024. Passed IP67 waterproof level 7, dustproof level 6, full compression test, ROHS + California 65 dual certification.",
+    description_zh: "8 系防护箱是客信新材料 2024 年主推明星产品系列，已通过 IP67 防水 7 级、防尘 6 级、抗压全项测试，ROHS + 加州 65 双重认证。",
+    description_en: "Series 8 Protective Case is the star product line of KeXinMaterials 2024. Passed IP67 waterproof level 7, dustproof level 6, full compression test, ROHS + California 65 dual certification.",
   },
 
   // === 定制服务（真实）===
@@ -352,7 +349,7 @@ export const siteConfig = {
 
   // === E-E-A-T 团队（真实公司 + 角色）===
   team: [
-    { key: "chief", name: "Wei Li (李伟)", role_zh: "创始人 & CEO", role_en: "Founder & CEO", bio_zh: "12 年防护箱行业经验，2014 年创立中山军之甲（客信新材料），带领团队从 0 做到年出口 50+ 国家。", bio_en: "12 years in protective case industry. Founded Zhongshan Junzhijia (KeXinMaterials) in 2014. Led the team from zero to 50+ country exports.", sameAs: ["https://www.linkedin.com/in/kexinmaterials-ceo"] },
+    { key: "chief", name: "Wei Li (李伟)", role_zh: "创始人 & CEO", role_en: "Founder & CEO", bio_zh: "12 年防护箱行业经验，2014 年创立客信新材料，带领团队从 0 做到年出口 50+ 国家。", bio_en: "12 years in protective case industry. Founded KeXinMaterials in 2014. Led the team from zero to 50+ country exports.", sameAs: ["https://www.linkedin.com/in/kexinmaterials-ceo"] },
     { key: "rd", name: "Zhang Hua (张华)", role_zh: "首席研发工程师", role_en: "Chief R&D Engineer", bio_zh: "15 年塑料材料工程经验，主导 20+ 项防护箱专利研发，专精 IP67/MIL-SPEC 配方。", bio_en: "15 years plastic materials engineering. Led 20+ protective case patents. Specialist in IP67/MIL-SPEC formula.", sameAs: ["https://www.linkedin.com/in/kexinmaterials-rd"] },
     { key: "qa", name: "Lin Mei (林梅)", role_zh: "质量经理", role_en: "QA Manager", bio_zh: "10 年 ISO9001 + CE/ROHS 体系管理，主持 200+ 批次第三方检测零失败。", bio_en: "10 years ISO9001 + CE/ROHS system management. 200+ third-party test batches, zero failure.", sameAs: [] },
     { key: "export", name: "Wang Tao (王涛)", role_zh: "出口销售总监", role_en: "Export Sales Director", bio_zh: "8 年 B2B 出口，熟悉 Alibaba / Made-in-China / Global Sources 平台运营。", bio_en: "8 years B2B export. Expert in Alibaba / Made-in-China / Global Sources platform operations.", sameAs: [] },

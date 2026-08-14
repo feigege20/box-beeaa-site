@@ -291,7 +291,7 @@ export function renderHome({ lang = "en" } = {}) {
         </div>
       </div>
       <p style="margin-top:1.5rem;font-size:0.875rem;color:#64748B;text-align:center;">
-        ${t ? "专利权人：客信新材料（广东）有限公司 · 详情" : "Patent Owner: Zhongshan Weili Plastic Products Co., Ltd. · "}
+        ${t ? "专利权人：客信新材料（广东）有限公司 · 详情" : "Patent Owner: KeXinMaterials (Guangdong) Co., Ltd. · "}
         <a href="mailto:${siteConfig.contact.email}?subject=${encodeURIComponent(t ? "专利详情" : "Patent Details")}">${t ? "联系索取证书副本" : "Request Certificate Copies"}</a>
       </p>
     </div>
