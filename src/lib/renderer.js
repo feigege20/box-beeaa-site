@@ -18,7 +18,7 @@ import {
 } from "./schemas.js";
 import {
   firstPersonStatement, firstPersonPreference, unpublishedData, varyParagraphLength, shuffleSections,
-  sGradeFirstPersonParagraph,
+  sGradeFirstPersonParagraph, personQuote, customerStory,
 } from "./content_variation.js";
 
 const BASE_URL = `${siteConfig.protocol}://${siteConfig.domain}`;
@@ -312,12 +312,14 @@ export function renderPage({ keyword, productLine, assets, lang = "en", grade = 
   // === 渲染各 section ===
   const sections = [];
 
-  // P1 修复 2026-08-12: 5 维防检测 (V3 §3.1)
+  // P1 修复 2026-08-12: 5 维防检测 (V3 §3.1) + 2026-08-14 升级到 7 维
   // 1. 段落长度变化 - varyParagraphLength 决定每段是短/中/长
   // 2. 第一人称经验 - firstPersonStatement 加一段"我厂 12 年经验..."
   // 3. 主观判断偏好 - firstPersonPreference 加一段"我个人更推荐..."
   // 4. 未发表数据 - unpublishedData 加一段"我厂 2024-2026 实测..."
   // 5. 段落顺序打乱 - shuffleSections 30% 概率打乱
+  // 6. 真实人名引用 - personQuote 加一段 CEO/RD/QA/Export 真实引述 (S/A 级)
+  // 7. 客户故事片段 - customerStory 加一段带具体数字的案例 (S/A 级)
   const seedKey = routes.canonicalPath + ':' + (keyword.no || '');
   const fpe = firstPersonStatement(t ? 'zh' : 'en');
   const fpp = firstPersonPreference(t ? 'zh' : 'en');
@@ -326,6 +328,12 @@ export function renderPage({ keyword, productLine, assets, lang = "en", grade = 
   const sGradeBlock = (grade === 'S' || grade === 'A')
     ? sGradeFirstPersonParagraph(esc(t ? keyword.zh : enClean(keyword.en)), t ? 'zh' : 'en')
     : '';
+  // 6+7 维: S/A 级额外加 personQuote + customerStory
+  const quoteRole = (grade === 'S' || grade === 'A')
+    ? ['chief', 'rd', 'qa', 'export'][Math.abs(hashCode(seedKey + 'role')) % 4]
+    : 'chief';
+  const pq = personQuote(quoteRole, t ? 'zh' : 'en');
+  const cs = customerStory(esc(t ? keyword.zh : enClean(keyword.en)), t ? 'zh' : 'en');
 
   // 1. Hero
   sections.push(sectionHero({
@@ -406,6 +414,31 @@ export function renderPage({ keyword, productLine, assets, lang = "en", grade = 
     ? [...fiveDimRawTexts].reverse()
     : fiveDimRawTexts;
   sections.push(sectionDeepDive({ paragraphs: finalParagraphs, lang }));
+
+  // P3.6 升级 2026-08-14: 6+7 维 (S/A 级) — person quote + customer story
+  if (grade === 'S' || grade === 'A') {
+    // 真实人名引用 (E-E-A-T 强化)
+    const quoteLen = varyParagraphLength(seedKey + ':quote');
+    const quoteSentences = pq.split(/[.!?]+/).map(s => s.trim()).filter(Boolean);
+    let quotePara = quoteSentences.join('. ') + (quoteSentences.length ? '.' : '');
+    if (quoteLen === 'short' && quoteSentences.length > 1) {
+      quotePara = quoteSentences.slice(0, 1).join('. ') + '.';
+    }
+    // 客户故事片段
+    const storyLen = varyParagraphLength(seedKey + ':story');
+    const storySentences = cs.split(/[.!?]+/).map(s => s.trim()).filter(Boolean);
+    let storyPara = storySentences.join('. ') + (storySentences.length ? '.' : '');
+    if (storyLen === 'short' && storySentences.length > 1) {
+      storyPara = storySentences.slice(0, 1).join('. ') + '.';
+    }
+    // 50% 概率合并成一段, 50% 概率分成两段 (差异化)
+    if (Math.abs(hashCode(seedKey + 'qstory')) % 10 < 5) {
+      sections.push(sectionDeepDive({ paragraphs: [quotePara + ' ' + storyPara], lang }));
+    } else {
+      sections.push(sectionDeepDive({ paragraphs: [quotePara], lang }));
+      sections.push(sectionDeepDive({ paragraphs: [storyPara], lang }));
+    }
+  }
 
   // 30% 概率打乱前面所有 section 顺序 (shuffleSections)
   if (Math.abs(hashCode(seedKey + 'shuffle')) % 10 < 3) {
