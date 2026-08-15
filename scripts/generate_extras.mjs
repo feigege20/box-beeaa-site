@@ -220,8 +220,8 @@ async function generateGuidePage(kw, lang) {
     sectionKeyFacts({ facts: keyFactsList, lang }),
     sectionDefinition({
       text: t
-        ? `${kw.zh} 是防护箱大类下的一种细分品类，主要应用于 ${productLine.desc_zh}。客信新材料（中山军之甲）作为源头工厂，2014 年起深耕这一领域，已为全球 50+ 国家、${300 + (Math.abs(hashCode(kw.slug)) % 1000)} 家头部企业供货。`
-        : `${kw.en} is a sub-category of protective cases, mainly used for ${productLine.desc_en}. KeXinMaterials (Zhongshan Junzhijia), as a source factory, has specialized in this field since 2014 and has supplied 50+ countries and ${300 + (Math.abs(hashCode(kw.slug)) % 1000)} leading brands.`,
+        ? `${kw.zh} 是防护箱大类下的一种细分品类，主要应用于 ${productLine.desc_zh}。客信新材料作为源头工厂，2014 年起深耕这一领域，已为全球 50+ 国家、${300 + (Math.abs(hashCode(kw.slug)) % 1000)} 家头部企业供货。`
+        : `${kw.en} is a sub-category of protective cases, mainly used for ${productLine.desc_en}. KeXinMaterials, as a source factory, has specialized in this field since 2014 and has supplied 50+ countries and ${300 + (Math.abs(hashCode(kw.slug)) % 1000)} leading brands.`,
       lang,
     }),
     sectionDeepDive({ paragraphs: deepDive, lang }),
@@ -560,59 +560,166 @@ async function generateToolPage(tool, lang) {
   return outPath;
 }
 
-// === 关于页（/about/） ===
+// === 关于页（/about/）— 主站 V3 design, B2B only ===
 
 async function generateAboutPage(lang) {
   const t = lang === "zh";
   const basePrefix = t ? "/zh" : "";
   const url = `${basePrefix}/about/`;
-  const today = new Date().toISOString().slice(0, 10);
 
   const breadcrumb = [
     { name: t ? "首页" : "Home", url: `${basePrefix || ""}/` },
-    { name: t ? "关于工厂" : "About", url: url },
+    { name: t ? "关于工厂" : "About Factory", url: url },
   ];
 
-  const sections = [
-    sectionHero({
-      title: t ? "关于客信新材料工厂" : "About KeXinMaterials Factory",
-      subtitle: t ? "客信新材料（广东）有限公司 = 中山市军之甲塑料制品有限公司 = 中山市伟立塑料制品有限公司（同一法人主体）" : "KeXinMaterials (Guangdong) = Zhongshan Junzhijia Plastic Products = Zhongshan Weili Plastic Products (same legal entity)",
-      image: "",
-      lang,
-    }),
-    sectionAboutCompany({ lang }),
-    sectionRDTeam({ lang }),
-    sectionTestReports({ reports: siteConfig.testReports, lang }),
-  ];
+  // 工厂核心数据 — 来自 siteConfig（已 clean，无内部名）
+  const factory = siteConfig.factory;
+  const yearEst = siteConfig.founded;
+  const yearsExp = new Date().getFullYear() - yearEst;
 
-  // 团队
-  for (const member of siteConfig.team) {
-    sections.push(`
-<section class="section" id="${member.key}" style="background:#F8FAFC;">
+  // 团队（来自 siteConfig.team，但用 V3 card design）
+  const teamCards = siteConfig.team.map(m => `
+<section class="section" id="${esc(m.key)}" style="background:#FFFFFF;padding:2rem 0;">
   <div class="container">
-    <div class="card" style="display:grid;grid-template-columns:120px 1fr;gap:1.5rem;align-items:center;">
-      <div style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#3B5BFF 0%,#1E40AF 100%);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:2.5rem;font-weight:800;">${esc(member.name.charAt(0))}</div>
+    <div class="card" style="display:grid;grid-template-columns:120px 1fr;gap:1.5rem;align-items:center;padding:1.5rem;border:1px solid #E2E8F0;">
+      <div style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#3B5BFF 0%,#1E40AF 100%);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:2.5rem;font-weight:800;">${esc(m.name.charAt(0))}</div>
       <div>
-        <h2>${esc(member.name)}</h2>
-        <p style="color:#64748B;font-size:0.875rem;margin-bottom:0.5rem;">${esc(t ? member.role_zh : member.role_en)}</p>
-        <p>${esc(t ? member.bio_zh : member.bio_en)}</p>
-        ${member.sameAs && member.sameAs.length > 0 ? `<p style="margin-top:0.5rem;"><a href="${esc(member.sameAs[0])}" target="_blank" rel="noopener" style="color:#3B5BFF;">LinkedIn</a></p>` : ""}
+        <h3 style="margin:0 0 0.25rem;font-size:1.25rem;">${esc(m.name)}</h3>
+        <p style="color:#64748B;font-size:0.875rem;margin:0 0 0.5rem;">${esc(t ? m.role_zh : m.role_en)}</p>
+        <p style="color:#334155;line-height:1.6;margin:0;">${esc(t ? m.bio_zh : m.bio_en)}</p>
       </div>
     </div>
   </div>
-</section>`);
-  }
+</section>`).join("\n");
 
-  sections.push(sectionCertifications({ certs: siteConfig.certifications.slice(0, 8), lang }));
-  sections.push(sectionBottomLine({ text: bottomLine(t ? "防护箱源头工厂" : "protective case source factory", lang), lang }));
+  // 9 大产品线链接
+  const productLines = siteConfig.productLines.map(p => `
+    <a href="${basePrefix}/${p.slug}/" class="card" style="text-decoration:none;color:inherit;display:block;padding:1rem;text-align:center;border:1px solid #E2E8F0;border-radius:8px;transition:all 0.2s;">
+      <div style="font-weight:700;color:#0F172A;margin-bottom:0.25rem;font-size:0.95rem;">${esc(t ? p.name_zh : p.name_en)}</div>
+      <div style="font-size:0.75rem;color:#64748B;">${esc(t ? p.short_zh : p.short_en)}</div>
+    </a>`).join("");
+
+  const sections = `
+<section class="hero" style="padding:4rem 0;background:linear-gradient(135deg,#0F172A 0%,#1E293B 100%);color:#FFFFFF;">
+  <div class="container" style="max-width:960px;">
+    <h1 style="color:#FFFFFF;font-size:clamp(2rem,4vw,3rem);line-height:1.2;margin:0 0 1rem;">${t ? "关于客信新材料工厂" : "About KeXinMaterials Factory"}</h1>
+    <p style="color:#CBD5E1;font-size:1.125rem;line-height:1.7;margin:0 0 1.5rem;">${t ? `客信新材料（广东）有限公司，${yearEst} 年成立于广东省中山市。${factory.area_sqm.toLocaleString()}㎡ 现代化工厂，${factory.equipment} 先进设备，${factory.patents} 设计专利，150+ 现货产品规格。` : `KeXinMaterials (Guangdong) Co., Ltd., established ${yearEst} in Zhongshan, Guangdong, China. ${factory.area_sqm.toLocaleString()}㎡ modern facility, ${factory.equipment} advanced machines, ${factory.patents} design patents, 150+ in-stock SKUs.`}</p>
+    <div class="hero-cta">
+      <a href="${basePrefix}/contact/" class="btn btn-lg cta-orange">📧 ${t ? "立即询盘" : "Inquire Now"}</a>
+      <a href="https://wa.me/${siteConfig.contact.whatsapp}" class="btn btn-lg cta-green" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a href="https://${siteConfig.contact.main_site.replace(/https?:\/\//, '')}" class="btn btn-lg" style="background:#FFFFFF;color:#0F172A;border:1px solid #E2E8F0;" target="_blank" rel="noopener">🛒 ${t ? "去主站采购" : "Shop at Main Site"}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>${t ? "工厂核心数据" : "Factory at a Glance"}</h2>
+    <div class="grid grid-4" style="margin-top:2rem;">
+      <div class="card" style="text-align:center;padding:2rem 1rem;">
+        <div style="font-size:2.5rem;font-weight:800;color:#3B5BFF;margin-bottom:0.5rem;">${factory.area_sqm.toLocaleString()}㎡</div>
+        <div style="color:#64748B;">${t ? "工厂面积" : "Factory Area"}</div>
+      </div>
+      <div class="card" style="text-align:center;padding:2rem 1rem;">
+        <div style="font-size:2.5rem;font-weight:800;color:#10B981;margin-bottom:0.5rem;">${factory.equipment}</div>
+        <div style="color:#64748B;">${t ? "先进设备" : "Advanced Machines"}</div>
+      </div>
+      <div class="card" style="text-align:center;padding:2rem 1rem;">
+        <div style="font-size:2.5rem;font-weight:800;color:#F59E0B;margin-bottom:0.5rem;">${factory.patents}</div>
+        <div style="color:#64748B;">${t ? "设计专利" : "Design Patents"}</div>
+      </div>
+      <div class="card" style="text-align:center;padding:2rem 1rem;">
+        <div style="font-size:2.5rem;font-weight:800;color:#C2410C;margin-bottom:0.5rem;">${factory.employees}</div>
+        <div style="color:#64748B;">${t ? "员工" : "Employees"}</div>
+      </div>
+    </div>
+    <div class="grid grid-4" style="margin-top:1.5rem;">
+      <div class="card" style="text-align:center;padding:1.5rem 1rem;">
+        <div style="font-size:2rem;font-weight:800;color:#1E40AF;margin-bottom:0.5rem;">${yearsExp}+</div>
+        <div style="color:#64748B;font-size:0.875rem;">${t ? "年源头工厂经验" : "Years Source Factory"}</div>
+      </div>
+      <div class="card" style="text-align:center;padding:1.5rem 1rem;">
+        <div style="font-size:2rem;font-weight:800;color:#1E40AF;margin-bottom:0.5rem;">9</div>
+        <div style="color:#64748B;font-size:0.875rem;">${t ? "产品线" : "Product Lines"}</div>
+      </div>
+      <div class="card" style="text-align:center;padding:1.5rem 1rem;">
+        <div style="font-size:2rem;font-weight:800;color:#1E40AF;margin-bottom:0.5rem;">150+</div>
+        <div style="color:#64748B;font-size:0.875rem;">${t ? "SKU" : "SKUs"}</div>
+      </div>
+      <div class="card" style="text-align:center;padding:1.5rem 1rem;">
+        <div style="font-size:2rem;font-weight:800;color:#1E40AF;margin-bottom:0.5rem;">50+</div>
+        <div style="color:#64748B;font-size:0.875rem;">${t ? "出口国家" : "Export Countries"}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#F8FAFC;">
+  <div class="container">
+    <h2>${t ? "我们做什么" : "What We Do"}</h2>
+    <p style="color:#475569;line-height:1.8;font-size:1.0625rem;max-width:840px;">${t ? "客信新材料专注 9 大产品线的防护箱 OEM/ODM 定制生产：军工战术、无人机、精密仪器、防水户外、医疗冷链、工程塑料、工具周转、摄影舞台、拉杆商务。从材料改性、模具设计、注塑/滚塑成型、装配到出货，全流程自主可控。源头工厂、批发价格、12 小时报价、30-45 天交付。" : `KeXinMaterials specializes in OEM/ODM custom manufacturing of protective cases across 9 product lines: military tactical, drone, precision instrument, waterproof outdoor, medical cold chain, engineering plastic, tool box, camera stage, and trolley business. From material modification, mold design, injection/rotomolding, assembly to shipping — fully in-house. Source factory, wholesale pricing, 12-hour quote, 30-45 day delivery.`}</p>
+    <div style="margin-top:2rem;">
+      <h3 style="font-size:1.25rem;color:#0F172A;margin-bottom:1rem;">${t ? "9 大产品线" : "9 Product Lines"}</h3>
+      <div class="grid grid-3" style="gap:0.75rem;">${productLines}</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>${t ? "贸易条款" : "Trade Terms"}</h2>
+    <div class="grid grid-2" style="margin-top:1.5rem;">
+      <div class="card" style="padding:1.5rem;">
+        <h3 style="margin:0 0 0.5rem;font-size:1.1rem;color:#3B5BFF;">${t ? "交货方式" : "Incoterms"}</h3>
+        <p style="margin:0;color:#334155;line-height:1.7;">${t ? "EXW 中山 / FOB 深圳。" : `EXW Zhongshan / FOB Shenzhen.`}</p>
+      </div>
+      <div class="card" style="padding:1.5rem;">
+        <h3 style="margin:0 0 0.5rem;font-size:1.1rem;color:#10B981;">${t ? "付款方式" : "Payment"}</h3>
+        <p style="margin:0;color:#334155;line-height:1.7;">${t ? "T/T 30% 定金，余款发货前付清。" : `T/T 30% deposit, 70% balance before shipment.`}</p>
+      </div>
+      <div class="card" style="padding:1.5rem;">
+        <h3 style="margin:0 0 0.5rem;font-size:1.1rem;color:#F59E0B;">${t ? "交货期" : "Lead Time"}</h3>
+        <p style="margin:0;color:#334155;line-height:1.7;">${t ? "标准 SKU 现货 7-15 天，定制订单 30-45 天。" : `Standard SKUs in stock 7-15 days, custom orders 30-45 days.`}</p>
+      </div>
+      <div class="card" style="padding:1.5rem;">
+        <h3 style="margin:0 0 0.5rem;font-size:1.1rem;color:#C2410C;">${t ? "起订量" : "MOQ"}</h3>
+        <p style="margin:0;color:#334155;line-height:1.7;">${t ? "标准 SKU 50-100 pcs，定制 300 pcs。" : `Standard SKUs 50-100 pcs, custom 300 pcs.`}</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:1.5rem;padding:1.5rem;background:#FEF3C7;border-left:4px solid #F59E0B;">
+      <h3 style="margin:0 0 0.5rem;font-size:1.1rem;color:#92400E;">${t ? "业务模式" : "Business Model"}</h3>
+      <p style="margin:0;color:#78350F;line-height:1.7;">${t ? "我们仅提供 B2B 批发、代理加盟、OEM/ODM 定制生产加工。面向全球代理批发商、需要使用防护箱的工厂、各地区采购商和代理商。EXW 和 FOB 交货，无 DDP、无海外仓、无零售。" : `B2B only: wholesale, agency, OEM/ODM custom production. Serving global agents, factories needing protective cases, regional buyers and distributors. EXW and FOB only. No DDP, no overseas warehouse, no retail.`}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#F8FAFC;">
+  <div class="container">
+    <h2>${t ? "权威认证" : "Certifications"}</h2>
+    <p style="color:#475569;margin-bottom:1.5rem;">ISO9001:2015 · CE · ROHS · SGS · MAC · IP67 · California 65</p>
+    <div class="grid grid-4">
+      ${siteConfig.certifications.slice(0, 8).map(c => `<div class="card" style="text-align:center;"><div style="font-size:1.5rem;font-weight:800;color:#3B5BFF;">${esc(c)}</div><div style="font-size:0.75rem;color:#64748B;margin-top:0.5rem;">${t ? "已认证" : "Certified"}</div></div>`).join("")}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>${t ? "团队" : "Our Team"}</h2>
+    <p style="color:#475569;margin-bottom:1.5rem;">${t ? "创始人、研发、质检、出口 — 12 年源头工厂实战经验。" : `Founder, R&D, QA, Export — 12 years of source factory hands-on experience.`}</p>
+  </div>
+</section>
+
+${teamCards}
+`.trim();
 
   const schemas = [
     breadcrumbSchema(breadcrumb),
   ];
 
   const html = renderHead({
-    title: t ? "关于客信新材料工厂 — 中山军之甲 · 中山伟立" : "About KeXinMaterials — Zhongshan Junzhijia · Weili",
-    description: siteConfig.description.en,
+    title: t ? "关于客信新材料 | 防护箱源头工厂 | 客信新材料 KeXinMaterials" : "About KeXinMaterials | Protective Case Source Factory | KeXinMaterials",
+    description: t ? `客信新材料 ${yearEst} 年成立的防护箱源头工厂，${factory.area_sqm.toLocaleString()}㎡ 厂房，9 大产品线，EXW/FOB 交货，B2B 批发/代理/OEM/ODM 定制。` : `KeXinMaterials (Guangdong) source factory of protective cases, established ${yearEst}. ${factory.area_sqm.toLocaleString()}㎡ facility, 9 product lines, EXW/FOB, B2B wholesale/agency/OEM/ODM custom.`,
     keywords: siteConfig.keywords.en,
     canonical: `https://${siteConfig.domain}${url}`,
     lang,
@@ -621,11 +728,260 @@ async function generateAboutPage(lang) {
   })
     + renderHeader({ lang, currentPath: url })
     + renderBreadcrumb({ items: breadcrumb, lang })
-    + sections.join("\n")
+    + sections
     + renderCTA({ lang })
     + renderFooter({ lang });
 
   const outPath = path.join(DIST, lang === "zh" ? "zh" : "", "about", "index.html");
+  await writeFile(outPath, html);
+  return outPath;
+}
+
+// === 联系页（/contact/）— 4 service 入口 ===
+
+async function generateContactPage(lang) {
+  const t = lang === "zh";
+  const basePrefix = t ? "/zh" : "";
+  const url = `${basePrefix}/contact/`;
+
+  const breadcrumb = [
+    { name: t ? "首页" : "Home", url: `${basePrefix || ""}/` },
+    { name: t ? "联系我们" : "Contact", url: url },
+  ];
+
+  const sections = `
+<section class="hero" style="padding:4rem 0;background:linear-gradient(135deg,#0F172A 0%,#1E293B 100%);color:#FFFFFF;">
+  <div class="container" style="max-width:960px;">
+    <h1 style="color:#FFFFFF;font-size:clamp(2rem,4vw,3rem);line-height:1.2;margin:0 0 1rem;">${t ? "联系客信新材料" : "Contact KeXinMaterials"}</h1>
+    <p style="color:#CBD5E1;font-size:1.125rem;line-height:1.7;margin:0 0 1.5rem;">${t ? "4 大 B2B 商业服务入口 — 批发采购、代理加盟、OEM/ODM 定制、全球供货。源头工厂 12 小时报价，30-45 天交付。" : "4 B2B commercial service entry points — wholesale, agency, OEM/ODM custom, global supply. Source factory, 12-hour quote, 30-45 day delivery."}</p>
+    <div class="hero-cta">
+      <a href="mailto:${siteConfig.contact.email}" class="btn btn-lg cta-orange">📧 ${t ? "邮件询盘" : "Email Inquiry"}</a>
+      <a href="https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(t ? "您好，我想咨询防护箱定制" : "Hello, I'd like to inquire about protective cases")}" class="btn btn-lg cta-green" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a href="tel:+${siteConfig.contact.phone.replace(/[^0-9]/g, '')}" class="btn btn-lg" style="background:#FFFFFF;color:#0F172A;">📞 ${t ? "电话" : "Call"}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>${t ? "4 大商业服务入口" : "4 Commercial Service Entry Points"}</h2>
+    <p style="color:#475569;margin-bottom:2rem;">${t ? "选择最适合您业务的服务类型。每个入口都有专属询盘模板和专业团队跟进。" : "Choose the service type that fits your business best. Each entry has a dedicated inquiry template and a specialized team."}</p>
+    <div class="grid grid-2" style="gap:1.5rem;">
+      <a href="${basePrefix}/wholesale/" class="card" style="text-decoration:none;color:#FFFFFF;display:block;background:linear-gradient(135deg,#F97316 0%,#EA580C 100%);padding:2rem;border-radius:12px;transition:transform 0.2s;">
+        <h3 style="color:#FFFFFF;margin:0 0 0.5rem;font-size:1.5rem;">${t ? "🛒 批发采购" : "🛒 Wholesale"}</h3>
+        <p style="margin:0;opacity:0.95;line-height:1.6;">${t ? "获取批发价目表。标准 SKU 50-100 pcs 起订，3 天内报价。" : "Get wholesale price list. Standard SKUs MOQ 50-100 pcs, 3-day quote."}</p>
+      </a>
+      <a href="${basePrefix}/agency/" class="card" style="text-decoration:none;color:#FFFFFF;display:block;background:linear-gradient(135deg,#F59E0B 0%,#D97706 100%);padding:2rem;border-radius:12px;transition:transform 0.2s;">
+        <h3 style="color:#FFFFFF;margin:0 0 0.5rem;font-size:1.5rem;">${t ? "🤝 代理加盟" : "🤝 Agency & Franchise"}</h3>
+        <p style="margin:0;opacity:0.95;line-height:1.6;">${t ? "申请区域代理。独家保护、季度返点、市场支持。" : "Apply for regional agency. Exclusive protection, quarterly rebate, marketing support."}</p>
+      </a>
+      <a href="${basePrefix}/oem/" class="card" style="text-decoration:none;color:#FFFFFF;display:block;background:linear-gradient(135deg,#3B5BFF 0%,#1E40AF 100%);padding:2rem;border-radius:12px;transition:transform 0.2s;">
+        <h3 style="color:#FFFFFF;margin:0 0 0.5rem;font-size:1.5rem;">${t ? "🏭 OEM/ODM 定制" : "🏭 OEM/ODM Custom"}</h3>
+        <p style="margin:0;opacity:0.95;line-height:1.6;">${t ? "3D 设计 3 天、打样 7-10 天、开模 45 天、量产 30 天。" : "3D design 3 days, sample 7-10 days, mold 45 days, mass production 30 days."}</p>
+      </a>
+      <a href="${basePrefix}/export/" class="card" style="text-decoration:none;color:#FFFFFF;display:block;background:linear-gradient(135deg,#10B981 0%,#047857 100%);padding:2rem;border-radius:12px;transition:transform 0.2s;">
+        <h3 style="color:#FFFFFF;margin:0 0 0.5rem;font-size:1.5rem;">${t ? "🌍 全球供货" : "🌍 Global Supply"}</h3>
+        <p style="margin:0;opacity:0.95;line-height:1.6;">${t ? "EXW 中山 / FOB 深圳。海运/空运报价、报关单证支持。" : "EXW Zhongshan / FOB Shenzhen. Sea/air freight quote, customs docs support."}</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#F8FAFC;">
+  <div class="container">
+    <h2>${t ? "直接联系" : "Direct Contact"}</h2>
+    <div class="grid grid-2" style="margin-top:1.5rem;">
+      <div class="card" style="padding:1.5rem;border:1px solid #E2E8F0;">
+        <h3 style="margin:0 0 0.5rem;font-size:1.1rem;color:#1E40AF;">📧 ${t ? "邮箱" : "Email"}</h3>
+        <p style="margin:0 0 0.5rem;"><a href="mailto:${siteConfig.contact.email}" style="color:#0F172A;font-size:1.1rem;font-weight:600;">${siteConfig.contact.email}</a></p>
+        <p style="color:#64748B;font-size:0.875rem;margin:0;">${t ? "推荐用于详细 RFQ、图纸与大批量询价。12 小时内回复。" : "Recommended for detailed RFQ, drawings, and bulk inquiries. 12-hour reply."}</p>
+      </div>
+      <div class="card" style="padding:1.5rem;border:1px solid #E2E8F0;">
+        <h3 style="margin:0 0 0.5rem;font-size:1.1rem;color:#1E40AF;">📞 ${t ? "电话 / WhatsApp" : "Phone / WhatsApp"}</h3>
+        <p style="margin:0 0 0.5rem;"><a href="tel:+${siteConfig.contact.phone.replace(/[^0-9]/g, '')}" style="color:#0F172A;font-size:1.1rem;font-weight:600;">${siteConfig.contact.phone}</a></p>
+        <p style="color:#64748B;font-size:0.875rem;margin:0;">${t ? "中英双语。周一至周六 中国时间早 8 点至晚 9 点。" : "Chinese & English. Mon-Sat 8:00-21:00 China time."}</p>
+      </div>
+      <div class="card" style="padding:1.5rem;border:1px solid #E2E8F0;">
+        <h3 style="margin:0 0 0.5rem;font-size:1.1rem;color:#1E40AF;">💬 ${t ? "WhatsApp 即时" : "WhatsApp Direct"}</h3>
+        <p style="margin:0 0 0.5rem;"><a href="https://wa.me/${siteConfig.contact.whatsapp}" style="color:#0F172A;font-size:1.1rem;font-weight:600;" target="_blank" rel="noopener">wa.me/${siteConfig.contact.whatsapp}</a></p>
+        <p style="color:#64748B;font-size:0.875rem;margin:0;">${t ? "点击直接打开 WhatsApp。号码与电话一致。" : "Click to open WhatsApp directly. Same number as phone."}</p>
+      </div>
+      <div class="card" style="padding:1.5rem;border:1px solid #E2E8F0;">
+        <h3 style="margin:0 0 0.5rem;font-size:1.1rem;color:#1E40AF;">🏭 ${t ? "工厂地址" : "Factory Address"}</h3>
+        <p style="margin:0 0 0.5rem;color:#0F172A;font-size:1rem;font-weight:600;">${t ? "广东省中山市" : "Zhongshan, Guangdong, China"}</p>
+        <p style="color:#64748B;font-size:0.875rem;margin:0;">${t ? "客信新材料（广东）有限公司。<br>需提前预约。微信:kexin-beeaa" : `KeXinMaterials (Guangdong) Co., Ltd.<br>Visit by appointment. WeChat: kexin-beeaa`}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>${t ? "询盘需提供信息" : "RFQ Required Information"}</h2>
+    <p style="color:#475569;margin-bottom:1.5rem;">${t ? "为加速报价，请提供以下信息：" : "To speed up quoting, please provide the following information:"}</p>
+    <div class="grid grid-2" style="gap:1rem;">
+      <div class="card" style="padding:1.25rem;">
+        <h4 style="margin:0 0 0.5rem;color:#0F172A;">${t ? "📐 规格" : "📐 Specifications"}</h4>
+        <p style="margin:0;color:#475569;line-height:1.7;font-size:0.9375rem;">${t ? "箱子尺寸 (L x W x H)、大致重量、IP 防护等级、材质偏好。" : "Case dimensions (L x W x H), approximate weight, IP rating, material preference."}</p>
+      </div>
+      <div class="card" style="padding:1.25rem;">
+        <h4 style="margin:0 0 0.5rem;color:#0F172A;">${t ? "🎯 装备信息" : "🎯 Equipment Info"}</h4>
+        <p style="margin:0;color:#475569;line-height:1.7;font-size:0.9375rem;">${t ? "装载什么？品牌、型号、单件价值。" : "What will it carry? Brand, model, per-unit value."}</p>
+      </div>
+      <div class="card" style="padding:1.25rem;">
+        <h4 style="margin:0 0 0.5rem;color:#0F172A;">${t ? "🌍 使用场景" : "🌍 Use Case"}</h4>
+        <p style="margin:0;color:#475569;line-height:1.7;font-size:0.9375rem;">${t ? "军工、工业、OEM、零售、出口目的地。" : "Military, industrial, OEM, retail, export destination."}</p>
+      </div>
+      <div class="card" style="padding:1.25rem;">
+        <h4 style="margin:0 0 0.5rem;color:#0F172A;">${t ? "📜 合规要求" : "📜 Compliance"}</h4>
+        <p style="margin:0;color:#475569;line-height:1.7;font-size:0.9375rem;">${t ? "ISO 9001、IATF 16949、ESD、ATEX、MIL-STD-810 等。" : "ISO 9001, IATF 16949, ESD, ATEX, MIL-STD-810, etc."}</p>
+      </div>
+      <div class="card" style="padding:1.25rem;">
+        <h4 style="margin:0 0 0.5rem;color:#0F172A;">${t ? "📦 数量" : "📦 Quantity"}</h4>
+        <p style="margin:0;color:#475569;line-height:1.7;font-size:0.9375rem;">${t ? "样品、小批试产、量产计划。" : "Sample, small batch trial, mass production plan."}</p>
+      </div>
+      <div class="card" style="padding:1.25rem;">
+        <h4 style="margin:0 0 0.5rem;color:#0F172A;">${t ? "🎨 定制功能" : "🎨 Custom Features"}</h4>
+        <p style="margin:0;color:#475569;line-height:1.7;font-size:0.9375rem;">${t ? "海绵内衬、颜色、Logo、RFID、分隔层。" : "Foam lining, color, logo, RFID, dividers."}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#F8FAFC;">
+  <div class="container">
+    <h2>${t ? "响应时效" : "Response Time"}</h2>
+    <div class="grid grid-4" style="margin-top:1.5rem;">
+      <div class="card" style="text-align:center;padding:1.5rem;">
+        <div style="font-size:1.5rem;font-weight:800;color:#3B5BFF;margin-bottom:0.5rem;">12 ${t ? "小时" : "hours"}</div>
+        <div style="color:#64748B;font-size:0.875rem;">${t ? "标准 RFQ 回复" : "Standard RFQ reply"}</div>
+      </div>
+      <div class="card" style="text-align:center;padding:1.5rem;">
+        <div style="font-size:1.5rem;font-weight:800;color:#10B981;margin-bottom:0.5rem;">3 ${t ? "天" : "days"}</div>
+        <div style="color:#64748B;font-size:0.875rem;">${t ? "详细工程评审" : "Detailed engineering review"}</div>
+      </div>
+      <div class="card" style="text-align:center;padding:1.5rem;">
+        <div style="font-size:1.5rem;font-weight:800;color:#F59E0B;margin-bottom:0.5rem;">7-10 ${t ? "天" : "days"}</div>
+        <div style="color:#64748B;font-size:0.875rem;">${t ? "打样生产" : "Sample production"}</div>
+      </div>
+      <div class="card" style="text-align:center;padding:1.5rem;">
+        <div style="font-size:1.5rem;font-weight:800;color:#C2410C;margin-bottom:0.5rem;">30-45 ${t ? "天" : "days"}</div>
+        <div style="color:#64748B;font-size:0.875rem;">${t ? "量产交期" : "Mass production"}</div>
+      </div>
+    </div>
+  </div>
+</section>
+`.trim();
+
+  const schemas = [
+    breadcrumbSchema(breadcrumb),
+  ];
+
+  const html = renderHead({
+    title: t ? "联系客信新材料 | 4 大 B2B 商业服务 | 客信新材料" : "Contact KeXinMaterials | 4 B2B Commercial Services | KeXinMaterials",
+    description: t ? "联系客信新材料获取批发、代理、OEM/ODM 定制、全球供货报价。电话/WhatsApp +86 13590555309, 邮箱 kexin@beeaa.com。12 小时回复。" : "Contact KeXinMaterials for wholesale, agency, OEM/ODM custom, global supply quote. Phone/WhatsApp +86 13590555309, email kexin@beeaa.com. 12-hour reply.",
+    keywords: siteConfig.keywords.en,
+    canonical: `https://${siteConfig.domain}${url}`,
+    lang,
+    theme: "contact",
+    schemas,
+  })
+    + renderHeader({ lang, currentPath: url })
+    + renderBreadcrumb({ items: breadcrumb, lang })
+    + sections
+    + renderCTA({ lang })
+    + renderFooter({ lang });
+
+  const outPath = path.join(DIST, lang === "zh" ? "zh" : "", "contact", "index.html");
+  await writeFile(outPath, html);
+  return outPath;
+}
+
+// === 产品线总览（/products/）— 9 大产品线总览 ===
+
+async function generateProductsPage(lang) {
+  const t = lang === "zh";
+  const basePrefix = t ? "/zh" : "";
+  const url = `${basePrefix}/products/`;
+
+  const breadcrumb = [
+    { name: t ? "首页" : "Home", url: `${basePrefix || ""}/` },
+    { name: t ? "9 大产品线" : "9 Product Lines", url: url },
+  ];
+
+  // 9 大产品线
+  const productLines = siteConfig.productLines.map(p => `
+    <a href="${basePrefix}/${p.slug}/" class="card" style="text-decoration:none;color:inherit;display:block;padding:1.5rem;border:1px solid #E2E8F0;border-radius:12px;transition:all 0.2s;background:#FFFFFF;">
+      <h3 style="margin:0 0 0.5rem;font-size:1.125rem;color:#0F172A;">${esc(t ? p.name_zh : p.name_en)}</h3>
+      <p style="margin:0 0 0.75rem;font-size:0.875rem;color:#475569;line-height:1.5;">${esc(t ? p.desc_zh : p.desc_en)}</p>
+      <div style="font-size:0.875rem;color:#3B5BFF;font-weight:600;">${t ? "查看产品 →" : "View Products →"}</div>
+    </a>`).join("");
+
+  const sections = `
+<section class="hero" style="padding:4rem 0;background:linear-gradient(135deg,#F8FAFC 0%,#FFFFFF 100%);">
+  <div class="container" style="max-width:960px;">
+    <h1 style="font-size:clamp(2rem,4vw,3rem);line-height:1.2;margin:0 0 1rem;">${t ? "9 大产品线 — 防护箱全场景" : "9 Product Lines — Full-Scenario Protective Cases"}</h1>
+    <p style="color:#475569;font-size:1.125rem;line-height:1.7;margin:0 0 1.5rem;">${t ? "客信新材料 9 大产品线，源头工厂直供，覆盖军工、无人机、精密仪器、防水户外、医疗冷链、工程塑料、工具周转、摄影舞台、拉杆商务全场景。" : `KeXinMaterials 9 product lines, source factory direct, covering military, drone, precision instrument, waterproof outdoor, medical cold chain, engineering plastic, tool box, camera stage, and trolley business.`}</p>
+    <div class="hero-cta">
+      <a href="${basePrefix}/contact/" class="btn btn-lg cta-orange">📧 ${t ? "立即询盘" : "Inquire Now"}</a>
+      <a href="https://wa.me/${siteConfig.contact.whatsapp}" class="btn btn-lg cta-green" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>${t ? "9 大产品线总览" : "All 9 Product Lines"}</h2>
+    <p style="color:#475569;margin-bottom:2rem;">${t ? "每个产品线都支持 OEM/ODM 定制，30-45 天交付。" : "Each product line supports OEM/ODM customization with 30-45 day delivery."}</p>
+    <div class="grid grid-3" style="gap:1.5rem;">${productLines}</div>
+  </div>
+</section>
+
+<section class="section" style="background:#F8FAFC;">
+  <div class="container">
+    <h2>${t ? "服务范围" : "Service Coverage"}</h2>
+    <div class="grid grid-4" style="margin-top:1.5rem;">
+      <div class="card" style="text-align:center;padding:1.5rem;">
+        <div style="font-size:2rem;font-weight:800;color:#3B5BFF;margin-bottom:0.5rem;">9</div>
+        <div style="color:#64748B;">${t ? "产品线" : "Product Lines"}</div>
+      </div>
+      <div class="card" style="text-align:center;padding:1.5rem;">
+        <div style="font-size:2rem;font-weight:800;color:#10B981;margin-bottom:0.5rem;">150+</div>
+        <div style="color:#64748B;">${t ? "SKU" : "SKUs"}</div>
+      </div>
+      <div class="card" style="text-align:center;padding:1.5rem;">
+        <div style="font-size:2rem;font-weight:800;color:#F59E0B;margin-bottom:0.5rem;">${siteConfig.factory.area_sqm.toLocaleString()}㎡</div>
+        <div style="color:#64748B;">${t ? "工厂" : "Factory"}</div>
+      </div>
+      <div class="card" style="text-align:center;padding:1.5rem;">
+        <div style="font-size:2rem;font-weight:800;color:#C2410C;margin-bottom:0.5rem;">50+</div>
+        <div style="color:#64748B;">${t ? "出口国家" : "Export Countries"}</div>
+      </div>
+    </div>
+  </div>
+</section>
+`.trim();
+
+  const schemas = [
+    breadcrumbSchema(breadcrumb),
+  ];
+
+  const html = renderHead({
+    title: t ? "9 大产品线 | 防护箱源头工厂 | 客信新材料" : "9 Product Lines | Protective Case Source Factory | KeXinMaterials",
+    description: t ? "客信新材料 9 大产品线，源头工厂直供：军工战术、无人机、精密仪器、防水户外、医疗冷链、工程塑料、工具周转、摄影舞台、拉杆商务。OEM/ODM 定制，30-45 天交付。" : "KeXinMaterials 9 product lines from source factory: military tactical, drone, precision instrument, waterproof outdoor, medical cold chain, engineering plastic, tool box, camera stage, trolley. OEM/ODM custom, 30-45 day delivery.",
+    keywords: siteConfig.keywords.en,
+    canonical: `https://${siteConfig.domain}${url}`,
+    lang,
+    theme: "products",
+    schemas,
+  })
+    + renderHeader({ lang, currentPath: url })
+    + renderBreadcrumb({ items: breadcrumb, lang })
+    + sections
+    + renderCTA({ lang })
+    + renderFooter({ lang });
+
+  const outPath = path.join(DIST, lang === "zh" ? "zh" : "", "products", "index.html");
   await writeFile(outPath, html);
   return outPath;
 }
@@ -705,6 +1061,16 @@ async function main() {
   await generateAboutPage("en");
   await generateAboutPage("zh");
   console.log("  -> 2 about pages");
+
+  // 4b. 联系页 (P3.6 W1 收尾)
+  await generateContactPage("en");
+  await generateContactPage("zh");
+  console.log("  -> 2 contact pages");
+
+  // 4c. 产品线总览页 (P3.6 W1 收尾)
+  await generateProductsPage("en");
+  await generateProductsPage("zh");
+  console.log("  -> 2 products pages");
 
   // 5. Guides 索引页
   await generateGuidesIndex("en");

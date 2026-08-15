@@ -101,7 +101,7 @@ export function renderCategoryPage({ productLine, keywords = [], lang = "en" }) 
     { q_zh: `${productLine.name_zh}起订量是多少？`, q_en: `What is the MOQ for ${productLine.name_en}?`, a_zh: `标准 SKU 50-100 pcs，定制 300 pcs。批量越大单价越优惠。`, a_en: `Standard SKUs 50-100 pcs, custom 300 pcs. Larger quantities get better pricing.` },
     { q_zh: `${productLine.name_zh}能定制 logo 吗？`, q_en: `Can ${productLine.name_en} be customized with logo?`, a_zh: `可以。丝印、烫金、激光雕刻、UV 喷涂 4 种方式，最低 100pcs 起。`, a_en: `Yes. Silk-screen, hot stamping, laser engraving, UV spray - 4 options, MOQ 100pcs.` },
     { q_zh: `${productLine.name_zh}有哪些认证？`, q_en: `What certifications for ${productLine.name_en}?`, a_zh: `CE / RoHS / ISO9001 全系标配。UN38.3、FDA、UL、MIL-SPEC 可选。`, a_en: `CE / RoHS / ISO9001 standard. UN38.3, FDA, UL, MIL-SPEC optional.` },
-    { q_zh: `${productLine.name_zh}出口多久到？`, q_en: `How long for export delivery?`, a_zh: `生产 30-45 天，海运 25-40 天 DDP，空运 5-7 天，快递 3-5 天。`, a_en: `Production 30-45 days, sea 25-40 days DDP, air 5-7 days, express 3-5 days.` },
+    { q_zh: `${productLine.name_zh}出口多久到？`, q_en: `How long for export delivery?`, a_zh: `生产 30-45 天，海运到港 25-40 天 (EXW/FOB)，空运 5-7 天，快递 3-5 天。客户可自派货代或委托货代。`, a_en: `Production 30-45 days, sea 25-40 days to destination port (EXW/FOB), air 5-7 days, express 3-5 days. Buyer arranges own freight forwarder or via nominated forwarder.` },
     { q_zh: `${productLine.name_zh}贸易条款？`, q_en: `What are the trade terms?`, a_zh: `FOB 深圳 / EXW 中山，T/T 30% 定金，余款发货前付清。`, a_en: `FOB Shenzhen / EXW Zhongshan, T/T 30% deposit, 70% balance before shipment.` },
   ];
 
@@ -161,9 +161,9 @@ export function renderCategoryPage({ productLine, keywords = [], lang = "en" }) 
         steps: [
           { title: t ? "提交询盘" : "Submit Inquiry", text: t ? "邮件 kexin@beeaa.com 或 WhatsApp +86 13590555309，提供产品需求 (尺寸、材质、IP 等级、颜色、Logo 印刷等)。我们 12 小时内回复。" : "Email kexin@beeaa.com or WhatsApp +86 13590555309 with product specs (size, material, IP rating, color, logo print). We reply within 12 hours." },
           { title: t ? "3D 设计与打样" : "3D Design & Sample", text: t ? "3D 设计 3 天完成，物理样品 7-10 天。样品费根据复杂度 $50-200，订单后返还。" : "3D design in 3 days, physical sample in 7-10 days. Sample fee $50-200 based on complexity, refundable on order." },
-          { title: t ? "报价与合同" : "Quote & Contract", text: t ? "基于样品确认，提供正式报价 (含 FOB 深圳 / EXW 中山 / DDP 可选)。合同条款: T/T 30% 定金 + 70% 发货前。" : "After sample confirmation, we provide formal quote (FOB Shenzhen / EXW Zhongshan / DDP options). Payment: T/T 30% deposit + 70% before shipment." },
+          { title: t ? "报价与合同" : "Quote & Contract", text: t ? "基于样品确认，提供正式报价 (FOB 深圳 / EXW 中山)。合同条款: T/T 30% 定金 + 70% 发货前。" : "After sample confirmation, we provide formal quote (FOB Shenzhen / EXW Zhongshan). Payment: T/T 30% deposit + 70% before shipment." },
           { title: t ? "开模与量产" : "Tooling & Mass Production", text: t ? "开模 45 天。量产 30-45 天。生产过程提供照片 + 视频更新。第三方验厂 (SGS/BV/TÜV) 可安排。" : "Mold 45 days. Mass production 30-45 days. Photo + video updates during production. Third-party inspection (SGS/BV/TUV) can be arranged." },
-          { title: t ? "物流与售后" : "Shipping & After-Sales", text: t ? "海运 25-40 天 DDP,空运 5-7 天,快递 3-5 天。FOB 深圳港口或 EXW 中山工厂提货。产品 12 个月质保。" : "Sea 25-40 days DDP, air 5-7 days, express 3-5 days. FOB Shenzhen port or EXW Zhongshan factory pickup. 12-month product warranty." },
+          { title: t ? "物流与售后" : "Shipping & After-Sales", text: t ? "海运 25-40 天到港 (EXW/FOB)，空运 5-7 天，快递 3-5 天。FOB 深圳港口或 EXW 中山工厂提货。客户自派货代或委托货代。产品 12 个月质保。" : "Sea 25-40 days to destination port (EXW/FOB), air 5-7 days, express 3-5 days. FOB Shenzhen port or EXW Zhongshan factory pickup. Buyer arranges own forwarder. 12-month product warranty." },
         ],
         totalTime: "P45D",
       }),
