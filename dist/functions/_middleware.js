@@ -179,7 +179,7 @@ export const onRequest = async (context) => {
   const skipPrefixes = [
     "zh/", "medical-case/", "styles/", "images/", "_",
     "llms", "sitemap", "robots", "rss", "manifest", ".well-known",
-    "guides/", "entities/", "tools/", "about/", "markets/",
+    "guides/", "entities/", "tools/", "about/", "contact/", "products/", "markets/",
     "wholesale", "agency", "oem", "export", "faq", "blog"
   ];
   const isStaticAsset = path === "/" || path === "/index.html" || path === "/favicon.ico"
