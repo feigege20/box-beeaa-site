@@ -210,16 +210,12 @@ async function handleZHRoute(context, path) {
   
   // 妫€娴嬫槸鍚﹀甫灏鹃儴鏂滄潬
   const endsWithSlash = path === "/zh" || path.endsWith("/");
-  let suffix = "";
-  if (endsWithSlash) {
-    suffix = "index.html";
-  }
-  
+
   // 绗竴杞? 绮剧‘鍖归厤
   const exactKeys = [];
   if (endsWithSlash) {
-    exactKeys.push(pathNoSlash + suffix); // zh/camera-stage-case/foo/index.html
-    exactKeys.push(pathNoSlash); // zh/camera-stage-case/foo/
+    exactKeys.push(pathNoSlash + "/index.html"); // zh/camera-stage-case/foo/index.html (FIX: 加上 /)
+    exactKeys.push(pathNoSlash + "/"); // zh/camera-stage-case/foo/
   } else {
     exactKeys.push(pathNoSlash); // zh/camera-stage-case/foo
     exactKeys.push(pathNoSlash + "/index.html"); // zh/camera-stage-case/foo/index.html
