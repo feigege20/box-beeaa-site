@@ -183,7 +183,8 @@ export const onRequest = async (context) => {
     "wholesale", "agency", "oem", "export", "faq", "blog"
   ];
   const isStaticAsset = path === "/" || path === "/index.html" || path === "/favicon.ico"
-    || skipPrefixes.some(p => path === p.replace(/\/$/, "") || path.startsWith(p));
+    || skipPrefixes.some(p => path === p.replace(/\/$/, "") || path.startsWith(p) || path.startsWith("/" + p))
+    || path === "/sitemap-zh.xml" || path === "/sitemap-noindex-zh.xml" || path === "/sitemap-noindex.xml";
 
   // === /zh/* 璺敱 ===
   if (path === "/zh" || path === "/zh/" || path.startsWith("/zh/")) {
