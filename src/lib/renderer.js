@@ -222,6 +222,7 @@ export function buildRoutes({ keyword, productLine, lang }) {
 /** 主页面渲染器 */
 export function renderPage({ keyword, productLine, assets, lang = "en", grade = "A" }) {
   const t = lang === "zh";
+  const basePrefix = t ? "/zh" : "";
   const meta = buildPageMeta({ keyword, productLine, lang });
   const routes = buildRoutes({ keyword, productLine, lang });
 

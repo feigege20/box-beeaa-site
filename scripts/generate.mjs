@@ -756,7 +756,9 @@ async function main() {
             let grade = "A"; // 默认
             if (scoredKeywords) {
               const found = scoredKeywords.find(s => s.no === kw.no && s.zh === kw.zh);
-              if (found) grade = found.grade;
+              if (found) {
+                grade = found.grade;
+              }
             }
 
             // C 级直接跳过（不创建文件）

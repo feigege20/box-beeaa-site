@@ -118,3 +118,7 @@ _audit_temp/
 dist-mini/
 _tmp_epc.html
 _worker.bundle
+
+# P3.6 W1 backups
+data/keywords.json.bak*
+
