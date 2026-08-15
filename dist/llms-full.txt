@@ -51,7 +51,7 @@ Q: What is your MOQ?
 A: Standard SKUs have an MOQ of 50-100pcs; custom mold MOQ is 300pcs. Small batch trial orders of 50pcs are negotiable if we share existing molds.
 
 Q: What is the lead time?
-A: Standard SKUs ship within 3 days from stock. Custom orders 20-30 days. Custom mold 35-45 days. Sea shipping DDP to SEA / EU / NA / AU / NZ: 30-40 days.
+A: Standard SKUs ship within 3 days from stock. Custom orders 20-30 days. Custom mold 35-45 days. Sea shipping to destination port 30-40 days (EXW / FOB Shenzhen or Ningbo). Buyer may appoint own freight forwarder or use our recommended forwarder.
 
 Q: Which payment methods are supported?
 A: We support T/T 30%/70%, L/C at sight, Letter of Credit, PayPal (small orders), and Western Union. Large orders can use staged payment. New clients typically start with T/T 30%/70%.
@@ -98,8 +98,8 @@ A: CE (mandatory, multiple directives), REACH (chemicals), RoHS 2.0 (hazardous s
 Q: Is GCC certification required for Middle East markets?
 A: Saudi Arabia: SABER mandatory (PCOC + SCOC). UAE: ECAS / EQM. Kuwait: KUCAS. Qatar: G-Mark. We offer one-stop GCC certification + SABER regulatory training.
 
-Q: How long and how much for DDP sea shipping to the US?
-A: DDP sea to US West Coast (LA / Long Beach): 25-32 days, ~USD 0.8-1.5/kg for 100kg+. East Coast (NY): 35-40 days, ~USD 1.2-2.0/kg. Includes tariff, customs, last-mile delivery.
+Q: Sea freight to the US — how long and how much?
+A: FOB Shenzhen → US West Coast (LA/Long Beach) sea 18-25 days, East Coast (NY) 28-35 days. 100kg+ FCL reference rate USD 0.8-1.5/kg (West Coast) / USD 1.2-2.0/kg (East Coast). Tariff, customs, and last-mile delivery are handled by the buyer (or buyer's appointed broker/freight forwarder).
 
 Q: What to note for exporting to Russia?
 A: GOST-R certification, Russian manual + labels, EAC mark (EAEU) required. Currently recommend re-export via Kazakhstan / Belarus, or use EAEU channels. We offer Russian localization.

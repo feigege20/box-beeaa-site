@@ -1008,6 +1008,29 @@ ${siteConfig.tools.map(tool => `
     // 现在 zh extras 已写到 dist/，让 generateSitemap 重写 index（用现有文件判断）
     await generateSitemap([], [], [], []);
   } else {
+    // P3.6 W1 close: 加 6 个固定 page sitemap entry (about/contact/products × 2 langs)
+    const baseProto = siteConfig.protocol + "://" + siteConfig.domain;
+    const fixedSitemapPages = [
+      { path_en: "/about/", path_zh: "/zh/about/", priority: "0.8" },
+      { path_en: "/contact/", path_zh: "/zh/contact/", priority: "0.8" },
+      { path_en: "/products/", path_zh: "/zh/products/", priority: "0.9" },
+    ];
+    for (const fp of fixedSitemapPages) {
+      enSitemapEntries.push({
+        url: baseProto + fp.path_en,
+        hreflang_en: baseProto + fp.path_en,
+        hreflang_zh: baseProto + fp.path_zh,
+        changefreq: "monthly",
+        priority: fp.priority,
+      });
+      zhSitemapEntries.push({
+        url: baseProto + fp.path_zh,
+        hreflang_en: baseProto + fp.path_en,
+        hreflang_zh: baseProto + fp.path_zh,
+        changefreq: "monthly",
+        priority: fp.priority,
+      });
+    }
     await generateSitemap(enSitemapEntries, enSitemapNoindexEntries, zhSitemapEntries, zhSitemapNoindexEntries);
     await generateRobots();
     await generateLlmsTxt(assets);

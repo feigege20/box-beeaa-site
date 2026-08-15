@@ -22,8 +22,8 @@
     {
       "q_zh": "交付周期多久？",
       "q_en": "What is the lead time?",
-      "a_zh": "标准 SKU 现货 3 天内发货；常规定制 20-30 天；开模定制 35-45 天。东南亚、欧美、澳新可走海运 DDP 30-40 天。",
-      "a_en": "Standard SKUs ship within 3 days from stock. Custom orders 20-30 days. Custom mold 35-45 days. Sea shipping DDP to SEA / EU / NA / AU / NZ: 30-40 days.",
+      "a_zh": "标准 SKU 现货 3 天内发货；常规定制 20-30 天；开模定制 35-45 天。海运到港 30-40 天（EXW/FOB 深圳/宁波），客户可自派货代或委托我们推荐的货代。",
+      "a_en": "Standard SKUs ship within 3 days from stock. Custom orders 20-30 days. Custom mold 35-45 days. Sea shipping to destination port 30-40 days (EXW / FOB Shenzhen or Ningbo). Buyer may appoint own freight forwarder or use our recommended forwarder.",
       "tags": ["global", "oem", "wholesale", "export"]
     },
     {
@@ -139,10 +139,10 @@
         "tags": ["export", "middle-east"]
       },
       {
-        "q_zh": "海运 DDP 到美国多久到？多少费用？",
-        "q_en": "How long and how much for DDP sea shipping to the US?",
-        "a_zh": "DDP 海运至美国西海岸（洛杉矶/长滩）：25-32 天，100kg 约 USD 0.8-1.5/kg。东海岸（纽约）：35-40 天，约 USD 1.2-2.0/kg。包含关税、清关、末端派送。",
-        "a_en": "DDP sea to US West Coast (LA / Long Beach): 25-32 days, ~USD 0.8-1.5/kg for 100kg+. East Coast (NY): 35-40 days, ~USD 1.2-2.0/kg. Includes tariff, customs, last-mile delivery.",
+        "q_zh": "海运到美国多久？多少费用？",
+        "q_en": "Sea freight to the US — how long and how much?",
+        "a_zh": "FOB 深圳 → 美西（洛杉矶/长滩）海运 18-25 天，美东（纽约）28-35 天。100kg+ 整柜参考运价 USD 0.8-1.5/kg（西海岸）/USD 1.2-2.0/kg（东海岸）。关税、清关、末端派送由客户自行安排。",
+        "a_en": "FOB Shenzhen → US West Coast (LA/Long Beach) sea 18-25 days, East Coast (NY) 28-35 days. 100kg+ FCL reference rate USD 0.8-1.5/kg (West Coast) / USD 1.2-2.0/kg (East Coast). Tariff, customs, and last-mile delivery are handled by the buyer (or buyer's appointed broker/freight forwarder).",
         "tags": ["export", "north-america"]
       },
       {

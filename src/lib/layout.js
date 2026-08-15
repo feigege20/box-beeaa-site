@@ -105,6 +105,9 @@ export function renderHeader({ lang = "en", currentPath = "/" } = {}) {
         <a href="${t ? "/zh" : ""}/wholesale/">${t ? "批发" : "Wholesale"}</a>
         <a href="${t ? "/zh" : ""}/oem/">${t ? "OEM" : "OEM"}</a>
         <a href="${t ? "/zh" : ""}/export/">${t ? "出口" : "Export"}</a>
+        <a href="${t ? "/zh" : ""}/products/">${t ? "全部产品" : "All Products"}</a>
+        <a href="${t ? "/zh" : ""}/about/">${t ? "关于" : "About"}</a>
+        <a href="${t ? "/zh" : ""}/contact/">${t ? "联系" : "Contact"}</a>
         <a href="mailto:${siteConfig.contact.email}" class="cta-blue">${t ? "询盘" : "Inquiry"}</a>
         <a href="${t ? "/" : "/zh/"}" class="lang-switch nav-lang">${t ? "EN" : "中"}</a>
       </div>
@@ -217,6 +220,9 @@ export function renderFooter({ lang = "en" } = {}) {
       <div>
         <h3 style="font-size:1rem;font-weight:700;">${t ? "资源" : "Resources"}</h3>
         <ul style="list-style:none;padding:0;margin:0;line-height:2;">
+          <li><a href="${t ? "/zh" : ""}/about/">${t ? "关于我们" : "About Us"}</a></li>
+          <li><a href="${t ? "/zh" : ""}/contact/">${t ? "联系我们" : "Contact"}</a></li>
+          <li><a href="${t ? "/zh" : ""}/products/">${t ? "全部产品" : "All Products"}</a></li>
           <li><a href="${t ? "/zh" : ""}/faq/">FAQ</a></li>
           <li><a href="${t ? "/zh" : ""}/blog/">${t ? "博客" : "Blog"}</a></li>
           <li><a href="${t ? "/zh" : ""}/llms.txt">llms.txt</a></li>

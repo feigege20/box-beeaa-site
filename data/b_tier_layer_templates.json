@@ -14,7 +14,7 @@
     "annual_export_revenue_usd": "8M+",
     "export_countries": 47,
     "address": "Fusha Industrial Park, Zhongshan, Guangdong, China",
-    "incoterms": ["FOB Shenzhen", "CIF", "DDP", "EXW"],
+    "incoterms": ["FOB Shenzhen", "FOB Ningbo", "EXW"],
     "payment_terms": ["T/T 30/70", "L/C at sight", "Western Union", "PayPal (samples)"],
     "response_time_quote_hours": 12,
     "response_time_sample_days": 5,
@@ -131,7 +131,7 @@
     "faq_en": [
       {"q": "What is the MOQ for {primary_keyword}?", "a": "Standard MOQ is {moq} units. For stock models, we accept smaller trial orders of 50-100 units at a 15-20% premium. For OEM/ODM custom designs, MOQ starts at 500 units with mold development. Repeat orders (3rd+ order with same spec) have flexible MOQ — many EU/US distributors start with 200 units to test the market."},
       {"q": "What is the price range?", "a": "For {primary_keyword}, factory-direct unit prices range from $3.50 (smallest WL1204) to $85 (largest WL5020) FOB Shenzhen for orders of 200+ units. Custom sizes, custom colors, custom foam, and logo printing add 5-30% depending on complexity. Request a quote at kexin@beeaa.com for exact pricing on your specs and quantity."},
-      {"q": "How long does production take?", "a": "Standard production lead time is {lead_time} days after deposit and artwork approval. Sample production: 5-7 days. Tooling/mold for new custom designs: 25-30 days. Full container (40HQ) orders: typically {lead_time} days. We ship to 47 countries via FOB Shenzhen, CIF, DDP — most EU/US buyers receive goods 35-45 days after order."},
+      {"q": "How long does production take?", "a": "Standard production lead time is {lead_time} days after deposit and artwork approval. Sample production: 5-7 days. Tooling/mold for new custom designs: 25-30 days. Full container (40HQ) orders: typically {lead_time} days. We ship to 47 countries via FOB Shenzhen / Ningbo (EXW also available) — most EU/US buyers receive goods at their port 35-45 days after order."},
       {"q": "Do you offer OEM/ODM services?", "a": "Yes — we specialize in OEM/ODM. We've delivered 150+ custom mold designs since 2014. Process: (1) Send your 3D model or sketch to kexin@beeaa.com. (2) We provide DFM feedback within 48 hours. (3) Mold development 25-30 days, $3,000-8,000 fee (waived >5,000 unit orders). (4) Pre-production sample 7-10 days. (5) Mass production {lead_time} days. Free structural prototyping in 5 business days."},
       {"q": "What payment methods do you accept?", "a": "T/T (30% deposit, 70% balance before shipment) is standard. We also accept L/C at sight for orders >$20,000, Western Union for samples, and PayPal for sample fees. Established customers (3+ orders, no payment issues) can request 60-day net terms after credit approval. All payments in USD or CNY at agreed exchange rate."}
     ],
@@ -139,7 +139,7 @@
     "faq_zh": [
       {"q": "{primary_keyword} 的起订量是多少？", "a": "标准 MOQ 是 {moq} 个。库存型号接受 50-100 个小批量试单，加价 15-20%。OEM/ODM 定制起订量 500 个起（含模具开发）。重复订单（第 3 次起同规格）MOQ 灵活 — 许多欧美分销商起订 200 个测市场。"},
       {"q": "价格区间是多少？", "a": "{primary_keyword} 工厂直供单价范围 $3.50（最小 WL1204）至 $85（最大 WL5020）FOB 深圳 200+ 个起。定制尺寸、颜色、泡沫、logo 印刷加 5-30%。发需求到 kexin@beeaa.com 即可获取按规格和数量的精确报价。"},
-      {"q": "生产周期多长？", "a": "标准生产交期 {lead_time} 天（定金和设计稿确认后）。打样 5-7 天。新定制设计开模 25-30 天。40HQ 整柜订单通常 {lead_time} 天。我们通过 FOB 深圳、CIF、DDP 发往 47 个国家 — 多数欧美买家在下单后 35-45 天收到货。"},
+      {"q": "生产周期多长？", "a": "标准生产交期 {lead_time} 天（定金和设计稿确认后）。打样 5-7 天。新定制设计开模 25-30 天。40HQ 整柜订单通常 {lead_time} 天。我们通过 FOB 深圳/宁波（也支持 EXW）发往 47 个国家 — 多数欧美买家货到港是下单后 35-45 天。"},
       {"q": "提供 OEM/ODM 服务吗？", "a": "提供 — 我们专注 OEM/ODM，2014 年以来交付 150+ 定制模具设计。流程：(1) 3D 模型或草图发 kexin@beeaa.com。(2) 48 小时内提供 DFM 反馈。(3) 模具开发 25-30 天，模具费 $3,000-8,000（订单 >5,000 个可免）。(4) 量产前样品 7-10 天。(5) 量产 {lead_time} 天。5 个工作日内免费结构打样。"},
       {"q": "接受哪些付款方式？", "a": "T/T（30% 定金，70% 余款发货前）标准。也接受 >$20,000 订单的即期信用证、样品用西联、样品费 PayPal。老客户（3+ 订单、无付款问题）信用审批后可用 60 天 Net。所有款项以美元或人民币（按约定汇率）结算。"}
     ],
@@ -229,22 +229,22 @@
     "faq_en": [
       {"q": "What certifications do I need to import {primary_keyword} into my country?", "a": "For most countries, our {primary_keyword} ships with ISO 9001, ROHS, CE, FCC, IP67, and MIL-STD-810H certificates. For specific markets: USA needs FCC + CPSC (children's products) or FDA (medical); EU needs CE + ROHS + REACH; Japan needs PSE + VCCI; Australia needs RCM; Korea needs KC; Canada needs IC + CSA. We provide all relevant certificates as PDF with each shipment."},
       {"q": "What HS code does {primary_keyword} use?", "a": "Standard HS code for {primary_keyword} (plastic protective case): 3923.10 (Articles for the conveyance/packing of goods, of plastics) or 4202.92 (plastic travel goods). For specific industries: 9002.11 (camera lens), 8802.11 (drone), 9302.00 (military). We declare accurately per buyer's destination to avoid customs delays."},
-      {"q": "How long does shipping take to my country?", "a": "Sea freight: 18-25 days to USA West Coast, 28-35 days to USA East Coast, 22-28 days to EU (Rotterdam/Hamburg), 15-20 days to Southeast Asia, 25-30 days to Middle East, 30-38 days to South America, 12-18 days to Japan/Korea. Express (DHL/FedEx): 3-7 days for samples, 7-12 days for small orders. We support FOB Shenzhen, CIF, DDP, and EXW incoterms."},
+      {"q": "How long does shipping take to my country?", "a": "Sea freight: 18-25 days to USA West Coast, 28-35 days to USA East Coast, 22-28 days to EU (Rotterdam/Hamburg), 15-20 days to Southeast Asia, 25-30 days to Middle East, 30-38 days to South America, 12-18 days to Japan/Korea. Express (DHL/FedEx): 3-7 days for samples, 7-12 days for small orders. We support FOB Shenzhen / Ningbo and EXW incoterms. Buyer arranges import clearance and last-mile delivery (or works with our recommended forwarder)."},
       {"q": "Do you have local distributors in my region?", "a": "Active distributor partners in: USA (West Coast + East Coast), Germany, UK, France, Netherlands, Australia, Japan, Korea, UAE, Saudi Arabia, Brazil, Mexico, Canada. Distributor programs offer 25-35% margin protection, exclusive territory by country/region, marketing co-funding, and 24-hour local-language support. Apply at kexin@beeaa.com with your business registration and target market."},
-      {"q": "What about import duties and taxes?", "a": "Most countries apply 0-7% duty on plastic protective cases under HS 3923.10 (most favored nation rate). Some countries: USA 0% (most HTS 3923.10.0000), EU 6.5%, Japan 0%, Korea 8%, Australia 5%, India 10% + GST, Brazil 18% (high!), UK 6.5%, Canada 0% (MFN). For DDP shipments, we pre-pay duties and quote you the all-in price. For FOB/CIF, you handle import clearance."}
+      {"q": "What about import duties and taxes?", "a": "Most countries apply 0-7% duty on plastic protective cases under HS 3923.10 (most favored nation rate). Some countries: USA 0% (most HTS 3923.10.0000), EU 6.5%, Japan 0%, Korea 8%, Australia 5%, India 10% + GST, Brazil 18% (high!), UK 6.5%, Canada 0% (MFN). Note: We do not offer DDP. Buyer (or buyer's appointed broker) handles import clearance, duties, and last-mile delivery. We can recommend reliable freight forwarders on request."}
     ],
 
     "faq_zh": [
       {"q": "我进口 {primary_keyword} 到本国需要哪些认证？", "a": "多数国家，我们 {primary_keyword} 随 ISO 9001、ROHS、CE、FCC、IP67、MIL-STD-810H 证书发货。特定市场：美国要 FCC + CPSC（儿童产品）或 FDA（医疗）；欧盟要 CE + ROHS + REACH；日本要 PSE + VCCI；澳洲要 RCM；韩国要 KC；加拿大要 IC + CSA。每次发货我们随附所有相关证书 PDF。"},
       {"q": "{primary_keyword} 用什么 HS 编码？", "a": "{primary_keyword}（塑料防护箱）标准 HS 编码：3923.10（塑料制货物包装/运输用品）或 4202.92（塑料旅行用品）。特定行业：9002.11（相机镜头）、8802.11（无人机）、9302.00（军警）。我们按买家目的地如实申报，避免清关延误。"},
-      {"q": "到贵国海运要多久？", "a": "海运：到美西 18-25 天，美东 28-35 天，欧盟（鹿特丹/汉堡）22-28 天，东南亚 15-20 天，中东 25-30 天，南美 30-38 天，日韩 12-18 天。快递（DHL/FedEx）：样品 3-7 天，小单 7-12 天。支持 FOB 深圳、CIF、DDP、EXW 贸易术语。"},
+      {"q": "到贵国海运要多久？", "a": "海运：到美西 18-25 天，美东 28-35 天，欧盟（鹿特丹/汉堡）22-28 天，东南亚 15-20 天，中东 25-30 天，南美 30-38 天，日韩 12-18 天。快递（DHL/FedEx）：样品 3-7 天，小单 7-12 天。贸易术语：FOB 深圳/宁波、EXW。客户自派货代或委托我们推荐的货代。"},
       {"q": "我所在区域有本地分销商吗？", "a": "活跃分销商合作方：美国（西海岸 + 东海岸）、德国、英国、法国、荷兰、澳洲、日本、韩国、阿联酋、沙特、巴西、墨西哥、加拿大。分销商项目提供 25-35% 利润保护、按国家/区域独家、营销共同出资、24 小时本地语言支持。申请发 kexin@beeaa.com 附营业执照和目标市场。"},
-      {"q": "进口关税和税？", "a": "多数国家对塑料防护箱按 HS 3923.10 征 0-7% 关税（最惠国）。部分国家：美国 0%（多数 HTS 3923.10.0000）、欧盟 6.5%、日本 0%、韩国 8%、澳洲 5%、印度 10% + GST、巴西 18%（高）、英国 6.5%、加拿大 0%（MFN）。DDP 货物我们预付关税并报全包价。FOB/CIF 由你处理清关。"}
+      {"q": "进口关税和税？", "a": "多数国家对塑料防护箱按 HS 3923.10 征 0-7% 关税（最惠国）。部分国家：美国 0%（多数 HTS 3923.10.0000）、欧盟 6.5%、日本 0%、韩国 8%、澳洲 5%、印度 10% + GST、巴西 18%（高）、英国 6.5%、加拿大 0%（MFN）。我们不提供 DDP，清关、关税、末端派送由客户（或客户委托的货代）处理，可推荐可靠货代。"}
     ],
 
     "infographic_title_en": "{primary_keyword}: Regional Shipping Routes",
     "infographic_title_zh": "{primary_keyword}：区域海运路线",
-    "infographic_data_points": ["FOB Shenzhen / CIF / DDP", "Sea 15-38 days by region", "Express 3-7 days for samples", "47 countries served"],
+    "infographic_data_points": ["FOB Shenzhen / Ningbo / EXW", "Sea 15-38 days by region", "Express 3-7 days for samples", "47 countries served"],
 
     "video_topic_en": "{primary_keyword} shipping to region, container loading, customs documentation",
     "video_topic_zh": "{primary_keyword} 海运到区域、装柜、清关文件"
@@ -280,7 +280,7 @@
       {"q": "How do I choose the right {primary_keyword}?", "a": "Step 1: Define your equipment's outer dimensions (L×W×H in mm). Step 2: Add 5-10mm clearance on each side for foam thickness. Step 3: Match to a WL series: WL1204 (smallest, 120mm) → WL2005 (medium-small) → WL2808 (medium) → WL3812 (medium-large) → WL5020 (large, 500mm). Step 4: Confirm IP rating (IP65 for indoor, IP67/IP68 for outdoor/water). Step 5: Send your spec to kexin@beeaa.com for a 12-hour quote with our recommendation."},
       {"q": "What are common mistakes when buying {primary_keyword}?", "a": "Top 5 mistakes we see: (1) Choosing by price alone, ignoring that cheap cases often skip IP certification and use brittle ABS that cracks in -10°C. (2) Over-specifying size — buying WL5020 when WL3812 fits, paying 2× for unused space. (3) Ignoring latch type — cheap plastic latches break after 200 cycles vs our 5,000-cycle metal-reinforced. (4) Forgetting the auto-pressure-equalization valve for air-travel use. (5) Not requesting lot certificates — without them, you can't verify the IP rating is real."},
       {"q": "Is {primary_keyword} worth the cost vs alternatives?", "a": "Compared to soft padded bags ($5-20 each, no protection, 6-month lifespan) or aluminum cases ($80-300 each, heavy, dent-prone), our PP/PC cases ($3.50-85 FOB) offer the best ROI for 80% of B2B use cases: IP67 + MIL-STD-810H + 10-year lifespan + lightweight (1-2.5kg empty). Aluminum is better for RF-shielded or ultra-heavy-duty; soft bags are better for one-time use only. Most professional buyers standardize on PP/PC cases."},
-      {"q": "How do I order {primary_keyword} from KeXinMaterials?", "a": "5-step ordering process: (1) Send inquiry to kexin@beeaa.com or WhatsApp +86 13590555309 with your spec (dimensions, equipment to fit, quantity, delivery destination). (2) Receive 12h quote with model recommendation, pricing, lead time, shipping cost. (3) Confirm PO with 30% T/T deposit. (4) Production {lead_time} days. (5) Pay 70% balance, we ship FOB/CIF/DDP. We send QC photos and test reports before shipping. Custom OEM/ODM adds 25-30 days for mold development."}
+      {"q": "How do I order {primary_keyword} from KeXinMaterials?", "a": "5-step ordering process: (1) Send inquiry to kexin@beeaa.com or WhatsApp +86 13590555309 with your spec (dimensions, equipment to fit, quantity, delivery destination). (2) Receive 12h quote with model recommendation, pricing, lead time, shipping cost. (3) Confirm PO with 30% T/T deposit. (4) Production {lead_time} days. (5) Pay 70% balance, we ship FOB Shenzhen / Ningbo (or EXW pickup). We send QC photos and test reports before shipping. Custom OEM/ODM adds 25-30 days for mold development."}
     ],
 
     "faq_zh": [
@@ -288,7 +288,7 @@
       {"q": "如何选择合适的 {primary_keyword}？", "a": "步骤 1：定义设备外尺寸（L×W×H mm）。步骤 2：每边加 5-10mm 间隙给泡沫厚度。步骤 3：匹配 WL 系列：WL1204（最小，120mm）→ WL2005（中小）→ WL2808（中）→ WL3812（中大）→ WL5020（大，500mm）。步骤 4：确认 IP 等级（室内 IP65，户外/水 IP67/IP68）。步骤 5：发需求到 kexin@beeaa.com，12 小时报价含我们推荐。"},
       {"q": "采购 {primary_keyword} 的常见误区？", "a": "我们看到的 5 大误区：(1) 只看价格 — 便宜防护箱常跳过 IP 认证，用脆 ABS 在 -10°C 开裂。(2) 过度规格尺寸 — 用 WL3812 够的买了 WL5020，多付 2× 用不上。(3) 忽略锁扣类型 — 便宜塑料锁扣 200 次后断 vs 我们 5,000 次金属加固。(4) 航空运输忘配自动压力平衡阀。(5) 没要批次证书 — 没有就验证不了 IP 等级真假。"},
       {"q": "{primary_keyword} vs 替代品值不值？", "a": "对比软包（$5-20，无防护，6 个月寿命）或铝箱（$80-300，重，凹痕易损），我们 PP/PC 防护箱（$3.50-85 FOB）80% B2B 用例最佳 ROI：IP67 + MIL-STD-810H + 10 年寿命 + 轻（空 1-2.5kg）。铝箱适合射频屏蔽或超重型；软包仅适合一次性。多数专业买家用 PP/PC 标准化。"},
-      {"q": "如何从客信新材料下 {primary_keyword} 单？", "a": "5 步流程：(1) 发询盘到 kexin@beeaa.com 或 WhatsApp +86 13590555309 附规格（尺寸、待装设备、数量、目的地）。(2) 12 小时内收到报价、型号推荐、价、交期、运费。(3) 30% T/T 定金确认 PO。(4) 生产 {lead_time} 天。(5) 付 70% 余款，我们 FOB/CIF/DDP 发货。发货前发 QC 照片和测试报告。定制 OEM/ODM 加 25-30 天模具开发。"}
+      {"q": "如何从客信新材料下 {primary_keyword} 单？", "a": "5 步流程：(1) 发询盘到 kexin@beeaa.com 或 WhatsApp +86 13590555309 附规格（尺寸、待装设备、数量、目的地）。(2) 12 小时内收到报价、型号推荐、价、交期、运费。(3) 30% T/T 定金确认 PO。(4) 生产 {lead_time} 天。(5) 付 70% 余款，FOB 深圳/宁波 出货（或 EXW 自提）。发货前发 QC 照片和测试报告。定制 OEM/ODM 加 25-30 天模具开发。"}
     ],
 
     "infographic_title_en": "{primary_keyword}: Buyer Decision Tree",

@@ -2,7 +2,7 @@
   "_meta": {
     "version": "1.0",
     "purpose": "对比表池 — 7 维差异化矩阵 #⑦ 辅助，每页选 1 张对比表",
-    "strategy": "20+ 张：客信 vs 普通 / PP vs ABS vs 玻纤 / 滚塑 vs 注塑 / IP67 vs IP68 / OEM vs ODM / DDP vs DDU / 海运 vs 空运 等"
+    "strategy": "20+ 张：客信 vs 普通 / PP vs ABS vs 玻纤 / 滚塑 vs 注塑 / IP67 vs IP68 / OEM vs ODM / FOB vs EXW / Incoterms 速查 / 海运 vs 空运 等"
   },
   "comparisons": [
     {
@@ -82,19 +82,36 @@
       "tags": ["oem", "service"]
     },
     {
-      "id": "ddp-vs-ddu",
-      "title_zh": "DDP vs DDU 贸易术语",
-      "title_en": "DDP vs DDU Incoterms",
+      "id": "fob-vs-exw",
+      "title_zh": "FOB vs EXW 贸易术语（我们提供的两种）",
+      "title_en": "FOB vs EXW Incoterms (Our two options)",
       "rows": [
-        ["术语", "Term", "DDP", "Delivered Duty Paid", "DDU (DAP)", "Delivered At Place"],
-        ["关税", "Tariff", "卖方付", "Seller pays", "买方付", "Buyer pays"],
-        ["清关", "Customs", "卖方负责", "Seller handles", "买方负责", "Buyer handles"],
-        ["末端派送", "Last-mile", "门到门", "Door-to-door", "门到门", "Door-to-door"],
-        ["报价", "Quoted", "含全部费用", "All-in", "不含关税", "Excl. tariff"],
-        ["客户复杂度", "Client Effort", "零", "Zero", "需有进口商", "Need importer"],
-        ["推荐", "Recommended", "新客户首选", "New clients", "老客户 / 集团采购", "Existing clients"]
+        ["术语", "Term", "EXW", "Ex Works", "FOB", "Free On Board"],
+        ["提货点", "Pickup", "工厂", "Our factory", "深圳/宁波港", "Shenzhen/Ningbo port"],
+        ["内陆运输", "Inland", "买方自提", "Buyer arranges", "卖方代办", "Seller arranges"],
+        ["报关", "Export Customs", "买方负责", "Buyer handles", "卖方负责", "Seller handles"],
+        ["海运", "Sea Freight", "买方", "Buyer", "卖方（至港）", "Seller (to port)"],
+        ["关税/清关", "Import Duty", "买方", "Buyer", "买方", "Buyer"],
+        ["末端派送", "Last-mile", "买方", "Buyer", "买方", "Buyer"],
+        ["适合", "Best For", "有货代的老客户", "Existing clients with forwarder", "新客户 / 整柜", "New clients / FCL"],
+        ["起订建议", "MOQ Suggestion", "任意", "Any", "整柜更划算", "FCL more cost-effective"]
       ],
       "tags": ["export", "logistics"]
+    },
+    {
+      "id": "incoterms-overview",
+      "title_zh": "常用 Incoterms 速查（含 DDP 说明）",
+      "title_en": "Common Incoterms Quick Reference (incl. DDP note)",
+      "rows": [
+        ["术语", "Term", "EXW", "Ex Works", "FOB", "Free On Board", "CIF", "Cost Insurance Freight", "DDP", "Delivered Duty Paid"],
+        ["提货", "Pickup", "工厂", "Factory", "装运港", "Port", "装运港", "Port", "目的地", "Destination"],
+        ["海运", "Sea", "买方", "Buyer", "卖方", "Seller", "卖方", "Seller", "卖方", "Seller"],
+        ["保险", "Insurance", "买方", "Buyer", "买方", "Buyer", "卖方", "Seller", "卖方", "Seller"],
+        ["进口清关", "Import Customs", "买方", "Buyer", "买方", "Buyer", "买方", "Buyer", "卖方", "Seller"],
+        ["我们提供", "KeXin Offers", "是", "Yes", "是", "Yes", "否", "No", "否", "No"],
+        ["推荐场景", "Use Case", "熟客", "Existing", "新客整柜", "New FCL", "—", "—", "—", "—"]
+      ],
+      "tags": ["export", "logistics", "education"]
     },
     {
       "id": "sea-vs-air-vs-express",
