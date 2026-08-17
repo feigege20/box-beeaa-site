@@ -797,7 +797,7 @@ async function main() {
             try {
               // B 级加 noindex 标记（doc1.txt 第 3 节关键原则）
               const kwWithGrade = { ...kw, _grade: grade };
-              const html = renderPage({ keyword: kwWithGrade, productLine, assets, lang, grade });
+              const html = renderPage({ keyword: { ...kwWithGrade, _product_line: line.slug }, productLine, assets, lang, grade, allKws: lineKw.map(k => ({ ...k, _product_line: line.slug })) });
               await fs.writeFile(path.join(dir, "index.html"), html, "utf-8");
               const url = `${siteConfig.protocol}://${siteConfig.domain}${basePrefix ? "/" + basePrefix : ""}/${line.slug}/${kwSlug}/`;
 

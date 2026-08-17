@@ -54,10 +54,17 @@ async function withSecurityHeaders(responsePromise) {
   });
 }
 
-function serveR2(obj) {
+function serveR2(obj, key) {
   const headers = new Headers();
   obj.writeHttpMetadata(headers);
   if (obj.httpEtag) headers.set("etag", obj.httpEtag);
+  // Force Content-Type for HTML files (R2 doesn't always set it)
+  const k = key || "";
+  if (k.endsWith(".html") || k.endsWith("/") || (!headers.has("content-type") && !k.includes("."))) {
+    headers.set("Content-Type", "text/html; charset=utf-8");
+  } else if (!headers.has("content-type")) {
+    headers.set("Content-Type", "application/octet-stream");
+  }
   headers.set("Cache-Control", "public, max-age=3600");
   applySecurityHeaders(headers);
   return new Response(obj.body, { headers });
@@ -226,7 +233,7 @@ async function handleZHRoute(context, path) {
     try {
       const obj = await context.env.BOX_ZH.get(key);
       if (obj) {
-        return serveR2(obj);
+        return serveR2(obj, key);
       }
     } catch (e) { /* continue */ }
   }
@@ -270,7 +277,7 @@ async function handleProductLineRoute(context, path, productLine, bucketName) {
     try {
       const obj = await context.env[bucketName].get(key);
       if (obj) {
-        return serveR2(obj);
+        return serveR2(obj, key);
       }
     } catch (e) { /* continue */ }
   }
@@ -316,7 +323,7 @@ async function handleGenericRoute(context, path) {
     try {
       const obj = await context.env.BOX_EN_B.get(key);
       if (obj) {
-        return serveR2(obj);
+        return serveR2(obj, key);
       }
     } catch (e) { /* continue */ }
   }

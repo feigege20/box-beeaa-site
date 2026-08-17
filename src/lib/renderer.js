@@ -14,6 +14,9 @@ import {
   sectionCertifications, sectionFlow, sectionRelatedCategories,
 } from "./sections.js";
 import {
+  pickRelatedCaseStudies, sectionRelatedCaseStudies, sectionTopCaseStudies,
+} from "./section_related_case.js";
+import {
   organizationSchema, productSchema, faqSchema, breadcrumbSchema, reviewSchema, aggregateRatingSchema,
 } from "./schemas.js";
 import {
@@ -220,7 +223,7 @@ export function buildRoutes({ keyword, productLine, lang }) {
 }
 
 /** 主页面渲染器 */
-export function renderPage({ keyword, productLine, assets, lang = "en", grade = "A" }) {
+export function renderPage({ keyword, productLine, assets, lang = "en", grade = "A", allKws = null }) {
   const t = lang === "zh";
   const basePrefix = t ? "/zh" : "";
   const meta = buildPageMeta({ keyword, productLine, lang });
@@ -397,6 +400,22 @@ export function renderPage({ keyword, productLine, assets, lang = "en", grade = 
     lang,
     basePrefix,
   }));
+
+  // P3.6 W2 2026-08-17: 内部链接增强 v2 - 同 PL 4 个 related case study
+  // 目的: B-tier 页面互相链接, 形成 hub-spoke 内部链接网络
+  if (allKws && allKws.length > 1) {
+    const related = pickRelatedCaseStudies(keyword, allKws, 4, lang);
+    if (related.length > 0) {
+      const currentSlug = `${slugify(t ? keyword.zh : enClean(keyword.en))}-${keyword.no}`;
+      sections.push(sectionRelatedCaseStudies({
+        relatedKws: related,
+        currentSlug,
+        lang,
+        basePrefix,
+        productLine: productLine.slug,
+      }));
+    }
+  }
 
   // 2.5 P1 修复 2026-08-12 v2: 注入 5 维防检测 (V3 §3.1)
   // Bug fix: sectionDeepDive 自己包 <p> + esc(), 不要预先包 <p> 字符串
