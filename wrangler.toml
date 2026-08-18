@@ -28,7 +28,7 @@ mode = "smart"
 # Non-secret env vars (RESEND_API_KEY 在 Cloudflare Dashboard 加为 Secret)
 # 2026-08-01 验证 beeaa.com 后, From 改用 noreply@beeaa.com
 [vars]
-RESEND_FROM = "KeXinMaterials Inquiry <noreply@beeaa.com>"
+RESEND_FROM = "onboarding@resend.dev"  # 8/18 W3 临时,等 beeaa.com DNS 验证后换回
 RESEND_TO = "kexin@beeaa.com"
 
 # Email Sending: Cloudflare Pages 不支持 send_email binding, 我们用 Resend HTTP API
