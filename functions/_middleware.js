@@ -187,7 +187,8 @@ export const onRequest = async (context) => {
     "zh/", "medical-case/", "styles/", "images/", "_",
     "llms", "sitemap", "robots", "rss", "manifest", ".well-known",
     "guides/", "entities/", "tools/", "about/", "contact/", "products/", "markets/",
-    "wholesale", "agency", "oem", "export", "faq", "blog"
+    "wholesale", "agency", "oem", "export", "faq", "blog",
+    "api/"  // Pages Functions (/api/inquiry, etc) — let context.next() route
   ];
   const isStaticAsset = path === "/" || path === "/index.html" || path === "/favicon.ico"
     || skipPrefixes.some(p => path === p.replace(/\/$/, "") || path.startsWith(p) || path.startsWith("/" + p))
