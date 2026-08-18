@@ -1,4 +1,5 @@
 ﻿/**
+// bindings refresh 2026-08-18: D1 + 4 R2 active
  * box.beeaa.com Pages Function Middleware 鈥?V6
  * 
  * 淇 V5 bug:
