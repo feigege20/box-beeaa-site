@@ -34,16 +34,36 @@ RESEND_FROM = "KeXinMaterials Inquiry <noreply@beeaa.com>"
 # FRED 在 https://resend.com 注册 (免费 100/天, 3K/月) → 创建 API key → 在 Pages Dashboard 加 secret RESEND_API_KEY
 # 也可以用 Cloudflare Email Service (需独立 Worker + 域名验证) — 见 functions/api/inquiry.js 注释
 
-# === D1 Database 询盘持久化 (2026-08-11 添加) ===
-# FRED 需要在 Cloudflare Dashboard 创建 D1 数据库, 把 database_id 填到下面:
-# 创建命令: npx wrangler d1 create box-beeaa-inquiries
-# Schema 初始化: npx wrangler d1 execute box-beeaa-inquiries --file=./schema/d1-inquiries.sql --remote
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "box-beeaa-inquiries"
-# database_id = "REPLACE_WITH_D1_DATABASE_ID"
-# preview_database_id = "REPLACE_WITH_D1_DATABASE_ID"
-# migrations_dir = "schema"
+# === D1 Database 询盘持久化 (2026-08-18 启用) ===
+# D1 created via Cloudflare API on 2026-08-18 02:28
+[[d1_databases]]
+binding = "DB"
+database_name = "box-beeaa-inquiries"
+database_id = "2e645789-47e9-47c6-8f7f-b5fb0341386f"
+preview_database_id = "2e645789-47e9-47c6-8f7f-b5fb0341386f"
+migrations_dir = "schema"
+
+# === 4 New R2 Buckets for Multi-Language (2026-08-18 启用) ===
+# DE/ES/FR/JA translations
+[[r2_buckets]]
+binding = "BUCKET_DE"
+bucket_name = "box-de"
+preview_bucket_name = "box-de"
+
+[[r2_buckets]]
+binding = "BUCKET_ES"
+bucket_name = "box-es"
+preview_bucket_name = "box-es"
+
+[[r2_buckets]]
+binding = "BUCKET_FR"
+bucket_name = "box-fr"
+preview_bucket_name = "box-fr"
+
+[[r2_buckets]]
+binding = "BUCKET_JA"
+bucket_name = "box-ja"
+preview_bucket_name = "box-ja"
 
 # === Admin Token (访问 /api/admin/inquiries 后台) ===
 # FRED 在 Pages Dashboard → Settings → Environment variables:
