@@ -185,7 +185,7 @@ export const onRequest = async (context) => {
 
   // 瑙ｆ瀽璺緞娈? 璺宠繃宸茬煡 segment
   const skipPrefixes = [
-    "zh/", "medical-case/", "styles/", "images/", "_",
+    "zh/", "de/", "es/", "fr/", "ja/", "medical-case/", "styles/", "images/", "_",
     "llms", "sitemap", "robots", "rss", "manifest", ".well-known",
     "guides/", "entities/", "tools/", "about/", "contact/", "products/", "markets/",
     "wholesale", "agency", "oem", "export", "faq", "blog",
