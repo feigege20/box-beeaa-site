@@ -823,7 +823,14 @@ export const onRequestPost = async (context) => {
     }
   }
 
-  // 3) Fallback: mailto 链接
+  // 3) Fallback: mailto 链接 — still persist to D1 so inquiry isn't lost
+  const [d1Result] = await Promise.all([
+    saveToD1(env, clean, ai, null, ip, userAgent),
+    Promise.resolve(null),
+  ]);
+  if (d1Result && d1Result.saved && d1Result.id) {
+    try { await sendWebhookNotification(env, clean, ai, d1Result.id); } catch (e) { /* ignore */ }
+  }
   const mailto = `mailto:kexin@beeaa.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
   return new Response(JSON.stringify({
     success: true,
@@ -831,6 +838,8 @@ export const onRequestPost = async (context) => {
     message: "Email service not configured. Please use the mailto link or contact us directly.",
     mailto,
     ai: ai,
+    inquiryId: d1Result && d1Result.id ? d1Result.id : null,
+    persisted: d1Result,
     setup_hint: "Configure RESEND_API_KEY in Cloudflare Pages environment variables for automatic email sending. See GUIDE_2026-08-01_Resend_Setup.md"
   }), {
     status: 200,
