@@ -200,6 +200,60 @@
   ]
 }
 </script>
+
+<style id="inquiry-form-css">
+.inq-form{max-width:680px;margin:32px auto;padding:24px;background:#FFFFFF;border-radius:12px;box-shadow:0 2px 12px rgba(15,23,42,.08);border:1px solid #E2E8F0;text-align:left}
+.inq-form *{box-sizing:border-box}
+.inq-form h3{margin:0 0 8px;font-size:20px;font-weight:700;color:#0F172A}
+.inq-form .inq-sub{margin:0 0 20px;font-size:14px;color:#475569}
+.inq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.inq-row{margin-bottom:14px}
+.inq-row label{display:block;margin-bottom:6px;font-size:13px;font-weight:600;color:#0F172A}
+.inq-row label .req{color:#DC2626;margin-left:2px}
+.inq-row input,.inq-row select,.inq-row textarea{width:100%;padding:9px 12px;border:1px solid #CBD5E1;border-radius:6px;font-size:14px;font-family:inherit;background:#FFF;color:#0F172A;transition:border-color .15s}
+.inq-row input:focus,.inq-row select:focus,.inq-row textarea:focus{outline:2px solid #FACC15;outline-offset:1px;border-color:#F59E0B}
+.inq-row textarea{min-height:90px;resize:vertical}
+.inq-row.inq-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.inq-row .inq-hint{font-size:12px;color:#64748B;margin-top:4px}
+.inq-row.inq-full{grid-column:1/-1}
+.inq-pl{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;padding:6px;background:#F1F5F9;border-radius:6px}
+.inq-pl label{font-weight:400;display:flex;align-items:center;gap:6px;padding:4px;font-size:13px;cursor:pointer;border-radius:4px}
+.inq-pl label:hover{background:#E2E8F0}
+.inq-pl input{width:auto;margin:0}
+.inq-submit{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;background:#C2410C;color:#FFF;border:none;border-radius:6px;font-size:15px;font-weight:700;cursor:pointer;transition:background .15s;font-family:inherit}
+.inq-submit:hover{background:#9A3412}
+.inq-submit:disabled{background:#94A3B8;cursor:not-allowed}
+.inq-status{margin-top:14px;padding:12px 14px;border-radius:6px;font-size:14px;display:none}
+.inq-status.ok{display:block;background:#DCFCE7;color:#166534;border:1px solid #86EFAC}
+.inq-status.err{display:block;background:#FEE2E2;color:#991B1B;border:1px solid #FCA5A5}
+.inq-status.loading{display:block;background:#DBEAFE;color:#1E40AF;border:1px solid #93C5FD}
+.inq-spinner{display:inline-block;width:14px;height:14px;border:2px solid #FFF;border-top-color:transparent;border-radius:50%;animation:inq-spin .6s linear infinite}
+@keyframes inq-spin{to{transform:rotate(360deg)}}
+@media (max-width:640px){.inq-grid{grid-template-columns:1fr}.inq-pl{grid-template-columns:1fr}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "OfferCatalog",
+  "name": "KeXinMaterials Protective Cases Catalog",
+  "description": "B2B wholesale protective cases: drone, camera, medical, tool, outdoor, instrument, sports, cosmetic, custom OEM/ODM. EXW Shenzhen / FOB Ningbo. 30-day delivery. MOQ 100.",
+  "url": "https://box.beeaa.com/products/",
+  "numberOfItems": 9,
+  "itemListElement": [
+    {"@type":"Offer","position":1,"name":"Drone & Robotics Case","category":"Drone","priceCurrency":"USD","priceRange":"$$","eligibleQuantity":{"@type":"QuantitativeValue","minValue":100,"unitText":"pcs"},"availability":"https://schema.org/InStock","itemOffered":{"@type":"Product","name":"Drone & Robotics Protective Case","description":"IP67-rated hard case for DJI/autel drones and industrial robotics"}},
+    {"@type":"Offer","position":2,"name":"Camera & Lens Case","category":"Camera","priceCurrency":"USD","priceRange":"$$","eligibleQuantity":{"@type":"QuantitativeValue","minValue":50,"unitText":"pcs"},"availability":"https://schema.org/InStock","itemOffered":{"@type":"Product","name":"Camera & Lens Protective Case","description":"Custom foam-cut case for DSLR, mirrorless, and cinema cameras"}},
+    {"@type":"Offer","position":3,"name":"Medical & First-Aid Case","category":"Medical","priceCurrency":"USD","priceRange":"$$","eligibleQuantity":{"@type":"QuantitativeValue","minValue":100,"unitText":"pcs"},"availability":"https://schema.org/InStock","itemOffered":{"@type":"Product","name":"Medical & First-Aid Case","description":"FDA-compliant hard case for medical devices, AED, and emergency kits"}},
+    {"@type":"Offer","position":4,"name":"Tool & Equipment Case","category":"Tool","priceCurrency":"USD","priceRange":"$","eligibleQuantity":{"@type":"QuantitativeValue","minValue":100,"unitText":"pcs"},"availability":"https://schema.org/InStock","itemOffered":{"@type":"Product","name":"Tool & Equipment Case","description":"Heavy-duty case for power tools, hand tools, and field equipment"}},
+    {"@type":"Offer","position":5,"name":"Outdoor & Tactical Case","category":"Outdoor","priceCurrency":"USD","priceRange":"$$","eligibleQuantity":{"@type":"QuantitativeValue","minValue":100,"unitText":"pcs"},"availability":"https://schema.org/InStock","itemOffered":{"@type":"Product","name":"Outdoor & Tactical Case","description":"IP68 waterproof case for hunting, fishing, and tactical gear"}},
+    {"@type":"Offer","position":6,"name":"Instrument & Meter Case","category":"Instrument","priceCurrency":"USD","priceRange":"$$","eligibleQuantity":{"@type":"QuantitativeValue","minValue":50,"unitText":"pcs"},"availability":"https://schema.org/InStock","itemOffered":{"@type":"Product","name":"Instrument & Meter Case","description":"EMI-shielded case for test equipment, meters, and precision instruments"}},
+    {"@type":"Offer","position":7,"name":"Sports & Hunting Case","category":"Sports","priceCurrency":"USD","priceRange":"$","eligibleQuantity":{"@type":"QuantitativeValue","minValue":100,"unitText":"pcs"},"availability":"https://schema.org/InStock","itemOffered":{"@type":"Product","name":"Sports & Hunting Case","description":"Rifle, bow, and sports equipment transport case"}},
+    {"@type":"Offer","position":8,"name":"Cosmetic & Beauty Case","category":"Cosmetic","priceCurrency":"USD","priceRange":"$","eligibleQuantity":{"@type":"QuantitativeValue","minValue":500,"unitText":"pcs"},"availability":"https://schema.org/InStock","itemOffered":{"@type":"Product","name":"Cosmetic & Beauty Case","description":"Travel and professional makeup case with custom compartments"}},
+    {"@type":"Offer","position":9,"name":"Custom OEM/ODM Case","category":"Custom","priceCurrency":"USD","priceRange":"$$$","eligibleQuantity":{"@type":"QuantitativeValue","minValue":500,"unitText":"pcs"},"availability":"https://schema.org/MadeToOrder","itemOffered":{"@type":"Product","name":"Custom OEM/ODM Protective Case","description":"Fully custom protective case design, mold, and mass production. 30-45 day lead time."}}
+  ]
+}
+</script>
+
 </head>
 <body>
   <a href="#main-content" class="skip-nav">Skip to main content</a><header role="banner" class="site-header">
@@ -400,11 +454,134 @@
   <div class="container">
     <h2>Inquire Now · 30-Day Delivery</h2>
     <p>Source factory, wholesale price, 12-hour quote</p>
-    <div class="btn-group">
-      <a href="mailto:kexin@beeaa.com?subject=Inquiry" class="btn btn-lg cta-orange">📧 Email Inquiry</a>
-      <a href="https://wa.me/8613590555309?text=Hello%2C%20I'd%20like%20to%20inquire%20about%20protective%20cases" class="btn btn-lg cta-green" target="_blank" rel="noopener">💬 WhatsApp</a>
-      <a href="https://beeaa.com" class="btn btn-lg" style="background:#FFFFFF;color:#0F172A;" target="_blank" rel="noopener">🛒 Shop at Main Site</a>
+    
+<form class="inq-f" id="inquiry-form" novalidate>
+  <h3>📋 Quick Inquiry Form</h3>
+  <p class="inq-sub">Submit below for a 12-hour quote. Required: <span style="color:#DC2626">*</span></p>
+
+  <div class="inq-grid">
+    <div class="inq-row">
+      <label>Name <span class="req">*</span></label>
+      <input type="text" name="name" required autocomplete="name" maxlength="80" placeholder="Your full name">
     </div>
+    <div class="inq-row">
+      <label>Email <span class="req">*</span></label>
+      <input type="email" name="email" required autocomplete="email" maxlength="120" placeholder="you@company.com">
+    </div>
+    <div class="inq-row">
+      <label>Phone / WhatsApp <span class="req">*</span></label>
+      <input type="tel" name="phone" required autocomplete="tel" maxlength="40" placeholder="+86 138 0000 0000">
+    </div>
+    <div class="inq-row">
+      <label>Country <span class="req">*</span></label>
+      <input type="text" name="country" required maxlength="60" placeholder="e.g. Germany" list="inq-country-list">
+      <datalist id="inq-country-list">
+        <option value="Germany"><option value="France"><option value="Spain"><option value="Italy">
+        <option value="USA"><option value="Canada"><option value="Mexico"><option value="Brazil">
+        <option value="UK"><option value="Netherlands"><option value="Poland"><option value="Australia">
+        <option value="Japan"><option value="South Korea"><option value="Singapore"><option value="UAE">
+        <option value="Saudi Arabia"><option value="Turkey"><option value="India"><option value="Other">
+      </datalist>
+    </div>
+    <div class="inq-row">
+      <label>Company</label>
+      <input type="text" name="company" maxlength="100" placeholder="Your company / brand">
+    </div>
+    <div class="inq-row">
+      <label>Quantity (pcs) <span class="req">*</span></label>
+      <input type="number" name="quantity" required min="1" max="10000000" placeholder="e.g. 500">
+    </div>
+  </div>
+
+  <div class="inq-row">
+    <label>Product Line <span class="req">*</span> <span class="inq-hint">(select at least one)</span></label>
+    <div class="inq-pl-host"></div>
+  </div>
+
+  <div class="inq-grid">
+    <div class="inq-row">
+      <label>Size (L×W×H cm)</label>
+      <input type="text" name="size" maxlength="60" placeholder="e.g. 50×40×30">
+    </div>
+    <div class="inq-row">
+      <label>Material</label>
+      <select name="material">
+        <option value="">— Select —</option>
+        <option value="PP">PP (Polypropylene)</option>
+        <option value="ABS">ABS</option>
+        <option value="PC">PC (Polycarbonate)</option>
+        <option value="Aluminum">Aluminum</option>
+        <option value="TPU">TPU</option>
+        <option value="Other">Other / Custom</option>
+      </select>
+    </div>
+    <div class="inq-row">
+      <label>IP Rating</label>
+      <select name="ipRating">
+        <option value="">— Select —</option>
+        <option value="IP65">IP65</option>
+        <option value="IP67">IP67</option>
+        <option value="IP68">IP68</option>
+        <option value="No rating">No rating required</option>
+      </select>
+    </div>
+    <div class="inq-row">
+      <label>Color</label>
+      <input type="text" name="color" maxlength="40" placeholder="e.g. Black / Orange">
+    </div>
+  </div>
+
+  <div class="inq-grid">
+    <div class="inq-row">
+      <label style="display:flex;align-items:center;gap:8px;font-weight:400">
+        <input type="checkbox" name="foamInsert" value="yes" style="width:auto"> Custom foam insert (pre-cut)
+      </label>
+    </div>
+    <div class="inq-row">
+      <label style="display:flex;align-items:center;gap:8px;font-weight:400">
+        <input type="checkbox" name="logoPrint" value="yes" style="width:auto"> Custom logo / print
+      </label>
+    </div>
+    <div class="inq-row">
+      <label>Target Price (USD/pc)</label>
+      <input type="text" name="targetPrice" maxlength="40" placeholder="e.g. 25-35">
+    </div>
+    <div class="inq-row">
+      <label>Lead Time</label>
+      <select name="leadTime">
+        <option value="">— Select —</option>
+        <option value="15 days">15 days</option>
+        <option value="30 days">30 days (standard)</option>
+        <option value="45 days">45 days</option>
+        <option value="60 days">60+ days</option>
+      </select>
+    </div>
+    <div class="inq-row">
+      <label>Certifications Needed</label>
+      <input type="text" name="certification" maxlength="120" placeholder="e.g. CE, FCC, RoHS, REACH">
+    </div>
+    <div class="inq-row">
+      <label>Usage / Application</label>
+      <input type="text" name="usage" maxlength="120" placeholder="e.g. Outdoor drone transport">
+    </div>
+  </div>
+
+  <div class="inq-row inq-full">
+    <label>Message / Specifications</label>
+    <textarea name="message" maxlength="2000" placeholder="Detailed specs, drawings link, special requirements..."></textarea>
+  </div>
+
+  <!-- Honeypot: invisible to humans -->
+  <div class="inq-row inq-hp" aria-hidden="true">
+    <label>Website (leave blank)</label>
+    <input type="text" name="website" tabindex="-1" autocomplete="off">
+  </div>
+  <input type="hidden" name="_ts" value="0">
+
+  <button type="submit" class="inq-submit">Submit Inquiry</button>
+  <div class="inq-status" role="status" aria-live="polite"></div>
+</form>
+
   </div>
 </section><footer role="contentinfo" class="site-footer">
   <div class="container">
@@ -466,5 +643,122 @@
     });
   }
 </script>
+
+<script id="inquiry-form-js">
+(function(){
+  // === Product line catalog (9 lines) ===
+  var PL = [
+    {v:'drone-case', en:'Drone & Robotics Case'},
+    {v:'camera-case', en:'Camera & Lens Case'},
+    {v:'medical-case', en:'Medical & First-Aid Case'},
+    {v:'tool-case', en:'Tool & Equipment Case'},
+    {v:'outdoor-case', en:'Outdoor & Tactical Case'},
+    {v:'instrument-case', en:'Instrument & Meter Case'},
+    {v:'sports-case', en:'Sports & Hunting Case'},
+    {v:'cosmetic-case', en:'Cosmetic & Beauty Case'},
+    {v:'custom-case', en:'Custom OEM/ODM'}
+  ];
+
+  function init(){
+    // Inject product line checkboxes
+    var plHosts = document.querySelectorAll('.inq-pl-host');
+    plHosts.forEach(function(host){
+      var html = '<div class="inq-pl" role="group" aria-label="Product Lines">';
+      PL.forEach(function(p){
+        html += '<label><input type="checkbox" name="pl" value="'+p.v+'"> '+p.en+'</label>';
+      });
+      html += '</div>';
+      host.innerHTML = html;
+    });
+    // Set timestamp on all forms
+    document.querySelectorAll('form.inq-f').forEach(function(f){
+      var ts = f.querySelector('input[name="_ts"]');
+      if (ts) ts.value = String(Date.now());
+    });
+    // Bind submit
+    document.querySelectorAll('form.inq-f').forEach(bind);
+  }
+
+  function bind(form){
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      var st = form.querySelector('.inq-status');
+      var btn = form.querySelector('.inq-submit');
+      st.className = 'inq-status loading';
+      st.textContent = 'Submitting...';
+      btn.disabled = true;
+      btn.innerHTML = '<span class="inq-spinner"></span> Submitting';
+      // Build payload
+      var fd = new FormData(form);
+      var pls = fd.getAll('pl');
+      var payload = {
+        name: (fd.get('name') || '').trim(),
+        email: (fd.get('email') || '').trim(),
+        phone: (fd.get('phone') || '').trim(),
+        country: (fd.get('country') || '').trim(),
+        company: (fd.get('company') || '').trim(),
+        productLine: pls,
+        quantity: parseInt(fd.get('quantity') || '0', 10) || 0,
+        size: (fd.get('size') || '').trim(),
+        material: (fd.get('material') || '').trim(),
+        ipRating: (fd.get('ipRating') || '').trim(),
+        color: (fd.get('color') || '').trim(),
+        foamInsert: fd.get('foamInsert') ? 'yes' : '',
+        logoPrint: fd.get('logoPrint') ? 'yes' : '',
+        targetPrice: (fd.get('targetPrice') || '').trim(),
+        leadTime: (fd.get('leadTime') || '').trim(),
+        certification: (fd.get('certification') || '').trim(),
+        usage: (fd.get('usage') || '').trim(),
+        message: (fd.get('message') || '').trim(),
+        // honeypot
+        website: (fd.get('website') || '').trim(),
+        _ts: parseInt(fd.get('_ts') || '0', 10)
+      };
+      // Lang detection
+      payload.lang = (location.pathname.indexOf('/zh/') === 0 || document.documentElement.lang === 'zh-Hans') ? 'zh' : 'en';
+      // Drop empty
+      Object.keys(payload).forEach(function(k){
+        if (payload[k] === '' || payload[k] === null) delete payload[k];
+      });
+      try {
+        var resp = await fetch('/api/inquiry', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(payload)
+        });
+        var data = await resp.json().catch(function(){return {};});
+        if (resp.ok && data.success) {
+          st.className = 'inq-status ok';
+          st.innerHTML = '✅ Inquiry submitted! Reference: <strong>'+(data.inquiryId || data.id || 'OK')+'</strong>. Our sales engineer will reply within 12 hours.';
+          form.reset();
+        } else if (resp.status === 429) {
+          st.className = 'inq-status err';
+          st.textContent = '⏱ Too many requests. Please wait 1 minute.';
+        } else if (resp.status === 400 && data.errors) {
+          st.className = 'inq-status err';
+          st.textContent = '❌ ' + data.errors.join('; ');
+        } else {
+          st.className = 'inq-status err';
+          st.textContent = '❌ ' + (data.message || data.error || ('HTTP '+resp.status)) + '. You can also email kexin@beeaa.com directly.';
+        }
+      } catch (err) {
+        st.className = 'inq-status err';
+        st.textContent = '❌ Network error. Please email kexin@beeaa.com directly.';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Submit Inquiry';
+        st.scrollIntoView({behavior:'smooth', block:'center'});
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
 </body>
 </html>
