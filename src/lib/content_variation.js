@@ -97,7 +97,7 @@ const PERSON_QUOTES = {
       "Lin Mei's rule: \"If a batch fails our internal 1% sampling, we don't ship. Period.\"",
     ],
     export: [
-      "Wang Tao (王涛, Export Director): \"Last year we shipped to 47 countries. Top 3 questions from buyers: lead time, MOQ, certifications.\"",
+      "Wang Tao (Export Director): \"Last year we shipped to 47 countries. Top 3 questions from buyers: lead time, MOQ, certifications.\"",
       "Wang Tao reports: \"US buyers care about FBA prep. EU buyers want REACH. Middle East buyers need Arabic labels. We handle all three.\"",
       "Our export team found that 30% of inquiries never close because the buyer was a trader, not the end-user. We screen for that now.\"",
     ],

@@ -20,7 +20,7 @@ export const siteConfig = {
   factory: {
     area_sqm: 13000,
     employees: "100+",
-    equipment: "60+ 台先进制造设备",
+    equipment: "60+ Advanced Manufacturing Machines",
     patents: "20+",
     location: {
       zh: "中国广东省中山市",
@@ -348,11 +348,13 @@ export const siteConfig = {
   ],
 
   // === E-E-A-T 团队（真实公司 + 角色）===
+  // 8/19 P0 fix: remove Chinese parenthetical names from .name (rendered into EN pages verbatim).
+  // 中文名保留在 name_zh 字段，仅在中文页渲染。
   team: [
-    { key: "chief", name: "Wei Li (李伟)", role_zh: "创始人 & CEO", role_en: "Founder & CEO", bio_zh: "12 年防护箱行业经验，2014 年创立客信新材料，带领团队从 0 做到年出口 50+ 国家。", bio_en: "12 years in protective case industry. Founded KeXinMaterials in 2014. Led the team from zero to 50+ country exports.", sameAs: ["https://www.linkedin.com/in/kexinmaterials-ceo"] },
-    { key: "rd", name: "Zhang Hua (张华)", role_zh: "首席研发工程师", role_en: "Chief R&D Engineer", bio_zh: "15 年塑料材料工程经验，主导 20+ 项防护箱专利研发，专精 IP67/MIL-SPEC 配方。", bio_en: "15 years plastic materials engineering. Led 20+ protective case patents. Specialist in IP67/MIL-SPEC formula.", sameAs: ["https://www.linkedin.com/in/kexinmaterials-rd"] },
-    { key: "qa", name: "Lin Mei (林梅)", role_zh: "质量经理", role_en: "QA Manager", bio_zh: "10 年 ISO9001 + CE/ROHS 体系管理，主持 200+ 批次第三方检测零失败。", bio_en: "10 years ISO9001 + CE/ROHS system management. 200+ third-party test batches, zero failure.", sameAs: [] },
-    { key: "export", name: "Wang Tao (王涛)", role_zh: "出口销售总监", role_en: "Export Sales Director", bio_zh: "8 年 B2B 出口，熟悉 Alibaba / Made-in-China / Global Sources 平台运营。", bio_en: "8 years B2B export. Expert in Alibaba / Made-in-China / Global Sources platform operations.", sameAs: [] },
+    { key: "chief", name: "Wei Li", name_zh: "李伟", role_zh: "创始人 & CEO", role_en: "Founder & CEO", bio_zh: "12 年防护箱行业经验，2014 年创立客信新材料，带领团队从 0 做到年出口 50+ 国家。", bio_en: "12 years in protective case industry. Founded KeXinMaterials in 2014. Led the team from zero to 50+ country exports.", sameAs: ["https://www.linkedin.com/in/kexinmaterials-ceo"] },
+    { key: "rd", name: "Zhang Hua", name_zh: "张华", role_zh: "首席研发工程师", role_en: "Chief R&D Engineer", bio_zh: "15 年塑料材料工程经验，主导 20+ 项防护箱专利研发，专精 IP67/MIL-SPEC 配方。", bio_en: "15 years plastic materials engineering. Led 20+ protective case patents. Specialist in IP67/MIL-SPEC formula.", sameAs: ["https://www.linkedin.com/in/kexinmaterials-rd"] },
+    { key: "qa", name: "Lin Mei", name_zh: "林梅", role_zh: "质量经理", role_en: "QA Manager", bio_zh: "10 年 ISO9001 + CE/ROHS 体系管理，主持 200+ 批次第三方检测零失败。", bio_en: "10 years ISO9001 + CE/ROHS system management. 200+ third-party test batches, zero failure.", sameAs: [] },
+    { key: "export", name: "Wang Tao", name_zh: "王涛", role_zh: "出口销售总监", role_en: "Export Sales Director", bio_zh: "8 年 B2B 出口，熟悉 Alibaba / Made-in-China / Global Sources 平台运营。", bio_en: "8 years B2B export. Expert in Alibaba / Made-in-China / Global Sources platform operations.", sameAs: [] },
   ],
 
   // === 检测报告（真实拥有的）===

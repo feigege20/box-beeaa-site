@@ -17,14 +17,14 @@ const BASE_URL = `${siteConfig.protocol}://${siteConfig.domain}`;
 
 const COMPANY_FOUNDER = {
   "@type": "Person",
-  name: "Wei Li (李伟)",
+  name: "Wei Li",
   alternateName: "Wei Li",
 };
 
 const AUTHORS = {
   chief: {
     "@type": "Person",
-    name: "Wei Li (李伟)",
+    name: "Wei Li",
     jobTitle: "Founder & CEO",
     worksFor: { "@id": `${BASE_URL}#organization` },
     sameAs: [
@@ -34,7 +34,7 @@ const AUTHORS = {
   },
   rd: {
     "@type": "Person",
-    name: "Zhang Hua (张华)",
+    name: "Zhang Hua",
     jobTitle: "Chief R&D Engineer",
     worksFor: { "@id": `${BASE_URL}#organization` },
     sameAs: [
@@ -44,14 +44,14 @@ const AUTHORS = {
   },
   qa: {
     "@type": "Person",
-    name: "Lin Mei (林梅)",
+    name: "Lin Mei",
     jobTitle: "QA Manager",
     worksFor: { "@id": `${BASE_URL}#organization` },
     knowsAbout: ["QC Testing", "CE/ROHS Certification", "Lab Management"],
   },
   export: {
     "@type": "Person",
-    name: "Wang Tao (王涛)",
+    name: "Wang Tao",
     jobTitle: "Export Sales Director",
     worksFor: { "@id": `${BASE_URL}#organization` },
     knowsAbout: ["B2B Export", "Alibaba", "Global Sourcing", "Trade Compliance"],
@@ -66,10 +66,9 @@ export function organizationSchema() {
     "@id": `${BASE_URL}#organization`,
     name: siteConfig.company.en,
     alternateName: [
-      siteConfig.brand.zh,
       siteConfig.brand.en,
     ],
-    legalName: siteConfig.company.zh,
+    legalName: siteConfig.company.en,
     url: BASE_URL,
     logo: `${BASE_URL}/images/logo.png`,
     image: `${BASE_URL}/images/real/factory/factory-10-800w.webp`,
@@ -140,7 +139,7 @@ export function webSiteSchema() {
     "@id": `${BASE_URL}#website`,
     url: BASE_URL,
     name: siteConfig.company.en,
-    alternateName: siteConfig.brand.zh,
+    alternateName: siteConfig.brand.en,
     inLanguage: ["en", "zh"],
     publisher: { "@id": `${BASE_URL}#organization` },
     potentialAction: {
@@ -177,7 +176,7 @@ export function localBusinessSchema() {
     "@type": "LocalBusiness",
     "@id": `${BASE_URL}#business`,
     name: siteConfig.company.en,
-    alternateName: siteConfig.brand.zh,
+    alternateName: siteConfig.brand.en,
     image: `${BASE_URL}/images/real/factory/factory-10-800w.webp`,
     telephone: siteConfig.contact.phone,
     email: siteConfig.contact.email,
