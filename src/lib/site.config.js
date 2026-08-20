@@ -91,20 +91,21 @@ export const siteConfig = {
     globalsources: "https://www.globalsources.com/kexinmaterials",
   },
 
-  // === 核心认证（真实）===
+  // === 核心认证（真实） ===
+  // 8/20 W5-2 fix: 结构化字段,en 有独立 EN label,避免 strip fallback 产生 WL 65 / 8 6 / 8 7 / 8 stub
   certifications: [
-    "ISO9001:2015 质量管理体系",
-    "ROHS 欧盟有害物质限制",
-    "CE 欧盟安全合规",
-    "SGS 国际第三方检测",
-    "MAC 多国认证",
-    "IP67 防水防尘",
-    "RoHS (ABS) 报告",
-    "RoHS (PP) 报告",
-    "WL 加州 65 报告",
-    "8 系防尘 6 级报告",
-    "8 系防水 7 级报告",
-    "8 系抗压测试报告",
+    { code: "ISO9001:2015", en: "ISO9001:2015", zh: "ISO9001:2015 质量管理体系" },
+    { code: "ROHS", en: "ROHS", zh: "ROHS 欧盟有害物质限制" },
+    { code: "CE", en: "CE", zh: "CE 欧盟安全合规" },
+    { code: "SGS", en: "SGS", zh: "SGS 国际第三方检测" },
+    { code: "MAC", en: "MAC", zh: "MAC 多国认证" },
+    { code: "IP67", en: "IP67", zh: "IP67 防水防尘" },
+    { code: "ROHS-ABS", en: "RoHS (ABS)", zh: "RoHS (ABS) 报告" },
+    { code: "ROHS-PP", en: "RoHS (PP)", zh: "RoHS (PP) 报告" },
+    { code: "WL65", en: "California 65", zh: "WL 加州 65 报告" },
+    { code: "IP6X", en: "IP6X Dust Test", zh: "8 系防尘 6 级报告" },
+    { code: "IPX7", en: "IPX7 Water Test", zh: "8 系防水 7 级报告" },
+    { code: "COMPRESS", en: "Compression Test", zh: "8 系抗压测试报告" },
   ],
 
   // === 出口市场（基于真实数据）===

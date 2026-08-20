@@ -213,31 +213,31 @@
   "unique_facts": {
     "drone-case": {
       "uav-battery-case": [
-        "已为 30+ 头部无人机厂商提供电池箱 OEM 方案",
-        "首家通过 UN38.3 + 41 节 PI 967 双认证的国内厂家",
-        "已为 DJI 大疆、TikTok 飞马、纵横股份等供应配套"
+        { "zh": "已为 30+ 头部无人机厂商提供电池箱 OEM 方案", "en": "Trusted by 30+ leading drone manufacturers with battery case OEM solutions" },
+        { "zh": "首家通过 UN38.3 + 41 节 PI 967 双认证的国内厂家", "en": "First domestic manufacturer dual-certified by UN38.3 + 41-section PI 967" },
+        { "zh": "已为 DJI 大疆、TikTok 飞马、纵横股份等供应配套", "en": "Supplying DJI, TikTok Feima, JOUAV and other tier-1 drone OEMs" }
       ],
       "uav-hard-case": [
-        "市占率华南前三",
-        "适配 DJI 全系列 200+ 款型"
+        { "zh": "市占率华南前三", "en": "Top 3 market share in South China" },
+        { "zh": "适配 DJI 全系列 200+ 款型", "en": "Compatible with 200+ DJI drone models" }
       ]
     },
     "waterproof-case": {
       "drifting-case": [
-        "漂流行业市占率超 40%",
-        "已为 100+ 漂流景区提供配套"
+        { "zh": "漂流行业市占率超 40%", "en": "Over 40% market share in drifting equipment" },
+        { "zh": "已为 100+ 漂流景区提供配套", "en": "Serving 100+ commercial rafting sites" }
       ]
     },
     "military-tactical-case": {
       "rifle-case": [
-        "出口至 25+ 国家",
-        "已通过 MIL-STD-810G 全项测试"
+        { "zh": "出口至 25+ 国家", "en": "Exported to 25+ countries" },
+        { "zh": "已通过 MIL-STD-810G 全项测试", "en": "Passed full MIL-STD-810G test suite" }
       ]
     },
     "medical-case": {
       "cold-chain-case": [
-        "已为 3 大疫苗厂商提供冷链方案",
-        "通过 WHO PQS 性能评估"
+        { "zh": "已为 3 大疫苗厂商提供冷链方案", "en": "Cold-chain solution for 3 major vaccine manufacturers" },
+        { "zh": "通过 WHO PQS 性能评估", "en": "WHO PQS performance-qualified" }
       ]
     }
   }

@@ -124,15 +124,13 @@ export function renderHome({ lang = "en" } = {}) {
       </div>`
     : "";
 
-  // Certifications - keep both raw + EN. EN page must show only English text.
-  // 8/19 P0 fix: do not fallback to Chinese when strip result is empty.
-  const certsRaw = (siteConfig.certifications || []).slice(0, 12);
-  const certs = t ? certsRaw : certsRaw.map(c => {
-    const stripped = c.replace(/[\u4e00-\u9fff]+/g, "").replace(/\s+/g, " ").trim();
-    if (stripped) return stripped;
-    // Fallback: use only the first acronym/code as the EN name
-    const code = (c.match(/[A-Z][A-Z0-9-]+/g) || ["Certification"])[0];
-    return code;
+  // 8/20 W5-2 fix: certifications 现在是结构化对象 {code,en,zh},EN 页直接取 en
+  const certs = (siteConfig.certifications || []).slice(0, 12).map(c => {
+    if (typeof c === "string") {
+      // 兼容旧 string 格式 (防御)
+      return t ? c : c.replace(/[\u4e00-\u9fff]+/g, "").replace(/\s+/g, " ").trim() || "Certified";
+    }
+    return t ? c.zh : c.en;
   });
 
   // FAQ

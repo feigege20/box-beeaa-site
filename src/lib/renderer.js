@@ -309,9 +309,16 @@ export function renderPage({ keyword, productLine, assets, lang = "en", grade = 
   const lineTestimonials = (assets.testimonials || []).filter(t => t.product_line === productLine.slug);
   const pageTestimonials = pickN(lineTestimonials, 3, routes.canonicalPath);
 
-  // 唯一数据点
-  const uniqueFact = (assets.params.unique_facts?.[productLine.slug]?.[Object.keys(assets.params.unique_facts[productLine.slug])[0]])?.[0] ||
-    `${productLine.name_en} 系列已出口至 30+ 国家，2024 年累计交付 50,000+ 套。`;
+  // 唯一数据点 (8/20 W5-1 fix: 数组元素支持 {zh, en} 对象 + EN fallback ZH fallback 双语)
+  const _ufGroup = assets.params.unique_facts?.[productLine.slug];
+  const _ufKey = _ufGroup ? Object.keys(_ufGroup)[0] : null;
+  const _ufRaw = _ufKey ? _ufGroup[_ufKey][0] : null;
+  const uniqueFact = (typeof _ufRaw === "object" && _ufRaw !== null)
+    ? ((t ? _ufRaw.zh : _ufRaw.en) || _ufRaw.zh || "")
+    : (_ufRaw ||
+       (t
+         ? `${productLine.name_zh} 系列已出口至 30+ 国家，2024 年累计交付 50,000+ 套。`
+         : `${productLine.name_en} series exported to 30+ countries, 50,000+ units delivered in 2024.`));
 
   // === 渲染各 section ===
   const sections = [];

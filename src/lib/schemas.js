@@ -198,6 +198,34 @@ export function localBusinessSchema() {
 
 /** Product schema - 每个长尾页都打 */
 export function productSchema({ name, description, image, sku, category, brand = "KeXinMaterials", additionalProperty = [] }) {
+  // 8/20 W5-1 fix: EN label map + ZH value translator, 避免 schema name="inner_dim_mm" / value="可定制"
+  const paramLabelEn = {
+    material: "Material",
+    ip_rating: "IP Rating",
+    temp_range: "Temp Range",
+    moq: "MOQ",
+    lead_time_days: "Lead Time",
+    certifications: "Certifications",
+    inner_dim_mm: "Inner Dimensions",
+    drop_test: "Drop Test",
+    foam: "Foam Insert",
+    weight_kg: "Weight",
+    color_options: "Color Options",
+    handle: "Handle Type",
+    latch: "Latch Type",
+    hinge: "Hinge Type",
+  };
+  // 8/20 W5-1: 已知 ZH value → EN 翻译 (B-tier schema + table)
+  const valueZhToEn = {
+    "可定制": "Customizable",
+    "1.2m 6 面": "1.2m / 6 faces",
+    "1.2m 6面": "1.2m / 6 faces",
+    "ABS+PC": "ABS+PC",
+    "PP+GF": "PP+GF",
+    "工程塑料": "Engineering Plastic",
+    "支持": "Supported",
+    "标准配置": "Standard",
+  };
   return {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -208,11 +236,14 @@ export function productSchema({ name, description, image, sku, category, brand =
     brand: { "@type": "Brand", name: brand },
     category,
     manufacturer: { "@id": `${BASE_URL}#organization` },
-    additionalProperty: additionalProperty.map(p => ({
-      "@type": "PropertyValue",
-      name: p.label_en || p.label_zh,
-      value: p.value,
-    })),
+    additionalProperty: additionalProperty.map(p => {
+      // 优先用 EN label, 缺则 fallback key 的可读形式
+      const lbl = (p.label_en && paramLabelEn[p.label_en]) || p.label_en || p.label_zh || "Spec";
+      // value 翻译: 已知 ZH → EN
+      let val = p.value;
+      if (typeof val === "string" && valueZhToEn[val]) val = valueZhToEn[val];
+      return { "@type": "PropertyValue", name: lbl, value: val };
+    }),
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "USD",
