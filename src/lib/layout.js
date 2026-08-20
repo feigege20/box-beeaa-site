@@ -84,7 +84,8 @@ export function renderHead({ title, description, keywords, canonical, ogImage, l
   ${allGlobalSchemas()}
   ${schemas.map(s => renderSchema(s)).join("\n")}
 </head>
-<body>`;
+<body>
+<a class="skip-nav" href="#main-content">Skip to content</a>`;
 }
 
 export function renderHeader({ lang = "en", currentPath = "/" } = {}) {

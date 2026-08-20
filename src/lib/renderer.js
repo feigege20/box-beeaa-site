@@ -529,7 +529,9 @@ export function renderPage({ keyword, productLine, assets, lang = "en", grade = 
   })
   + renderHeader({ lang, currentPath: routes.canonicalPath })
   + renderBreadcrumb({ items: routes.breadcrumb, lang })
+  + `<main id="main-content">`
   + sections.join("\n")
+  + `</main>`
   + renderFooter({ lang });
 
   return html;
