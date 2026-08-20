@@ -3,6 +3,8 @@
  * 支持 4 类长尾公式的差异化结构
  * P1 修复 2026-08-12: 启用 5 维防检测 (firstPersonStatement + firstPersonPreference + unpublishedData + varyParagraphLength + shuffleSections)
  *   之前 renderer 完全没调 content_variation.js,导致 99% 模板同质
+ * W5-3 2026-08-20: 6+7 维 (personQuote + customerStory + sGrade 3 段深度解读) 推广到 B-tier (noindex)
+ *   之前 6+7 维只给 S/A 级, B-tier 只有 5 维。本次 B-tier 也享受 6+7 维以提升人类化与 AI 引用质量
  */
 
 import { siteConfig } from "./site.config.js";
@@ -335,12 +337,12 @@ export function renderPage({ keyword, productLine, assets, lang = "en", grade = 
   const fpe = firstPersonStatement(t ? 'zh' : 'en');
   const fpp = firstPersonPreference(t ? 'zh' : 'en');
   const upd = unpublishedData(t ? 'zh' : 'en');
-  // S/A 级用更长版, B/C 级用短版 (差异化)
-  const sGradeBlock = (grade === 'S' || grade === 'A')
+  // S/A/B 级用更长版 (W5-3: 推广到 B-tier), C 级用空 (差异化)
+  const sGradeBlock = (grade === 'S' || grade === 'A' || grade === 'B')
     ? sGradeFirstPersonParagraph(esc(t ? keyword.zh : enClean(keyword.en)), t ? 'zh' : 'en')
     : '';
-  // 6+7 维: S/A 级额外加 personQuote + customerStory
-  const quoteRole = (grade === 'S' || grade === 'A')
+  // 6+7 维: S/A/B 级加 personQuote + customerStory (W5-3: 推广到 B-tier, C 级除外)
+  const quoteRole = (grade === 'S' || grade === 'A' || grade === 'B')
     ? ['chief', 'rd', 'qa', 'export'][Math.abs(hashCode(seedKey + 'role')) % 4]
     : 'chief';
   const pq = personQuote(quoteRole, t ? 'zh' : 'en');
@@ -452,7 +454,8 @@ export function renderPage({ keyword, productLine, assets, lang = "en", grade = 
   sections.push(sectionDeepDive({ paragraphs: finalParagraphs, lang }));
 
   // P3.6 升级 2026-08-14: 6+7 维 (S/A 级) — person quote + customer story
-  if (grade === 'S' || grade === 'A') {
+  // W5-3 2026-08-20: 推广到 B-tier (C 级除外)
+  if (grade === 'S' || grade === 'A' || grade === 'B') {
     // 真实人名引用 (E-E-A-T 强化)
     const quoteLen = varyParagraphLength(seedKey + ':quote');
     const quoteSentences = pq.split(/[.!?]+/).map(s => s.trim()).filter(Boolean);
