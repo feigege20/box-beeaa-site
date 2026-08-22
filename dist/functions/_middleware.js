@@ -1,4 +1,5 @@
 ﻿/**
+// bindings refresh 2026-08-18: D1 + 4 R2 active
  * box.beeaa.com Pages Function Middleware 鈥?V6
  * 
  * 淇 V5 bug:
@@ -187,7 +188,8 @@ export const onRequest = async (context) => {
     "zh/", "medical-case/", "styles/", "images/", "_",
     "llms", "sitemap", "robots", "rss", "manifest", ".well-known",
     "guides/", "entities/", "tools/", "about/", "contact/", "products/", "markets/",
-    "wholesale", "agency", "oem", "export", "faq", "blog"
+    "wholesale", "agency", "oem", "export", "faq", "blog",
+    "api/"  // Pages Functions (/api/inquiry, etc) — let context.next() route
   ];
   const isStaticAsset = path === "/" || path === "/index.html" || path === "/favicon.ico"
     || skipPrefixes.some(p => path === p.replace(/\/$/, "") || path.startsWith(p) || path.startsWith("/" + p))
@@ -196,6 +198,20 @@ export const onRequest = async (context) => {
   // === /zh/* 璺敱 ===
   if (path === "/zh" || path === "/zh/" || path.startsWith("/zh/")) {
     return await handleZHRoute(context, path);
+  }
+
+  // === /de/* 璺敱 (5 langs: de/es/fr/ja) ===
+  if (path === "/de" || path === "/de/" || path.startsWith("/de/")) {
+    return await handleLangRoute(context, path, "BUCKET_DE");
+  }
+  if (path === "/es" || path === "/es/" || path.startsWith("/es/")) {
+    return await handleLangRoute(context, path, "BUCKET_ES");
+  }
+  if (path === "/fr" || path === "/fr/" || path.startsWith("/fr/")) {
+    return await handleLangRoute(context, path, "BUCKET_FR");
+  }
+  if (path === "/ja" || path === "/ja/" || path.startsWith("/ja/")) {
+    return await handleLangRoute(context, path, "BUCKET_JA");
   }
 
   // === /medical-case/* 璺敱 ===
@@ -258,6 +274,55 @@ async function handleZHRoute(context, path) {
   }
   
   // 鐪?404
+  return withSecurityHeaders(serve404());
+}
+
+/**
+ * 5 langs (de/es/fr/ja) 閫氱敤璺敱 — 涓?handleZHRoute 绫讳技,浣嗕笉鍋?zh/ 鍓嶇紑
+ * path 浠?/<lang> 寮€澶? 姣斿 /de/drone-case/
+ * 鍏抽棴妯＄硦鍖归厤 (杩欎簺璇█ B-tier 鏆傛棭娌℃湁鐢熸垚, 涓嶅仛 301)
+ */
+async function handleLangRoute(context, path, bucketBinding) {
+  const pathNoSlash = path.replace(/^\/+|\/+$/g, ""); // "de/..." or "de"
+  const endsWithSlash = path.endsWith("/");
+
+  // 绮剧‘鍖归厤: 鍘绘帀璇█鍓嶇紑, 鐩存帴鐢?R2 key
+  // 鍖归厤 /^(de|es|fr|ja)(?:\/(.*))?$/ : lang + 鍙兘鐨?/rest
+  // 渚嬪: "de/drone-case" -> lang="de", rest="drone-case"
+  //        "de"            -> lang="de", rest=""
+  //        "de/drone-case/foo" -> lang="de", rest="drone-case/foo"
+  const langMatch = pathNoSlash.match(/^(de|es|fr|ja)(?:\/(.*))?$/);
+  const stripped = langMatch ? (langMatch[2] || "") : pathNoSlash;
+
+  const exactKeys = [];
+  if (endsWithSlash) {
+    if (stripped) {
+      // /de/drone-case/  => R2 key: drone-case/index.html
+      exactKeys.push(stripped + "/index.html");
+      exactKeys.push(stripped + "/");
+    } else {
+      // /de/  => R2 key: index.html (home)
+      exactKeys.push("index.html");
+      exactKeys.push("");
+    }
+  } else {
+    if (stripped) {
+      exactKeys.push(stripped);
+      exactKeys.push(stripped + "/index.html");
+    } else {
+      exactKeys.push("index.html");
+    }
+  }
+
+  for (const key of exactKeys) {
+    try {
+      const obj = await context.env[bucketBinding].get(key);
+      if (obj) {
+        return serveR2(obj, key);
+      }
+    } catch (e) { /* continue */ }
+  }
+
   return withSecurityHeaders(serve404());
 }
 
@@ -346,4 +411,4 @@ async function handleGenericRoute(context, path) {
   }
   
   return withSecurityHeaders(serve404());
-}
+}// Force re-deploy 2026-08-22 19:29:41

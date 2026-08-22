@@ -1,7 +1,14 @@
 {
   "_version": "2026-08-18-v1",
   "_comment": "9 product lines x 6 langs translation dictionary. en/zh from existing data; de/es/fr/ja auto-translated with W3 i18n framework.",
-  "lang_codes": ["en", "zh", "de", "es", "fr", "ja"],
+  "lang_codes": [
+    "en",
+    "zh",
+    "de",
+    "es",
+    "fr",
+    "ja"
+  ],
   "lang_names": {
     "en": "English",
     "zh": "中文",
@@ -12,88 +19,462 @@
   },
   "product_lines": {
     "drone-case": {
-      "en": {"name": "Drone Case", "tagline": "Professional protective cases for drones and UAV equipment", "category": "Professional Cases"},
-      "zh": {"name": "无人机防护箱", "tagline": "专业无人机和 UAV 设备防护箱", "category": "专业防护箱"},
-      "de": {"name": "Drohnen-Koffer", "tagline": "Professionelle Schutzkoffer für Drohnen und UAV-Ausrüstung", "category": "Professionelle Koffer"},
-      "es": {"name": "Estuche para Drones", "tagline": "Estuches protectores profesionales para drones y equipos UAV", "category": "Estuches Profesionales"},
-      "fr": {"name": "Valise pour Drone", "tagline": "Valises de protection professionnelles pour drones et équipements UAV", "category": "Valises Professionnelles"},
-      "ja": {"name": "ドローンケース", "tagline": "ドローン・UAV機器向けプロフェッショナル保護ケース", "category": "プロフェッショナルケース"}
+      "en": {
+        "name": "Drone Case",
+        "tagline": "Professional protective cases for drones and UAV equipment",
+        "category": "Professional Cases"
+      },
+      "zh": {
+        "name": "无人机防护箱",
+        "tagline": "专业无人机和 UAV 设备防护箱",
+        "category": "专业防护箱"
+      },
+      "de": {
+        "name": "Drohnen-Koffer",
+        "tagline": "Professionelle Schutzkoffer für Drohnen und UAV-Ausrüstung",
+        "category": "Professionelle Koffer"
+      },
+      "es": {
+        "name": "Estuche para Drones",
+        "tagline": "Estuches protectores profesionales para drones y equipos UAV",
+        "category": "Estuches Profesionales"
+      },
+      "fr": {
+        "name": "Valise pour Drone",
+        "tagline": "Valises de protection professionnelles pour drones et équipements UAV",
+        "category": "Valises Professionnelles"
+      },
+      "ja": {
+        "name": "ドローンケース",
+        "tagline": "ドローン・UAV機器向けプロフェッショナル保護ケース",
+        "category": "プロフェッショナルケース"
+      }
     },
     "medical-case": {
-      "en": {"name": "Medical Case", "tagline": "Medical-grade protective cases for first aid and medical equipment", "category": "Medical Cases"},
-      "zh": {"name": "医疗箱", "tagline": "医疗级防护箱用于急救和医疗设备", "category": "医疗防护箱"},
-      "de": {"name": "Medizinischer Koffer", "tagline": "Medizinische Schutzkoffer für Erste Hilfe und medizinische Geräte", "category": "Medizinische Koffer"},
-      "es": {"name": "Estuche Médico", "tagline": "Estuches protectores de grado médico para primeros auxilios y equipos médicos", "category": "Estuches Médicos"},
-      "fr": {"name": "Valise Médicale", "tagline": "Valises de protection de qualité médicale pour premiers secours et équipements médicaux", "category": "Valises Médicales"},
-      "ja": {"name": "メディカルケース", "tagline": "救急・医療機器向け医療グレード保護ケース", "category": "メディカルケース"}
+      "en": {
+        "name": "Medical Case",
+        "tagline": "Medical-grade protective cases for first aid and medical equipment",
+        "category": "Medical Cases"
+      },
+      "zh": {
+        "name": "医疗箱",
+        "tagline": "医疗级防护箱用于急救和医疗设备",
+        "category": "医疗防护箱"
+      },
+      "de": {
+        "name": "Medizinischer Koffer",
+        "tagline": "Medizinische Schutzkoffer für Erste Hilfe und medizinische Geräte",
+        "category": "Medizinische Koffer"
+      },
+      "es": {
+        "name": "Estuche Médico",
+        "tagline": "Estuches protectores de grado médico para primeros auxilios y equipos médicos",
+        "category": "Estuches Médicos"
+      },
+      "fr": {
+        "name": "Valise Médicale",
+        "tagline": "Valises de protection de qualité médicale pour premiers secours et équipements médicaux",
+        "category": "Valises Médicales"
+      },
+      "ja": {
+        "name": "メディカルケース",
+        "tagline": "救急・医療機器向け医療グレード保護ケース",
+        "category": "メディカルケース"
+      }
     },
     "waterproof-case": {
-      "en": {"name": "Waterproof Case", "tagline": "IP67/IP68 waterproof cases for outdoor and marine applications", "category": "Waterproof Cases"},
-      "zh": {"name": "防水箱", "tagline": "IP67/IP68 防水箱用于户外和海事应用", "category": "防水防护箱"},
-      "de": {"name": "Wasserdichter Koffer", "tagline": "IP67/IP68 wasserdichte Koffer für Outdoor- und Marineanwendungen", "category": "Wasserdichte Koffer"},
-      "es": {"name": "Estuche Impermeable", "tagline": "Estuches impermeables IP67/IP68 para aplicaciones exteriores y marinas", "category": "Estuches Impermeables"},
-      "fr": {"name": "Valise Étanche", "tagline": "Valises étanches IP67/IP68 pour applications extérieures et marine", "category": "Valises Étanches"},
-      "ja": {"name": "防水ケース", "tagline": "屋外・海洋用途向けIP67/IP68防水ケース", "category": "防水ケース"}
+      "en": {
+        "name": "Waterproof Case",
+        "tagline": "IP67/IP68 waterproof cases for outdoor and marine applications",
+        "category": "Waterproof Cases"
+      },
+      "zh": {
+        "name": "防水箱",
+        "tagline": "IP67/IP68 防水箱用于户外和海事应用",
+        "category": "防水防护箱"
+      },
+      "de": {
+        "name": "Wasserdichter Koffer",
+        "tagline": "IP67/IP68 wasserdichte Koffer für Outdoor- und Marineanwendungen",
+        "category": "Wasserdichte Koffer"
+      },
+      "es": {
+        "name": "Estuche Impermeable",
+        "tagline": "Estuches impermeables IP67/IP68 para aplicaciones exteriores y marinas",
+        "category": "Estuches Impermeables"
+      },
+      "fr": {
+        "name": "Valise Étanche",
+        "tagline": "Valises étanches IP67/IP68 pour applications extérieures et marine",
+        "category": "Valises Étanches"
+      },
+      "ja": {
+        "name": "防水ケース",
+        "tagline": "屋外・海洋用途向けIP67/IP68防水ケース",
+        "category": "防水ケース"
+      }
     },
     "tactical-case": {
-      "en": {"name": "Tactical Case", "tagline": "Military-grade tactical cases for defense and law enforcement", "category": "Tactical Cases"},
-      "zh": {"name": "战术防护箱", "tagline": "军用级战术防护箱用于国防和执法", "category": "战术防护箱"},
-      "de": {"name": "Taktischer Koffer", "tagline": "Militärische taktische Koffer für Verteidigung und Strafverfolgung", "category": "Taktische Koffer"},
-      "es": {"name": "Estuche Táctico", "tagline": "Estuches tácticos de grado militar para defensa y aplicación de la ley", "category": "Estuches Tácticos"},
-      "fr": {"name": "Valise Tactique", "tagline": "Valises tactiques de qualité militaire pour défense et forces de l'ordre", "category": "Valises Tactiques"},
-      "ja": {"name": "タクティカルケース", "tagline": "防衛・法執行機関向けミリタリーグレードのタクティカルケース", "category": "タクティカルケース"}
+      "en": {
+        "name": "Tactical Case",
+        "tagline": "Military-grade tactical cases for defense and law enforcement",
+        "category": "Tactical Cases"
+      },
+      "zh": {
+        "name": "战术防护箱",
+        "tagline": "军用级战术防护箱用于国防和执法",
+        "category": "战术防护箱"
+      },
+      "de": {
+        "name": "Taktischer Koffer",
+        "tagline": "Militärische taktische Koffer für Verteidigung und Strafverfolgung",
+        "category": "Taktische Koffer"
+      },
+      "es": {
+        "name": "Estuche Táctico",
+        "tagline": "Estuches tácticos de grado militar para defensa y aplicación de la ley",
+        "category": "Estuches Tácticos"
+      },
+      "fr": {
+        "name": "Valise Tactique",
+        "tagline": "Valises tactiques de qualité militaire pour défense et forces de l'ordre",
+        "category": "Valises Tactiques"
+      },
+      "ja": {
+        "name": "タクティカルケース",
+        "tagline": "防衛・法執行機関向けミリタリーグレードのタクティカルケース",
+        "category": "タクティカルケース"
+      }
     },
     "camera-stage-case": {
-      "en": {"name": "Camera & Stage Case", "tagline": "Protective cases for cameras, lighting, and stage equipment", "category": "Equipment Cases"},
-      "zh": {"name": "摄影舞台箱", "tagline": "摄影、灯光和舞台设备防护箱", "category": "设备防护箱"},
-      "de": {"name": "Kamera- und Bühnekoffer", "tagline": "Schutzkoffer für Kameras, Beleuchtung und Bühnenausrüstung", "category": "Ausrüstungskoffer"},
-      "es": {"name": "Estuche para Cámara y Escenario", "tagline": "Estuches protectores para cámaras, iluminación y equipo de escenario", "category": "Estuches para Equipos"},
-      "fr": {"name": "Valise pour Caméra et Scène", "tagline": "Valises de protection pour caméras, éclairage et équipement de scène", "category": "Valises pour Équipement"},
-      "ja": {"name": "カメラ・ステージケース", "tagline": "カメラ・照明・ステージ機器向け保護ケース", "category": "機器用ケース"}
+      "en": {
+        "name": "Camera & Stage Case",
+        "tagline": "Protective cases for cameras, lighting, and stage equipment",
+        "category": "Equipment Cases"
+      },
+      "zh": {
+        "name": "摄影舞台箱",
+        "tagline": "摄影、灯光和舞台设备防护箱",
+        "category": "设备防护箱"
+      },
+      "de": {
+        "name": "Kamera- und Bühnekoffer",
+        "tagline": "Schutzkoffer für Kameras, Beleuchtung und Bühnenausrüstung",
+        "category": "Ausrüstungskoffer"
+      },
+      "es": {
+        "name": "Estuche para Cámara y Escenario",
+        "tagline": "Estuches protectores para cámaras, iluminación y equipo de escenario",
+        "category": "Estuches para Equipos"
+      },
+      "fr": {
+        "name": "Valise pour Caméra et Scène",
+        "tagline": "Valises de protection pour caméras, éclairage et équipement de scène",
+        "category": "Valises pour Équipement"
+      },
+      "ja": {
+        "name": "カメラ・ステージケース",
+        "tagline": "カメラ・照明・ステージ機器向け保護ケース",
+        "category": "機器用ケース"
+      }
     },
     "first-aid-case": {
-      "en": {"name": "First Aid Case", "tagline": "Compact first aid kits and emergency medical cases", "category": "First Aid Cases"},
-      "zh": {"name": "急救箱", "tagline": "紧凑型急救包和紧急医疗箱", "category": "急救防护箱"},
-      "de": {"name": "Erste-Hilfe-Koffer", "tagline": "Kompakte Erste-Hilfe-Sets und Notfallkoffer", "category": "Erste-Hilfe-Koffer"},
-      "es": {"name": "Estuche de Primeros Auxilios", "tagline": "Kits de primeros auxilios compactos y estuches médicos de emergencia", "category": "Estuches de Primeros Auxilios"},
-      "fr": {"name": "Valise de Premiers Secours", "tagline": "Kits de premiers secours compacts et valises médicales d'urgence", "category": "Valises de Premiers Secours"},
-      "ja": {"name": "救急ケース", "tagline": "コンパクト救急キットと緊急医療ケース", "category": "救急ケース"}
+      "en": {
+        "name": "First Aid Case",
+        "tagline": "Compact first aid kits and emergency medical cases",
+        "category": "First Aid Cases"
+      },
+      "zh": {
+        "name": "急救箱",
+        "tagline": "紧凑型急救包和紧急医疗箱",
+        "category": "急救防护箱"
+      },
+      "de": {
+        "name": "Erste-Hilfe-Koffer",
+        "tagline": "Kompakte Erste-Hilfe-Sets und Notfallkoffer",
+        "category": "Erste-Hilfe-Koffer"
+      },
+      "es": {
+        "name": "Estuche de Primeros Auxilios",
+        "tagline": "Kits de primeros auxilios compactos y estuches médicos de emergencia",
+        "category": "Estuches de Primeros Auxilios"
+      },
+      "fr": {
+        "name": "Valise de Premiers Secours",
+        "tagline": "Kits de premiers secours compacts et valises médicales d'urgence",
+        "category": "Valises de Premiers Secours"
+      },
+      "ja": {
+        "name": "救急ケース",
+        "tagline": "コンパクト救急キットと緊急医療ケース",
+        "category": "救急ケース"
+      }
     },
     "peli-case": {
-      "en": {"name": "Peli Case Alternative", "tagline": "Direct factory alternative to Pelican cases with OEM/ODM customization", "category": "Peli Alternatives"},
-      "zh": {"name": "Peli 替代箱", "tagline": "Peli 箱直供工厂替代品, 支持 OEM/ODM 定制", "category": "Peli 替代"},
-      "de": {"name": "Peli-Koffer-Alternative", "tagline": "Direkte Fabrik-Alternative zu Pelican-Koffern mit OEM/ODM-Anpassung", "category": "Peli-Alternativen"},
-      "es": {"name": "Alternativa a Estuches Peli", "tagline": "Alternativa directa de fábrica a estuches Pelican con personalización OEM/ODM", "category": "Alternativas Peli"},
-      "fr": {"name": "Alternative Valise Peli", "tagline": "Alternative directe d'usine aux valises Pelican avec personnalisation OEM/ODM", "category": "Alternatives Peli"},
-      "ja": {"name": "Peliケース代替", "tagline": "Peliケースの直接工場代替品、OEM/ODMカスタマイズ対応", "category": "Peli代替"}
+      "en": {
+        "name": "Peli Case Alternative",
+        "tagline": "Direct factory alternative to Pelican cases with OEM/ODM customization",
+        "category": "Peli Alternatives"
+      },
+      "zh": {
+        "name": "Peli 替代箱",
+        "tagline": "Peli 箱直供工厂替代品, 支持 OEM/ODM 定制",
+        "category": "Peli 替代"
+      },
+      "de": {
+        "name": "Peli-Koffer-Alternative",
+        "tagline": "Direkte Fabrik-Alternative zu Pelican-Koffern mit OEM/ODM-Anpassung",
+        "category": "Peli-Alternativen"
+      },
+      "es": {
+        "name": "Alternativa a Estuches Peli",
+        "tagline": "Alternativa directa de fábrica a estuches Pelican con personalización OEM/ODM",
+        "category": "Alternativas Peli"
+      },
+      "fr": {
+        "name": "Alternative Valise Peli",
+        "tagline": "Alternative directe d'usine aux valises Pelican avec personnalisation OEM/ODM",
+        "category": "Alternatives Peli"
+      },
+      "ja": {
+        "name": "Peliケース代替",
+        "tagline": "Peliケースの直接工場代替品、OEM/ODMカスタマイズ対応",
+        "category": "Peli代替"
+      }
     },
     "engineering-plastic-case": {
-      "en": {"name": "Engineering Plastic Case", "tagline": "Heavy-duty engineering plastic cases for industrial applications", "category": "Industrial Cases"},
-      "zh": {"name": "工程塑料箱", "tagline": "重型工程塑料箱用于工业应用", "category": "工业防护箱"},
-      "de": {"name": "Kunststoff-Koffer für Industrie", "tagline": "Robuste technische Kunststoffkoffer für industrielle Anwendungen", "category": "Industriekoffer"},
-      "es": {"name": "Estuche de Plástico Industrial", "tagline": "Estuches de plástico de ingeniería de alta resistencia para aplicaciones industriales", "category": "Estuches Industriales"},
-      "fr": {"name": "Valise Plastique Industriel", "tagline": "Valises en plastique technique robuste pour applications industrielles", "category": "Valises Industrielles"},
-      "ja": {"name": "エンジニアリングプラスチックケース", "tagline": "産業用途向け高耐久エンジニアリングプラスチックケース", "category": "産業用ケース"}
+      "en": {
+        "name": "Engineering Plastic Case",
+        "tagline": "Heavy-duty engineering plastic cases for industrial applications",
+        "category": "Industrial Cases"
+      },
+      "zh": {
+        "name": "工程塑料箱",
+        "tagline": "重型工程塑料箱用于工业应用",
+        "category": "工业防护箱"
+      },
+      "de": {
+        "name": "Kunststoff-Koffer für Industrie",
+        "tagline": "Robuste technische Kunststoffkoffer für industrielle Anwendungen",
+        "category": "Industriekoffer"
+      },
+      "es": {
+        "name": "Estuche de Plástico Industrial",
+        "tagline": "Estuches de plástico de ingeniería de alta resistencia para aplicaciones industriales",
+        "category": "Estuches Industriales"
+      },
+      "fr": {
+        "name": "Valise Plastique Industriel",
+        "tagline": "Valises en plastique technique robuste pour applications industrielles",
+        "category": "Valises Industrielles"
+      },
+      "ja": {
+        "name": "エンジニアリングプラスチックケース",
+        "tagline": "産業用途向け高耐久エンジニアリングプラスチックケース",
+        "category": "産業用ケース"
+      }
     },
     "tools-case": {
-      "en": {"name": "Tools Case", "tagline": "Heavy-duty tool storage cases for professionals", "category": "Tools Cases"},
-      "zh": {"name": "工具箱", "tagline": "重型工具收纳箱用于专业人士", "category": "工具防护箱"},
-      "de": {"name": "Werkzeugkoffer", "tagline": "Robuste Werkzeugaufbewahrungskoffer für Profis", "category": "Werkzeugkoffer"},
-      "es": {"name": "Estuche para Herramientas", "tagline": "Estuches de almacenamiento de herramientas de alta resistencia para profesionales", "category": "Estuches para Herramientas"},
-      "fr": {"name": "Valise à Outils", "tagline": "Valises de rangement d'outils robustes pour professionnels", "category": "Valises à Outils"},
-      "ja": {"name": "ツールケース", "tagline": "プロフェッショナル向け高耐久工具収納ケース", "category": "ツールケース"}
+      "en": {
+        "name": "Tools Case",
+        "tagline": "Heavy-duty tool storage cases for professionals",
+        "category": "Tools Cases"
+      },
+      "zh": {
+        "name": "工具箱",
+        "tagline": "重型工具收纳箱用于专业人士",
+        "category": "工具防护箱"
+      },
+      "de": {
+        "name": "Werkzeugkoffer",
+        "tagline": "Robuste Werkzeugaufbewahrungskoffer für Profis",
+        "category": "Werkzeugkoffer"
+      },
+      "es": {
+        "name": "Estuche para Herramientas",
+        "tagline": "Estuches de almacenamiento de herramientas de alta resistencia para profesionales",
+        "category": "Estuches para Herramientas"
+      },
+      "fr": {
+        "name": "Valise à Outils",
+        "tagline": "Valises de rangement d'outils robustes pour professionnels",
+        "category": "Valises à Outils"
+      },
+      "ja": {
+        "name": "ツールケース",
+        "tagline": "プロフェッショナル向け高耐久工具収納ケース",
+        "category": "ツールケース"
+      }
+    },
+    "tool-box": {
+      "de": {
+        "name": "Werkzeugbox",
+        "tagline": "Schwere Werkzeugboxen für professionelle Anwender und industrielle Anwendungen",
+        "category": "Werkzeugboxen"
+      },
+      "es": {
+        "name": "Caja de Herramientas",
+        "tagline": "Cajas de herramientas de alta resistencia para profesionales e industrias",
+        "category": "Cajas de Herramientas"
+      },
+      "fr": {
+        "name": "Boîte à Outils",
+        "tagline": "Boîtes à outils robustes pour professionnels et applications industrielles",
+        "category": "Boîtes à Outils"
+      },
+      "ja": {
+        "name": "工具箱",
+        "tagline": "プロおよび産業向けの耐久工具箱",
+        "category": "工具箱"
+      }
+    },
+    "military-tactical-case": {
+      "de": {
+        "name": "Militärische Tactical-Koffer",
+        "tagline": "Militärische taktische Koffer für Verteidigung, Strafverfolgung und Outdoor-Operationen",
+        "category": "Taktische Militärische Koffer"
+      },
+      "es": {
+        "name": "Estuche Táctico Militar",
+        "tagline": "Estuches tácticos militares para defensa, aplicación de la ley y operaciones exteriores",
+        "category": "Estuches Tácticos Militares"
+      },
+      "fr": {
+        "name": "Valise Tactique Militaire",
+        "tagline": "Valises tactiques militaires pour défense, forces de l'ordre et opérations extérieures",
+        "category": "Valises Tactiques Militaires"
+      },
+      "ja": {
+        "name": "軍用戦術ケース",
+        "tagline": "防衛、法執行、および野外作戦向けの軍用戦術ケース",
+        "category": "軍用戦術ケース"
+      }
+    },
+    "trolley-case": {
+      "de": {
+        "name": "Trolley-Koffer",
+        "tagline": "Trolley-Koffer mit Rädern für Reise, Ausrüstung und professionellen Einsatz",
+        "category": "Trolley-Koffer"
+      },
+      "es": {
+        "name": "Estuche con Ruedas",
+        "tagline": "Estuches trolley con ruedas para viajes, equipo y uso profesional",
+        "category": "Estuches con Ruedas"
+      },
+      "fr": {
+        "name": "Valise à Roulettes",
+        "tagline": "Valises trolley à roulettes pour voyage, équipement et usage professionnel",
+        "category": "Valises à Roulettes"
+      },
+      "ja": {
+        "name": "トロリーケース",
+        "tagline": "旅行、装備、業務用向けトロリーケース(車輪付)",
+        "category": "トロリーケース"
+      }
+    },
+    "instrument-case": {
+      "de": {
+        "name": "Instrumentenkoffer",
+        "tagline": "Schutzkoffer für empfindliche Instrumente, Messgeräte und Prüfausrüstung",
+        "category": "Instrumentenkoffer"
+      },
+      "es": {
+        "name": "Estuche para Instrumentos",
+        "tagline": "Estuches protectores para instrumentos delicados, medidores y equipos de prueba",
+        "category": "Estuches para Instrumentos"
+      },
+      "fr": {
+        "name": "Valise pour Instruments",
+        "tagline": "Valises de protection pour instruments délicats, appareils de mesure et équipements de test",
+        "category": "Valises pour Instruments"
+      },
+      "ja": {
+        "name": "計器ケース",
+        "tagline": "精密計器、測定器、試験装置向け保護ケース",
+        "category": "計器ケース"
+      }
     }
   },
   "common": {
-    "home": {"en": "Home", "zh": "首页", "de": "Startseite", "es": "Inicio", "fr": "Accueil", "ja": "ホーム"},
-    "contact": {"en": "Contact", "zh": "联系我们", "de": "Kontakt", "es": "Contacto", "fr": "Contact", "ja": "お問い合わせ"},
-    "about": {"en": "About", "zh": "关于我们", "de": "Über uns", "es": "Acerca de", "fr": "À propos", "ja": "会社概要"},
-    "products": {"en": "Products", "zh": "产品", "de": "Produkte", "es": "Productos", "fr": "Produits", "ja": "製品"},
-    "inquiry": {"en": "Inquiry", "zh": "询盘", "de": "Anfrage", "es": "Consulta", "fr": "Demande", "ja": "お問い合わせ"},
-    "wholesale": {"en": "Wholesale", "zh": "批发", "de": "Großhandel", "es": "Mayorista", "fr": "Grossiste", "ja": "卸売"},
-    "oem_odm": {"en": "OEM/ODM", "zh": "OEM/ODM", "de": "OEM/ODM", "es": "OEM/ODM", "fr": "OEM/ODM", "ja": "OEM/ODM"},
-    "request_quote": {"en": "Request a Quote", "zh": "获取报价", "de": "Angebot anfordern", "es": "Solicitar Cotización", "fr": "Demander un Devis", "ja": "見積もりを依頼"},
-    "learn_more": {"en": "Learn More", "zh": "了解更多", "de": "Mehr erfahren", "es": "Saber más", "fr": "En savoir plus", "ja": "詳細を見る"},
-    "factory_direct": {"en": "Factory Direct", "zh": "工厂直供", "de": "Direkt ab Werk", "es": "Directo de Fábrica", "fr": "Direct Usine", "ja": "工場直送"}
+    "home": {
+      "en": "Home",
+      "zh": "首页",
+      "de": "Startseite",
+      "es": "Inicio",
+      "fr": "Accueil",
+      "ja": "ホーム"
+    },
+    "contact": {
+      "en": "Contact",
+      "zh": "联系我们",
+      "de": "Kontakt",
+      "es": "Contacto",
+      "fr": "Contact",
+      "ja": "お問い合わせ"
+    },
+    "about": {
+      "en": "About",
+      "zh": "关于我们",
+      "de": "Über uns",
+      "es": "Acerca de",
+      "fr": "À propos",
+      "ja": "会社概要"
+    },
+    "products": {
+      "en": "Products",
+      "zh": "产品",
+      "de": "Produkte",
+      "es": "Productos",
+      "fr": "Produits",
+      "ja": "製品"
+    },
+    "inquiry": {
+      "en": "Inquiry",
+      "zh": "询盘",
+      "de": "Anfrage",
+      "es": "Consulta",
+      "fr": "Demande",
+      "ja": "お問い合わせ"
+    },
+    "wholesale": {
+      "en": "Wholesale",
+      "zh": "批发",
+      "de": "Großhandel",
+      "es": "Mayorista",
+      "fr": "Grossiste",
+      "ja": "卸売"
+    },
+    "oem_odm": {
+      "en": "OEM/ODM",
+      "zh": "OEM/ODM",
+      "de": "OEM/ODM",
+      "es": "OEM/ODM",
+      "fr": "OEM/ODM",
+      "ja": "OEM/ODM"
+    },
+    "request_quote": {
+      "en": "Request a Quote",
+      "zh": "获取报价",
+      "de": "Angebot anfordern",
+      "es": "Solicitar Cotización",
+      "fr": "Demander un Devis",
+      "ja": "見積もりを依頼"
+    },
+    "learn_more": {
+      "en": "Learn More",
+      "zh": "了解更多",
+      "de": "Mehr erfahren",
+      "es": "Saber más",
+      "fr": "En savoir plus",
+      "ja": "詳細を見る"
+    },
+    "factory_direct": {
+      "en": "Factory Direct",
+      "zh": "工厂直供",
+      "de": "Direkt ab Werk",
+      "es": "Directo de Fábrica",
+      "fr": "Direct Usine",
+      "ja": "工場直送"
+    }
   }
 }
