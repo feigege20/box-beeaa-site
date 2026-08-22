@@ -348,4 +348,4 @@ async function handleGenericRoute(context, path) {
   }
   
   return withSecurityHeaders(serve404());
-}
+}// Force re-deploy 2026-08-22 19:29:41
