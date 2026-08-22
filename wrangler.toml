@@ -1,6 +1,6 @@
 name = "box-beeaa-site"
 compatibility_date = "2026-07-29"
-pages_build_output_dir = "./dist"
+pages_build_output_dir = "./dist-pages"
 
 # R2 buckets for Phase 2 (B-en long-tail + Chinese)
 # These bindings are exposed to Pages Functions via context.env
