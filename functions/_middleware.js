@@ -108,12 +108,15 @@ async function withSecurityHeaders(responsePromise, request) {
     probe = await response.clone().arrayBuffer();
   } catch (e) { /* continue */ }
   if (probe && probe.byteLength >= 2 && probe[0] === 0x1f && probe[1] === 0x8b) {
+    // P0 fix: CF Pages labels body as 'br' (brotli) but body is actually gzip
+    // (gzip magic 0x1f 0x8b). Override Content-Encoding to match actual body.
     const ce = newHeaders.get('content-encoding');
-    if (!ce || ce === 'identity') {
+    if (ce !== 'gzip') {
       newHeaders.set('Content-Encoding', 'gzip');
       newHeaders.set('Content-Length', String(probe.byteLength));
       newHeaders.set('Vary', 'Accept-Encoding');
-      // Force header by passing arraybuffer with explicit header map
+      // Prevent CF from re-compressing: no-transform tells CDN not to modify
+      newHeaders.set('Cache-Control', 'public, max-age=3600, no-transform');
       return new Response(probe, {
         status: response.status,
         statusText: response.statusText,
