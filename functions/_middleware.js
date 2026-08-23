@@ -1,11 +1,11 @@
 /**
 // bindings refresh 2026-08-18: D1 + 4 R2 active
- * box.beeaa.com Pages Function Middleware �?V6
+ * box.beeaa.com Pages Function Middleware �?V6
  * 
  * 修复 V5 bug:
- * - 移除 tryKeys.push("zh/index.html") / "medical-case/index.html" 兜底 (404 静默回首�?
- * - 移除其他 HTML 路径�?R2 兜底 (404 应当返回 404)
- * - 新增 B-tier 301 模糊匹配: URL 不带数字后缀 �?自动�?-<NNNNN> �?301 重定�?
+ * - 移除 tryKeys.push("zh/index.html") / "medical-case/index.html" 兜底 (404 静默回首�?
+ * - 移除其他 HTML 路径�?R2 兜底 (404 应当返回 404)
+ * - 新增 B-tier 301 模糊匹配: URL 不带数字后缀 �?自动�?-<NNNNN> �?301 重定�?
  * 
  * 路由:
  *   /zh/*             -> R2 bucket: box-zh
@@ -45,18 +45,36 @@ function applySecurityHeaders(headers) {
 }
 
 /**
- * Gzip ѹ�� HTML ��Ӧ (P1 perf �� ���� 70% ����)
- * ʹ�� CompressionStream API (CF Workers ԭ��֧��)
- * ������ѹ������Ӧ��С�� 256B ����Ӧ
+ * Gzip ѹ�� HTML ��Ӧ (P1 perf �� ���� 70% ����)
+ * ʹ�� CompressionStream API (CF Workers ԭ��֧��)
+ * ������ѹ������Ӧ��С�� 256B ����Ӧ
  */
-async function compressIfHtml(response, contentType) {
+async function compressIfHtml(response, contentType, request) {
+  // P0 bug fix: only compress if client accepts gzip (CF Pages auto-compresses)
+  if (request) {
+    const acceptEnc = (request.headers.get('Accept-Encoding') || '').toLowerCase();
+    if (!acceptEnc.includes('gzip')) {
+      return response;
+    }
+  }
   const ct = (contentType || '').toLowerCase();
   if (!ct.includes('text/html') && !ct.includes('text/css') && !ct.includes('application/javascript') && !ct.includes('application/json')) {
     return response;
   }
   const ce = response.headers.get('content-encoding');
-  if (ce && ce !== 'identity') return response;  // already compressed
   const body = await response.arrayBuffer();
+  // Detect double-gzip: CF Pages auto-compresses but may strip Content-Encoding
+  if (body.byteLength >= 2 && body[0] === 0x1f && body[1] === 0x8b) {
+    // Body is already gzipped (gzip magic header)
+    if (ce && ce !== 'identity') return response;  // header says compressed
+    // CF Pages auto-gzipped but stripped the header — add it back
+    const newHeaders = new Headers(response.headers);
+    newHeaders.set('Content-Encoding', 'gzip');
+    newHeaders.set('Content-Length', String(body.byteLength));
+    newHeaders.set('Vary', 'Accept-Encoding');
+    return new Response(body, { status: response.status, statusText: response.statusText, headers: newHeaders });
+  }
+  if (ce && ce !== 'identity') return response;  // already compressed (and not gzipped body)
   if (body.byteLength < 256) {
     return new Response(body, { status: response.status, statusText: response.statusText, headers: response.headers });
   }
@@ -77,17 +95,37 @@ async function compressIfHtml(response, contentType) {
   }
 }
 
-async function withSecurityHeaders(responsePromise) {
+async function withSecurityHeaders(responsePromise, request) {
   const response = await responsePromise;
   const newHeaders = new Headers(response.headers);
   applySecurityHeaders(newHeaders);
-  // ѹ�� HTML
   const ct = newHeaders.get('content-type') || '';
-  const compressed = await compressIfHtml(new Response(response.body, { status: response.status, headers: newHeaders }), ct);
-  return compressed;
+
+  // CF Pages bug fix: auto-gzips but strips Content-Encoding header.
+  // Detect gzipped body and rewrite response with header.
+  let probe = null;
+  try {
+    probe = await response.clone().arrayBuffer();
+  } catch (e) { /* continue */ }
+  if (probe && probe.byteLength >= 2 && probe[0] === 0x1f && probe[1] === 0x8b) {
+    const ce = newHeaders.get('content-encoding');
+    if (!ce || ce === 'identity') {
+      newHeaders.set('Content-Encoding', 'gzip');
+      newHeaders.set('Content-Length', String(probe.byteLength));
+      newHeaders.set('Vary', 'Accept-Encoding');
+      // Force header by passing arraybuffer with explicit header map
+      return new Response(probe, {
+        status: response.status,
+        statusText: response.statusText,
+        headers: newHeaders
+      });
+    }
+  }
+
+  return await compressIfHtml(new Response(response.body, { status: response.status, headers: newHeaders }), ct, request);
 }
 
-async function serveR2(obj, key) {
+async function serveR2(obj, key, request) {
   const headers = new Headers();
   obj.writeHttpMetadata(headers);
   if (obj.httpEtag) headers.set("etag", obj.httpEtag);
@@ -101,11 +139,11 @@ async function serveR2(obj, key) {
   headers.set("Cache-Control", "public, max-age=3600");
   applySecurityHeaders(headers);
   const ct = headers.get('content-type') || '';
-  return await compressIfHtml(new Response(obj.body, { headers }), ct);
+  return await compressIfHtml(new Response(obj.body, { headers }), ct, request);
 }
 
 /**
- * 404 响应 �?标准 404 + HTML body
+ * 404 响应 �?标准 404 + HTML body
  */
 function serve404() {
   const body = `<!DOCTYPE html>
@@ -128,7 +166,7 @@ p { color:#475569; line-height:1.6; margin:0 5px 0 0; }
 <h1>404</h1>
 <h2>Page Not Found</h2>
 <p>The page you requested is not in our catalog. This may be an old or mistyped URL. Browse our <a href="/">home page</a> for the latest products, or contact us for a custom quote.</p>
-<a href="/" class="cta">�?Back to Home</a>
+<a href="/" class="cta">�?Back to Home</a>
 </div>
 </body>
 </html>`;
@@ -146,7 +184,7 @@ function serve301(targetUrl) {
 }
 
 /**
- * 解析 B-tier slug 是否�?-NNNNN 数字后缀
+ * 解析 B-tier slug 是否�?-NNNNN 数字后缀
  * 返回 { base, hasSuffix, suffix, fullSlug }
  */
 function parseBslug(slug) {
@@ -158,14 +196,14 @@ function parseBslug(slug) {
 }
 
 /**
- * �?R2 List API 查找不带数字后缀�?slug 对应的实�?-NNNNN URL
- * 限制: 每个 prefix 最�?1 个匹�?(5min KV cache)
+ * �?R2 List API 查找不带数字后缀�?slug 对应的实�?-NNNNN URL
+ * 限制: 每个 prefix 最�?1 个匹�?(5min KV cache)
  */
 const B_TIER_CACHE = new Map();
 const B_TIER_TTL_MS = 5 * 60 * 1000;
 
 async function findBslugSuffix(env, bucketName, productLine, slug) {
-  // 只在 box-en-b / box-zh �?
+  // 只在 box-en-b / box-zh �?
   if (bucketName !== "BOX_EN_B" && bucketName !== "BOX_ZH") return null;
   const cacheKey = `${bucketName}|${productLine}|${slug}`;
   const now = Date.now();
@@ -173,7 +211,7 @@ async function findBslugSuffix(env, bucketName, productLine, slug) {
     const e = B_TIER_CACHE.get(cacheKey);
     if (now - e.ts < B_TIER_TTL_MS) return e.value;
   }
-  // List 找以 slug- 开头的 key (delimiter "/" 限定�?list 子目�?
+  // List 找以 slug- 开头的 key (delimiter "/" 限定�?list 子目�?
   const prefix = `${productLine}/${slug}-`;
   const bucket = bucketName === "BOX_EN_B" ? env.BOX_EN_B : env.BOX_ZH;
   try {
@@ -216,13 +254,13 @@ export const onRequest = async (context) => {
     path = url.pathname;
   }
 
-  // 解析路径�? 跳过已知 segment
+  // 解析路径�? 跳过已知 segment
   const skipPrefixes = [
     "zh/", "medical-case/", "styles/", "images/", "_",
     "llms", "sitemap", "robots", "rss", "manifest", ".well-known",
     "guides/", "entities/", "tools/", "about/", "contact/", "products/", "markets/",
     "wholesale", "agency", "oem", "export", "faq", "blog",
-    "api/"  // Pages Functions (/api/inquiry, etc) �� let context.next() route
+    "api/"  // Pages Functions (/api/inquiry, etc) �� let context.next() route
   ];
   const isStaticAsset = path === "/" || path === "/index.html" || path === "/favicon.ico"
     || skipPrefixes.some(p => path === p.replace(/\/$/, "") || path.startsWith(p) || path.startsWith("/" + p))
@@ -252,26 +290,26 @@ export const onRequest = async (context) => {
     return await handleProductLineRoute(context, path, "medical-case", "BOX_EN_B");
   }
 
-  // === 其他 HTML 路径(非静态资�? ===
+  // === 其他 HTML 路径(非静态资�? ===
   if (!isStaticAsset) {
     return await handleGenericRoute(context, path);
   }
 
-  // === 静态资�?Pages 默认 ===
-  return withSecurityHeaders(context.next());
+  // === 静态资�?Pages 默认 ===
+  return withSecurityHeaders(context.next(), context.request);
 };
 
 async function handleZHRoute(context, path) {
-  // path �?/zh 开�?
+  // path �?/zh 开�?
   const pathNoSlash = path.replace(/^\/+|\/+$/g, ""); // "zh/..." or "zh"
   
   // 检测是否带尾部斜杠
   const endsWithSlash = path === "/zh" || path.endsWith("/");
 
-  // 第一�? 精确匹配
+  // 第一�? 精确匹配
   const exactKeys = [];
   if (endsWithSlash) {
-    exactKeys.push(pathNoSlash + "/index.html"); // zh/camera-stage-case/foo/index.html (FIX: ���� /)
+    exactKeys.push(pathNoSlash + "/index.html"); // zh/camera-stage-case/foo/index.html (FIX: ���� /)
     exactKeys.push(pathNoSlash + "/"); // zh/camera-stage-case/foo/
   } else {
     exactKeys.push(pathNoSlash); // zh/camera-stage-case/foo
@@ -282,14 +320,14 @@ async function handleZHRoute(context, path) {
     try {
       const obj = await context.env.BOX_ZH.get(key);
       if (obj) {
-        return await serveR2(obj, key);
+        return await serveR2(obj, key, context.request);
       }
     } catch (e) { /* continue */ }
   }
   
-  // 第二�? B-tier 模糊匹配 �?301
+  // 第二�? B-tier 模糊匹配 �?301
   if (endsWithSlash) {
-    // 路径�?/zh/<product-line>/<slug>/
+    // 路径�?/zh/<product-line>/<slug>/
     const m = pathNoSlash.match(/^zh\/([^/]+)\/([^/]+)\/?$/);
     if (m) {
       const productLine = m[1];
@@ -306,21 +344,21 @@ async function handleZHRoute(context, path) {
     }
   }
   
-  // �?404
-  return withSecurityHeaders(serve404());
+  // �?404
+  return withSecurityHeaders(serve404(), context.request);
 }
 
 /**
- * 5 langs (de/es/fr/ja) 通用路由 �� �?handleZHRoute 类似,但不�?zh/ 前缀
- * path �?/<lang> 开�? 比如 /de/drone-case/
+ * 5 langs (de/es/fr/ja) 通用路由 �� �?handleZHRoute 类似,但不�?zh/ 前缀
+ * path �?/<lang> 开�? 比如 /de/drone-case/
  * 关闭模糊匹配 (这些语言 B-tier 暂早没有生成, 不做 301)
  */
 async function handleLangRoute(context, path, bucketBinding) {
   const pathNoSlash = path.replace(/^\/+|\/+$/g, ""); // "de/..." or "de"
   const endsWithSlash = path.endsWith("/");
 
-  // 精确匹配: 去掉语言前缀, 直接�?R2 key
-  // 匹配 /^(de|es|fr|ja)(?:\/(.*))?$/ : lang + 可能�?/rest
+  // 精确匹配: 去掉语言前缀, 直接�?R2 key
+  // 匹配 /^(de|es|fr|ja)(?:\/(.*))?$/ : lang + 可能�?/rest
   // 例如: "de/drone-case" -> lang="de", rest="drone-case"
   //        "de"            -> lang="de", rest=""
   //        "de/drone-case/foo" -> lang="de", rest="drone-case/foo"
@@ -351,12 +389,12 @@ async function handleLangRoute(context, path, bucketBinding) {
     try {
       const obj = await context.env[bucketBinding].get(key);
       if (obj) {
-        return await serveR2(obj, key);
+        return await serveR2(obj, key, context.request);
       }
     } catch (e) { /* continue */ }
   }
 
-  return withSecurityHeaders(serve404());
+  return withSecurityHeaders(serve404(), context.request);
 }
 
 async function handleProductLineRoute(context, path, productLine, bucketName) {
@@ -375,7 +413,7 @@ async function handleProductLineRoute(context, path, productLine, bucketName) {
     try {
       const obj = await context.env[bucketName].get(key);
       if (obj) {
-        return await serveR2(obj, key);
+        return await serveR2(obj, key, context.request);
       }
     } catch (e) { /* continue */ }
   }
@@ -397,7 +435,7 @@ async function handleProductLineRoute(context, path, productLine, bucketName) {
     }
   }
   
-  return withSecurityHeaders(serve404());
+  return withSecurityHeaders(serve404(), context.request);
 }
 
 async function handleGenericRoute(context, path) {
@@ -406,7 +444,7 @@ async function handleGenericRoute(context, path) {
   
   // 跳过 _api, _next 之类
   if (pathNoSlash.startsWith("_")) {
-    return withSecurityHeaders(context.next());
+    return withSecurityHeaders(context.next(), context.request);
   }
   
   const exactKeys = [];
@@ -421,12 +459,12 @@ async function handleGenericRoute(context, path) {
     try {
       const obj = await context.env.BOX_EN_B.get(key);
       if (obj) {
-        return await serveR2(obj, key);
+        return await serveR2(obj, key, context.request);
       }
     } catch (e) { /* continue */ }
   }
   
-  // 模糊匹配 B-tier: 路径�?/<product-line>/<slug>/
+  // 模糊匹配 B-tier: 路径�?/<product-line>/<slug>/
   if (endsWithSlash) {
     const m = pathNoSlash.match(/^([^/]+)\/([^/]+)\/?$/);
     if (m) {
@@ -443,5 +481,5 @@ async function handleGenericRoute(context, path) {
     }
   }
   
-  return withSecurityHeaders(serve404());
+  return withSecurityHeaders(serve404(), context.request);
 }// Force re-deploy 2026-08-22 19:29:41
