@@ -1,13 +1,13 @@
-﻿/**
+/**
 // bindings refresh 2026-08-18: D1 + 4 R2 active
- * box.beeaa.com Pages Function Middleware 鈥?V6
+ * box.beeaa.com Pages Function Middleware �?V6
  * 
- * 淇 V5 bug:
- * - 绉婚櫎 tryKeys.push("zh/index.html") / "medical-case/index.html" 鍏滃簳 (404 闈欓粯鍥為椤?
- * - 绉婚櫎鍏朵粬 HTML 璺緞鐨?R2 鍏滃簳 (404 搴斿綋杩斿洖 404)
- * - 鏂板 B-tier 301 妯＄硦鍖归厤: URL 涓嶅甫鏁板瓧鍚庣紑 鈫?鑷姩鍔?-<NNNNN> 鍚?301 閲嶅畾鍚?
+ * 修复 V5 bug:
+ * - 移除 tryKeys.push("zh/index.html") / "medical-case/index.html" 兜底 (404 静默回首�?
+ * - 移除其他 HTML 路径�?R2 兜底 (404 应当返回 404)
+ * - 新增 B-tier 301 模糊匹配: URL 不带数字后缀 �?自动�?-<NNNNN> �?301 重定�?
  * 
- * 璺敱:
+ * 路由:
  *   /zh/*             -> R2 bucket: box-zh
  *   /medical-case/*   -> R2 bucket: box-en-b (manual override)
  *   other HTML paths  -> R2 box-en-b (B-tier) then Pages fallback
@@ -44,18 +44,50 @@ function applySecurityHeaders(headers) {
   return headers;
 }
 
+/**
+ * Gzip ѹ�� HTML ��Ӧ (P1 perf �� ���� 70% ����)
+ * ʹ�� CompressionStream API (CF Workers ԭ��֧��)
+ * ������ѹ������Ӧ��С�� 256B ����Ӧ
+ */
+async function compressIfHtml(response, contentType) {
+  const ct = (contentType || '').toLowerCase();
+  if (!ct.includes('text/html') && !ct.includes('text/css') && !ct.includes('application/javascript') && !ct.includes('application/json')) {
+    return response;
+  }
+  const ce = response.headers.get('content-encoding');
+  if (ce && ce !== 'identity') return response;  // already compressed
+  const body = await response.arrayBuffer();
+  if (body.byteLength < 256) {
+    return new Response(body, { status: response.status, statusText: response.statusText, headers: response.headers });
+  }
+  try {
+    const stream = new Blob([body]).stream().pipeThrough(new CompressionStream('gzip'));
+    const compressed = await new Response(stream).arrayBuffer();
+    const newHeaders = new Headers(response.headers);
+    newHeaders.set('Content-Encoding', 'gzip');
+    newHeaders.set('Content-Length', String(compressed.byteLength));
+    newHeaders.set('Vary', 'Accept-Encoding');
+    return new Response(compressed, {
+      status: response.status,
+      statusText: response.statusText,
+      headers: newHeaders
+    });
+  } catch (e) {
+    return new Response(body, { status: response.status, statusText: response.statusText, headers: response.headers });
+  }
+}
+
 async function withSecurityHeaders(responsePromise) {
   const response = await responsePromise;
   const newHeaders = new Headers(response.headers);
   applySecurityHeaders(newHeaders);
-  return new Response(response.body, {
-    status: response.status,
-    statusText: response.statusText,
-    headers: newHeaders
-  });
+  // ѹ�� HTML
+  const ct = newHeaders.get('content-type') || '';
+  const compressed = await compressIfHtml(new Response(response.body, { status: response.status, headers: newHeaders }), ct);
+  return compressed;
 }
 
-function serveR2(obj, key) {
+async function serveR2(obj, key) {
   const headers = new Headers();
   obj.writeHttpMetadata(headers);
   if (obj.httpEtag) headers.set("etag", obj.httpEtag);
@@ -68,11 +100,12 @@ function serveR2(obj, key) {
   }
   headers.set("Cache-Control", "public, max-age=3600");
   applySecurityHeaders(headers);
-  return new Response(obj.body, { headers });
+  const ct = headers.get('content-type') || '';
+  return await compressIfHtml(new Response(obj.body, { headers }), ct);
 }
 
 /**
- * 404 鍝嶅簲 鈥?鏍囧噯 404 + HTML body
+ * 404 响应 �?标准 404 + HTML body
  */
 function serve404() {
   const body = `<!DOCTYPE html>
@@ -95,7 +128,7 @@ p { color:#475569; line-height:1.6; margin:0 5px 0 0; }
 <h1>404</h1>
 <h2>Page Not Found</h2>
 <p>The page you requested is not in our catalog. This may be an old or mistyped URL. Browse our <a href="/">home page</a> for the latest products, or contact us for a custom quote.</p>
-<a href="/" class="cta">鈫?Back to Home</a>
+<a href="/" class="cta">�?Back to Home</a>
 </div>
 </body>
 </html>`;
@@ -113,8 +146,8 @@ function serve301(targetUrl) {
 }
 
 /**
- * 瑙ｆ瀽 B-tier slug 鏄惁甯?-NNNNN 鏁板瓧鍚庣紑
- * 杩斿洖 { base, hasSuffix, suffix, fullSlug }
+ * 解析 B-tier slug 是否�?-NNNNN 数字后缀
+ * 返回 { base, hasSuffix, suffix, fullSlug }
  */
 function parseBslug(slug) {
   const m = slug.match(/^(.*?)-(\d{4,6})$/);
@@ -125,14 +158,14 @@ function parseBslug(slug) {
 }
 
 /**
- * 鐢?R2 List API 鏌ユ壘涓嶅甫鏁板瓧鍚庣紑鐨?slug 瀵瑰簲鐨勫疄闄?-NNNNN URL
- * 闄愬埗: 姣忎釜 prefix 鏈€澶?1 涓尮閰?(5min KV cache)
+ * �?R2 List API 查找不带数字后缀�?slug 对应的实�?-NNNNN URL
+ * 限制: 每个 prefix 最�?1 个匹�?(5min KV cache)
  */
 const B_TIER_CACHE = new Map();
 const B_TIER_TTL_MS = 5 * 60 * 1000;
 
 async function findBslugSuffix(env, bucketName, productLine, slug) {
-  // 鍙湪 box-en-b / box-zh 鎵?
+  // 只在 box-en-b / box-zh �?
   if (bucketName !== "BOX_EN_B" && bucketName !== "BOX_ZH") return null;
   const cacheKey = `${bucketName}|${productLine}|${slug}`;
   const now = Date.now();
@@ -140,7 +173,7 @@ async function findBslugSuffix(env, bucketName, productLine, slug) {
     const e = B_TIER_CACHE.get(cacheKey);
     if (now - e.ts < B_TIER_TTL_MS) return e.value;
   }
-  // List 鎵句互 slug- 寮€澶寸殑 key (delimiter "/" 闄愬畾鍙?list 瀛愮洰褰?
+  // List 找以 slug- 开头的 key (delimiter "/" 限定�?list 子目�?
   const prefix = `${productLine}/${slug}-`;
   const bucket = bucketName === "BOX_EN_B" ? env.BOX_EN_B : env.BOX_ZH;
   try {
@@ -156,7 +189,7 @@ async function findBslugSuffix(env, bucketName, productLine, slug) {
       if (continuationToken) params.ContinuationToken = continuationToken;
       const resp = await bucket.list(params);
       for (const cp of resp.CommonPrefixes || []) {
-        // cp.Prefix 褰㈠ "product-line/slug-NNNNN/"
+        // cp.Prefix 形如 "product-line/slug-NNNNN/"
         const matched = cp.Prefix.match(new RegExp(`^${productLine.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&")}/${slug.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&")}-(\\d{4,6})/$`));
         if (matched) {
           found = matched[1];
@@ -183,24 +216,24 @@ export const onRequest = async (context) => {
     path = url.pathname;
   }
 
-  // 瑙ｆ瀽璺緞娈? 璺宠繃宸茬煡 segment
+  // 解析路径�? 跳过已知 segment
   const skipPrefixes = [
     "zh/", "medical-case/", "styles/", "images/", "_",
     "llms", "sitemap", "robots", "rss", "manifest", ".well-known",
     "guides/", "entities/", "tools/", "about/", "contact/", "products/", "markets/",
     "wholesale", "agency", "oem", "export", "faq", "blog",
-    "api/"  // Pages Functions (/api/inquiry, etc) — let context.next() route
+    "api/"  // Pages Functions (/api/inquiry, etc) �� let context.next() route
   ];
   const isStaticAsset = path === "/" || path === "/index.html" || path === "/favicon.ico"
     || skipPrefixes.some(p => path === p.replace(/\/$/, "") || path.startsWith(p) || path.startsWith("/" + p))
     || path === "/sitemap-zh.xml" || path === "/sitemap-noindex-zh.xml" || path === "/sitemap-noindex.xml";
 
-  // === /zh/* 璺敱 ===
+  // === /zh/* 路由 ===
   if (path === "/zh" || path === "/zh/" || path.startsWith("/zh/")) {
     return await handleZHRoute(context, path);
   }
 
-  // === /de/* 璺敱 (5 langs: de/es/fr/ja) ===
+  // === /de/* 路由 (5 langs: de/es/fr/ja) ===
   if (path === "/de" || path === "/de/" || path.startsWith("/de/")) {
     return await handleLangRoute(context, path, "BUCKET_DE");
   }
@@ -214,31 +247,31 @@ export const onRequest = async (context) => {
     return await handleLangRoute(context, path, "BUCKET_JA");
   }
 
-  // === /medical-case/* 璺敱 ===
+  // === /medical-case/* 路由 ===
   if (path === "/medical-case" || path === "/medical-case/" || path.startsWith("/medical-case/")) {
     return await handleProductLineRoute(context, path, "medical-case", "BOX_EN_B");
   }
 
-  // === 鍏朵粬 HTML 璺緞(闈為潤鎬佽祫婧? ===
+  // === 其他 HTML 路径(非静态资�? ===
   if (!isStaticAsset) {
     return await handleGenericRoute(context, path);
   }
 
-  // === 闈欐€佽祫婧?Pages 榛樿 ===
+  // === 静态资�?Pages 默认 ===
   return withSecurityHeaders(context.next());
 };
 
 async function handleZHRoute(context, path) {
-  // path 浠?/zh 寮€澶?
+  // path �?/zh 开�?
   const pathNoSlash = path.replace(/^\/+|\/+$/g, ""); // "zh/..." or "zh"
   
-  // 妫€娴嬫槸鍚﹀甫灏鹃儴鏂滄潬
+  // 检测是否带尾部斜杠
   const endsWithSlash = path === "/zh" || path.endsWith("/");
 
-  // 绗竴杞? 绮剧‘鍖归厤
+  // 第一�? 精确匹配
   const exactKeys = [];
   if (endsWithSlash) {
-    exactKeys.push(pathNoSlash + "/index.html"); // zh/camera-stage-case/foo/index.html (FIX: 加上 /)
+    exactKeys.push(pathNoSlash + "/index.html"); // zh/camera-stage-case/foo/index.html (FIX: ���� /)
     exactKeys.push(pathNoSlash + "/"); // zh/camera-stage-case/foo/
   } else {
     exactKeys.push(pathNoSlash); // zh/camera-stage-case/foo
@@ -249,21 +282,21 @@ async function handleZHRoute(context, path) {
     try {
       const obj = await context.env.BOX_ZH.get(key);
       if (obj) {
-        return serveR2(obj, key);
+        return await serveR2(obj, key);
       }
     } catch (e) { /* continue */ }
   }
   
-  // 绗簩杞? B-tier 妯＄硦鍖归厤 鈫?301
+  // 第二�? B-tier 模糊匹配 �?301
   if (endsWithSlash) {
-    // 璺緞鏄?/zh/<product-line>/<slug>/
+    // 路径�?/zh/<product-line>/<slug>/
     const m = pathNoSlash.match(/^zh\/([^/]+)\/([^/]+)\/?$/);
     if (m) {
       const productLine = m[1];
       const slug = m[2];
       const slugInfo = parseBslug(slug);
       if (!slugInfo.hasSuffix) {
-        // 鏌ユ壘鍚庣紑
+        // 查找后缀
         const suffixNum = await findBslugSuffix(context.env, "BOX_ZH", productLine, slug);
         if (suffixNum) {
           const newPath = `/zh/${productLine}/${slug}-${suffixNum}/`;
@@ -273,22 +306,22 @@ async function handleZHRoute(context, path) {
     }
   }
   
-  // 鐪?404
+  // �?404
   return withSecurityHeaders(serve404());
 }
 
 /**
- * 5 langs (de/es/fr/ja) 閫氱敤璺敱 — 涓?handleZHRoute 绫讳技,浣嗕笉鍋?zh/ 鍓嶇紑
- * path 浠?/<lang> 寮€澶? 姣斿 /de/drone-case/
- * 鍏抽棴妯＄硦鍖归厤 (杩欎簺璇█ B-tier 鏆傛棭娌℃湁鐢熸垚, 涓嶅仛 301)
+ * 5 langs (de/es/fr/ja) 通用路由 �� �?handleZHRoute 类似,但不�?zh/ 前缀
+ * path �?/<lang> 开�? 比如 /de/drone-case/
+ * 关闭模糊匹配 (这些语言 B-tier 暂早没有生成, 不做 301)
  */
 async function handleLangRoute(context, path, bucketBinding) {
   const pathNoSlash = path.replace(/^\/+|\/+$/g, ""); // "de/..." or "de"
   const endsWithSlash = path.endsWith("/");
 
-  // 绮剧‘鍖归厤: 鍘绘帀璇█鍓嶇紑, 鐩存帴鐢?R2 key
-  // 鍖归厤 /^(de|es|fr|ja)(?:\/(.*))?$/ : lang + 鍙兘鐨?/rest
-  // 渚嬪: "de/drone-case" -> lang="de", rest="drone-case"
+  // 精确匹配: 去掉语言前缀, 直接�?R2 key
+  // 匹配 /^(de|es|fr|ja)(?:\/(.*))?$/ : lang + 可能�?/rest
+  // 例如: "de/drone-case" -> lang="de", rest="drone-case"
   //        "de"            -> lang="de", rest=""
   //        "de/drone-case/foo" -> lang="de", rest="drone-case/foo"
   const langMatch = pathNoSlash.match(/^(de|es|fr|ja)(?:\/(.*))?$/);
@@ -318,7 +351,7 @@ async function handleLangRoute(context, path, bucketBinding) {
     try {
       const obj = await context.env[bucketBinding].get(key);
       if (obj) {
-        return serveR2(obj, key);
+        return await serveR2(obj, key);
       }
     } catch (e) { /* continue */ }
   }
@@ -342,12 +375,12 @@ async function handleProductLineRoute(context, path, productLine, bucketName) {
     try {
       const obj = await context.env[bucketName].get(key);
       if (obj) {
-        return serveR2(obj, key);
+        return await serveR2(obj, key);
       }
     } catch (e) { /* continue */ }
   }
   
-  // 妯＄硦鍖归厤
+  // 模糊匹配
   if (endsWithSlash) {
     const m = pathNoSlash.match(/^([^/]+)\/([^/]+)\/?$/);
     if (m) {
@@ -371,7 +404,7 @@ async function handleGenericRoute(context, path) {
   const pathNoSlash = path.replace(/^\/+|\/+$/g, "");
   const endsWithSlash = path.endsWith("/");
   
-  // 璺宠繃 _api, _next 涔嬬被
+  // 跳过 _api, _next 之类
   if (pathNoSlash.startsWith("_")) {
     return withSecurityHeaders(context.next());
   }
@@ -388,12 +421,12 @@ async function handleGenericRoute(context, path) {
     try {
       const obj = await context.env.BOX_EN_B.get(key);
       if (obj) {
-        return serveR2(obj, key);
+        return await serveR2(obj, key);
       }
     } catch (e) { /* continue */ }
   }
   
-  // 妯＄硦鍖归厤 B-tier: 璺緞鏄?/<product-line>/<slug>/
+  // 模糊匹配 B-tier: 路径�?/<product-line>/<slug>/
   if (endsWithSlash) {
     const m = pathNoSlash.match(/^([^/]+)\/([^/]+)\/?$/);
     if (m) {
