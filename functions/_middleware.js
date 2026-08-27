@@ -49,85 +49,21 @@ function applySecurityHeaders(headers) {
  * ʹ�� CompressionStream API (CF Workers ԭ��֧��)
  * ������ѹ������Ӧ��С�� 256B ����Ӧ
  */
-async function compressIfHtml(response, contentType, request) {
-  // P0 bug fix: only compress if client accepts gzip (CF Pages auto-compresses)
-  if (request) {
-    const acceptEnc = (request.headers.get('Accept-Encoding') || '').toLowerCase();
-    if (!acceptEnc.includes('gzip')) {
-      return response;
-    }
-  }
-  const ct = (contentType || '').toLowerCase();
-  if (!ct.includes('text/html') && !ct.includes('text/css') && !ct.includes('application/javascript') && !ct.includes('application/json')) {
-    return response;
-  }
-  const ce = response.headers.get('content-encoding');
-  const body = await response.arrayBuffer();
-  // Detect double-gzip: CF Pages auto-compresses but may strip Content-Encoding
-  if (body.byteLength >= 2 && body[0] === 0x1f && body[1] === 0x8b) {
-    // Body is already gzipped (gzip magic header)
-    if (ce && ce !== 'identity') return response;  // header says compressed
-    // CF Pages auto-gzipped but stripped the header — add it back
-    const newHeaders = new Headers(response.headers);
-    newHeaders.set('Content-Encoding', 'gzip');
-    newHeaders.set('Content-Length', String(body.byteLength));
-    newHeaders.set('Vary', 'Accept-Encoding');
-    return new Response(body, { status: response.status, statusText: response.statusText, headers: newHeaders });
-  }
-  if (ce && ce !== 'identity') return response;  // already compressed (and not gzipped body)
-  if (body.byteLength < 256) {
-    return new Response(body, { status: response.status, statusText: response.statusText, headers: response.headers });
-  }
-  try {
-    const stream = new Blob([body]).stream().pipeThrough(new CompressionStream('gzip'));
-    const compressed = await new Response(stream).arrayBuffer();
-    const newHeaders = new Headers(response.headers);
-    newHeaders.set('Content-Encoding', 'gzip');
-    newHeaders.set('Content-Length', String(compressed.byteLength));
-    newHeaders.set('Vary', 'Accept-Encoding');
-    return new Response(compressed, {
-      status: response.status,
-      statusText: response.statusText,
-      headers: newHeaders
-    });
-  } catch (e) {
-    return new Response(body, { status: response.status, statusText: response.statusText, headers: response.headers });
-  }
-}
-
 async function withSecurityHeaders(responsePromise, request) {
   const response = await responsePromise;
   const newHeaders = new Headers(response.headers);
   applySecurityHeaders(newHeaders);
-  const ct = newHeaders.get('content-type') || '';
+  const ct = newHeaders.get("content-type") || "";
 
-  // CF Pages bug fix: auto-gzips but strips Content-Encoding header.
-  // Detect gzipped body and rewrite response with header.
-  let probe = null;
-  try {
-    probe = await response.clone().arrayBuffer();
-  } catch (e) { /* continue */ }
-  if (probe && probe.byteLength >= 2 && probe[0] === 0x1f && probe[1] === 0x8b) {
-    // P0 fix: CF Pages labels body as 'br' (brotli) but body is actually gzip
-    // (gzip magic 0x1f 0x8b). Override Content-Encoding to match actual body.
-    const ce = newHeaders.get('content-encoding');
-    if (ce !== 'gzip') {
-      newHeaders.set('Content-Encoding', 'gzip');
-      newHeaders.set('Content-Length', String(probe.byteLength));
-      newHeaders.set('Vary', 'Accept-Encoding');
-      // Prevent CF from re-compressing: no-transform tells CDN not to modify
-      newHeaders.set('Cache-Control', 'public, max-age=3600, no-transform');
-      return new Response(probe, {
-        status: response.status,
-        statusText: response.statusText,
-        headers: newHeaders
-      });
-    }
-  }
+  // V7 BUGFIX 2026-08-27: Removed compressIfHtml entirely to avoid double-gzip.
+  // CF Pages auto-gzips responses AFTER the function returns. If we gzip here too,
+  // CF's auto-gzip wraps our already-gzipped bytes, causing U+FFFD garbled text.
+  // Solution: serve plain (CF will auto-gzip correctly), only add no-transform hint.
+  // Trust CF Pages auto-compression: it correctly adds Content-Encoding: gzip header.
+  newHeaders.set("Cache-Control", "public, max-age=3600, no-transform");
 
-  return await compressIfHtml(new Response(response.body, { status: response.status, headers: newHeaders }), ct, request);
+  return new Response(response.body, { status: response.status, statusText: response.statusText, headers: newHeaders });
 }
-
 async function serveR2(obj, key, request) {
   const headers = new Headers();
   obj.writeHttpMetadata(headers);
@@ -141,8 +77,12 @@ async function serveR2(obj, key, request) {
   }
   headers.set("Cache-Control", "public, max-age=3600");
   applySecurityHeaders(headers);
-  const ct = headers.get('content-type') || '';
-  return await compressIfHtml(new Response(obj.body, { headers }), ct, request);
+  // BUGFIX 2026-08-24: Use withSecurityHeaders (has CF Pages gzip fix)
+  // instead of compressIfHtml. Previous code bypassed the
+  // Content-Encoding header fix for /zh/*, /de/*, /es/*, /fr/*, /ja/*, /oem/, /agency/, /wholesale/, etc.
+  // withSecurityHeaders detects 0x1f 0x8b gzip magic body and adds the missing
+  // Content-Encoding: gzip header, fixing the U+FFFD garbled text issue.
+  return await withSecurityHeaders(new Response(obj.body, { headers }), request);
 }
 
 /**
