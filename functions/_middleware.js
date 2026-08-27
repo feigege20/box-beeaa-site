@@ -55,14 +55,44 @@ async function withSecurityHeaders(responsePromise, request) {
   applySecurityHeaders(newHeaders);
   const ct = newHeaders.get("content-type") || "";
 
-  // V7 BUGFIX 2026-08-27: Removed compressIfHtml entirely to avoid double-gzip.
-  // CF Pages auto-gzips responses AFTER the function returns. If we gzip here too,
-  // CF's auto-gzip wraps our already-gzipped bytes, causing U+FFFD garbled text.
-  // Solution: serve plain (CF will auto-gzip correctly), only add no-transform hint.
-  // Trust CF Pages auto-compression: it correctly adds Content-Encoding: gzip header.
+  // V8 BUGFIX 2026-08-27: Decompress gzipped R2 body before returning.
+  // R2 stored HTML files as gzipped bytes (8/14 deploy). Worker was passing
+  // these raw bytes through + Content-Encoding: gzip header. CF Pages then
+  // auto-compressed again, causing double-gzip (raw bytes 1f 8b 1f 8b...).
+  // Client decompressed once, got another gzip stream, failed to decode as UTF-8.
+  // V8 fix: Detect gzipped body (0x1f 0x8b magic), decompress it, strip encoding header.
+  // Trust CF Pages to add single correct Content-Encoding: gzip on the way out.
   newHeaders.set("Cache-Control", "public, max-age=3600, no-transform");
 
-  return new Response(response.body, { status: response.status, statusText: response.statusText, headers: newHeaders });
+  // Read body to check for gzip magic
+  let bodyBuf;
+  try {
+    bodyBuf = await response.arrayBuffer();
+  } catch (e) {
+    return new Response(response.body, { status: response.status, statusText: response.statusText, headers: newHeaders });
+  }
+
+  // Detect double-gzip: R2 stored gzipped, body starts with 0x1f 0x8b
+  if (bodyBuf.byteLength >= 2 && bodyBuf[0] === 0x1f && bodyBuf[1] === 0x8b) {
+    // Decompress the R2-level gzip
+    try {
+      const stream = new Blob([bodyBuf]).stream().pipeThrough(new DecompressionStream('gzip'));
+      const decompressed = await new Response(stream).arrayBuffer();
+      // Strip Content-Encoding header (we now serve plain text)
+      newHeaders.delete('Content-Encoding');
+      newHeaders.set('Content-Length', String(decompressed.byteLength));
+      return new Response(decompressed, {
+        status: response.status,
+        statusText: response.statusText,
+        headers: newHeaders
+      });
+    } catch (e) {
+      // Decompression failed, fall through to plain pass-through
+    }
+  }
+
+  // Fallback: pass through unchanged
+  return new Response(bodyBuf, { status: response.status, statusText: response.statusText, headers: newHeaders });
 }
 async function serveR2(obj, key, request) {
   const headers = new Headers();
