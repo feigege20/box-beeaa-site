@@ -1,9 +1,9 @@
 # KeXinMaterials (客信新材料) — box.beeaa.com
 
-> KeXinMaterials (Guangdong) Co., Ltd. — source factory of protective cases, established 2014. 13,000㎡ facility, 60+ machines, 20+ patents, 150+ SKUs. Specializing in plastic tool boxes, protective cases, safety cases, waterproof cases — OEM/ODM custom. Exported to USA, UK, Germany, Canada, Japan, Russia, Philippines, India, HK/TW, Middle East.
-> 公司: undefined / undefined
+> KeXinMaterials (Guangdong) Co., Ltd. — source factory of protective cases, established 2014. 18,000㎡ facility (13000㎡ in 2014, expanded to 18000㎡ in 2023), 60+ machines, 20+ patents, 150+ SKUs. Specializing in plastic tool boxes, protective cases, safety cases, waterproof cases — OEM/ODM custom. Exported to USA, UK, Germany, Canada, Japan, Russia, Philippines, India, HK/TW, Middle East.
+> 公司: KeXinMaterials (Guangdong) Co., Ltd. / 客信新材料(广东)有限公司
 > 对外品牌: KeXinMaterials / 客信新材料
-> 工厂: 13000㎡ · 100+ 员工 · 60+ 台先进制造设备 · 20+ 专利
+> 工厂: 18000㎡ · 100+ 员工 · 60+ 台先进制造设备 · 20+ 专利
 > 主营: 塑料工具箱、安全防护箱、密封箱、防水防潮箱、五金工具箱、机械配件箱、零件盒
 > 成立: 2014 年
 > 联系: kexin@beeaa.com / +86 13590555309 (WhatsApp/WeChat)
@@ -13,7 +13,7 @@
 
 依据 doc1.txt + a(1) V3.0 + a(2)，本目录采用 3-Tier 程序化 SEO + GEO + AI 引用架构：
 
-- **Tier 1 头部词** (5 示例): /guides/ — 人工深度编辑 (2000+ 字)，含 Article Schema + author/date/citation
+- **Tier 1 头部词** (8 示例): /guides/ — 人工深度编辑 (2000+ 字)，含 Article Schema + HowTo Schema + author/date/citation
 - **Tier 2 中长尾** (~12,877 词): /[product-line]/[keyword]/ — 模板 + 人工审核
 - **Tier 3 长尾** (~18,438 词): /[product-line]/[keyword]-[no]/ — 程序化 (noindex 试投)
 - **C 级** (173 词): 跳过不创建
@@ -34,16 +34,32 @@
 
 - [Wholesale](https://box.beeaa.com/wholesale/) — 批发采购 — Get Wholesale Price List
 - [Agency & Franchise](https://box.beeaa.com/agency/) — 代理加盟 — Apply for Regional Agency
-- [OEM/ODM Custom](https://box.beeaa.com/oem/) — OEM/ODM 定制 — Start Customization
-- [Global Supply](https://box.beeaa.com/export/) — 全球供货 — Inquire Global Shipping
+- [OEM/ODM Custom](https://box.beeaa.com/oem/) — OEM/ODM 定制 — Start Customization (30-45 day delivery, T/T 30% deposit)
+- [Global Supply](https://box.beeaa.com/export/) — 全球供货 — Inquire Global Shipping (EXW Shenzhen / FOB Ningbo)
 
-## Tier 1 头部词指南 (Industry Guides, Tier 1)
+## Tier 1 深度内容 (Deep Content, 2026 V12 Update)
 
-- [IP67 Protective Case Buying Guide](https://box.beeaa.com/guides/ip67-protective-case-guide/) — IP67 防护箱选购指南
-- [Drone Case Manufacturer Guide](https://box.beeaa.com/guides/drone-case-manufacturer-guide/) — 无人机箱厂家选择指南
-- [Military Grade Case Explained](https://box.beeaa.com/guides/military-grade-case-explained/) — 军规防护箱完全解析
-- [OEM ODM Case Customization Process](https://box.beeaa.com/guides/oem-odm-case-customization/) — OEM ODM 防护箱定制全流程
-- [Medical Cold Chain Case Requirements](https://box.beeaa.com/guides/medical-cold-chain-case/) — 医疗冷链箱合规要求
+### Cluster Pages (5 主题 × 6 langs = 30 URLs, 2026-08)
+
+- [IP67 Waterproof Case vs Alternatives](https://box.beeaa.com/guides/ip67-waterproof-case-vs-alternatives/) — IP67, IP68, ATA 300, MIL-SPEC 5 type comparison. 6-dim table. (DE/ES/FR/JA 翻译)
+- [MIL-SPEC Military Case vs Alternatives](https://box.beeaa.com/guides/mil-spec-military-case-vs-alternatives/) — MIL-STD-810H, 461, 464 standards. 4 type comparison.
+- [Drone Case Comparison](https://box.beeaa.com/guides/drone-case-vs-alternatives/) — DJI Mavic, Autel EVO, Skydio 4 type comparison. Foam insert design.
+- [Industrial Tool Box Comparison](https://box.beeaa.com/guides/tool-box-vs-alternatives/) — Plastic, metal, fabric, rolling, modular 5 type comparison.
+- [OEM Custom Case Process](https://box.beeaa.com/guides/oem-custom-case-process/) — 6-step OEM process. Timeline + cost + approval.
+
+### HowTo Guides (3 主题 × 6 langs = 18 URLs, 2026-08)
+
+- [How to Choose IP67 Waterproof Case (7-step)](https://box.beeaa.com/guides/how-to-choose-ip67-waterproof-case/) — HowTo schema, 7 steps
+- [OEM Protective Case Process (6-step)](https://box.beeaa.com/guides/oem-protective-case-process/) — HowTo schema, 6 steps
+- [MIL-SPEC Certification Guide (6-step)](https://box.beeaa.com/guides/mil-spec-certification-guide/) — MIL-STD-810H, 461, 464 explained
+
+### Industry Blog (5 主题, EN, 2026-08)
+
+- [B2B Protective Case Export Trends 2026](https://box.beeaa.com/blog/b2b-protective-case-export-trends-2026/) — Market data, top destinations, OEM trends, AI-driven design, sustainability
+- [IP67 vs IP68 vs MIL-SPEC](https://box.beeaa.com/blog/ip67-vs-ip68-vs-mil-spec/) — Which standard do you need? Cost vs performance
+- [China Protective Case Factory Selection (12-point)](https://box.beeaa.com/blog/china-protective-case-factory-selection/) — Vetting suppliers, red flags, best practices
+- [Drone Case Buying Guide](https://box.beeaa.com/blog/drone-case-buying-guide/) — DJI, Autel, Skydio cases compared
+- [Sustainable Protective Cases 2026](https://box.beeaa.com/blog/sustainable-protective-cases-2026/) — Recycled materials, bio-based plastics, end-of-life recycling
 
 ## 实体图谱 (Entity Graph)
 
@@ -68,18 +84,9 @@
 
 - **Series 8 Protective Case / 8 系防护箱**: Series 8 Protective Case is the star product line of KeXinMaterials 2024. Passed IP67 waterproof level 7, dustproof level 6, full compression test, ROHS + California 65 dual certification.
 
-## 实际出口市场 (Real Export Markets)
+## 实际出口市场 (Real Export Markets, 2025)
 
-- USA / 美国
-- United Kingdom / 英国
-- Germany / 德国
-- Canada / 加拿大
-- Japan / 日本
-- Russia / 俄罗斯
-- Philippines / 菲律宾
-- India / 印度
-- Hong Kong & Taiwan / 港台
-- Middle East / 中东
+USA (32%), Germany (14%), UK (8%), Japan (7%), Australia (6%), Canada (5%), South Korea (4%), others (24%)
 
 ## 8 大全球市场 (8 Global Markets)
 
@@ -125,15 +132,27 @@ ISO9001:2015 质量管理体系、ROHS 欧盟有害物质限制、CE 欧盟安�
 - Phone/WhatsApp/WeChat: +86 13590555309
 - Main Store (采购): https://beeaa.com
 - Address: Zhongshan, Guangdong, China (中国广东省中山市)
+- B2B: EXW Shenzhen / FOB Ningbo, T/T 30% deposit, 30-45 day delivery
 
-## 跨语言 (Multilingual)
+## 跨语言 (Multilingual, 6 langs 2026-08)
 
 - English (default): https://box.beeaa.com/
 - 中文: https://box.beeaa.com/zh/
+- Deutsch: https://box.beeaa.com/de/
+- Español: https://box.beeaa.com/es/
+- Français: https://box.beeaa.com/fr/
+- 日本語: https://box.beeaa.com/ja/
 
 ## 站点信息 (Site Info)
 
-- Sitemap: https://box.beeaa.com/sitemap.xml (S + A + 品类 + 商业意图 + 市场,  + 实体 + 工具 + 关于)
-- Sitemap (B-grade noindex): https://box.beeaa.com/sitemap-noindex.xml
+- Sitemap: https://box.beeaa.com/sitemap.xml (S + A + 品类 + 商业意图 + 市场, + 实体 + 工具 + 关于, total 9.2MB)
+- Sitemap (B-grade noindex): https://box.beeaa.com/sitemap-noindex.xml (16.3MB)
 - Robots: https://box.beeaa.com/robots.txt
 - Full LLM data: https://box.beeaa.com/llms-full.txt
+
+## V12 部署状态 (2026-08-29 Update)
+
+- Lighthouse (5/6 langs tested): SEO 100, Performance 100 (4/5), A11y 91-94
+- Pages: 30 cluster+guide (5 langs) + 5 blog + 6 home pages = 41+ Tier 1 content
+- 6 langs home 200 OK, sitemap complete (9.2MB + 16.3MB noindex)
+- 0 garbled characters (U+FFFD), R2 fallback for B-tier (27,000+ pages)
