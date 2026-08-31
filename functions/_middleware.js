@@ -1,6 +1,7 @@
 /**
 // bindings refresh 2026-08-18: D1 + 4 R2 active
- * box.beeaa.com Pages Function Middleware — V11
+// V12 update 2026-08-31: 8 B-tier PL paths R2 fallback (Phase 14 trim)
+ * box.beeaa.com Pages Function Middleware — V12
  *
  * V11 改进 (2026-08-29):
  * - 修复 /de/ /es/ /fr/ /ja/ 4 langs 404 (BUCKET binding 失败兜底)
@@ -8,10 +9,15 @@
  * - 增强 try/catch: 任何 R2 binding 错误都走 Pages 静态兜底
  * - 保留 V8 double-gzip decompress + V9 cache headers
  *
+ * V12 改进 (2026-08-31):
+ * - 8 B-tier PL paths R2 fallback (drone/camera/military/waterproof/instrument/tool/engineering/trolley)
+ * - Phase 14: enable 40K sub-PL pages in R2 to serve production (CF Pages 20K trim 兼容)
+ *
  * 路由:
  *   /zh/*                  -> R2 bucket: box-zh
  *   /de|/es|/fr|/ja        -> R2 box-de/box-es/box-fr/box-ja (with fallback)
  *   /medical-case/*        -> R2 box-en-b
+ *   /drone-case/* etc 8 PLs -> R2 box-en-b (V12 NEW)
  *   /styles/* /images/*    -> R2 box-en-b static (R2 全兜底)
  *   other HTML paths       -> R2 box-en-b (B-tier) then Pages fallback
  *   other                  -> Pages static
@@ -225,6 +231,25 @@ export const onRequest = async (context) => {
   // === /medical-case/* 路由 ===
   if (path === "/medical-case" || path === "/medical-case/" || path.startsWith("/medical-case/")) {
     return await handleProductLineRoute(context, path, "medical-case", "BOX_EN_B");
+  }
+
+  // === V12 B-tier R2 fallback (8 PL paths) ===
+  // Phase 14: enable R2 fallback for B-tier product line sub-PL pages
+  // (trimmed from CF Pages git tree in commits e9022c2e + aa27a4d9)
+  const bTierPLs = [
+    "drone-case",
+    "camera-stage-case",
+    "military-tactical-case",
+    "waterproof-case",
+    "instrument-case",
+    "tool-box",
+    "engineering-plastic-case",
+    "trolley-case"
+  ];
+  for (const pl of bTierPLs) {
+    if (path === "/" + pl || path === "/" + pl + "/" || path.startsWith("/" + pl + "/")) {
+      return await handleProductLineRoute(context, path, pl, "BOX_EN_B");
+    }
   }
 
   // === V11 静态资源 R2 兜底 ===
