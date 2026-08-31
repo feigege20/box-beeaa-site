@@ -148,6 +148,42 @@ function parseBslug(slug) {
   return { base: slug, hasSuffix: false, suffix: null, fullSlug: slug };
 }
 
+// V12.2: Decide if a path should serve from CF Pages (static) instead of R2 fallback
+// /zh/wholesale/ -> static (top-level page now in dist-pages/)
+// /zh/drone-case/dji-mavic-3-classic-case/ -> R2 (B-tier sub-PL, not in dist-pages/)
+// /zh/guides/... -> static (cluster pages)
+// /zh/blog/... -> static
+function isStaticPath(path, langPrefix) {
+  // Strip lang prefix
+  let p = path;
+  if (langPrefix && p.startsWith(langPrefix + "/")) {
+    p = p.substring(langPrefix.length + 1);
+  } else if (langPrefix && p === langPrefix) {
+    p = "";
+  }
+  // Empty = home page
+  if (!p || p === "/") return true;
+
+  // Known top-level static pages (Phase 17-C)
+  const STATIC_TOP = new Set([
+    "wholesale", "agency", "export", "oem", "faq",
+    "about", "contact", "products", "search", "tools", "entities",
+    "blog", "guides", "markets",
+    "drone-case", "camera-stage-case", "military-tactical-case",
+    "medical-case", "waterproof-case", "instrument-case",
+    "tool-box", "engineering-plastic-case", "trolley-case",
+  ]);
+
+  const firstSeg = p.split("/")[0];
+  // Top-level static page
+  if (STATIC_TOP.has(firstSeg)) return true;
+  // Index under first seg is also static (e.g. /zh/wholesale/)
+  if (p === firstSeg || p === firstSeg + "/") return true;
+
+  // Otherwise (B-tier sub-PL with slug-NNNN), go to R2
+  return false;
+}
+
 const B_TIER_CACHE = new Map();
 const B_TIER_TTL_MS = 5 * 60 * 1000;
 
@@ -211,20 +247,29 @@ export const onRequest = async (context) => {
 
   // === /zh/* 路由 ===
   if (path === "/zh" || path === "/zh/" || path.startsWith("/zh/")) {
+    // V12.2: /zh/ 顶级页面 (wholesale/agency/export/oem/faq/markets/*) 优先 Pages static
+    // 只有 B-tier sub-PL (slug-NNNN pattern) 走 R2
+    if (isStaticPath(path, "/zh")) {
+      return await context.next();
+    }
     return await handleZHRoute(context, path);
   }
 
   // === /de/* 路由 (5 langs: de/es/fr/ja) ===
   if (path === "/de" || path === "/de/" || path.startsWith("/de/")) {
+    if (isStaticPath(path, "/de")) return await context.next();
     return await handleLangRoute(context, path, "BUCKET_DE");
   }
   if (path === "/es" || path === "/es/" || path.startsWith("/es/")) {
+    if (isStaticPath(path, "/es")) return await context.next();
     return await handleLangRoute(context, path, "BUCKET_ES");
   }
   if (path === "/fr" || path === "/fr/" || path.startsWith("/fr/")) {
+    if (isStaticPath(path, "/fr")) return await context.next();
     return await handleLangRoute(context, path, "BUCKET_FR");
   }
   if (path === "/ja" || path === "/ja/" || path.startsWith("/ja/")) {
+    if (isStaticPath(path, "/ja")) return await context.next();
     return await handleLangRoute(context, path, "BUCKET_JA");
   }
 
