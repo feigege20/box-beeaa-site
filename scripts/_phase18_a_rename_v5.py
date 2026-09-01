@@ -1,15 +1,15 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Phase 18 v5: Phase 15 A slug 路径 bug 修复
-- 读 v2+v4 mapping (100,118 keys)
-- 对每个 old_key → 从 R2 拉 HTML → 解析 canonical → 修正 slug
-- 修正逻辑:
-  1. 去掉 /zh/ 前缀 (如果存在)
-  2. 去掉 PL 前缀 (如果 slug 以 pl 开头,即旧 v2/v4 的重复 PL bug)
-- copy_object 到正确 new_key
-- 5 workers + 0.5-2s 指数 backoff
+"""Phase 18 v5: Phase 15 A slug 璺緞 bug 淇
+- 璇?v2+v4 mapping (100,118 keys)
+- 瀵规瘡涓?old_key 鈫?浠?R2 鎷?HTML 鈫?瑙ｆ瀽 canonical 鈫?淇 slug
+- 淇閫昏緫:
+  1. 鍘绘帀 /zh/ 鍓嶇紑 (濡傛灉瀛樺湪)
+  2. 鍘绘帀 PL 鍓嶇紑 (濡傛灉 slug 浠?pl 寮€澶?鍗虫棫 v2/v4 鐨勯噸澶?PL bug)
+- copy_object 鍒版纭?new_key
+- 5 workers + 0.5-2s 鎸囨暟 backoff
 
-预计 2-3h 完成 100,118 rename
+棰勮 2-3h 瀹屾垚 100,118 rename
 """
 import boto3
 import json
@@ -88,21 +88,38 @@ def fix_slug(old_key: str, slug: str) -> str:
 
 
 def process_one(s3, bucket: str, old_key: str, max_retries: int = 5) -> dict:
-    for attempt in range(max_retries):
-        try:
-            resp = s3.get_object(Bucket=bucket, Key=old_key, Range="bytes=0-4095")
-            body = resp["Body"].read()
+    # Probe both buckets because v4 mapping doesn't store bucket info
+    # v4 input was a mix of box-en-b and box-zh keys
+    actual_bucket = None
+    body = None
+    for probe_bucket in [bucket, "box-zh" if bucket == "box-en-b" else "box-en-b"]:
+        for attempt in range(max_retries):
+            try:
+                resp = s3.get_object(Bucket=probe_bucket, Key=old_key, Range="bytes=0-4095")
+                body = resp["Body"].read()
+                actual_bucket = probe_bucket
+                break
+            except Exception as e:
+                code = ""
+                if hasattr(e, "response"):
+                    code = e.response.get("Error", {}).get("Code", "")
+                if code in ("404", "NoSuchKey", "NotFound"):
+                    # Not in this bucket, try next
+                    break
+                if attempt < max_retries - 1:
+                    sleep_s = (2 ** attempt) * 0.5 + random.uniform(0, 0.5)
+                    time.sleep(sleep_s)
+                    continue
+                # Don't return yet 鈥?try other bucket first
+                break
+        if body is not None:
             break
-        except Exception as e:
-            if attempt < max_retries - 1:
-                sleep_s = (2 ** attempt) * 0.5 + random.uniform(0, 0.5)
-                time.sleep(sleep_s)
-                continue
-            return {"ok": False, "old_key": old_key, "stage": "get", "err": str(e)[:200]}
+    if body is None:
+        return {"ok": False, "old_key": old_key, "stage": "get", "err": "not found in either bucket"}
 
     slug = extract_production_slug(body)
     if not slug:
-        return {"ok": False, "old_key": old_key, "stage": "parse", "err": "no canonical"}
+        return {"ok": False, "old_key": old_key, "stage": "parse", "err": "no canonical", "actual_bucket": actual_bucket}
 
     new_key = fix_slug(old_key, slug)
 
@@ -112,14 +129,14 @@ def process_one(s3, bucket: str, old_key: str, max_retries: int = 5) -> dict:
     for attempt in range(max_retries):
         try:
             s3.copy_object(
-                Bucket=bucket,
+                Bucket=actual_bucket,
                 Key=new_key,
-                CopySource={"Bucket": bucket, "Key": old_key},
+                CopySource={"Bucket": actual_bucket, "Key": old_key},
                 MetadataDirective="REPLACE",
                 ContentType="text/html; charset=utf-8",
                 CacheControl="public, max-age=300",
             )
-            return {"ok": True, "old_key": old_key, "new_key": new_key, "noop": False}
+            return {"ok": True, "old_key": old_key, "new_key": new_key, "noop": False, "actual_bucket": actual_bucket}
         except Exception as e:
             if attempt < max_retries - 1:
                 sleep_s = (2 ** attempt) * 0.5 + random.uniform(0, 0.5)
@@ -127,7 +144,7 @@ def process_one(s3, bucket: str, old_key: str, max_retries: int = 5) -> dict:
                 continue
             return {
                 "ok": False, "old_key": old_key, "new_key": new_key,
-                "stage": "copy", "err": str(e)[:200],
+                "stage": "copy", "err": str(e)[:200], "actual_bucket": actual_bucket,
             }
 
 
@@ -144,7 +161,7 @@ def main():
         v4_mapping = json.load(f)
     log_line(f"v4 mapping: {len(v4_mapping)} entries")
 
-    # Tasks: (bucket, old_key) — old_key from v2/v4 mapping
+    # Tasks: (bucket, old_key) 鈥?old_key from v2/v4 mapping
     # v2/v4 only renamed B-tier sub-PL pages, which are in box-en-b and box-zh
     tasks = []
     for old_key in v4_mapping.keys():
