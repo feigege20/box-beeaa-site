@@ -14,28 +14,12 @@ binding = "BOX_ZH"
 bucket_name = "box-zh"
 preview_bucket_name = "box-zh"
 
-# Workers AI (Paid plan: 10K neurons/day 免费 + 付费扩展)
-# 自动按需调用 Llama 3 / embedding 模型
-[ai]
-binding = "AI"
+# === 2026-09-01 v2: 关闭 Workers Paid, 切换到 CF Pages Free + R2 + D1 ===
+# 删除 [ai] / [placement] / [vars] 三段 (Workers AI 已无调用方 / Smart Placement 需 Paid)
+# 保留 R2 + D1 bindings (Pages Free 仍可用)
+# OEM 询盘改 mailto: (已在 8/30 部署, /oem/ 页用 mailto:kexin@beeaa.com)
 
-# Smart Placement (Paid plan)
-# Worker 自动部署到用户最近的数据中心, 大幅降低延迟 (尤其对亚洲/欧洲用户)
-# Free 计划不支持, 已在 $5/mo 套餐内
-[placement]
-mode = "smart"
-
-# Non-secret env vars (RESEND_API_KEY 在 Cloudflare Dashboard 加为 Secret)
-# 2026-08-01 验证 beeaa.com 后, From 改用 noreply@beeaa.com
-[vars]
-RESEND_FROM = "KeXinMaterials Inquiry <noreply@beeaa.com>"  # 8/18 14:40 测试,Resend 200 OK,但需 beeaa.com DNS 验证才能真 deliver
-RESEND_TO = "kexin@beeaa.com"
-
-# Email Sending: Cloudflare Pages 不支持 send_email binding, 我们用 Resend HTTP API
-# FRED 在 https://resend.com 注册 (免费 100/天, 3K/月) → 创建 API key → 在 Pages Dashboard 加 secret RESEND_API_KEY
-# 也可以用 Cloudflare Email Service (需独立 Worker + 域名验证) — 见 functions/api/inquiry.js 注释
-
-# === D1 Database 询盘持久化 (2026-08-18 启用) ===
+# === D1 Database 询盘持久化 (2026-08-18 启用, 免费层 5GB / 5M rows read/day) ===
 # D1 created via Cloudflare API on 2026-08-18 02:28
 [[d1_databases]]
 binding = "DB"
@@ -66,16 +50,9 @@ binding = "BUCKET_JA"
 bucket_name = "box-ja"
 preview_bucket_name = "box-ja"
 
-# === Admin Token (访问 /api/admin/inquiries 后台) ===
-# FRED 在 Pages Dashboard → Settings → Environment variables:
+# === Admin Token (保留说明) ===
+# functions/api/admin/inquiries.js 已删除 (2026-09-01 v2),如需重建后台:
 #   Variable: ADMIN_TOKEN
 #   Type: Secret
 #   Value: 32+ 字符串 (e.g. openssl rand -hex 32)
-
-# === Slack/Discord Webhook 实时通知 (可选) ===
-# 如设置 NOTIFY_WEBHOOK, 每条询盘将推送到该 webhook
-# 适用于 Slack Incoming Webhook 或 Discord Webhook URL
-# FRED 在 Pages Dashboard → Settings → Environment variables:
-#   Variable: NOTIFY_WEBHOOK
-#   Type: Secret
-#   Value: https://hooks.slack.com/services/...
+# 询盘数据仍写入 D1 (POST /api/inquiry 已删除,但 D1 schema 保留)
