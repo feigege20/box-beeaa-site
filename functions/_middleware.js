@@ -113,84 +113,59 @@ async function serveR2(obj, key, request) {
   return await withSecurityHeaders(new Response(obj.body, { headers }), request);
 }
 
-// V13.2 (2026-09-17): Cache-aware wrapper around serveR2.
-// CF Pages Functions V12 worker responses DO NOT auto-engage CF Edge Cache
+// V13 (2026-09-17): Cache-aware wrapper around serveR2.
+// CF Pages Functions V12 worker responses don't auto-engage CF Edge Cache
 // (Cache Rule "cache: true" alone has no effect).
 // This wrapper uses the Cloudflare Cache API (caches.default) to explicitly
 // store and retrieve responses at the edge.
 //
+// NOTE (2026-09-17): Production traffic for box.beeaa.com goes through the
+// ZONE-level Worker "box-beeaa-css-router" (box-beeaa-full-router v7), NOT
+// this CF Pages Functions middleware. The zone Worker has its own cache logic.
+// This serveR2Cached is defensive — used if/when CF Pages Functions IS the
+// primary handler for some path.
+//
 // Flow:
 //   1. Try caches.default.match(request) -> HIT or MISS
-//   2. On HIT: re-apply security headers (cache may have stripped them) and return
+//   2. On HIT: re-apply security headers and return
 //   3. On MISS: call serveR2() to build from R2, then ctx.waitUntil(cache.put(...))
-//      to store the response. Original is returned to client.
 //
 // Cache TTL is governed by the response's Cache-Control header (set in serveR2).
-//
-// Diagnostic header X-Cache-Status: HIT|MISS|ERR added for debug.
 async function serveR2Cached(obj, key, request, ctx) {
-  let cacheStatus = "SKIP";
-
   if (typeof caches === "undefined" || !caches.default) {
-    cacheStatus = "NO-CACHE-API";
-    const response = await serveR2(obj, key, request);
-    const h = new Headers(response.headers);
-    h.set("X-Cache-Status", cacheStatus);
-    return new Response(response.body, { status: response.status, statusText: response.statusText, headers: h });
+    return await serveR2(obj, key, request);
   }
 
   const cache = caches.default;
   const cacheKey = new Request(request.url, { method: "GET" });
 
-  // === Try cache first ===
-  let cached = null;
   try {
-    cached = await cache.match(cacheKey);
+    const cached = await cache.match(cacheKey);
+    if (cached) {
+      const newHeaders = new Headers(cached.headers);
+      applySecurityHeaders(newHeaders);
+      return new Response(cached.body, {
+        status: cached.status,
+        statusText: cached.statusText,
+        headers: newHeaders
+      });
+    }
   } catch (e) {
-    cacheStatus = "ERR-MATCH:" + e.message;
+    // Cache lookup failed, fall through to MISS
   }
 
-  if (cached) {
-    cacheStatus = "HIT";
-    // HIT — re-apply security headers (they may have been stripped by cache normalization)
-    const newHeaders = new Headers(cached.headers);
-    applySecurityHeaders(newHeaders);
-    newHeaders.set("X-Cache-Status", cacheStatus);
-    newHeaders.set("X-Cache-Debug", "v13.2-cached");
-    return new Response(cached.body, {
-      status: cached.status,
-      statusText: cached.statusText,
-      headers: newHeaders
-    });
-  }
-
-  // === MISS — build from R2 ===
-  cacheStatus = "MISS";
   const response = await serveR2(obj, key, request);
 
-  // === Store in cache (non-blocking via ctx.waitUntil) ===
-  let putResult = "";
   if (ctx && typeof ctx.waitUntil === "function") {
     try {
       const toCache = response.clone();
-      const putPromise = cache.put(cacheKey, toCache);
-      ctx.waitUntil(putPromise);
-      putResult = "PUT-QUEUED";
+      ctx.waitUntil(cache.put(cacheKey, toCache));
     } catch (e) {
-      putResult = "ERR-PUT:" + e.message;
+      // Cache put failed, continue without caching
     }
-  } else {
-    putResult = "NO-WAITUNTIL";
   }
 
-  const newHeaders = new Headers(response.headers);
-  newHeaders.set("X-Cache-Status", cacheStatus);
-  newHeaders.set("X-Cache-Debug", "v13.2-" + putResult);
-  return new Response(response.body, {
-    status: response.status,
-    statusText: response.statusText,
-    headers: newHeaders
-  });
+  return response;
 }
 
 function serve404() {
