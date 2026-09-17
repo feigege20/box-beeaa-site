@@ -97,9 +97,76 @@ async function serveR2(obj, key, request) {
   } else if (!headers.has("content-type")) {
     headers.set("Content-Type", "application/octet-stream");
   }
-  headers.set("Cache-Control", "public, max-age=300, must-revalidate");
+  // V13 (2026-09-17): Edge TTL tuned — HTML 1h, static 30d, other 5min.
+  // CF Cache Rule "box-beeaa-static-edge-cache" overrides browser_ttl to 3600 for HTML.
+  // Worker-side Cache-Control determines edge TTL via caches.default.put().
+  let edgeTtlSec;
+  if (k.endsWith(".html") || k.endsWith("/")) {
+    edgeTtlSec = 3600;            // HTML: 1 hour at edge
+  } else if (/\.(css|js|webp|png|jpg|jpeg|svg|ico|woff2?|ttf|otf)$/i.test(k)) {
+    edgeTtlSec = 2592000;         // Static: 30 days at edge
+  } else {
+    edgeTtlSec = 300;             // Other: 5 min at edge
+  }
+  headers.set("Cache-Control", `public, max-age=${edgeTtlSec}, must-revalidate`);
   applySecurityHeaders(headers);
   return await withSecurityHeaders(new Response(obj.body, { headers }), request);
+}
+
+// V13 (2026-09-17): Cache-aware wrapper around serveR2.
+// CF Pages Functions V12 worker responses DO NOT auto-engage CF Edge Cache
+// (Cache Rule "cache: true" alone has no effect).
+// This wrapper uses the Cloudflare Cache API (caches.default) to explicitly
+// store and retrieve responses at the edge.
+//
+// Flow:
+//   1. Try caches.default.match(request) -> HIT or MISS
+//   2. On HIT: re-apply security headers (cache may have stripped them) and return
+//   3. On MISS: call serveR2() to build from R2, then ctx.waitUntil(cache.put(...))
+//      to store the response. Original is returned to client.
+//
+// Cache TTL is governed by the response's Cache-Control header (set in serveR2).
+async function serveR2Cached(obj, key, request, ctx) {
+  // If no cache API available, just fall through to serveR2
+  if (typeof caches === "undefined" || !caches.default) {
+    return await serveR2(obj, key, request);
+  }
+
+  const cache = caches.default;
+  const cacheKey = new Request(request.url, { method: "GET" });
+
+  // === Try cache first ===
+  try {
+    const cached = await cache.match(cacheKey);
+    if (cached) {
+      // HIT — re-apply security headers (they may have been stripped by cache normalization)
+      const newHeaders = new Headers(cached.headers);
+      applySecurityHeaders(newHeaders);
+      return new Response(cached.body, {
+        status: cached.status,
+        statusText: cached.statusText,
+        headers: newHeaders
+      });
+    }
+  } catch (e) {
+    // Cache lookup failed, fall through to MISS path
+  }
+
+  // === MISS — build from R2 ===
+  const response = await serveR2(obj, key, request);
+
+  // === Store in cache (non-blocking via ctx.waitUntil) ===
+  if (ctx && typeof ctx.waitUntil === "function") {
+    try {
+      // response.clone() lets cache.put consume the body without breaking the original
+      const toCache = response.clone();
+      ctx.waitUntil(cache.put(cacheKey, toCache));
+    } catch (e) {
+      // Cache put failed (e.g., streaming body not cloneable), continue without caching
+    }
+  }
+
+  return response;
 }
 
 function serve404() {
@@ -334,7 +401,7 @@ async function handleZHRoute(context, path) {
   for (const key of exactKeys) {
     const obj = await safeR2Get(context.env, "BOX_ZH", key);
     if (obj) {
-      return await serveR2(obj, key, context.request);
+      return await serveR2Cached(obj, key, context.request, context);
     }
   }
 
@@ -384,7 +451,7 @@ async function handleLangRoute(context, path, bucketBinding) {
   for (const key of exactKeys) {
     const obj = await safeR2Get(context.env, bucketBinding, key);
     if (obj) {
-      return await serveR2(obj, key, context.request);
+      return await serveR2Cached(obj, key, context.request, context);
     }
   }
 
@@ -406,7 +473,7 @@ async function handleProductLineRoute(context, path, productLine, bucketBinding)
   for (const key of exactKeys) {
     const obj = await safeR2Get(context.env, bucketBinding, key);
     if (obj) {
-      return await serveR2(obj, key, context.request);
+      return await serveR2Cached(obj, key, context.request, context);
     }
   }
 
@@ -445,7 +512,7 @@ async function handleStaticAssetR2(context, path) {
   }
 
   if (obj) {
-    return await serveR2(obj, key, context.request);
+    return await serveR2Cached(obj, key, context.request, context);
   }
 
   // R2 没找到, 走 Pages 静态
@@ -471,7 +538,7 @@ async function handleGenericRoute(context, path) {
   for (const key of exactKeys) {
     const obj = await safeR2Get(context.env, "BOX_EN_B", key);
     if (obj) {
-      return await serveR2(obj, key, context.request);
+      return await serveR2Cached(obj, key, context.request, context);
     }
   }
 
